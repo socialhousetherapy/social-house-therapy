@@ -137,8 +137,8 @@ img { display: block; max-width: 100%; }
 .btn-accent:hover { background: var(--clay-500); transform: translateY(-1px); }
 .btn-outline { background: transparent; color: var(--ink-900); border: 2px solid var(--ink-900); padding: 12px 22px; }
 .btn-outline:hover { background: var(--ink-900); color: var(--cream-50); }
-.btn-ghost { background: transparent; color: var(--ink-900); padding: 12px 18px; }
-.btn-ghost:hover { background: var(--sage-100); }
+.btn-ghost { background: transparent; color: #123F2A; padding: 12px 0; border: none; }
+.btn-ghost:hover { background: transparent; text-decoration: underline; }
 .btn-soft { background: var(--cream-100); color: var(--ink-900); border: 1px solid var(--cream-300); }
 .btn-soft:hover { background: var(--cream-200); }
 

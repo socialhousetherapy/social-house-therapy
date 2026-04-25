@@ -57,32 +57,28 @@
 }
 
 .hero-v4-heading {
-  font-family: var(--font-heading);
-  font-size: clamp(40px, 5vw, 68px);
+  font-family: "Cormorant Garamond", "Playfair Display", Georgia, serif;
+  font-size: clamp(40px, 5vw, 72px);
   font-weight: 500;
-  color: var(--brand-ink);
-  line-height: 1.07;
-  letter-spacing: -0.03em;
-  margin: 0 0 20px;
-}
-.hero-v4-heading em {
-  font-style: italic;
-  color: var(--sage-700);
+  color: #123F2A;
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+  margin: 0 0 22px;
 }
 
 .hero-v4-rule {
-  width: 44px; height: 3px;
-  background: var(--sage-600);
-  border-radius: 2px;
-  margin-bottom: 22px;
+  width: 48px; height: 2px;
+  background: #123F2A;
+  border-radius: 1px;
+  margin-bottom: 24px;
 }
 
 .hero-v4-sub {
-  font-size: clamp(16px, 1.3vw, 18px);
-  line-height: 1.65;
-  color: var(--fg-2);
-  max-width: 460px;
-  margin: 0 0 28px;
+  font-size: clamp(16px, 1.3vw, 17px);
+  line-height: 1.6;
+  color: #2E3430;
+  max-width: 480px;
+  margin: 0 0 32px;
 }
 
 /* 5-star badge */
@@ -105,7 +101,7 @@
 .hero-v4-ctas {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 24px;
   flex-wrap: wrap;
 }
 
@@ -217,6 +213,9 @@
   .hero-v4-left, .hero-v4-right { animation: none; opacity: 1; }
 }
 </style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -234,24 +233,17 @@
       </div>
 
       <h1 class="hero-v4-heading">
-        Speech therapy<br>that starts with<br><em>connection.</em>
+        Speech therapy<br>that starts with<br>connection.
       </h1>
       <div class="hero-v4-rule"></div>
 
       <p class="hero-v4-sub">
-        Personalized speech therapy for children, delivered in the places they live, learn, and grow — so communication comes more naturally, every day.
+        Personalized speech therapy for children, delivered in the places they live, learn, and grow—so communication comes more naturally, every day.
       </p>
-
-      <div class="hero-v4-stars" aria-label="5 out of 5 stars on Google">
-        <span class="s-stars">★ ★ ★ ★ ★</span>
-        <span class="s-label">5.0 on Google</span>
-        <span class="s-sep" aria-hidden="true"></span>
-        <span class="s-meta">Tempe &amp; Scottsdale families</span>
-      </div>
 
       <div class="hero-v4-ctas">
         <a class="btn btn-primary" href="contact.html">
-          Book a free call
+          Book a Free Call
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </a>
         <a class="btn btn-ghost" href="about.html">Meet Madison →</a>
