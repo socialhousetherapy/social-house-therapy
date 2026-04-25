@@ -1,0 +1,320 @@
+/* =============================================================
+   Social House Therapy — Design Tokens
+   colors_and_type.css
+   ============================================================= */
+
+/* ---- Webfonts (Google Fonts) ---------------------------------
+   Display  : Bagel Fat One       — groovy echo of the logo
+   Heading  : Bricolage Grotesque — modern, friendly, distinctive
+   Body     : DM Sans             — warm geometric sans
+   Accent   : Caveat              — hand-written moments ("connection first")
+   -------------------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,400..600&family=Caveat:wght@500;600;700&display=swap');
+
+:root {
+  /* ---------- Brand Colors ---------- */
+
+  /* Sage — primary brand (extends the logo's ~#A8BFA0) */
+  --sage-50:  #F1F5EE;
+  --sage-100: #E2EBDC;
+  --sage-200: #CADBC1;
+  --sage-300: #B1C9A5;
+  --sage-400: #9AB68E;   /* logo color, approximately */
+  --sage-500: #7E9E74;   /* primary action */
+  --sage-600: #637F5C;   /* hover / deep */
+  --sage-700: #4B6347;
+  --sage-800: #364932;
+  --sage-900: #243121;
+
+  /* Cream — warm neutrals (home, calm, paper) */
+  --cream-50:  #FBF8F1;   /* page bg */
+  --cream-100: #F5EFE1;   /* card bg */
+  --cream-200: #EDE3CD;
+  --cream-300: #E0D3B3;
+  --cream-400: #C8B791;
+
+  /* Clay — warm accent (terracotta, AZ desert, connection) */
+  --clay-50:  #FBF0EA;
+  --clay-100: #F6DDCF;
+  --clay-200: #EFBFA6;
+  --clay-300: #E6997A;
+  --clay-400: #D97854;   /* primary accent */
+  --clay-500: #C55E3B;
+  --clay-600: #A14A2D;
+
+  /* Sun — high-energy joy accent (sparingly) */
+  --sun-100: #FFF4CB;
+  --sun-300: #FCD870;
+  --sun-400: #F6C13C;
+  --sun-500: #E0A51A;
+
+  /* Sky — supportive cool (rare; for variety / chips) */
+  --sky-100: #E3EEF3;
+  --sky-300: #A7C9D8;
+  --sky-500: #5E93AC;
+
+  /* Ink — text + lines (warm near-black, never pure) */
+  --ink-900: #1F2A23;   /* primary text — warm green-black */
+  --ink-700: #3D4C42;   /* body secondary */
+  --ink-500: #6C7A70;   /* tertiary / captions */
+  --ink-300: #B6BEB7;   /* disabled */
+  --ink-100: #E8EAE6;   /* hairlines */
+
+  /* Pure neutrals for chrome */
+  --white: #FFFFFF;
+  --off-white: #FDFCF8;
+
+  /* ---------- Semantic Colors ---------- */
+  --bg-page:        var(--cream-50);
+  --bg-surface:     var(--white);
+  --bg-raised:      var(--off-white);
+  --bg-muted:       var(--cream-100);
+  --bg-inverse:     var(--ink-900);
+
+  --fg-1:           var(--ink-900);   /* primary body */
+  --fg-2:           var(--ink-700);   /* secondary */
+  --fg-3:           var(--ink-500);   /* tertiary / meta */
+  --fg-disabled:    var(--ink-300);
+  --fg-on-brand:    var(--cream-50);
+  --fg-on-inverse:  var(--cream-50);
+
+  --brand:          var(--sage-500);
+  --brand-hover:    var(--sage-600);
+  --brand-soft:     var(--sage-100);
+  --brand-ink:      var(--sage-800);   /* dark sage for headings */
+
+  --accent:         var(--clay-400);
+  --accent-hover:   var(--clay-500);
+  --accent-soft:    var(--clay-100);
+
+  --highlight:      var(--sun-300);    /* text highlight, tiny moments */
+
+  --border-subtle:  var(--ink-100);
+  --border-default: var(--cream-300);
+  --border-strong:  var(--ink-700);
+
+  --focus-ring:     var(--clay-400);
+
+  /* Status (kept in-palette) */
+  --success: #5E8C5A;
+  --warning: #D08A2B;
+  --danger:  #B94A3B;
+  --info:    #5E93AC;
+
+  /* ---------- Type Scale ---------- */
+  --font-display: "Bagel Fat One", "Chewy", system-ui, sans-serif;
+  --font-heading: "Bricolage Grotesque", "Inter Tight", system-ui, sans-serif;
+  --font-body:    "DM Sans", system-ui, -apple-system, sans-serif;
+  --font-hand:    "Caveat", "Kalam", cursive;
+  --font-mono:    ui-monospace, "JetBrains Mono", Menlo, monospace;
+
+  /* Fluid type (clamp(min, preferred, max)) — desktop-ish defaults */
+  --fs-display-xl: clamp(3.5rem, 7vw + 1rem, 8rem);    /* 56–128 */
+  --fs-display-lg: clamp(2.75rem, 5vw + 1rem, 5.5rem); /* 44–88 */
+  --fs-display-md: clamp(2.25rem, 3.5vw + 1rem, 4rem); /* 36–64 */
+
+  --fs-h1: clamp(2rem, 2.5vw + 1rem, 3.25rem);    /* 32–52 */
+  --fs-h2: clamp(1.625rem, 1.5vw + 1rem, 2.5rem); /* 26–40 */
+  --fs-h3: clamp(1.375rem, 1vw + 1rem, 1.875rem); /* 22–30 */
+  --fs-h4: 1.25rem;                                /* 20 */
+  --fs-eyebrow: 0.8125rem;                         /* 13 */
+
+  --fs-body-lg: 1.1875rem;  /* 19 — lead paragraph */
+  --fs-body:    1.0625rem;  /* 17 */
+  --fs-body-sm: 0.9375rem;  /* 15 */
+  --fs-caption: 0.8125rem;  /* 13 */
+
+  --lh-tight:    1.05;
+  --lh-snug:     1.2;
+  --lh-normal:   1.45;
+  --lh-relaxed:  1.6;
+  --lh-loose:    1.8;
+
+  --tracking-tight:  -0.02em;
+  --tracking-normal: 0;
+  --tracking-wide:   0.04em;
+  --tracking-uppercase: 0.12em;
+
+  /* ---------- Spacing ---------- */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-8:  32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+  --space-32: 128px;
+
+  /* ---------- Radius ---------- */
+  --radius-xs:  6px;
+  --radius-sm:  10px;
+  --radius-md:  16px;
+  --radius-lg:  24px;
+  --radius-xl:  32px;
+  --radius-2xl: 48px;
+  --radius-pill: 999px;
+  --radius-blob: 62% 38% 58% 42% / 55% 55% 45% 45%; /* organic shape */
+
+  /* ---------- Shadow ---------- */
+  --shadow-xs:   0 1px 2px rgba(31, 42, 35, 0.06);
+  --shadow-sm:   0 2px 6px rgba(31, 42, 35, 0.06), 0 1px 2px rgba(31, 42, 35, 0.04);
+  --shadow-md:   0 6px 20px -6px rgba(31, 42, 35, 0.12), 0 2px 6px rgba(31, 42, 35, 0.05);
+  --shadow-lg:   0 18px 40px -12px rgba(31, 42, 35, 0.18), 0 6px 14px rgba(31, 42, 35, 0.06);
+  --shadow-xl:   0 32px 64px -16px rgba(31, 42, 35, 0.25), 0 12px 22px rgba(31, 42, 35, 0.08);
+  --shadow-focus:0 0 0 4px rgba(217, 120, 84, 0.35); /* clay, low-alpha */
+
+  /* ---------- Motion ---------- */
+  --ease-out:    cubic-bezier(0.22, 0.7, 0.3, 1);
+  --ease-spring: cubic-bezier(0.34, 1.35, 0.4, 1);
+  --ease-soft:   cubic-bezier(0.4, 0, 0.2, 1);
+
+  --dur-fast:   140ms;
+  --dur-base:   240ms;
+  --dur-slow:   420ms;
+  --dur-slower: 700ms;
+}
+
+/* =============================================================
+   Semantic Type classes — use these for text roles
+   ============================================================= */
+
+html {
+  color: var(--fg-1);
+  background: var(--bg-page);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: var(--lh-normal);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body { margin: 0; }
+
+/* Headings */
+h1, .h1 {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: var(--fs-h1);
+  line-height: var(--lh-snug);
+  letter-spacing: var(--tracking-tight);
+  color: var(--brand-ink);
+  margin: 0 0 0.4em;
+  text-wrap: balance;
+}
+
+h2, .h2 {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: var(--fs-h2);
+  line-height: var(--lh-snug);
+  letter-spacing: var(--tracking-tight);
+  color: var(--brand-ink);
+  margin: 0 0 0.4em;
+  text-wrap: balance;
+}
+
+h3, .h3 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: var(--fs-h3);
+  line-height: 1.25;
+  color: var(--fg-1);
+  margin: 0 0 0.4em;
+}
+
+h4, .h4 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: var(--fs-h4);
+  line-height: 1.3;
+  color: var(--fg-1);
+  margin: 0 0 0.4em;
+}
+
+/* Display = Bagel Fat One, use SPARINGLY — hero moments only */
+.display-xl, .display-lg, .display-md {
+  font-family: var(--font-display);
+  font-weight: 400; /* Bagel Fat One only has 400 */
+  color: var(--brand-ink);
+  line-height: var(--lh-tight);
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+  margin: 0 0 0.3em;
+}
+.display-xl { font-size: var(--fs-display-xl); }
+.display-lg { font-size: var(--fs-display-lg); }
+.display-md { font-size: var(--fs-display-md); }
+
+/* Eyebrow / kicker — tiny label above a heading */
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: var(--fs-eyebrow);
+  font-weight: 600;
+  letter-spacing: var(--tracking-uppercase);
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 var(--space-4);
+}
+
+/* Handwriting accents — for little margin notes, "connection first" moments */
+.hand {
+  font-family: var(--font-hand);
+  font-weight: 600;
+  color: var(--clay-500);
+  font-size: 1.5em;
+  line-height: 1;
+}
+
+/* Body text */
+p, .body {
+  font-size: var(--fs-body);
+  line-height: var(--lh-relaxed);
+  color: var(--fg-2);
+  margin: 0 0 1em;
+  text-wrap: pretty;
+}
+
+.lead {
+  font-size: var(--fs-body-lg);
+  line-height: var(--lh-relaxed);
+  color: var(--fg-1);
+  font-weight: 400;
+}
+
+.small { font-size: var(--fs-body-sm); }
+.caption {
+  font-size: var(--fs-caption);
+  color: var(--fg-3);
+  line-height: var(--lh-normal);
+}
+
+/* Links */
+a {
+  color: var(--clay-500);
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 3px;
+  text-decoration-color: color-mix(in oklab, var(--clay-500), transparent 60%);
+  transition: color var(--dur-fast) var(--ease-out), text-decoration-color var(--dur-fast) var(--ease-out);
+}
+a:hover {
+  color: var(--clay-600);
+  text-decoration-color: var(--clay-500);
+}
+
+/* Selection */
+::selection {
+  background: var(--sage-200);
+  color: var(--ink-900);
+}
+
+/* Focus */
+:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
