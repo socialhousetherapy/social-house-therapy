@@ -10,55 +10,40 @@
 <link rel="stylesheet" href="styles/site.css">
 <script>window.__PAGE = 'home';</script>
 <style>
-/* ── NAV: three-color crayon stripe at top ─────────────────── */
+/* ── NAV: three-color crayon stripe ───────────────────────── */
 .nav::before {
   content: '';
   position: absolute;
   top: 0; left: 0; right: 0; height: 3px;
-  background: linear-gradient(to right,
-    #D97854 0% 33.3%,
-    #4B7FC4 33.3% 66.6%,
-    #5A9E6F 66.6% 100%);
+  background: linear-gradient(to right, #D97854 0% 33.3%, #4B7FC4 33.3% 66.6%, #5A9E6F 66.6% 100%);
   z-index: 1;
 }
 
-/* ── HERO V2 ────────────────────────────────────────────────── */
+/* ── HERO LAYOUT ─────────────────────────────────────────── */
 .hero-v2 {
   display: grid;
   grid-template-columns: 55% 45%;
-  min-height: 92vh;
   position: relative;
-  overflow: hidden;
+  /* overflow visible so left content never clips */
 }
-
-/* Left panel */
 .hero-v2-left {
   display: flex;
-  align-items: center;
-  padding: clamp(48px, 8vh, 100px) clamp(32px, 4vw, 56px) clamp(48px, 8vh, 80px) clamp(32px, 5vw, 64px);
-  position: relative;
+  align-items: flex-start;
+  padding: clamp(56px, 9vh, 108px) clamp(28px, 3.5vw, 52px) clamp(56px, 9vh, 80px) clamp(28px, 4.5vw, 60px);
   z-index: 2;
+  position: relative;
 }
-.hero-v2-inner { max-width: 600px; width: 100%; }
+.hero-v2-inner { max-width: 580px; width: 100%; }
 
-/* Crayon headline */
-.crayon-hed {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-  margin: 22px 0 26px;
-}
-.crayon-line {
-  display: block;
-  overflow: hidden;
-  line-height: 1.13;
-}
+/* ── CRAYON HEADLINE ─────────────────────────────────────── */
+.crayon-hed { display: flex; flex-direction: column; margin: 20px 0 24px; }
+.crayon-line { display: block; overflow: hidden; }
 .cl-text {
   display: block;
   font-family: var(--font-hand);
   font-weight: 700;
-  font-size: clamp(52px, 6.5vw, 104px);
-  line-height: 1.13;
+  font-size: clamp(50px, 5.8vw, 100px);
+  line-height: 1.1;
   letter-spacing: -0.01em;
   clip-path: inset(-10% 100% -20% -5%);
   animation: crayonWrite 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
@@ -66,120 +51,145 @@
 .cl-1 .cl-text { color: #D97854; animation-delay: 0.3s; }
 .cl-2 .cl-text { color: #4B7FC4; animation-delay: 1.1s; }
 .cl-3 .cl-text { color: #5A9E6F; animation-delay: 1.85s; }
+@keyframes crayonWrite { to { clip-path: inset(-10% 0% -20% -5%); } }
 
-@keyframes crayonWrite {
-  to { clip-path: inset(-10% 0% -20% -5%); }
-}
-
-/* Staggered fade-ups */
-.hero-v2-inner .eyebrow-pill {
-  opacity: 0;
-  animation: heroFadeUp 0.6s ease-out 0.1s both;
-}
+/* ── STAGGERED FADE-UPS ──────────────────────────────────── */
+.hero-v2-inner .eyebrow-pill { opacity: 0; animation: heroFadeUp 0.6s ease-out 0.1s both; }
 .hero-v2-lead {
-  font-size: clamp(15px, 1.4vw, 18px);
-  line-height: 1.65;
-  color: var(--fg-2);
-  max-width: 520px;
-  margin: 0 0 24px;
-  opacity: 0;
-  animation: heroFadeUp 0.65s ease-out 2.6s both;
+  font-size: clamp(15px, 1.3vw, 17px);
+  line-height: 1.65; color: var(--fg-2);
+  max-width: 500px; margin: 0 0 22px;
+  opacity: 0; animation: heroFadeUp 0.65s ease-out 2.6s both;
 }
 .hero-v2-ctas {
   display: flex; gap: 12px; flex-wrap: wrap; align-items: center;
-  opacity: 0;
-  animation: heroFadeUp 0.65s ease-out 2.8s both;
+  opacity: 0; animation: heroFadeUp 0.65s ease-out 2.8s both;
 }
-
-/* ── Trust cards (replace old badges) ── */
-.hero-trust {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-  margin-top: 24px;
-  opacity: 0;
-  animation: heroFadeUp 0.65s ease-out 2.95s both;
-}
-.trust-card {
-  display: flex;
-  gap: 10px;
-  align-items: flex-start;
-  padding: 12px 14px;
-  background: var(--white);
-  border: 1px solid var(--border-subtle);
-  border-radius: 14px;
-  box-shadow: var(--shadow-xs);
-}
-.trust-icon {
-  width: 32px; height: 32px;
-  border-radius: 8px;
-  display: grid; place-items: center;
-  flex-shrink: 0;
-  margin-top: 1px;
-}
-.trust-title {
-  font-family: var(--font-heading);
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--ink-900);
-  line-height: 1.25;
-}
-.trust-sub {
-  font-size: 12px;
-  color: var(--fg-3);
-  margin-top: 3px;
-  line-height: 1.4;
-}
-
 @keyframes heroFadeUp {
-  from { opacity: 0; transform: translateY(14px); }
+  from { opacity: 0; transform: translateY(12px); }
   to   { opacity: 1; transform: none; }
 }
 
-/* Right panel */
+/* ── TRUST CARDS ─────────────────────────────────────────── */
+.hero-trust {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 9px;
+  margin-top: 22px;
+  opacity: 0; animation: heroFadeUp 0.65s ease-out 2.95s both;
+}
+.trust-card {
+  display: flex; gap: 10px; align-items: flex-start;
+  padding: 11px 13px;
+  background: var(--white);
+  border: 1px solid var(--border-subtle);
+  border-radius: 13px;
+  box-shadow: var(--shadow-xs);
+}
+.trust-icon {
+  width: 30px; height: 30px; border-radius: 8px;
+  display: grid; place-items: center; flex-shrink: 0;
+}
+.trust-title { font-family: var(--font-heading); font-size: 12.5px; font-weight: 600; color: var(--ink-900); line-height: 1.25; }
+.trust-sub   { font-size: 11.5px; color: var(--fg-3); margin-top: 2px; line-height: 1.35; }
+
+/* ── RIGHT PANEL ─────────────────────────────────────────── */
 .hero-v2-right {
   position: relative;
   overflow: hidden;
+  min-height: 92vh; /* drives the overall hero height */
+  background: linear-gradient(148deg, #E8EDE5 0%, #F5EFE1 52%, #FBF0EA 100%);
 }
-.hero-v2-img {
-  width: 100%; height: 100%;
-  object-fit: cover;
-  object-position: center top;
-  display: block;
+
+/* Blob background */
+.blob-field { position: absolute; inset: 0; }
+.blob {
+  position: absolute;
+  border-radius: 60% 40% 70% 30% / 50% 60% 40% 50%;
+  filter: blur(52px);
+  animation: blobMorph 11s ease-in-out infinite alternate;
 }
+.b1 { width: 60%; height: 58%; background: rgba(162,193,162,0.52); top: -10%; right: -8%; animation-delay: 0s; }
+.b2 { width: 50%; height: 50%; background: rgba(233,185,160,0.42); bottom: 5%; left: -6%; animation-delay: -3.5s; }
+.b3 { width: 42%; height: 42%; background: rgba(167,201,216,0.38); top: 38%; left: 22%; animation-delay: -7s; }
+@keyframes blobMorph {
+  0%   { border-radius: 60% 40% 70% 30% / 50% 60% 40% 50%; }
+  33%  { border-radius: 40% 60% 30% 70% / 60% 40% 60% 40%; }
+  66%  { border-radius: 70% 30% 50% 50% / 40% 70% 30% 60%; }
+  100% { border-radius: 50% 50% 40% 60% / 30% 50% 70% 40%; }
+}
+
+/* Child SVG illustration */
+.child-stage {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  z-index: 2;
+}
+.child-svg {
+  width: 54%; max-width: 270px; height: auto;
+  filter: drop-shadow(0 24px 48px rgba(31,42,35,0.13));
+  animation: childFloat 7s ease-in-out infinite;
+}
+@keyframes childFloat {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-10px); }
+}
+
+/* Speech bubbles */
+.speech-bub {
+  position: absolute;
+  font-family: var(--font-hand);
+  font-weight: 600;
+  font-size: clamp(14px, 1.5vw, 19px);
+  padding: 8px 16px;
+  border-radius: 999px;
+  white-space: nowrap;
+  z-index: 3;
+  box-shadow: 0 4px 18px rgba(31,42,35,0.11);
+  animation: bubFloat var(--d,6s) ease-in-out infinite;
+  animation-delay: var(--dl,0s);
+}
+@keyframes bubFloat {
+  0%, 100% { transform: translateY(0) rotate(var(--r, -3deg)); }
+  50%       { transform: translateY(-14px) rotate(var(--r, -3deg)); }
+}
+.sb1 { --d:5.8s; --dl:0s;   --r:-4deg; background:#fff;     color:#D97854; border:1.5px solid rgba(217,120,84,.18); top:10%; left:5%; }
+.sb2 { --d:6.6s; --dl:-1.4s;--r: 3deg; background:#D97854;  color:#fff;    top:7%;  right:5%; }
+.sb3 { --d:5.4s; --dl:-2.7s;--r:-2deg; background:#fff;     color:#4B7FC4; border:1.5px solid rgba(75,127,196,.18);  top:50%; right:3%; }
+.sb4 { --d:7.0s; --dl:-0.7s;--r: 5deg; background:#5A9E6F;  color:#fff;    bottom:30%; left:4%; }
+.sb5 { --d:6.2s; --dl:-3.5s;--r:-3deg; background:#F6C13C;  color:#5C3D2E; bottom:14%; right:7%; }
+
+/* Left fade overlay */
 .hero-v2-fade {
-  position: absolute; inset: 0;
-  background: linear-gradient(to right, var(--cream-50) 0%, transparent 24%);
-  pointer-events: none; z-index: 1;
-}
-.hero-v2-tint {
-  position: absolute; inset: 0;
-  background: linear-gradient(175deg, rgba(251,240,234,0.12) 0%, rgba(31,42,35,0.28) 100%);
-  pointer-events: none; z-index: 1;
+  position: absolute; inset: 0; z-index: 4;
+  background: linear-gradient(to right, var(--cream-50) 0%, transparent 20%);
+  pointer-events: none;
 }
 
-/* Reduced motion */
+/* ── REDUCED MOTION ──────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
-  .cl-text { animation: none; clip-path: none; }
+  .cl-text, .hero-v2-inner .eyebrow-pill,
+  .hero-v2-lead, .hero-v2-ctas, .hero-trust,
+  .blob, .child-svg, .speech-bub { animation: none; }
+  .cl-text { clip-path: none; }
   .hero-v2-inner .eyebrow-pill,
-  .hero-v2-lead, .hero-v2-ctas, .hero-trust { animation: none; opacity: 1; transform: none; }
+  .hero-v2-lead, .hero-v2-ctas, .hero-trust { opacity: 1; transform: none; }
 }
 
-/* ── Responsive ── */
-@media (max-width: 1100px) {
-  .hero-v2 { grid-template-columns: 58% 42%; }
-}
+/* ── RESPONSIVE ──────────────────────────────────────────── */
+@media (max-width: 1100px) { .hero-v2 { grid-template-columns: 57% 43%; } }
 @media (max-width: 900px) {
-  .hero-v2 { grid-template-columns: 1fr; min-height: auto; }
-  .hero-v2-right { height: 52vw; min-height: 260px; order: -1; }
-  .hero-v2-fade { background: linear-gradient(to bottom, var(--cream-50) 0%, transparent 30%); }
-  .hero-v2-left { padding: 36px 32px 52px; }
+  .hero-v2 { grid-template-columns: 1fr; }
+  .hero-v2-right { min-height: 58vw; order: -1; }
+  .hero-v2-fade { background: linear-gradient(to bottom, var(--cream-50) 0%, transparent 28%); }
+  .hero-v2-left { padding: 32px 28px 48px; }
   .hero-v2-inner { max-width: none; }
-  .hero-trust { grid-template-columns: 1fr 1fr; }
+  .child-svg { width: 40%; }
+  .speech-bub { font-size: 13px; padding: 6px 12px; }
 }
 @media (max-width: 600px) {
-  .hero-v2-left { padding: 28px 20px 44px; }
+  .hero-v2-right { min-height: 70vw; }
+  .hero-v2-left { padding: 24px 20px 40px; }
   .hero-trust { grid-template-columns: 1fr; }
+  .sb3, .sb4 { display: none; }
 }
 </style>
 </head>
@@ -267,15 +277,85 @@
     </div>
   </div>
 
-  <!-- ── Right: full-height image ── -->
-  <div class="hero-v2-right">
-    <img
-      class="hero-v2-img"
-      src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=1400&auto=format&fit=crop&q=82"
-      alt="A young child laughing joyfully"
-      onerror="this.src='https://images.unsplash.com/photo-1471286174890-9c112ffca5b4?w=1400&auto=format&fit=crop&q=82'"
-    >
-    <div class="hero-v2-tint"></div>
+  <!-- ── Right: animated illustrated panel ── -->
+  <div class="hero-v2-right" aria-hidden="true">
+
+    <!-- Layer 1: morphing color blobs -->
+    <div class="blob-field">
+      <div class="blob b1"></div>
+      <div class="blob b2"></div>
+      <div class="blob b3"></div>
+    </div>
+
+    <!-- Layer 2: child SVG illustration -->
+    <div class="child-stage">
+      <svg class="child-svg" viewBox="0 0 280 390" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Shadow -->
+        <ellipse cx="140" cy="382" rx="58" ry="8" fill="rgba(31,42,35,0.07)"/>
+        <!-- Legs -->
+        <rect x="96"  y="258" width="34" height="96" rx="17" fill="#4B7FC4"/>
+        <rect x="150" y="258" width="34" height="96" rx="17" fill="#4B7FC4"/>
+        <!-- Shoes -->
+        <ellipse cx="113" cy="356" rx="25" ry="15" fill="#2D2D2D"/>
+        <ellipse cx="167" cy="356" rx="25" ry="15" fill="#2D2D2D"/>
+        <!-- Shoe shine -->
+        <ellipse cx="107" cy="350" rx="8"  ry="4"  fill="rgba(255,255,255,0.18)"/>
+        <ellipse cx="161" cy="350" rx="8"  ry="4"  fill="rgba(255,255,255,0.18)"/>
+        <!-- Body / shirt -->
+        <rect x="82" y="166" width="116" height="104" rx="32" fill="#7E9E74"/>
+        <!-- Shirt pocket detail -->
+        <rect x="98" y="182" width="28" height="22" rx="6" fill="rgba(255,255,255,0.18)"/>
+        <!-- Left arm (raised) -->
+        <path d="M90 188 Q52 152 36 112" stroke="#FDDBB4" stroke-width="30" stroke-linecap="round" fill="none"/>
+        <!-- Right arm (raised) -->
+        <path d="M190 188 Q228 152 244 112" stroke="#FDDBB4" stroke-width="30" stroke-linecap="round" fill="none"/>
+        <!-- Hands -->
+        <circle cx="32"  cy="104" r="22" fill="#FDDBB4"/>
+        <circle cx="248" cy="104" r="22" fill="#FDDBB4"/>
+        <!-- Neck -->
+        <rect x="120" y="152" width="40" height="22" rx="10" fill="#FDDBB4"/>
+        <!-- Hair (behind head) -->
+        <ellipse cx="140" cy="92" rx="60" ry="46" fill="#5C3D2E"/>
+        <!-- Head -->
+        <circle cx="140" cy="104" r="58" fill="#FDDBB4"/>
+        <!-- Hair (top/front) -->
+        <path d="M82 88 Q84 36 140 34 Q196 36 198 88 Q180 60 140 62 Q100 60 82 88Z" fill="#5C3D2E"/>
+        <!-- Ears -->
+        <ellipse cx="82"  cy="106" rx="12" ry="16" fill="#FDDBB4"/>
+        <ellipse cx="198" cy="106" rx="12" ry="16" fill="#FDDBB4"/>
+        <!-- Eye whites -->
+        <circle cx="118" cy="100" r="15" fill="white"/>
+        <circle cx="162" cy="100" r="15" fill="white"/>
+        <!-- Pupils -->
+        <circle cx="120" cy="101" r="10" fill="#2D2D2D"/>
+        <circle cx="164" cy="101" r="10" fill="#2D2D2D"/>
+        <!-- Eye shine -->
+        <circle cx="124" cy="96"  r="4"  fill="white"/>
+        <circle cx="168" cy="96"  r="4"  fill="white"/>
+        <!-- Eyebrows -->
+        <path d="M106 82 Q118 75 130 80" stroke="#5C3D2E" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+        <path d="M150 80 Q162 75 174 82" stroke="#5C3D2E" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+        <!-- Nose -->
+        <path d="M134 118 Q140 126 146 118" stroke="#C07858" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+        <!-- Big smile -->
+        <path d="M112 134 Q140 160 168 134" stroke="#C07858" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+        <!-- Rosy cheeks -->
+        <ellipse cx="98"  cy="124" rx="16" ry="11" fill="#F4A090" opacity="0.45"/>
+        <ellipse cx="182" cy="124" rx="16" ry="11" fill="#F4A090" opacity="0.45"/>
+        <!-- Small sparkle stars on hands -->
+        <path d="M24 86 l2 5 5 0 -4 3 2 5 -5-3 -5 3 2-5 -4-3 5 0z" fill="#F6C13C" opacity="0.9"/>
+        <path d="M248 86 l2 5 5 0 -4 3 2 5 -5-3 -5 3 2-5 -4-3 5 0z" fill="#F6C13C" opacity="0.9"/>
+      </svg>
+    </div>
+
+    <!-- Layer 3: floating speech bubbles -->
+    <span class="speech-bub sb1">hi mama!</span>
+    <span class="speech-bub sb2">more please</span>
+    <span class="speech-bub sb3">I did it!</span>
+    <span class="speech-bub sb4">my turn</span>
+    <span class="speech-bub sb5">read again!</span>
+
+    <!-- Left edge fade into page background -->
     <div class="hero-v2-fade"></div>
   </div>
 
