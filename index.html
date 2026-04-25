@@ -9,22 +9,307 @@
 <link rel="stylesheet" href="styles/tokens.css">
 <link rel="stylesheet" href="styles/site.css">
 <script>window.__PAGE = 'home';</script>
+<style>
+/* ── NAV: three-color crayon stripe at top ─────────────────── */
+.nav {
+  border-top: 3px solid transparent;
+}
+.nav::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(to right,
+    #D97854 0% 33.3%,
+    #4B7FC4 33.3% 66.6%,
+    #5A9E6F 66.6% 100%);
+  z-index: 1;
+}
+
+/* ── HERO V2 ────────────────────────────────────────────────── */
+.hero-v2 {
+  display: grid;
+  grid-template-columns: 55% 45%;
+  min-height: 92vh;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Left panel */
+.hero-v2-left {
+  display: flex;
+  align-items: center;
+  padding: 100px 56px 80px 64px;
+  position: relative;
+  z-index: 2;
+}
+.hero-v2-inner {
+  max-width: 600px;
+  width: 100%;
+}
+
+/* Crayon SVG filter — slight roughness */
+.crayon-hed {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin: 26px 0 30px;
+  filter: url(#crayon-rough);
+}
+
+/* Each line: hidden overflow + mask reveals left→right */
+.crayon-line {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  line-height: 1.12;
+}
+.cl-text {
+  display: block;
+  font-family: var(--font-hand);
+  font-weight: 700;
+  font-size: clamp(64px, 7.5vw, 104px);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  padding-bottom: 4px;
+}
+.cl-1 .cl-text { color: #D97854; }   /* warm crayon red-orange */
+.cl-2 .cl-text { color: #4B7FC4; }   /* crayon blue            */
+.cl-3 .cl-text { color: #5A9E6F; }   /* crayon green           */
+
+/* Sliding mask: starts covering text, peels away right→left */
+.crayon-line::after {
+  content: '';
+  position: absolute;
+  inset: -4px -8px;
+  background: var(--cream-50);
+  transform-origin: right center;
+  transform: scaleX(1);
+  animation: crayonReveal 0.85s cubic-bezier(0.25, 0, 0.1, 1) both;
+}
+.cl-1::after { animation-delay: 0.4s; }
+.cl-2::after { animation-delay: 1.2s; }
+.cl-3::after { animation-delay: 1.95s; }
+
+@keyframes crayonReveal {
+  from { transform: scaleX(1); }
+  to   { transform: scaleX(0); }
+}
+
+/* Staggered fade-ups for the rest */
+.hero-v2-inner .eyebrow-pill {
+  opacity: 0;
+  animation: heroFadeUp 0.6s ease-out 0.1s both;
+}
+.hero-v2-lead {
+  font-size: 18px;
+  line-height: 1.65;
+  color: var(--fg-2);
+  max-width: 520px;
+  margin: 0 0 28px;
+  opacity: 0;
+  animation: heroFadeUp 0.65s ease-out 2.65s both;
+}
+.hero-v2-ctas {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  align-items: center;
+  opacity: 0;
+  animation: heroFadeUp 0.65s ease-out 2.85s both;
+}
+.hero-v2-badges {
+  margin-top: 28px;
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  align-items: center;
+  font-size: 14px;
+  color: var(--fg-2);
+  opacity: 0;
+  animation: heroFadeUp 0.65s ease-out 3.0s both;
+}
+@keyframes heroFadeUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* Right panel: full-height image */
+.hero-v2-right {
+  position: relative;
+  overflow: hidden;
+}
+.hero-v2-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+/* Soft gradient fade — left edge blends into page background */
+.hero-v2-fade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, var(--cream-50) 0%, transparent 22%);
+  pointer-events: none;
+  z-index: 1;
+}
+/* Subtle warm tint overlay */
+.hero-v2-tint {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, rgba(251,240,234,0.18) 0%, rgba(31,42,35,0.22) 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Sound rings */
+.sound-rings {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255,255,255,0.5);
+  width: 80px;
+  height: 80px;
+  animation: ringExpand 4.2s ease-out infinite;
+}
+.r1 { animation-delay: 0s; }
+.r2 { animation-delay: 1.05s; }
+.r3 { animation-delay: 2.1s; }
+.r4 { animation-delay: 3.15s; }
+@keyframes ringExpand {
+  0%   { transform: scale(0.5);  opacity: 0.75; }
+  100% { transform: scale(6.5);  opacity: 0; }
+}
+
+/* Floating Madison card */
+.hero-v2-card {
+  position: absolute;
+  bottom: 28px;
+  left: -2px;
+  z-index: 3;
+  background: var(--white);
+  border: 1px solid var(--border-subtle);
+  border-radius: 20px;
+  padding: 14px 18px;
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  animation: heroFadeUp 0.7s ease-out 1.0s both;
+}
+.hero-v2-card .avatar {
+  width: 44px; height: 44px;
+  border-radius: 999px;
+  overflow: hidden;
+  background: var(--sage-200);
+  flex-shrink: 0;
+}
+.hero-v2-card .avatar img { width: 100%; height: 100%; object-fit: cover; }
+.hero-v2-card .label {
+  font-family: var(--font-hand);
+  font-size: 17px;
+  color: var(--clay-500);
+  line-height: 1;
+}
+.hero-v2-card .name {
+  font-family: var(--font-heading);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink-900);
+  margin-top: 2px;
+}
+.hero-v2-card .cred { font-size: 11px; color: var(--fg-3); margin-top: 1px; }
+
+/* "Now accepting" tag */
+.hero-v2-tag {
+  position: absolute;
+  top: 28px; right: 20px;
+  z-index: 3;
+  background: var(--sage-500);
+  color: var(--cream-50);
+  padding: 9px 16px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transform: rotate(2deg);
+  box-shadow: var(--shadow-md);
+  animation: heroFadeUp 0.7s ease-out 1.2s both;
+}
+
+/* Respect reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .crayon-line::after,
+  .hero-v2-inner .eyebrow-pill,
+  .hero-v2-lead, .hero-v2-ctas, .hero-v2-badges,
+  .hero-v2-card, .hero-v2-tag { animation: none; opacity: 1; transform: none; }
+  .crayon-line::after { transform: scaleX(0); }
+  .ring { animation: none; display: none; }
+}
+
+/* Responsive */
+@media (max-width: 980px) {
+  .hero-v2 { grid-template-columns: 1fr; min-height: auto; }
+  .hero-v2-right { height: 55vw; min-height: 320px; order: -1; }
+  .hero-v2-left { padding: 48px 32px 56px; }
+  .hero-v2-inner { max-width: none; }
+  .hero-v2-card { bottom: 16px; }
+}
+@media (max-width: 560px) {
+  .hero-v2-left { padding: 36px 20px 48px; }
+  .cl-text { font-size: clamp(52px, 14vw, 80px); }
+}
+</style>
 </head>
 <body>
 
 <div id="site-nav"></div>
 
-<!-- ========== HERO ========== -->
-<section class="hero">
-  <div class="hero-grid">
-    <div class="reveal in">
-      <span class="eyebrow-pill"><span class="dot"></span>Pediatric SLP · Tempe &amp; Scottsdale, AZ</span>
-      <h1>Care that <em>connects.</em></h1>
-      <p class="hero-lead">
-        Family-centered, child-led speech and language therapy — where your little one
-        finds their voice and carries it into every part of their world.
+<!-- ========== HERO V2 ========== -->
+
+<!-- SVG crayon roughness filter (hidden) -->
+<svg width="0" height="0" aria-hidden="true" style="position:absolute;overflow:hidden;pointer-events:none">
+  <defs>
+    <filter id="crayon-rough" x="-5%" y="-15%" width="110%" height="130%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.038" numOctaves="4" seed="7" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="2.2"
+        xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </defs>
+</svg>
+
+<section class="hero-v2">
+
+  <!-- ── Left: crayon headline + copy ── -->
+  <div class="hero-v2-left">
+    <div class="hero-v2-inner">
+
+      <span class="eyebrow-pill">
+        <span class="dot"></span>
+        Pediatric SLP · Tempe &amp; Scottsdale, AZ
+      </span>
+
+      <h1 class="crayon-hed" aria-label="Every child has something to say.">
+        <span class="crayon-line cl-1"><span class="cl-text">Every child</span></span>
+        <span class="crayon-line cl-2"><span class="cl-text">has something</span></span>
+        <span class="crayon-line cl-3"><span class="cl-text">to say.</span></span>
+      </h1>
+
+      <p class="hero-v2-lead">
+        Family-centered speech &amp; language therapy in Tempe and Scottsdale —
+        where your child finds their voice and carries it into every part of their world.
       </p>
-      <div class="hero-ctas">
+
+      <div class="hero-v2-ctas">
         <a class="btn btn-primary" href="contact.html">
           Book a free 15-min call
           <span class="btn-arrow">
@@ -33,40 +318,54 @@
         </a>
         <a class="btn btn-ghost" href="about.html">Meet Madison →</a>
       </div>
-      <div class="hero-badges">
-        <span class="hero-badge"><span class="hero-stars">★ ★ ★ ★ ★</span> <strong>5.0 on Google</strong></span>
+
+      <div class="hero-v2-badges">
+        <span class="hero-badge"><span class="hero-stars">★ ★ ★ ★ ★</span>&nbsp;<strong>5.0 on Google</strong></span>
         <span class="hero-badge">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--sage-600)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--sage-600)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
           Neurodiversity-affirming
         </span>
         <span class="hero-badge">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--sage-600)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--sage-600)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
           In-home · on-site · telehealth
         </span>
       </div>
-    </div>
 
-    <div class="hero-portrait reveal in">
-      <div class="hero-portrait-frame">
-        <!-- Young child finding her voice -->
-        <img src="https://images.unsplash.com/photo-1544126592-807ade215a0b?w=900&auto=format&fit=crop&q=80"
-             alt="A young child smiling and speaking, finding her voice"
-             onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=900&auto=format&fit=crop&q=80'">
-      </div>
-      <span class="voice-bubble voice-b1">hi mama!</span>
-      <span class="voice-bubble voice-b2">more please</span>
-      <span class="voice-bubble voice-b3">my turn</span>
-      <div class="hero-card">
-        <div class="avatar"><img src="assets/madison-jeffery.jpg" alt="Madison Jeffery"></div>
-        <div>
-          <div class="label">Your SLP</div>
-          <div class="name">Madison Jeffery</div>
-          <div class="cred">CCC-SLP · Founder</div>
-        </div>
-      </div>
-      <span class="hero-tag">Now accepting families</span>
     </div>
   </div>
+
+  <!-- ── Right: full-height image + rings ── -->
+  <div class="hero-v2-right">
+    <img
+      class="hero-v2-img"
+      src="https://images.unsplash.com/photo-1544126592-807ade215a0b?w=1400&auto=format&fit=crop&q=82"
+      alt="A young child smiling and finding her voice"
+      onerror="this.src='https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=1400&auto=format&fit=crop&q=82'"
+    >
+    <div class="hero-v2-tint"></div>
+    <div class="hero-v2-fade"></div>
+
+    <!-- Animated sound rings -->
+    <div class="sound-rings" aria-hidden="true">
+      <div class="ring r1"></div>
+      <div class="ring r2"></div>
+      <div class="ring r3"></div>
+      <div class="ring r4"></div>
+    </div>
+
+    <!-- Madison card -->
+    <div class="hero-v2-card">
+      <div class="avatar"><img src="assets/madison-jeffery.jpg" alt="Madison Jeffery, CCC-SLP"></div>
+      <div>
+        <div class="label">Your SLP</div>
+        <div class="name">Madison Jeffery</div>
+        <div class="cred">CCC-SLP · Founder</div>
+      </div>
+    </div>
+
+    <span class="hero-v2-tag">Now accepting families</span>
+  </div>
+
 </section>
 
 <!-- ========== STATS ========== -->
