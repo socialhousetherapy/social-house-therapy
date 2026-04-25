@@ -9,94 +9,139 @@
 <link rel="stylesheet" href="styles/tokens.css">
 <link rel="stylesheet" href="styles/site.css">
 <script>window.__PAGE = 'home';</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-/* ── HERO V4: Two-column, illustration right ───────────── */
-@keyframes heroFadeUp {
-  from { opacity: 0; transform: translateY(16px); }
-  to   { opacity: 1; transform: none; }
+/* =============================================================
+   HOMEPAGE HERO — Exact match to reference design
+   ============================================================= */
+
+/* Page-scoped tokens */
+.home-page {
+  --hero-cream-page: #FBF8F1;
+  --hero-cream-card: #F7F2E6;
+  --hero-cream-inner: #F5F0E2;
+  --hero-border: #E5DCC9;
+  --hero-deep-green: #123F2A;
+  --hero-olive: #5E7048;
+  --hero-olive-hover: #4A5A38;
+  --hero-eyebrow: #4A5A38;
+  --hero-text: #2E3430;
+  --hero-icon-bg: #EFE9D7;
+  background: var(--hero-cream-page);
 }
 
+/* Body grain overlay subtle */
+.home-page::before { display: none; }
+
+/* ── NAV OVERRIDES (homepage only) ──────────────────── */
+.home-page .nav {
+  position: relative;
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border-bottom: none;
+}
+.home-page .nav-inner {
+  padding: 18px 32px;
+  max-width: 1400px;
+}
+.home-page .nav-links {
+  gap: 36px;
+}
+.home-page .nav-links a {
+  color: var(--hero-text);
+  font-weight: 500;
+  font-size: 15px;
+}
+.home-page .nav-links a::after { background: var(--hero-deep-green); }
+.home-page .nav-links a.active { color: var(--hero-deep-green); }
+.home-page .nav-cta {
+  background: var(--hero-olive);
+  color: #FFF;
+  font-weight: 500;
+  font-size: 14px;
+  padding: 12px 22px;
+  border-radius: 10px;
+  box-shadow: none;
+  letter-spacing: 0.01em;
+}
+.home-page .nav-cta:hover {
+  background: var(--hero-olive-hover);
+  transform: none;
+}
+
+/* ── HERO SHELL ──────────────────────────────────────── */
 .hero-v4 {
-  background: #F5F1E8;
+  background: var(--hero-cream-page);
+  padding: 0 24px 32px;
   position: relative;
 }
+.hero-card {
+  position: relative;
+  max-width: 1400px;
+  margin: 0 auto;
+  background: var(--hero-cream-card);
+  border: 1px solid var(--hero-border);
+  border-radius: 20px;
+  overflow: hidden;
+  isolation: isolate;
+}
 
+/* ── HERO TOP CONTENT ──────────────────────────────── */
 .hero-v4-grid {
   display: grid;
-  grid-template-columns: 1.05fr 1fr;
+  grid-template-columns: 1.05fr 1.15fr;
   align-items: center;
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 96px 56px 32px;
-  gap: 24px;
-  min-height: 82vh;
+  padding: clamp(40px, 6vw, 80px) clamp(32px, 5vw, 72px) 24px;
+  gap: clamp(24px, 4vw, 48px);
+  position: relative;
+  z-index: 1;
 }
 
 .hero-v4-left {
-  padding-right: 24px;
-  opacity: 0;
-  animation: heroFadeUp 0.7s ease-out 0.1s both;
+  padding-right: 8px;
 }
 
 .hero-eyebrow-row {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 14px;
+  display: block;
+  font-size: 15px;
   font-weight: 500;
-  color: var(--fg-2);
-  margin-bottom: 22px;
-  letter-spacing: 0.01em;
+  color: var(--hero-eyebrow);
+  margin-bottom: 28px;
+  letter-spacing: 0.005em;
 }
-.hero-eyebrow-dot {
-  width: 6px; height: 6px;
-  border-radius: 50%;
-  background: var(--sage-500);
-  display: inline-block;
-  flex-shrink: 0;
-}
+.hero-eyebrow-dot { display: none; }
 
 .hero-v4-heading {
   font-family: "Cormorant Garamond", "Playfair Display", Georgia, serif;
-  font-size: clamp(40px, 5vw, 72px);
+  font-size: clamp(42px, 6vw, 84px);
   font-weight: 500;
-  color: #123F2A;
-  line-height: 1.05;
+  color: var(--hero-deep-green);
+  line-height: 1.04;
   letter-spacing: -0.015em;
-  margin: 0 0 22px;
+  margin: 0 0 28px;
 }
 
 .hero-v4-rule {
-  width: 48px; height: 2px;
-  background: #123F2A;
+  width: 56px;
+  height: 2px;
+  background: var(--hero-deep-green);
+  border: none;
   border-radius: 1px;
-  margin-bottom: 24px;
+  margin: 0 0 24px;
+  opacity: 0.85;
 }
 
 .hero-v4-sub {
-  font-size: clamp(16px, 1.3vw, 17px);
+  font-family: var(--font-body);
+  font-size: 15px;
   line-height: 1.6;
-  color: #2E3430;
-  max-width: 480px;
-  margin: 0 0 32px;
+  color: var(--hero-text);
+  max-width: 420px;
+  margin: 0 0 36px;
 }
-
-/* 5-star badge */
-.hero-v4-stars {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 8px 18px;
-  background: var(--white);
-  border: 1px solid var(--border-subtle);
-  border-radius: 999px;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.07);
-  margin-bottom: 28px;
-}
-.hero-v4-stars .s-stars { color: var(--sun-500); font-size: 13px; letter-spacing: 2px; }
-.hero-v4-stars .s-label { font-family: var(--font-heading); font-weight: 600; font-size: 13px; color: var(--ink-900); }
-.hero-v4-stars .s-sep { width: 1px; height: 14px; background: var(--border-default); }
-.hero-v4-stars .s-meta { font-size: 12px; color: var(--fg-3); }
 
 .hero-v4-ctas {
   display: flex;
@@ -105,196 +150,287 @@
   flex-wrap: wrap;
 }
 
-/* Right: illustration */
+.btn-book {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--hero-olive);
+  color: #FFF;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 15px;
+  padding: 16px 28px;
+  border-radius: 10px;
+  border: 0;
+  text-decoration: none;
+  box-shadow: 0 4px 12px -4px rgba(94, 112, 72, 0.35);
+  transition: background 200ms ease, transform 180ms ease;
+}
+.btn-book:hover {
+  background: var(--hero-olive-hover);
+  transform: translateY(-1px);
+}
+.btn-book svg { transition: transform 200ms ease; }
+.btn-book:hover svg { transform: translateX(3px); }
+
+.btn-meet {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 15px;
+  color: var(--hero-deep-green);
+  text-decoration: none;
+  padding: 6px 4px;
+  transition: color 180ms ease;
+}
+.btn-meet svg { transition: transform 200ms ease; }
+.btn-meet:hover { color: var(--hero-olive); }
+.btn-meet:hover svg { transform: translateX(3px); }
+
+/* ── HERO ARTWORK (right side) ─────────────────────── */
 .hero-v4-right {
   position: relative;
-  opacity: 0;
-  animation: heroFadeUp 0.8s ease-out 0.25s both;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .hero-v4-img {
   width: 100%;
-  max-width: 600px;
+  max-width: 720px;
   height: auto;
   display: block;
   object-fit: contain;
 }
 
-/* Bottom icon strip */
-.hero-v4-strip {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 24px 56px 28px;
-  border-top: 1px solid rgba(0,0,0,0.08);
-  display: flex;
-  gap: 0;
+/* Allow image to slightly bleed left into the text area */
+@media (min-width: 960px) {
+  .hero-v4-right { margin-left: -6%; }
+}
+
+/* ── INNER TRUST/SERVICE CARD ──────────────────────── */
+.hero-trust-card {
+  margin: 0 clamp(24px, 4vw, 48px) clamp(24px, 4vw, 40px);
+  background: var(--hero-cream-inner);
+  border: 1px solid var(--hero-border);
+  border-radius: 16px;
+  padding: 22px clamp(24px, 4vw, 40px);
+  display: grid;
+  grid-template-columns: 1fr auto 0.8fr;
   align-items: center;
+  gap: clamp(20px, 4vw, 40px);
+  position: relative;
+  z-index: 2;
 }
-.hero-strip-icons {
-  display: flex;
-  gap: 0;
-  flex: 1;
+
+.hero-trust-services {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(16px, 2vw, 28px);
+  align-items: start;
 }
-.hero-icon {
+.hero-trust-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
-  flex: 1;
   text-align: center;
-  padding: 0 12px;
-  border-right: 1px solid rgba(0,0,0,0.08);
+  gap: 10px;
 }
-.hero-icon:last-child { border-right: none; }
-.hero-icon-ring {
-  width: 46px; height: 46px;
+.hero-trust-icon {
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
-  border: 1px solid rgba(0,0,0,0.12);
+  background: var(--hero-icon-bg);
   display: grid;
   place-items: center;
-  color: var(--sage-700);
-  background: rgba(255,255,255,0.6);
+  color: var(--hero-deep-green);
 }
-.hero-icon-label {
-  font-size: 11.5px;
-  font-weight: 600;
-  color: var(--fg-2);
+.hero-trust-label {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--hero-text);
   line-height: 1.3;
-}
-.hero-trust {
-  padding-left: 32px;
-  border-left: 1px solid rgba(0,0,0,0.08);
-  margin-left: 8px;
-}
-.hero-trust p {
-  font-family: var(--font-heading);
-  font-size: 13.5px;
-  font-style: italic;
-  color: var(--fg-2);
-  line-height: 1.55;
-  margin: 0;
-  max-width: 220px;
+  max-width: 90px;
 }
 
-/* Responsive */
-@media (max-width: 960px) {
+.hero-trust-divider {
+  width: 1px;
+  align-self: stretch;
+  background: var(--hero-border);
+  margin: 8px 0;
+}
+
+.hero-trust-message {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.hero-trust-mark {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--hero-icon-bg);
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  color: var(--hero-olive);
+}
+.hero-trust-message p {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--hero-text);
+  font-style: normal;
+  max-width: none;
+}
+
+/* ── RESPONSIVE — TABLET ──────────────────────────── */
+@media (max-width: 1024px) {
   .hero-v4-grid {
     grid-template-columns: 1fr;
-    padding: 72px 28px 24px;
-    min-height: unset;
-    text-align: center;
+    text-align: left;
     gap: 32px;
+    padding: 48px 32px 16px;
   }
-  .hero-v4-left { padding-right: 0; }
-  .hero-eyebrow-row { justify-content: center; }
-  .hero-v4-rule { margin: 0 auto 22px; }
-  .hero-v4-sub { margin: 0 auto 28px; }
-  .hero-v4-stars { display: flex; }
-  .hero-v4-ctas { justify-content: center; }
-  .hero-v4-right { max-width: 440px; margin: 0 auto; }
-  .hero-v4-strip { padding: 20px 28px 24px; flex-wrap: wrap; }
-  .hero-strip-icons { flex-wrap: wrap; }
-  .hero-icon { min-width: 80px; border-right: none; border-bottom: 1px solid rgba(0,0,0,0.08); padding-bottom: 16px; margin-bottom: 8px; }
-  .hero-trust { border-left: none; padding-left: 0; margin-left: 0; text-align: center; }
-  .hero-trust p { max-width: none; }
+  .hero-v4-right { margin-left: 0; }
+  .hero-v4-img { max-width: 520px; margin: 0 auto; }
+
+  .hero-trust-card {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .hero-trust-divider { display: none; }
+  .hero-trust-message {
+    border-top: 1px solid var(--hero-border);
+    padding-top: 18px;
+    justify-content: center;
+  }
+  .hero-trust-message p { text-align: center; }
 }
-@media (max-width: 540px) {
-  .hero-v4-grid { padding: 56px 20px 20px; }
-  .hero-v4-strip { padding: 16px 20px 20px; }
-  .hero-strip-icons { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-  .hero-icon { border-bottom: none; }
-  .hero-v4-ctas .btn { flex: 1; justify-content: center; min-width: 140px; }
+
+/* ── RESPONSIVE — MOBILE ──────────────────────────── */
+@media (max-width: 720px) {
+  .hero-v4 { padding: 0 12px 16px; }
+  .hero-card { border-radius: 16px; }
+  .hero-v4-grid { padding: 32px 24px 16px; gap: 28px; }
+  .hero-v4-heading { font-size: clamp(36px, 9vw, 50px); margin-bottom: 22px; }
+  .hero-v4-sub { margin-bottom: 28px; }
+  .hero-v4-ctas { gap: 18px; }
+  .btn-book { padding: 14px 24px; min-height: 48px; }
+
+  .hero-trust-card {
+    margin: 0 12px 16px;
+    padding: 20px 18px;
+  }
+  .hero-trust-services {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+}
+
+@media (max-width: 420px) {
+  .btn-book { width: 100%; justify-content: center; }
+  .btn-meet { width: 100%; justify-content: flex-start; }
 }
 
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  .hero-v4-left, .hero-v4-right { animation: none; opacity: 1; }
+  .btn-book, .btn-book svg, .btn-meet, .btn-meet svg { transition: none; }
 }
 </style>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="home-page">
 
 <div id="site-nav"></div>
 
 <!-- ========== HERO ========== -->
 <section class="hero-v4">
-  <div class="hero-v4-grid">
+  <div class="hero-card">
 
-    <!-- Left: text -->
-    <div class="hero-v4-left">
-      <div class="hero-eyebrow-row">
-        <span class="hero-eyebrow-dot"></span>
-        Pediatric SLP · Tempe &amp; Scottsdale, AZ
+    <!-- Top: text + illustration -->
+    <div class="hero-v4-grid">
+
+      <!-- Left: text -->
+      <div class="hero-v4-left">
+        <p class="hero-eyebrow-row">Pediatric SLP &middot; Tempe &amp; Scottsdale, AZ</p>
+
+        <h1 class="hero-v4-heading">
+          Speech therapy<br>that starts with<br>connection.
+        </h1>
+
+        <hr class="hero-v4-rule" aria-hidden="true">
+
+        <p class="hero-v4-sub">
+          Personalized speech therapy for children, delivered in the places they live, learn, and grow&mdash;so communication comes more naturally, every day.
+        </p>
+
+        <div class="hero-v4-ctas">
+          <a class="btn-book" href="contact.html">
+            Book a Free Call
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+          <a class="btn-meet" href="about.html">
+            Meet Madison
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
       </div>
 
-      <h1 class="hero-v4-heading">
-        Speech therapy<br>that starts with<br>connection.
-      </h1>
-      <div class="hero-v4-rule"></div>
-
-      <p class="hero-v4-sub">
-        Personalized speech therapy for children, delivered in the places they live, learn, and grow—so communication comes more naturally, every day.
-      </p>
-
-      <div class="hero-v4-ctas">
-        <a class="btn btn-primary" href="contact.html">
-          Book a Free Call
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </a>
-        <a class="btn btn-ghost" href="about.html">Meet Madison →</a>
+      <!-- Right: illustration -->
+      <div class="hero-v4-right">
+        <img
+          src="assets/hero-child.png"
+          alt="Watercolor illustration of a child speaking with flowing sound waves"
+          class="hero-v4-img"
+          loading="eager"
+          width="720"
+          height="406"
+        >
       </div>
     </div>
 
-    <!-- Right: illustration -->
-    <div class="hero-v4-right">
-      <img
-        src="assets/hero-child.png"
-        alt="Watercolor illustration of a child speaking with flowing sound waves"
-        class="hero-v4-img"
-        loading="eager"
-        width="624"
-        height="396"
-      >
+    <!-- Bottom: Trust/service inner card -->
+    <div class="hero-trust-card">
+      <div class="hero-trust-services">
+        <div class="hero-trust-item">
+          <div class="hero-trust-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg>
+          </div>
+          <span class="hero-trust-label">In-Home<br>Therapy</span>
+        </div>
+        <div class="hero-trust-item">
+          <div class="hero-trust-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.4"/><path d="M3 19c0-3 3-5 6-5s6 2 6 5"/><path d="M15 19c0-2 2-3.5 4-3.5"/></svg>
+          </div>
+          <span class="hero-trust-label">Community-<br>Based</span>
+        </div>
+        <div class="hero-trust-item">
+          <div class="hero-trust-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="13" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <span class="hero-trust-label">Teletherapy<br>Options</span>
+        </div>
+        <div class="hero-trust-item">
+          <div class="hero-trust-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </div>
+          <span class="hero-trust-label">Family<br>Centered</span>
+        </div>
+      </div>
+
+      <div class="hero-trust-divider" aria-hidden="true"></div>
+
+      <div class="hero-trust-message">
+        <div class="hero-trust-mark" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c0-7 4-11 10-11-1 6-5 11-10 11z"/><path d="M12 22c-1-6-4-11-10-11 0 7 4 11 10 11z"/><path d="M12 22V11"/></svg>
+        </div>
+        <p>Trusted by families. Built on connection.<br>Focused on your child&rsquo;s potential.</p>
+      </div>
     </div>
 
-  </div>
-
-  <!-- Icon strip -->
-  <div class="hero-v4-strip">
-    <div class="hero-strip-icons">
-      <div class="hero-icon">
-        <div class="hero-icon-ring" aria-hidden="true">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12L12 3l9 9"/><path d="M9 21V12h6v9"/></svg>
-        </div>
-        <span class="hero-icon-label">In-Home<br>Therapy</span>
-      </div>
-      <div class="hero-icon">
-        <div class="hero-icon-ring" aria-hidden="true">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="3"/><path d="M3 20c0-4 2.7-6 6-6"/><circle cx="17" cy="10" r="2.5"/><path d="M14 20c0-3 1.8-5 5-5"/></svg>
-        </div>
-        <span class="hero-icon-label">Community-<br>Based</span>
-      </div>
-      <div class="hero-icon">
-        <div class="hero-icon-ring" aria-hidden="true">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-        </div>
-        <span class="hero-icon-label">Teletherapy<br>Options</span>
-      </div>
-      <div class="hero-icon">
-        <div class="hero-icon-ring" aria-hidden="true">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-        </div>
-        <span class="hero-icon-label">Family<br>Centered</span>
-      </div>
-    </div>
-    <div class="hero-trust">
-      <p>Trusted by families.<br>Built on connection.<br>Focused on your child's potential.</p>
-    </div>
   </div>
 </section>
 
@@ -331,7 +467,7 @@
 </section>
 
 <!-- ========== HOW IT WORKS (process) ========== -->
-<section class="section">
+<section class="section" id="how-it-works">
   <div class="container">
     <div class="section-head reveal" style="display: flex; align-items: flex-end; justify-content: space-between; gap: 32px; flex-wrap: wrap; max-width: none;">
       <div style="max-width: 620px;">
