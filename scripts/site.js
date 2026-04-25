@@ -19,8 +19,7 @@
       <header class="nav" id="navEl">
         <div class="nav-inner">
           <a class="nav-brand" href="index.html" aria-label="Social House Therapy">
-            <img src="assets/favicon-48.png" alt="">
-            <span class="nav-brand-text">Social House</span>
+            <img src="assets/logo-full.png" alt="Social House Therapy">
           </a>
           <nav class="nav-links" aria-label="Primary">
             ${LINKS.map(l => `<a href="${l.href}" class="${l.key===PAGE?'active':''}">${l.label}</a>`).join('')}
