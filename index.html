@@ -10,171 +10,211 @@
 <link rel="stylesheet" href="styles/site.css">
 <script>window.__PAGE = 'home';</script>
 <style>
-/* ── NAV: three-color crayon stripe ───────────────────────── */
-.nav::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0; height: 3px;
-  background: linear-gradient(to right, #D97854 0% 33.3%, #4B7FC4 33.3% 66.6%, #5A9E6F 66.6% 100%);
-  z-index: 1;
-}
-
-/* ── HERO ─ Centered, single-column, refined ──────────────── */
-.hero-v3 {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 84vh;
-  padding: clamp(48px, 8vh, 96px) clamp(20px, 4vw, 48px);
-  overflow: hidden;
-  isolation: isolate;
-}
-
-/* Soft painterly gradient backdrop */
-.hero-v3::before {
-  content: '';
-  position: absolute; inset: 0; z-index: -1;
-  background:
-    radial-gradient(ellipse 600px 500px at 18% 28%, rgba(154, 182, 142, 0.32) 0%, transparent 60%),
-    radial-gradient(ellipse 540px 460px at 82% 72%, rgba(217, 120, 84, 0.20) 0%, transparent 60%),
-    radial-gradient(ellipse 460px 400px at 50% 100%, rgba(255, 244, 203, 0.45) 0%, transparent 65%);
-}
-
-/* Slow morphing blob behind the headline */
-.hero-v3::after {
-  content: '';
-  position: absolute;
-  width: 56vmin; height: 56vmin;
-  max-width: 720px; max-height: 720px;
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
-  background: radial-gradient(circle, rgba(178, 201, 193, 0.34) 0%, transparent 70%);
-  border-radius: 60% 40% 70% 30% / 50% 60% 40% 50%;
-  filter: blur(48px);
-  z-index: -1;
-  animation: heroBgMorph 14s ease-in-out infinite alternate;
-}
-@keyframes heroBgMorph {
-  0%   { border-radius: 60% 40% 70% 30% / 50% 60% 40% 50%; transform: translate(-50%, -50%) rotate(0deg); }
-  100% { border-radius: 40% 60% 50% 50% / 60% 40% 60% 40%; transform: translate(-50%, -50%) rotate(8deg); }
-}
-
-.hero-v3-content {
-  width: 100%;
-  max-width: 920px;
-  text-align: center;
-  position: relative;
-  z-index: 1;
-}
-
-/* Eyebrow */
-.hero-v3-content .eyebrow-pill {
-  opacity: 0;
-  animation: heroFadeUp 0.6s ease-out 0.1s both;
-}
-
-/* ── CRAYON HEADLINE (centered) ─────────────────────────── */
-.crayon-hed {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 28px 0 28px;
-  gap: 0;
-}
-.crayon-line { display: block; overflow: hidden; }
-.cl-text {
-  display: inline-block;
-  font-family: var(--font-hand);
-  font-weight: 700;
-  font-size: clamp(56px, 9vw, 132px);
-  line-height: 1.05;
-  letter-spacing: -0.015em;
-  clip-path: inset(-10% 100% -22% -5%);
-  animation: crayonWrite 0.95s cubic-bezier(0.16, 1, 0.3, 1) both;
-  padding: 0 0.05em;
-}
-.cl-1 .cl-text { color: #D97854; animation-delay: 0.35s; }
-.cl-2 .cl-text { color: #4B7FC4; animation-delay: 1.20s; }
-.cl-3 .cl-text { color: #5A9E6F; animation-delay: 2.00s; }
-@keyframes crayonWrite { to { clip-path: inset(-10% 0% -22% -5%); } }
-
-/* ── LEAD COPY ─────────────────────────────────────────── */
-.hero-v3-lead {
-  font-size: clamp(16px, 1.4vw, 19px);
-  line-height: 1.6;
-  color: var(--fg-2);
-  max-width: 620px;
-  margin: 0 auto 28px;
-  opacity: 0;
-  animation: heroFadeUp 0.7s ease-out 2.7s both;
-}
-
-/* ── 5-STAR GOOGLE BADGE (single, centered) ─────────────── */
-.hero-v3-rating {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  padding: 10px 20px;
-  background: var(--white);
-  border: 1px solid var(--border-subtle);
-  border-radius: 999px;
-  box-shadow: var(--shadow-sm);
-  margin-bottom: 28px;
-  opacity: 0;
-  animation: heroFadeUp 0.65s ease-out 2.9s both;
-}
-.hero-v3-rating .stars { color: var(--sun-500); letter-spacing: 2px; font-size: 14px; }
-.hero-v3-rating .label {
-  font-family: var(--font-heading);
-  font-weight: 600;
-  font-size: 14px;
-  color: var(--ink-900);
-}
-.hero-v3-rating .meta {
-  font-size: 12px;
-  color: var(--fg-3);
-  border-left: 1px solid var(--border-default);
-  padding-left: 12px;
-}
-
-/* ── CTA BUTTONS ───────────────────────────────────────── */
-.hero-v3-ctas {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-  flex-wrap: wrap;
-  opacity: 0;
-  animation: heroFadeUp 0.7s ease-out 3.05s both;
-}
-
+/* ── HERO V4: Two-column, illustration right ───────────── */
 @keyframes heroFadeUp {
-  from { opacity: 0; transform: translateY(14px); }
+  from { opacity: 0; transform: translateY(16px); }
   to   { opacity: 1; transform: none; }
 }
 
-/* ── REDUCED MOTION ──────────────────────────────────── */
-@media (prefers-reduced-motion: reduce) {
-  .cl-text, .hero-v3-content .eyebrow-pill,
-  .hero-v3-lead, .hero-v3-rating, .hero-v3-ctas,
-  .hero-v3::after { animation: none; }
-  .cl-text { clip-path: none; }
-  .hero-v3-content .eyebrow-pill,
-  .hero-v3-lead, .hero-v3-rating, .hero-v3-ctas { opacity: 1; transform: none; }
+.hero-v4 {
+  background: #F5F1E8;
+  position: relative;
 }
 
-/* ── RESPONSIVE FINE-TUNING ─────────────────────────── */
-@media (max-width: 768px) {
-  .hero-v3 { min-height: 78vh; padding: 56px 20px; }
-  .hero-v3-content .eyebrow-pill { font-size: 11px; padding: 5px 12px; }
-  .crayon-hed { margin: 22px 0 22px; }
-  .hero-v3-rating { padding: 9px 16px; gap: 10px; }
-  .hero-v3-rating .meta { padding-left: 10px; font-size: 11px; }
+.hero-v4-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  align-items: center;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 96px 56px 32px;
+  gap: 24px;
+  min-height: 82vh;
 }
-@media (max-width: 480px) {
-  .hero-v3 { min-height: 72vh; padding: 40px 16px; }
-  .hero-v3-rating .meta { display: none; }
-  .hero-v3-ctas .btn { width: 100%; justify-content: center; }
+
+.hero-v4-left {
+  padding-right: 24px;
+  opacity: 0;
+  animation: heroFadeUp 0.7s ease-out 0.1s both;
+}
+
+.hero-eyebrow-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--fg-2);
+  margin-bottom: 22px;
+  letter-spacing: 0.01em;
+}
+.hero-eyebrow-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--sage-500);
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.hero-v4-heading {
+  font-family: var(--font-heading);
+  font-size: clamp(40px, 5vw, 68px);
+  font-weight: 500;
+  color: var(--brand-ink);
+  line-height: 1.07;
+  letter-spacing: -0.03em;
+  margin: 0 0 20px;
+}
+.hero-v4-heading em {
+  font-style: italic;
+  color: var(--sage-700);
+}
+
+.hero-v4-rule {
+  width: 44px; height: 3px;
+  background: var(--sage-600);
+  border-radius: 2px;
+  margin-bottom: 22px;
+}
+
+.hero-v4-sub {
+  font-size: clamp(16px, 1.3vw, 18px);
+  line-height: 1.65;
+  color: var(--fg-2);
+  max-width: 460px;
+  margin: 0 0 28px;
+}
+
+/* 5-star badge */
+.hero-v4-stars {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 18px;
+  background: var(--white);
+  border: 1px solid var(--border-subtle);
+  border-radius: 999px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+  margin-bottom: 28px;
+}
+.hero-v4-stars .s-stars { color: var(--sun-500); font-size: 13px; letter-spacing: 2px; }
+.hero-v4-stars .s-label { font-family: var(--font-heading); font-weight: 600; font-size: 13px; color: var(--ink-900); }
+.hero-v4-stars .s-sep { width: 1px; height: 14px; background: var(--border-default); }
+.hero-v4-stars .s-meta { font-size: 12px; color: var(--fg-3); }
+
+.hero-v4-ctas {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* Right: illustration */
+.hero-v4-right {
+  position: relative;
+  opacity: 0;
+  animation: heroFadeUp 0.8s ease-out 0.25s both;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-v4-img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+/* Bottom icon strip */
+.hero-v4-strip {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 24px 56px 28px;
+  border-top: 1px solid rgba(0,0,0,0.08);
+  display: flex;
+  gap: 0;
+  align-items: center;
+}
+.hero-strip-icons {
+  display: flex;
+  gap: 0;
+  flex: 1;
+}
+.hero-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  text-align: center;
+  padding: 0 12px;
+  border-right: 1px solid rgba(0,0,0,0.08);
+}
+.hero-icon:last-child { border-right: none; }
+.hero-icon-ring {
+  width: 46px; height: 46px;
+  border-radius: 50%;
+  border: 1px solid rgba(0,0,0,0.12);
+  display: grid;
+  place-items: center;
+  color: var(--sage-700);
+  background: rgba(255,255,255,0.6);
+}
+.hero-icon-label {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--fg-2);
+  line-height: 1.3;
+}
+.hero-trust {
+  padding-left: 32px;
+  border-left: 1px solid rgba(0,0,0,0.08);
+  margin-left: 8px;
+}
+.hero-trust p {
+  font-family: var(--font-heading);
+  font-size: 13.5px;
+  font-style: italic;
+  color: var(--fg-2);
+  line-height: 1.55;
+  margin: 0;
+  max-width: 220px;
+}
+
+/* Responsive */
+@media (max-width: 960px) {
+  .hero-v4-grid {
+    grid-template-columns: 1fr;
+    padding: 72px 28px 24px;
+    min-height: unset;
+    text-align: center;
+    gap: 32px;
+  }
+  .hero-v4-left { padding-right: 0; }
+  .hero-eyebrow-row { justify-content: center; }
+  .hero-v4-rule { margin: 0 auto 22px; }
+  .hero-v4-sub { margin: 0 auto 28px; }
+  .hero-v4-stars { display: flex; }
+  .hero-v4-ctas { justify-content: center; }
+  .hero-v4-right { max-width: 440px; margin: 0 auto; }
+  .hero-v4-strip { padding: 20px 28px 24px; flex-wrap: wrap; }
+  .hero-strip-icons { flex-wrap: wrap; }
+  .hero-icon { min-width: 80px; border-right: none; border-bottom: 1px solid rgba(0,0,0,0.08); padding-bottom: 16px; margin-bottom: 8px; }
+  .hero-trust { border-left: none; padding-left: 0; margin-left: 0; text-align: center; }
+  .hero-trust p { max-width: none; }
+}
+@media (max-width: 540px) {
+  .hero-v4-grid { padding: 56px 20px 20px; }
+  .hero-v4-strip { padding: 16px 20px 20px; }
+  .hero-strip-icons { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .hero-icon { border-bottom: none; }
+  .hero-v4-ctas .btn { flex: 1; justify-content: center; min-width: 140px; }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .hero-v4-left, .hero-v4-right { animation: none; opacity: 1; }
 }
 </style>
 </head>
@@ -183,52 +223,83 @@
 <div id="site-nav"></div>
 
 <!-- ========== HERO ========== -->
-<section class="hero-v3">
-  <div class="hero-v3-content">
+<section class="hero-v4">
+  <div class="hero-v4-grid">
 
-    <span class="eyebrow-pill">
-      <span class="dot"></span>
-      Pediatric SLP · Tempe &amp; Scottsdale, AZ
-    </span>
+    <!-- Left: text -->
+    <div class="hero-v4-left">
+      <div class="hero-eyebrow-row">
+        <span class="hero-eyebrow-dot"></span>
+        Pediatric SLP · Tempe &amp; Scottsdale, AZ
+      </div>
 
-    <h1 class="crayon-hed" aria-label="Every child has something to say.">
-      <span class="crayon-line cl-1"><span class="cl-text">Every child</span></span>
-      <span class="crayon-line cl-2"><span class="cl-text">has something</span></span>
-      <span class="crayon-line cl-3"><span class="cl-text">to say.</span></span>
-    </h1>
+      <h1 class="hero-v4-heading">
+        Speech therapy<br>that starts with<br><em>connection.</em>
+      </h1>
+      <div class="hero-v4-rule"></div>
 
-    <p class="hero-v3-lead">
-      Family-centered speech &amp; language therapy in Tempe and Scottsdale —
-      where your child finds their voice and carries it into every part of their world.
-    </p>
+      <p class="hero-v4-sub">
+        Personalized speech therapy for children, delivered in the places they live, learn, and grow — so communication comes more naturally, every day.
+      </p>
 
-    <div class="hero-v3-rating">
-      <span class="stars" aria-label="5 out of 5 stars">★ ★ ★ ★ ★</span>
-      <span class="label">5.0 on Google</span>
-      <span class="meta">Trusted by Tempe &amp; Scottsdale families</span>
+      <div class="hero-v4-stars" aria-label="5 out of 5 stars on Google">
+        <span class="s-stars">★ ★ ★ ★ ★</span>
+        <span class="s-label">5.0 on Google</span>
+        <span class="s-sep" aria-hidden="true"></span>
+        <span class="s-meta">Tempe &amp; Scottsdale families</span>
+      </div>
+
+      <div class="hero-v4-ctas">
+        <a class="btn btn-primary" href="contact.html">
+          Book a free call
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a class="btn btn-ghost" href="about.html">Meet Madison →</a>
+      </div>
     </div>
 
-    <div class="hero-v3-ctas">
-      <a class="btn btn-primary" href="contact.html">
-        Book a free 15-min call
-        <span class="btn-arrow">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </span>
-      </a>
-      <a class="btn btn-ghost" href="about.html">Meet Madison →</a>
+    <!-- Right: illustration -->
+    <div class="hero-v4-right">
+      <img
+        src="assets/hero-child.webp"
+        alt="Child speaking with illustrated sound waves — pediatric speech therapy"
+        class="hero-v4-img"
+        loading="eager"
+      >
     </div>
 
   </div>
-</section>
 
-<!-- ========== STATS ========== -->
-<section style="padding: 0 32px 48px; position: relative; z-index: 2;">
-  <div class="container reveal">
-    <div class="stats-strip">
-      <div class="stat"><div class="stat-num">5.0 ★</div><div class="stat-label">Average Google rating from families</div></div>
-      <div class="stat"><div class="stat-num">FREE 15</div><div class="stat-label">Minute consultation, no commitment</div></div>
-      <div class="stat"><div class="stat-num">3 ways</div><div class="stat-label">In-home · on-site · telehealth</div></div>
-      <div class="stat"><div class="stat-num">2&ndash;21</div><div class="stat-label">Ages served, toddler to young adult</div></div>
+  <!-- Icon strip -->
+  <div class="hero-v4-strip">
+    <div class="hero-strip-icons">
+      <div class="hero-icon">
+        <div class="hero-icon-ring" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12L12 3l9 9"/><path d="M9 21V12h6v9"/></svg>
+        </div>
+        <span class="hero-icon-label">In-Home<br>Therapy</span>
+      </div>
+      <div class="hero-icon">
+        <div class="hero-icon-ring" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="3"/><path d="M3 20c0-4 2.7-6 6-6"/><circle cx="17" cy="10" r="2.5"/><path d="M14 20c0-3 1.8-5 5-5"/></svg>
+        </div>
+        <span class="hero-icon-label">Community-<br>Based</span>
+      </div>
+      <div class="hero-icon">
+        <div class="hero-icon-ring" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        </div>
+        <span class="hero-icon-label">Teletherapy<br>Options</span>
+      </div>
+      <div class="hero-icon">
+        <div class="hero-icon-ring" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </div>
+        <span class="hero-icon-label">Family<br>Centered</span>
+      </div>
+    </div>
+    <div class="hero-trust">
+      <p>Trusted by families.<br>Built on connection.<br>Focused on your child's potential.</p>
     </div>
   </div>
 </section>
