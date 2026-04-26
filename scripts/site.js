@@ -19,7 +19,17 @@
       <header class="nav" id="navEl">
         <div class="nav-inner">
           <a class="nav-brand" href="index.html" aria-label="Social House Therapy">
-            <img src="assets/logo-full.png" alt="Social House Therapy">
+            <span class="brand-mark" aria-hidden="true">
+              <svg viewBox="0 0 64 64" width="56" height="56" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M10 30 L32 12 L54 30 L54 54 L10 54 Z"/>
+                <path d="M22 24c0-4 3-7 8-7-1 4-3 7-8 7z"/>
+                <path d="M22 24c2 1 4 3 5 6"/>
+              </svg>
+            </span>
+            <span class="brand-text">
+              <span class="brand-line-1">SOCIAL HOUSE</span>
+              <span class="brand-line-2">THERAPY</span>
+            </span>
           </a>
           <nav class="nav-links" aria-label="Primary">
             ${LINKS.map(l => `<a href="${l.href}" class="${l.key===PAGE?'active':''}">${l.label}</a>`).join('')}

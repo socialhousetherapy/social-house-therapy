@@ -53,6 +53,9 @@ img { display: block; max-width: 100%; }
 }
 .nav-brand {
   display: flex; align-items: center;
+  gap: 14px;
+  color: #123F2A;
+  text-decoration: none;
   transition: transform 200ms var(--ease-out);
 }
 .nav-brand:hover { transform: scale(1.03); }
@@ -61,8 +64,36 @@ img { display: block; max-width: 100%; }
   width: auto;
   display: block;
 }
+.brand-mark {
+  display: grid;
+  place-items: center;
+  color: #123F2A;
+}
+.brand-mark svg { display: block; width: 56px; height: 56px; }
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+  color: #123F2A;
+}
+.brand-line-1 {
+  font-family: var(--font-serif), Georgia, serif;
+  font-weight: 600;
+  font-size: 22px;
+  letter-spacing: 0.06em;
+}
+.brand-line-2 {
+  font-family: var(--font-serif), Georgia, serif;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 0.32em;
+  margin-top: 4px;
+}
 @media (max-width: 860px) {
   .nav-brand img { height: 48px; }
+  .brand-mark svg { width: 44px; height: 44px; }
+  .brand-line-1 { font-size: 18px; }
+  .brand-line-2 { font-size: 12px; letter-spacing: 0.28em; }
   .nav-inner { padding: 10px 20px; min-height: 64px; }
 }
 .nav-links {
