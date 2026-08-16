@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Notice of Privacy Practices | Social House Therapy</title>
+<meta name="description" content="Social House Therapy LLC Notice of Privacy Practices: how protected health information may be used and disclosed, and your privacy rights under HIPAA.">
+<link rel="icon" href="assets/favicon-48.png">
+<link rel="canonical" href="https://socialhousetherapy.com/privacy.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&amp;family=Bricolage+Grotesque:opsz,wght@12..96,300..800&amp;family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,400..600&amp;family=Caveat:wght@500;600;700&amp;family=Instrument+Serif:ital@0;1&amp;display=swap">
+<link rel="stylesheet" href="styles/tokens.css">
+<link rel="stylesheet" href="styles/site.css?v=28">
+<script>window.__PAGE = 'privacy';</script>
+<style>
+.pp-hero{background:var(--cream-50);padding:clamp(34px,4vw,58px) 0 clamp(22px,2.4vw,32px);position:relative;z-index:2}
+.pp-hero-shell{max-width:1160px;margin:0 auto;padding:0 clamp(20px,4vw,48px)}
+.pp-crumbs{display:flex;align-items:center;gap:8px;font-size:11.5px;color:var(--fg-3);margin-bottom:16px}
+.pp-crumbs a{color:var(--fg-3);text-decoration:none}
+.pp-crumbs a:hover{color:var(--sage-700)}
+.pp-crumbs .sep{color:var(--ink-300)}
+.pp-eyebrow{display:inline-block;background:rgba(108,129,89,.16);color:#4a5c3c;font-family:var(--font-body);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:6px 14px;border-radius:999px}
+.pp-hero-h{font-family:var(--font-heading);font-size:clamp(28px,3.6vw,42px);font-weight:600;line-height:1.08;letter-spacing:-.024em;color:var(--sage-800);margin:18px 0 14px;text-wrap:balance;max-width:20ch}
+.pp-hand{font-family:var(--font-hand);font-weight:600;color:var(--clay-500);font-size:1.22em;line-height:.9}
+.pp-hero-lead{font-family:var(--font-body);font-size:14px;line-height:1.7;color:var(--fg-2);margin:0;max-width:56ch;text-wrap:pretty}
+@media (max-width:640px){.pp-hero-h{max-width:none}}
+.pp-section{background:url("assets/splatter-full.svg") top center/100% auto repeat-y var(--sky-100,#E3EEF3);padding:clamp(26px,3vw,44px) clamp(16px,3.2vw,40px) clamp(38px,4vw,60px)}
+.pp-shell{max-width:1120px;margin:0 auto}
+.pp-meta{display:flex;flex-wrap:wrap;align-items:center;gap:10px 22px;margin:0 0 clamp(16px,1.8vw,22px);padding:0 4px}
+.pp-meta-item{display:flex;align-items:center;gap:8px;font-family:var(--font-body);font-size:12.5px;color:var(--ink-700)}
+.pp-meta-item b{font-weight:600;color:var(--sage-800)}
+.pp-meta-item svg{width:15px;height:15px;color:var(--sage-600);flex:none}
+.pp-meta-hand{font-family:var(--font-hand);font-size:19px;color:var(--clay-500);line-height:1;margin-left:auto;transform:rotate(-1.5deg)}
+
+/* ---- the box ---- */
+.pp-card{position:relative;background:var(--white);border:1px solid var(--border-subtle);border-radius:36px 14px 36px 14px;box-shadow:0 1px 0 rgba(0,0,0,.02),0 28px 60px -30px rgba(45,58,35,.35);overflow:hidden;display:grid;grid-template-columns:272px 1fr;height:min(78vh,860px);min-height:520px}
+.pp-toc{border-right:1px solid var(--border-subtle);background:var(--sage-100);overflow-y:auto;padding:22px 10px 28px 22px;overscroll-behavior:contain}
+.pp-toc-label{font-family:var(--font-body);font-size:9.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--sage-700);margin:0 0 12px;display:flex;align-items:center;gap:9px}
+.pp-toc-label::before{content:"";width:22px;height:2px;background:var(--clay-400);border-radius:2px}
+.pp-toc ol{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:1px}
+.pp-toc a{display:grid;grid-template-columns:22px 1fr;gap:8px;align-items:baseline;padding:6px 10px 6px 8px;border-radius:8px;font-family:var(--font-body);font-size:11.5px;line-height:1.35;color:var(--ink-700);text-decoration:none;transition:background .16s var(--ease-out),color .16s var(--ease-out)}
+.pp-toc a .n{font-family:var(--font-hand);font-size:14px;color:var(--sage-600);line-height:1.1}
+.pp-toc a:hover{background:rgba(255,255,255,.7);color:var(--sage-800)}
+.pp-toc a.is-active{background:var(--white);color:var(--sage-800);font-weight:600;box-shadow:0 6px 14px -10px rgba(45,58,35,.5)}
+.pp-toc a.is-active .n{color:var(--clay-500)}
+.pp-toc-mobile{display:none}
+
+.pp-scroll{position:relative;overflow-y:auto;overscroll-behavior:contain;padding:clamp(26px,2.6vw,40px) clamp(22px,3vw,54px) 64px;scroll-behavior:smooth}
+.pp-scroll::-webkit-scrollbar{width:11px}
+.pp-scroll::-webkit-scrollbar-track{background:var(--cream-50)}
+.pp-scroll::-webkit-scrollbar-thumb{background:var(--sage-300);border-radius:999px;border:3px solid var(--cream-50)}
+.pp-scroll::-webkit-scrollbar-thumb:hover{background:var(--sage-400)}
+.pp-toc::-webkit-scrollbar{width:8px}
+.pp-toc::-webkit-scrollbar-thumb{background:var(--sage-300);border-radius:999px;border:2px solid var(--sage-100)}
+.pp-body{max-width:72ch}
+.pp-intro{border-bottom:1px solid var(--border-subtle);padding-bottom:22px;margin-bottom:6px}
+.pp-intro p{font-family:var(--font-body);font-size:13.5px;line-height:1.7;color:var(--ink-700);margin:0 0 12px}
+.pp-intro p:last-child{margin-bottom:0}
+.pp-body h2{font-family:var(--font-heading);font-size:clamp(17px,1.5vw,20px);font-weight:600;letter-spacing:-.014em;line-height:1.25;color:var(--sage-800);margin:36px 0 12px;scroll-margin-top:12px;display:grid;grid-template-columns:auto 1fr;gap:11px;align-items:baseline}
+.pp-body h2 .num{font-family:var(--font-hand);font-size:20px;font-weight:600;color:var(--clay-500);line-height:1}
+.pp-body h3{font-family:var(--font-heading);font-size:14px;font-weight:600;letter-spacing:-.008em;color:var(--sage-700);margin:22px 0 8px}
+.pp-body p{font-family:var(--font-body);font-size:13.5px;line-height:1.7;color:var(--ink-700);margin:0 0 12px;text-wrap:pretty}
+.pp-body ul{list-style:none;margin:0 0 14px;padding:0;display:grid;gap:6px}
+.pp-body ul li{position:relative;padding-left:18px;font-family:var(--font-body);font-size:13px;line-height:1.6;color:var(--ink-700)}
+.pp-body ul li::before{content:"";position:absolute;left:2px;top:8px;width:5px;height:5px;border-radius:50%;background:var(--sage-400)}
+.pp-body ul.pp-cols{grid-template-columns:1fr 1fr;gap:6px 22px}
+.pp-body strong{color:var(--sage-800);font-weight:600}
+.pp-body a{color:var(--clay-500)}
+.pp-body a:hover{color:var(--clay-600)}
+.pp-note{background:var(--cream-100);border-radius:20px 8px 20px 8px;padding:16px 20px;margin:0 0 14px}
+.pp-note p{margin:0;font-size:13px}
+.pp-note p+p{margin-top:10px}
+.pp-note.is-alert{background:var(--clay-100,#F6DDCF)}
+.pp-note.is-alert p strong{color:#8f3f1e}
+.pp-contact{background:var(--sage-100);border-radius:24px 10px 24px 10px;padding:20px 24px;margin:4px 0 14px;display:grid;gap:4px}
+.pp-contact .who{font-family:var(--font-heading);font-size:14.5px;font-weight:700;color:var(--sage-800);line-height:1.3}
+.pp-contact .attn,.pp-contact .addr{font-family:var(--font-body);font-size:13px;line-height:1.55;color:var(--ink-700)}
+.pp-contact .rows{display:flex;flex-wrap:wrap;gap:6px 24px;margin-top:10px;padding-top:12px;border-top:1px solid rgba(45,58,35,.12)}
+.pp-contact .rows span{display:flex;align-items:center;gap:8px;font-family:var(--font-body);font-size:13px;color:var(--ink-700)}
+.pp-contact .rows svg{width:14px;height:14px;color:var(--sage-600);flex:none}
+.pp-end{margin-top:40px;padding-top:20px;border-top:1px solid var(--border-subtle);font-family:var(--font-hand);font-size:20px;color:var(--clay-500);line-height:1.3}
+
+.pp-fade{position:absolute;left:272px;right:0;height:38px;pointer-events:none;z-index:3;transition:opacity .2s var(--ease-out)}
+.pp-fade.top{top:0;background:linear-gradient(var(--white),rgba(255,255,255,0));opacity:0}
+.pp-fade.bot{bottom:0;background:linear-gradient(rgba(255,255,255,0),var(--white))}
+.pp-card.at-top .pp-fade.top{opacity:0}
+.pp-card:not(.at-top) .pp-fade.top{opacity:1}
+.pp-card.at-end .pp-fade.bot{opacity:0}
+.pp-top-btn{position:absolute;right:22px;bottom:20px;z-index:4;display:inline-flex;align-items:center;gap:7px;background:var(--sage-600);color:var(--cream-50);border:0;border-radius:999px;padding:9px 15px;font-family:var(--font-body);font-size:11.5px;font-weight:600;cursor:pointer;box-shadow:0 10px 24px -12px rgba(45,58,35,.7);opacity:0;transform:translateY(8px);pointer-events:none;transition:opacity .2s var(--ease-out),transform .2s var(--ease-out),background .16s var(--ease-out)}
+.pp-top-btn:hover{background:var(--sage-700)}
+.pp-top-btn.show{opacity:1;transform:none;pointer-events:auto}
+.pp-top-btn svg{width:13px;height:13px}
+
+.pp-after{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px 28px;margin-top:clamp(18px,2vw,26px);padding:0 6px}
+.pp-after p{font-family:var(--font-body);font-size:13px;color:var(--ink-700);margin:0;max-width:46ch}
+.pp-after .cl-cta-btn{flex:none}
+
+@media (max-width:900px){
+.pp-card{grid-template-columns:1fr;height:auto;border-radius:28px 12px 28px 12px}
+.pp-toc{display:none}
+.pp-toc-mobile{display:block;border-bottom:1px solid var(--border-subtle);background:var(--sage-100)}
+.pp-toc-mobile summary{list-style:none;cursor:pointer;padding:16px 20px;font-family:var(--font-heading);font-size:13.5px;font-weight:700;color:var(--sage-800);display:flex;align-items:center;justify-content:space-between;gap:12px}
+.pp-toc-mobile summary::-webkit-details-marker{display:none}
+.pp-toc-mobile summary svg{width:16px;height:16px;color:var(--sage-600);transition:transform .2s var(--ease-out)}
+.pp-toc-mobile[open] summary svg{transform:rotate(180deg)}
+.pp-toc-mobile .pp-toc-inner{max-height:44vh;overflow-y:auto;padding:0 14px 16px 18px}
+.pp-toc-mobile ol{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:1px}
+.pp-toc-mobile a{display:grid;grid-template-columns:22px 1fr;gap:8px;align-items:baseline;padding:7px 8px;border-radius:8px;font-family:var(--font-body);font-size:12.5px;line-height:1.35;color:var(--ink-700);text-decoration:none}
+.pp-toc-mobile a .n{font-family:var(--font-hand);font-size:14px;color:var(--sage-600)}
+.pp-scroll{height:min(68vh,620px);padding-bottom:56px}
+.pp-fade{left:0}
+.pp-body ul.pp-cols{grid-template-columns:1fr}
+.pp-meta-hand{margin-left:0;width:100%}
+}
+</style>
+</head>
+<body>
+<div id="site-nav"></div>
+
+<section class="pp-hero" data-screen-label="Privacy hero">
+  <div class="pp-hero-shell">
+    <div class="reveal in">
+      <div class="pp-crumbs"><a href="index.html">Home</a><span class="sep">/</span><span>Notice of Privacy Practices</span></div>
+      <h1 class="pp-hero-h">Notice of <span class="pp-hand">Privacy Practices.</span></h1>
+      <p class="pp-hero-lead">How medical information about you or your child may be used and disclosed, and how you can get access to it. Written out in full below.</p>
+    </div>
+  </div>
+</section>
+
+<section class="pp-section" data-screen-label="Privacy Policy">
+  <div class="pp-shell">
+
+    <div class="pp-meta reveal">
+      <span class="pp-meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2.5"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/></svg>Effective <b>August 3, 2026</b></span>
+      <span class="pp-meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15.5 14"/></svg>Last updated <b>August 3, 2026</b></span>
+      <span class="pp-meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7.5 3v5.2c0 4.6-3.1 8.4-7.5 9.8-4.4-1.4-7.5-5.2-7.5-9.8V6z"/><polyline points="9 12 11 14 15 10"/></svg><b>9 sections</b></span>
+      <span class="pp-meta-hand">Scroll inside the card &darr;</span>
+    </div>
+
+    <div class="pp-card reveal at-top" id="ppCard">
+      <div class="pp-fade top" aria-hidden="true"></div>
+      <div class="pp-fade bot" aria-hidden="true"></div>
+
+      <nav class="pp-toc" id="ppToc" aria-label="Privacy policy sections">
+        <p class="pp-toc-label">Contents</p>
+        <ol>
+            <li><a href="#s1"><span class="n">01</span><span>Our Commitment to Your Privacy</span></a></li>
+            <li><a href="#s2"><span class="n">02</span><span>How We May Use or Share Health Information</span></a></li>
+            <li><a href="#s3"><span class="n">03</span><span>Uses That Require Written Authorization</span></a></li>
+            <li><a href="#s4"><span class="n">04</span><span>Substance Use Disorder Records</span></a></li>
+            <li><a href="#s5"><span class="n">05</span><span>Your Privacy Rights</span></a></li>
+            <li><a href="#s6"><span class="n">06</span><span>Our Responsibilities</span></a></li>
+            <li><a href="#s7"><span class="n">07</span><span>Who Must Follow This Notice</span></a></li>
+            <li><a href="#s8"><span class="n">08</span><span>Changes to This Notice</span></a></li>
+            <li><a href="#s9"><span class="n">09</span><span>Questions, Requests, or Complaints</span></a></li>
+          </ol>
+      </nav>
+
+      <details class="pp-toc-mobile" id="ppTocMobile">
+        <summary>Jump to a section<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></summary>
+        <div class="pp-toc-inner">
+          <ol>
+            <li><a href="#s1"><span class="n">01</span><span>Our Commitment to Your Privacy</span></a></li>
+            <li><a href="#s2"><span class="n">02</span><span>How We May Use or Share Health Information</span></a></li>
+            <li><a href="#s3"><span class="n">03</span><span>Uses That Require Written Authorization</span></a></li>
+            <li><a href="#s4"><span class="n">04</span><span>Substance Use Disorder Records</span></a></li>
+            <li><a href="#s5"><span class="n">05</span><span>Your Privacy Rights</span></a></li>
+            <li><a href="#s6"><span class="n">06</span><span>Our Responsibilities</span></a></li>
+            <li><a href="#s7"><span class="n">07</span><span>Who Must Follow This Notice</span></a></li>
+            <li><a href="#s8"><span class="n">08</span><span>Changes to This Notice</span></a></li>
+            <li><a href="#s9"><span class="n">09</span><span>Questions, Requests, or Complaints</span></a></li>
+          </ol>
+        </div>
+      </details>
+
+      <div class="pp-scroll" id="ppScroll" tabindex="0">
+        <div class="pp-body">
+
+          <div class="pp-intro">
+            <p><strong>Social House Therapy LLC: Notice of Privacy Practices</strong></p>
+            <div class="pp-note is-alert"><p><strong>This notice describes how medical information about you or your child may be used and disclosed, and how you can get access to this information. Please review it carefully.</strong></p></div>
+          </div>
+
+          <h2 id="s1"><span class="num">01</span><span>Our Commitment to Your Privacy</span></h2>
+          <p>Social House Therapy LLC is committed to protecting the privacy and security of your health information.</p>
+          <p>This notice applies to services provided by Social House Therapy, including in-home therapy, community-based therapy, teletherapy, evaluations, consultations, caregiver education, and related administrative services.</p>
+          <p>Protected health information may include:</p>
+          <ul class="pp-cols"><li>Contact and identifying information</li><li>Medical and developmental history</li><li>Information from doctors, teachers, caregivers, therapists, or other providers</li><li>Evaluation results and standardized test scores</li><li>Treatment plans, goals, and therapy notes</li><li>Billing, payment, and insurance information</li><li>Photos, videos, recordings, or electronic communications maintained as part of the clinical record</li></ul>
+          <p>We are required by law to protect the privacy and security of your protected health information, provide you with this notice, and follow the privacy practices described in this notice.</p>
+
+          <h2 id="s2"><span class="num">02</span><span>How We May Use or Share Health Information</span></h2>
+          <p>We may use or share health information without written authorization for the purposes described below.</p>
+          <h3>Treatment</h3>
+          <p>We may use and share health information to provide, coordinate, or manage care.</p>
+          <p>For example, we may communicate with a physician, occupational therapist, physical therapist, teacher, psychologist, behavioral health provider, or other professional involved in your child&rsquo;s care.</p>
+          <p>We may request written permission before communicating with a school or another provider when permission is required or appropriate.</p>
+          <h3>Payment</h3>
+          <p>We may use or share health information to bill for services and receive payment. This may include sharing information with:</p>
+          <ul><li>Health insurance companies</li><li>Arizona Empowerment Scholarship Account programs</li><li>Health savings or flexible spending account administrators</li><li>Other individuals or organizations responsible for payment</li></ul>
+          <p>We may share information when needed to confirm benefits, request authorization, submit claims, provide superbills, collect payment, or respond to questions about charges.</p>
+          <h3>Health Care Operations</h3>
+          <p>We may use or share health information to operate and improve our practice. For example, we may use information to:</p>
+          <ul class="pp-cols"><li>Review the quality of our services</li><li>Coordinate scheduling and care</li><li>Train or supervise staff and students</li><li>Complete licensing, credentialing, auditing, or compliance activities</li><li>Improve our clinical and administrative procedures</li><li>Manage business, legal, accounting, and technology services</li></ul>
+          <p>Outside companies that help us operate our practice may receive limited health information when necessary. When required, these companies must sign agreements requiring them to protect the information.</p>
+          <h3>Appointment Reminders and Practice Communications</h3>
+          <p>We may contact you by phone, voicemail, text message, email, patient portal, or mail regarding:</p>
+          <ul class="pp-cols"><li>Appointments</li><li>Scheduling changes</li><li>Forms or records</li><li>Billing</li><li>Treatment follow-up</li><li>Services related to your care</li></ul>
+          <p>You may ask us to contact you in a different way or at a different location.</p>
+          <h3>People Involved in Care or Payment</h3>
+          <p>With your permission, or when otherwise permitted by law, we may share relevant information with family members, caregivers, or other people involved in the client&rsquo;s care or payment.</p>
+          <p>When the client is a child, the child&rsquo;s parent or legal guardian will generally act as the child&rsquo;s personal representative. Certain exceptions may apply when a minor is legally permitted to consent to care or when another law limits a parent&rsquo;s access.</p>
+          <h3>Public Health and Safety</h3>
+          <p>We may share health information when permitted or required by law for purposes such as:</p>
+          <ul><li>Reporting suspected child abuse, neglect, or domestic violence</li><li>Preventing or controlling disease</li><li>Reporting certain injuries or health conditions</li><li>Preventing or reducing a serious and immediate threat to someone&rsquo;s health or safety</li><li>Responding to product recalls or adverse events</li></ul>
+          <h3>Health Oversight</h3>
+          <p>We may share information with authorized government agencies responsible for activities such as:</p>
+          <ul class="pp-cols"><li>Licensing</li><li>Audits</li><li>Inspections</li><li>Investigations</li><li>Credentialing</li><li>Compliance reviews</li></ul>
+          <h3>Legal Proceedings and Law Enforcement</h3>
+          <p>We may share health information in response to a valid court order, administrative order, subpoena, or other lawful request when the requirements of federal and state law have been met.</p>
+          <p>We may also share limited information with law-enforcement officials in specific situations permitted or required by law. We will not release an entire record merely because someone requests it.</p>
+          <h3>Required by Law</h3>
+          <p>We will share information when federal or state law requires us to do so. We may also share information with the U.S. Department of Health and Human Services when it is reviewing our compliance with federal privacy laws.</p>
+          <h3>Workers&rsquo; Compensation</h3>
+          <p>We may share information as permitted or required for workers&rsquo; compensation claims or similar programs involving work-related injuries or illnesses.</p>
+          <h3>Coroners, Medical Examiners, and Funeral Directors</h3>
+          <p>We may share information with a coroner, medical examiner, or funeral director when permitted or required by law following an individual&rsquo;s death.</p>
+          <h3>Research</h3>
+          <p>Social House Therapy does not routinely use client information for research. If information is used or shared for research, we will obtain written authorization or follow another process specifically permitted by law.</p>
+
+          <h2 id="s3"><span class="num">03</span><span>Uses That Require Written Authorization</span></h2>
+          <p>We will obtain written authorization before using or sharing health information for purposes not described in this notice, unless the use or disclosure is otherwise permitted or required by law.</p>
+          <p>Written authorization is generally required for:</p>
+          <ul><li>Most marketing activities involving protected health information</li><li>The sale of protected health information</li><li>Most uses or disclosures of psychotherapy notes, if we maintain any</li><li>Sharing photos, videos, testimonials, or client stories for advertising, social media, or public educational materials</li></ul>
+          <div class="pp-note"><p><strong>Social House Therapy does not sell protected health information.</strong></p></div>
+          <p>You may revoke an authorization at any time by submitting a written request. Revoking an authorization will not affect information that was already used or shared while the authorization was in effect.</p>
+
+          <h2 id="s4"><span class="num">04</span><span>Substance Use Disorder Records</span></h2>
+          <p>Social House Therapy does not provide substance use disorder treatment. However, if we receive records protected by federal substance use disorder confidentiality laws, we will protect those records as required by HIPAA and 42 CFR Part 2.</p>
+          <p>Such records generally may not be used or disclosed in civil, criminal, administrative, or legislative investigations or proceedings against the individual without written consent or an appropriate court order and subpoena.</p>
+
+          <h2 id="s5"><span class="num">05</span><span>Your Privacy Rights</span></h2>
+          <p>You have the following rights regarding health information maintained by Social House Therapy.</p>
+          <h3>Get an Electronic or Paper Copy of the Record</h3>
+          <p>You may ask to inspect or receive an electronic or paper copy of the health and billing information we maintain.</p>
+          <p>We will generally provide the requested information within 30 days. We may charge a reasonable, cost-based fee when permitted by law.</p>
+          <p>Access may be limited in certain situations, including for information prepared for legal proceedings, copyrighted testing materials, or information that the law does not permit us to release.</p>
+          <h3>Ask Us to Correct the Record</h3>
+          <p>You may ask us to correct information you believe is incorrect or incomplete.</p>
+          <p>We may deny the request in certain situations, but we will explain the reason in writing, generally within 60 days. You may submit a written statement of disagreement if your request is denied.</p>
+          <h3>Request Confidential Communications</h3>
+          <p>You may ask us to contact you in a particular way or at a particular location.</p>
+          <p>For example, you may ask us to communicate only through the patient portal, call a specific phone number, or avoid leaving detailed voicemail messages. We will honor reasonable requests.</p>
+          <h3>Ask Us to Limit What We Use or Share</h3>
+          <p>You may ask us not to use or share certain information for treatment, payment, or health care operations.</p>
+          <p>We are not always required to agree to the request. If we agree, we will follow the restriction except when the information is needed to provide emergency treatment or when disclosure is required by law.</p>
+          <p>If you pay for a service completely out of pocket, you may ask us not to share information about that service with your health insurance company for payment or health care operations. We will agree unless the law requires us to share it.</p>
+          <h3>Get a List of Certain Disclosures</h3>
+          <p>You may request a list, called an accounting of disclosures, showing certain times we shared your health information during the six years before your request.</p>
+          <p>The list will not include every disclosure. For example, it generally will not include disclosures for treatment, payment, health care operations, or disclosures you specifically authorized.</p>
+          <p>We will provide one accounting within a 12-month period at no charge. We may charge a reasonable, cost-based fee for additional requests made during the same 12-month period.</p>
+          <h3>Get a Copy of This Notice</h3>
+          <p>You may request a paper copy of this notice at any time, even if you previously agreed to receive it electronically.</p>
+          <h3>Choose Someone to Act for You</h3>
+          <p>A legally authorized personal representative may exercise your privacy rights on your behalf.</p>
+          <p>For a child, this person is generally the child&rsquo;s parent or legal guardian. We may request documentation confirming that the person has legal authority to act for the client.</p>
+          <h3>Be Notified of a Breach</h3>
+          <p>We will notify you as required by law if a breach occurs that may have compromised the privacy or security of your protected health information.</p>
+          <h3>File a Complaint</h3>
+          <p>You may file a complaint if you believe your privacy rights have been violated. You may contact Social House Therapy&rsquo;s Privacy Officer using the information below.</p>
+          <p>You may also file a complaint with the:</p>
+          <div class="pp-contact">
+            <p class="who">U.S. Department of Health and Human Services</p>
+            <p class="attn">Office for Civil Rights</p>
+            <p class="addr">200 Independence Avenue SW<br>Washington, DC 20201</p>
+            <div class="rows">
+              <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 1.12 4.2 2 2 0 0 1 3.1 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg><a href="tel:18776966775">1-877-696-6775</a></span>
+              <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19"/><path d="M12 2.5c2.5 2.6 3.9 6 3.9 9.5S14.5 18.9 12 21.5C9.5 18.9 8.1 15.5 8.1 12S9.5 5.1 12 2.5z"/></svg><a href="https://www.hhs.gov/hipaa/filing-a-complaint" target="_blank" rel="noopener">hhs.gov/hipaa/filing-a-complaint</a></span>
+            </div>
+          </div>
+          <p>Social House Therapy will not retaliate against you or deny services because you filed a complaint.</p>
+
+          <h2 id="s6"><span class="num">06</span><span>Our Responsibilities</span></h2>
+          <p>Social House Therapy is required to:</p>
+          <ul><li>Maintain the privacy and security of protected health information</li><li>Follow the duties and privacy practices described in this notice</li><li>Provide you with a copy of this notice</li><li>Limit uses, disclosures, and requests to the minimum information reasonably necessary when required by law</li><li>Notify affected individuals when a reportable breach occurs</li><li>Obtain written authorization for uses and disclosures not otherwise permitted by law</li></ul>
+
+          <h2 id="s7"><span class="num">07</span><span>Who Must Follow This Notice</span></h2>
+          <p>This notice applies to:</p>
+          <ul><li>Social House Therapy LLC</li><li>Speech-language pathologists and speech-language pathology assistants working for or with the practice</li><li>Administrative personnel</li><li>Students, interns, and supervised trainees</li><li>Employees, contractors, and volunteers who may have access to health information</li><li>Other individuals or organizations assisting Social House Therapy as permitted by law</li></ul>
+          <p>Everyone covered by this notice must follow its terms when handling protected health information.</p>
+
+          <h2 id="s8"><span class="num">08</span><span>Changes to This Notice</span></h2>
+          <p>We may change the terms of this notice at any time.</p>
+          <p>Changes may apply to information we already maintain as well as information we receive in the future. The current notice will be available upon request and posted on the Social House Therapy website.</p>
+          <p>The effective date at the top of the notice shows when the current version became effective.</p>
+
+          <h2 id="s9"><span class="num">09</span><span>Questions, Requests, or Complaints</span></h2>
+          <p>Contact Social House Therapy&rsquo;s Privacy Officer with questions about this notice, requests concerning health records, or privacy complaints.</p>
+          <div class="pp-contact">
+            <p class="who">Social House Therapy LLC</p>
+            <p class="attn">Attn: Privacy Officer</p>
+            <p class="addr">Mailing address available on request</p>
+            <div class="rows">
+              <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 1.12 4.2 2 2 0 0 1 3.1 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg><a href="tel:4804904812">480-490-4812</a></span>
+              <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><polyline points="3 6 12 13 21 6"/></svg><a href="mailto:info@socialhousetherapy.com">info@socialhousetherapy.com</a></span>
+              <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19"/><path d="M12 2.5c2.5 2.6 3.9 6 3.9 9.5S14.5 18.9 12 21.5C9.5 18.9 8.1 15.5 8.1 12S9.5 5.1 12 2.5z"/></svg><a href="https://socialhousetherapy.com">socialhousetherapy.com</a></span>
+            </div>
+          </div>
+          <p>A paper copy of this notice is available on request.</p>
+          <p class="pp-end">Thank you for trusting us with your family&rsquo;s information.</p>
+
+        </div>
+      </div>
+
+      <button class="pp-top-btn" id="ppTopBtn" type="button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="6"/><polyline points="6 12 12 6 18 12"/></svg>
+        Back to top
+      </button>
+    </div>
+
+  </div>
+</section>
+
+<div id="site-footer"></div>
+<script src="scripts/site.js?v=19"></script>
+<script src="scripts/sp-widget.js?v=3" defer></script>
+<script src="https://widget-cdn.simplepractice.com/assets/integration-1.0.js" defer></script>
+<script>
+(function(){
+  var card=document.getElementById('ppCard'),box=document.getElementById('ppScroll'),toc=document.getElementById('ppToc'),tocM=document.getElementById('ppTocMobile'),topBtn=document.getElementById('ppTopBtn');
+  if(!box)return;
+  var heads=Array.prototype.slice.call(box.querySelectorAll('h2[id]'));
+  var links=Array.prototype.slice.call(document.querySelectorAll('.pp-toc a, .pp-toc-mobile a'));
+  function jump(e){
+    var id=this.getAttribute('href').slice(1),t=document.getElementById(id);
+    if(!t)return;
+    e.preventDefault();
+    box.scrollTo({top:t.offsetTop-box.querySelector('.pp-body').offsetTop-8,behavior:'smooth'});
+    if(tocM&&tocM.open&&window.matchMedia('(max-width:900px)').matches)tocM.open=false;
+  }
+  links.forEach(function(a){a.addEventListener('click',jump)});
+  var active=null;
+  function spy(){
+    var t=box.scrollTop,end=box.scrollHeight-box.clientHeight-2,base=box.querySelector('.pp-body').offsetTop;
+    card.classList.toggle('at-top',t<8);
+    card.classList.toggle('at-end',t>=end);
+    topBtn.classList.toggle('show',t>360);
+    var cur=heads[0];
+    for(var i=0;i<heads.length;i++){ if(heads[i].offsetTop-base-70<=t) cur=heads[i]; }
+    if(t>=end) cur=heads[heads.length-1];
+    if(cur&&cur.id!==active){
+      active=cur.id;
+      links.forEach(function(a){a.classList.toggle('is-active',a.getAttribute('href')==='#'+active)});
+      var on=toc&&toc.querySelector('a.is-active');
+      if(on){
+        var r=on.offsetTop,h=toc.clientHeight;
+        if(r<toc.scrollTop+20||r>toc.scrollTop+h-50) toc.scrollTo({top:Math.max(0,r-h/2),behavior:'smooth'});
+      }
+    }
+  }
+  box.addEventListener('scroll',spy,{passive:true});
+  window.addEventListener('resize',spy);
+  spy();
+  topBtn.addEventListener('click',function(){box.scrollTo({top:0,behavior:'smooth'})});
+})();
+</script>
+</body>
+</html>

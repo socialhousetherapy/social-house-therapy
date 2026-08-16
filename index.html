@@ -3,673 +3,1852 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Social House Therapy — Care that connects. Pediatric speech therapy in Tempe &amp; Scottsdale, AZ</title>
-<meta name="description" content="Family-centered, child-led pediatric speech and language therapy in Tempe &amp; Scottsdale, Arizona. In-home, on-site, and telehealth visits with Madison Jeffery, CCC-SLP.">
+<title>Pediatric Speech Therapy in Tempe &amp; Scottsdale, AZ | Social House Therapy</title>
+<meta name="description" content="Family-centered, child-led pediatric speech therapy in Tempe and Scottsdale, AZ. In-home, on-site, and telehealth visits with Madison Jeffery, CCC-SLP.">
 <link rel="icon" href="assets/favicon-48.png">
-<link rel="stylesheet" href="styles/tokens.css">
-<link rel="stylesheet" href="styles/site.css">
-<script>window.__PAGE = 'home';</script>
+<link rel="canonical" href="https://socialhousetherapy.com/">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"MedicalBusiness","@id":"https://socialhousetherapy.com/#org","name":"Social House Therapy","description":"Family-centered, child-led pediatric speech and language therapy in Tempe and Scottsdale, Arizona. In-home, on-site, and telehealth visits.","url":"https://socialhousetherapy.com/","logo":"https://socialhousetherapy.com/assets/logo-240.webp","image":"https://socialhousetherapy.com/assets/logo-240.webp","telephone":"+1-480-490-4812","priceRange":"$80-$350","address":{"@type":"PostalAddress","addressLocality":"Tempe","addressRegion":"AZ","addressCountry":"US"},"founder":{"@type":"Person","name":"Madison Jeffery","jobTitle":"Speech-Language Pathologist, MS, CCC-SLP"},"sameAs":["https://instagram.com/socialhousetherapy","https://facebook.com/socialhousetherapy","https://tiktok.com/@socialhousetherapy"],"areaServed":[{"@type":"City","name":"Tempe"},{"@type":"City","name":"Scottsdale"},{"@type":"City","name":"Chandler"},{"@type":"City","name":"Mesa"},{"@type":"City","name":"Phoenix"},{"@type":"State","name":"Arizona"}],"serviceType":["Pediatric speech therapy","Speech and language evaluations","In-home speech therapy","Telehealth speech therapy","Early intervention for late talkers","Autism and social communication support","Speech sound disorders","Language therapy","Stuttering and fluency therapy","Pediatric feeding and oral-motor therapy","AAC support"]}
+</script>
+<link rel="preload" as="image" href="assets/hero-handprints-440.webp" media="(max-width: 560px)" fetchpriority="high">
+<link rel="preload" as="image" href="assets/hero-handprints-560.webp" media="(min-width: 561px) and (max-width: 960px)" fetchpriority="high">
+<link rel="preload" as="image" href="assets/hero-handprints.webp" media="(min-width: 961px)" fetchpriority="high">
+<meta name="ext-resource-dependency" content="https://widget-cdn.simplepractice.com/assets/integration-1.0.js">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-/* =============================================================
-   HOMEPAGE HERO — Exact match to reference design
-   ============================================================= */
-
-/* Page-scoped tokens */
-.home-page {
-  --hero-cream-page: #FBF8F1;
-  --hero-cream-card: #F7F2E6;
-  --hero-cream-inner: #F5F0E2;
-  --hero-border: #E5DCC9;
-  --hero-deep-green: #123F2A;
-  --hero-olive: #5E7048;
-  --hero-olive-hover: #4A5A38;
-  --hero-eyebrow: #4A5A38;
-  --hero-text: #2E3430;
-  --hero-icon-bg: #EFE9D7;
-  background: var(--hero-cream-page);
-}
-
-/* Body grain overlay subtle */
-.home-page::before { display: none; }
-
-/* ── NAV OVERRIDES (homepage only) ──────────────────── */
-.home-page .nav {
-  position: relative;
-  background: transparent;
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
-  border-bottom: none;
-}
-.home-page .nav-inner {
-  padding: 18px 32px;
-  max-width: 1400px;
-}
-.home-page .nav-links {
-  gap: 36px;
-}
-.home-page .nav-links a {
-  color: var(--hero-text);
-  font-weight: 500;
-  font-size: 15px;
-}
-.home-page .nav-links a::after { background: var(--hero-deep-green); }
-.home-page .nav-links a.active { color: var(--hero-deep-green); }
-.home-page .nav-cta {
-  background: var(--hero-olive);
-  color: #FFF;
-  font-weight: 500;
-  font-size: 14px;
-  padding: 12px 22px;
-  border-radius: 10px;
-  box-shadow: none;
-  letter-spacing: 0.01em;
-}
-.home-page .nav-cta:hover {
-  background: var(--hero-olive-hover);
-  transform: none;
-}
-
-/* ── HERO SHELL ──────────────────────────────────────── */
-.hero-v4 {
-  background: var(--hero-cream-page);
-  padding: 0 24px 32px;
-  position: relative;
-}
-.hero-v4-card {
-  position: relative;
-  max-width: 1400px;
-  margin: 0 auto;
-  background: var(--hero-cream-card);
-  border: 1px solid var(--hero-border);
-  border-radius: 20px;
-  overflow: hidden;
-  isolation: isolate;
-}
-
-/* ── 2-COLUMN GRID: left (text+CTAs) | right (image) ── */
-.hero-v4-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.12fr);
-  align-items: center;
-  /* no right padding — image fills to card edge */
-  padding: clamp(48px, 5.5vw, 72px) 0 clamp(32px, 4vw, 48px) clamp(36px, 5vw, 64px);
-  gap: 0;
-  position: relative;
-  z-index: 1;
-}
-
-/* ── LEFT COLUMN: eyebrow → heading → rule → sub → CTAs */
-.hero-v4-left {
-  position: relative;
-  z-index: 2; /* text above the overlapping watercolor */
-  padding-right: clamp(24px, 3vw, 40px);
-}
-
-.hero-eyebrow-row {
-  display: block;
-  font-size: 15px;
-  font-weight: 500;
-  color: var(--hero-eyebrow);
-  margin-bottom: 24px;
-  letter-spacing: 0.005em;
-}
-.hero-eyebrow-dot { display: none; }
-
-.hero-v4-heading {
-  font-family: "Cormorant Garamond", "Playfair Display", Georgia, serif;
-  font-size: clamp(42px, 4.8vw, 68px);
-  font-weight: 500;
-  color: var(--hero-deep-green);
-  line-height: 1.03;
-  letter-spacing: -0.018em;
-  margin: 0 0 24px;
-  text-wrap: balance;
-}
-
-.hero-v4-rule {
-  width: 56px;
-  height: 2px;
-  background: var(--hero-deep-green);
-  border: none;
-  border-radius: 1px;
-  margin: 0 0 22px;
-  opacity: 0.85;
-}
-
-.hero-v4-sub {
-  font-family: var(--font-body);
-  font-size: 15px;
-  line-height: 1.65;
-  color: var(--hero-text);
-  max-width: 400px;
-  margin: 0 0 32px;
-}
-
-.hero-v4-ctas {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-  flex-wrap: wrap;
-}
-
-/* ── CTAs ─────────────────────────────────────────── */
-.btn-book {
-  display: inline-flex;
-  align-items: center;
-  gap: 14px;
-  background: var(--hero-olive);
-  color: #FFF;
-  font-family: var(--font-body);
-  font-weight: 500;
-  font-size: 15px;
-  padding: 16px 28px;
-  border-radius: 10px;
-  border: 0;
-  text-decoration: none;
-  box-shadow: 0 4px 12px -4px rgba(94, 112, 72, 0.35);
-  transition: background 200ms ease, transform 180ms ease;
-}
-.btn-book:hover {
-  background: var(--hero-olive-hover);
-  transform: translateY(-1px);
-}
-.btn-book svg { transition: transform 200ms ease; }
-.btn-book:hover svg { transform: translateX(3px); }
-
-.btn-meet {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  font-family: var(--font-body);
-  font-weight: 500;
-  font-size: 15px;
-  color: var(--hero-deep-green);
-  text-decoration: none;
-  padding: 6px 4px;
-  transition: color 180ms ease;
-}
-.btn-meet svg { transition: transform 200ms ease; }
-.btn-meet:hover { color: var(--hero-olive); }
-.btn-meet:hover svg { transform: translateX(3px); }
-
-/* ── RIGHT COLUMN: illustration (overlaps left & bleeds right) */
-.hero-v4-right {
-  position: relative;
-  z-index: 1;
-  /* Pull the image left so the sound waves drift behind the headline */
-  margin-left: clamp(-100px, -7.5vw, -40px);
-  /* Let image exceed the card's right boundary (overflow:hidden clips it) */
-  margin-right: clamp(-48px, -3.5vw, -16px);
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  align-self: stretch;
-}
-.hero-v4-img {
-  width: 100%;
-  max-width: 900px;
-  height: auto;
-  display: block;
-  object-fit: contain;
-}
-
-/* ── TRUST/SERVICE CARD — full-width strip below the grid ── */
-.hero-trust-card {
-  margin: 0 clamp(24px, 4vw, 48px) clamp(24px, 4vw, 36px);
-  background: var(--hero-cream-inner);
-  border: 1px solid var(--hero-border);
-  border-radius: 16px;
-  padding: 20px clamp(24px, 3vw, 40px);
-  display: grid;
-  grid-template-columns: minmax(0, 1.5fr) 1px minmax(0, 1fr);
-  align-items: center;
-  gap: clamp(20px, 3vw, 36px);
-  position: relative;
-  z-index: 2;
-}
-
-.hero-trust-services {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: clamp(12px, 1.8vw, 24px);
-  align-items: start;
-}
-.hero-trust-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 9px;
-  min-width: 0;
-}
-.hero-trust-icon {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background: var(--hero-icon-bg);
-  display: grid;
-  place-items: center;
-  color: var(--hero-deep-green);
-}
-.hero-trust-label {
-  font-family: var(--font-body);
-  font-size: 13px;
-  font-weight: 500;
-  color: var(--hero-text);
-  line-height: 1.3;
-}
-
-.hero-trust-divider {
-  width: 1px;
-  align-self: stretch;
-  background: var(--hero-border);
-  margin: 6px 0;
-}
-
-.hero-trust-message {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  min-width: 0;
-}
-.hero-trust-mark {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background: var(--hero-icon-bg);
-  flex-shrink: 0;
-  display: grid;
-  place-items: center;
-  color: var(--hero-olive);
-}
-.hero-trust-message p {
-  margin: 0;
-  font-family: var(--font-body);
-  font-size: 14px;
-  line-height: 1.5;
-  color: var(--hero-text);
-  font-style: normal;
-  max-width: none;
-}
-
-/* ── RESPONSIVE — TABLET ────────────────────────────── */
-@media (max-width: 1020px) {
-  .hero-v4-grid {
-    grid-template-columns: 1fr;
-    padding: 44px 32px 20px;
-    gap: 28px;
-  }
-  .hero-v4-right {
-    justify-content: center;
-    margin: 0 -24px;
-    align-self: auto;
-  }
-  .hero-v4-img { max-width: 580px; margin: 0 auto; }
-  .hero-trust-card { grid-template-columns: 1fr; }
-  .hero-trust-divider { display: none; }
-  .hero-trust-message {
-    border-top: 1px solid var(--hero-border);
-    padding-top: 16px;
-    justify-content: center;
-  }
-  .hero-trust-message p { text-align: center; }
-}
-
-/* ── RESPONSIVE — MOBILE ──────────────────────────── */
-@media (max-width: 680px) {
-  .hero-v4 { padding: 0 12px 16px; }
-  .hero-v4-card { border-radius: 16px; }
-  .hero-v4-grid { padding: 32px 20px 16px; gap: 20px; }
-  .hero-v4-heading { font-size: clamp(36px, 9vw, 48px); }
-  .hero-v4-sub { margin-bottom: 26px; }
-  .hero-v4-ctas { gap: 16px; }
-  .btn-book { padding: 14px 22px; min-height: 48px; }
-  .hero-trust-card { margin: 0 8px 16px; padding: 18px 16px; }
-  .hero-trust-services { grid-template-columns: repeat(2, 1fr); gap: 16px; }
-}
-
-@media (max-width: 400px) {
-  .btn-book { width: 100%; justify-content: center; }
-  .btn-meet { justify-content: flex-start; }
-}
-
-/* Reduced motion */
-@media (prefers-reduced-motion: reduce) {
-  .btn-book, .btn-book svg, .btn-meet, .btn-meet svg { transition: none; }
-}
-</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..700&amp;family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&amp;family=Caveat:wght@400..700&amp;display=swap">
+<link rel="stylesheet" href="styles/tokens.css">
+<link rel="stylesheet" href="styles/site.css?v=28">
+<link rel="stylesheet" href="styles/when-to-reach.css?v=4">
+<link rel="stylesheet" href="styles/clarity.css?v=10">
+<link rel="stylesheet" href="styles/how-it-works.css?v=8">
+<style>#site-nav{min-height:76px}</style>
+<script>window.__PAGE = 'home';</script>
 </head>
-<body class="home-page">
-
+<body>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><rect width="400" height="400" fill="#7A8B6F"/><path d="M120 208l80-64 80 64v76a8 8 0 0 1-8 8h-56v-56h-32v56h-56a8 8 0 0 1-8-8z" fill="#FBF8F1"/><circle cx="200" cy="132" r="16" fill="#C4622D"/></svg></template>
 <div id="site-nav"></div>
 
 <!-- ========== HERO ========== -->
-<section class="hero-v4">
-  <div class="hero-v4-card">
-    <div class="hero-v4-grid">
-
-      <!-- LEFT: eyebrow + heading + rule + subtext + CTAs -->
-      <div class="hero-v4-left">
-        <p class="hero-eyebrow-row">Pediatric SLP &middot; Tempe &amp; Scottsdale, AZ</p>
-
-        <h1 class="hero-v4-heading">
-          Speech therapy<br>that starts with<br>connection.
-        </h1>
-
-        <hr class="hero-v4-rule" aria-hidden="true">
-
-        <p class="hero-v4-sub">
-          Personalized speech therapy for children, delivered in the places they live, learn, and grow&mdash;so communication comes more naturally, every day.
+<style>
+  /* Make hero (frame + reviews band) fit the initial viewport */
+  .hero.hero-v2 {
+    min-height: var(--hero-fit-h, calc(100svh - 72px));
+  }
+  .hero.hero-v2 .hero-v2-frame {
+    padding-top: clamp(20px, 3vw, 36px);
+    padding-bottom: clamp(8px, 1vw, 14px);
+    align-items: center;
+  }
+</style>
+<section class="hero hero-v2">
+  <div class="hero-v2-frame">
+    <div class="hero-v2-inner">
+      <div class="hero-v2-text reveal in">
+        <h1 class="hero-v2-eyebrow">Pediatric Speech Therapy in Arizona</h1>
+        <p class="hero-v2-display">
+          <span class="hero-v2-line">Help Your Child Feel Heard</span>
+          <span class="hero-v2-line">Understood, and More</span>
+          <span class="hero-v2-line">Confident in Everyday Life</span>
         </p>
-
-        <div class="hero-v4-ctas">
-          <a class="btn-book" href="contact.html">
-            Book a Free Call
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        <p class="hero-v2-lead">If communication challenges leave you guessing what your child needs, we help you understand what is happening and find a clear next step. Our child-led speech therapy is built around your child, your family, and the moments that matter in everyday life.</p>
+        <div class="hero-v2-ctas">
+          <a class="hiw-step-cta" href="contact.html">
+            Book a Free 15-Min Call
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg>
           </a>
-          <a class="btn-meet" href="about.html">
-            Meet Madison
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          <a class="hero-v2-phone-cta" href="tel:4804904812" aria-label="Call us at 480-490-4812">
+            <span class="hero-v2-phone-pre">Call/Text</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <span>480-490-4812</span>
           </a>
         </div>
+        <ul class="hero-v2-points" aria-label="What you can expect">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="8 12 11 15 16 9"/></svg> Simple strategies for home</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="8 12 11 15 16 9"/></svg> Flexible scheduling</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="8 12 11 15 16 9"/></svg> Open communication</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="8 12 11 15 16 9"/></svg> Parent coaching included</li>
+        </ul>
+      </div>
+      <div class="hero-v2-image reveal in">
+        <picture>
+          <source media="(max-width: 560px)" srcset="assets/hero-handprints-440.webp">
+          <source media="(max-width: 960px)" srcset="assets/hero-handprints-560.webp">
+          <img src="assets/hero-handprints.webp" alt="Watercolor handprints in sage green and peach: a parent and child hand together" width="820" height="820" fetchpriority="high" decoding="async">
+        </picture>
+      </div>
+    </div>
+  </div>
+  <!-- Review band (matches city pages) -->
+<style>
+.hero.hero-v2 .hero-v2-reviews{background:var(--sky-100);background-image:none;color:inherit;border-bottom:0;padding:clamp(14px,1.8vw,22px) clamp(20px,4vw,48px) clamp(18px,2.2vw,28px)}
+.hero.hero-v2 .hero-v2-reviews-inner{display:grid;grid-template-columns:1fr 1fr;max-width:1060px;margin:0 auto;align-items:stretch}
+.hz-cquote{padding:4px 20px 4px 0}
+.hz-cquote+.hz-cquote{border-left:1px solid rgba(45,58,35,.14);padding-left:20px}
+.hz-cquote .q{font-family:var(--font-heading);font-size:12.5px;font-weight:600;line-height:1.4;letter-spacing:-.01em;color:var(--sage-800);margin:0 0 8px;text-wrap:pretty;font-style:normal}
+.hz-cquote .a{display:flex;align-items:center;gap:8px}
+.hz-cquote .nm{font-family:var(--font-heading);font-weight:700;font-size:11px;color:var(--brand-ink)}
+.hz-cquote .st{color:var(--sun-500);letter-spacing:1.5px;font-size:10.5px}
+.hz-cquote .g{width:14px;height:14px;flex:none}
+@media (max-width:820px){
+.hero.hero-v2 .hero-v2-reviews-inner{grid-template-columns:1fr}
+.hz-cquote{padding:12px 0}
+.hz-cquote+.hz-cquote{border-left:0;padding-left:0;border-top:1px solid rgba(45,58,35,.14)}
+}
+</style>
+<div class="hero-v2-reviews" aria-label="What families are saying">
+  <div class="hero-v2-reviews-inner">
+    <div class="hz-cquote"><blockquote class="q">&ldquo;I&rsquo;ve already noticed a difference in my son&rsquo;s enunciation.&rdquo;</blockquote><div class="a"><svg class="g" viewBox="0 0 48 48" aria-hidden="true"><path fill="#4285F4" d="M44.5 20H24v8.5h11.8C34.7 33 30 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3 0 5.7 1.1 7.8 3l6-6C34.6 6.1 29.6 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20c10.5 0 19.5-7.6 19.5-20 0-1.3-.2-2.7-.5-4z"></path><path fill="#34A853" d="M6.3 14.7l6.6 4.8C14.7 16 19 13 24 13c3 0 5.7 1.1 7.8 3l6-6C34.6 6.1 29.6 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"></path><path fill="#FBBC05" d="M24 44c5.5 0 10.5-2.1 14.3-5.6l-6.6-5.4C29.6 34.6 27 36 24 36c-6 0-10.7-3-12.6-7.5l-6.6 5.1C8.6 39.7 15.7 44 24 44z"></path><path fill="#EA4335" d="M44.5 20H24v8.5h11.8c-1.1 3.2-3.3 5.6-6.1 7l6.6 5.4C40.3 37 44 31.2 44 24c0-1.3-.2-2.7-.5-4z"></path></svg><span class="nm">Jessica C. &middot; Parent</span><span class="st" aria-label="5 out of 5 stars">★★★★★</span></div></div>
+    <div class="hz-cquote"><blockquote class="q">&ldquo;Speech can be stressful, but my son looked forward to his sessions!&rdquo;</blockquote><div class="a"><svg class="g" viewBox="0 0 48 48" aria-hidden="true"><path fill="#4285F4" d="M44.5 20H24v8.5h11.8C34.7 33 30 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3 0 5.7 1.1 7.8 3l6-6C34.6 6.1 29.6 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20c10.5 0 19.5-7.6 19.5-20 0-1.3-.2-2.7-.5-4z"></path><path fill="#34A853" d="M6.3 14.7l6.6 4.8C14.7 16 19 13 24 13c3 0 5.7 1.1 7.8 3l6-6C34.6 6.1 29.6 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"></path><path fill="#FBBC05" d="M24 44c5.5 0 10.5-2.1 14.3-5.6l-6.6-5.4C29.6 34.6 27 36 24 36c-6 0-10.7-3-12.6-7.5l-6.6 5.1C8.6 39.7 15.7 44 24 44z"></path><path fill="#EA4335" d="M44.5 20H24v8.5h11.8c-1.1 3.2-3.3 5.6-6.1 7l6.6 5.4C40.3 37 44 31.2 44 24c0-1.3-.2-2.7-.5-4z"></path></svg><span class="nm">Sabrina M. &middot; Parent</span><span class="st" aria-label="5 out of 5 stars">★★★★★</span></div></div>
+  </div>
+</div>
+</section>
+
+
+
+<!-- ========== CLARITY (pain-points, simplified) ========== -->
+<section class="cl-section" data-screen-label="Clarity" aria-labelledby="cl-headline">
+  <div class="cl-container">
+    <div class="cl-row reveal">
+
+      <!-- LEFT: photograph -->
+      <div class="cl-photo">
+        <img src="assets/clarity-mother-child.webp"
+             alt="A mother and her young daughter smiling and talking together on the floor, with picture cards laid out in front of them in a warm sunlit living room."
+             loading="lazy">
       </div>
 
-      <!-- RIGHT: illustration — pulled left so waves drift behind headline -->
-      <div class="hero-v4-right">
-        <img
-          src="assets/1d9e7df4-c956-4577-840c-eaffa61be9c3.png?v=4"
-          alt="Watercolor illustration of a child speaking with flowing sound waves"
-          class="hero-v4-img"
-          loading="eager"
-          width="1672"
-          height="941"
-        >
+      <!-- RIGHT: content -->
+      <div class="cl-content">
+
+        <h2 id="cl-headline" class="cl-headline">
+          When communication feels hard, the right support brings <span class="cl-headline-hand">clarity</span>
+        </h2>
+
+        <p class="cl-intro">Maybe your child is hard to understand, not using as many words as expected, or getting frustrated when they cannot get their message across. You should not have to keep wondering what is going on or what to do next.</p>
+
+        <ul class="cl-bullets" role="list">
+          <li><span class="cl-dot" aria-hidden="true"></span>It may be speech that is difficult for others to understand.</li>
+          <li><span class="cl-dot" aria-hidden="true"></span>It may be trouble talking, understanding, stuttering, or connecting with others.</li>
+          <li><span class="cl-dot" aria-hidden="true"></span>It may be affecting confidence, routines, school, or relationships.</li>
+        </ul>
+
+        <p class="cl-intro">We help you understand what your child is experiencing and what kind of support may help. Then we give you clear, realistic next steps so you can move forward with confidence.</p>
+
+        <div class="hero-v2-ctas">
+          <a class="cl-cta-btn" href="contact.html">
+          Get Some Clarity
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg>
+        </a>
+          <a class="hero-v2-phone-cta" href="tel:4804904812" aria-label="Call or text us at 480-490-4812">
+            <span class="hero-v2-phone-pre">Call/Text</span>
+            <span>480-490-4812</span>
+          </a>
+        </div>
+
       </div>
 
-    </div><!-- end hero-v4-grid -->
+    </div>
+  </div>
+</section>
 
-    <!-- TRUST STRIP — full-width below the grid, inside the card -->
-    <div class="hero-trust-card">
-      <div class="hero-trust-services">
-        <div class="hero-trust-item">
-          <div class="hero-trust-icon" aria-hidden="true">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg>
-          </div>
-          <span class="hero-trust-label">In-Home<br>Therapy</span>
-        </div>
-        <div class="hero-trust-item">
-          <div class="hero-trust-icon" aria-hidden="true">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.4"/><path d="M3 19c0-3 3-5 6-5s6 2 6 5"/><path d="M15 19c0-2 2-3.5 4-3.5"/></svg>
-          </div>
-          <span class="hero-trust-label">Community-<br>Based</span>
-        </div>
-        <div class="hero-trust-item">
-          <div class="hero-trust-icon" aria-hidden="true">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="13" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-          </div>
-          <span class="hero-trust-label">Teletherapy<br>Options</span>
-        </div>
-        <div class="hero-trust-item">
-          <div class="hero-trust-icon" aria-hidden="true">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-          </div>
-          <span class="hero-trust-label">Family<br>Centered</span>
-        </div>
+<!-- ========== OUR APPROACH ========== -->
+<style>
+  .approach-section { background: var(--white); padding: clamp(28px, 3.2vw, 48px) 0; }
+  .approach-grid {
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    gap: clamp(38px, 5.6vw, 88px);
+    align-items: center;
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 clamp(20px, 4vw, 52px);
+  }
+  .approach-eyebrow {
+    display: inline-block;
+    background: rgba(108, 129, 89, 0.16);
+    color: #4a5c3c;
+    font-family: var(--font-body);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 999px;
+  }
+  .approach-headline {
+    font-family: var(--font-heading);
+    font-size: clamp(26px, 3.2vw, 38px);
+    font-weight: 600;
+    letter-spacing: -0.022em;
+    line-height: 1.1;
+    color: var(--sage-800);
+    margin: 0 0 24px;
+    text-wrap: balance;
+  }
+  .approach-copy p {
+    font-size: 14px;
+    line-height: 1.65;
+    color: var(--fg-2, #4a4a44);
+    margin: 0 0 14px;
+  }
+  .approach-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 18px;
+    padding: 14px 24px;
+    background: #c7541f;
+    color: #fff8ee;
+    border-radius: 999px;
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 13.5px;
+    text-decoration: none;
+    box-shadow: 0 10px 22px -10px rgba(199, 84, 31, 0.55);
+    transition: transform .2s ease, box-shadow .2s ease;
+  }
+  .approach-cta:hover { transform: translateY(-1px); box-shadow: 0 14px 28px -12px rgba(199, 84, 31, 0.65); }
+  .approach-cta svg { width: 16px; height: 16px; }
+
+  .approach-divider {
+    margin-top: 44px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .approach-divider-line { flex: 1; height: 1px; background: rgba(45, 58, 35, 0.18); }
+  .approach-divider-leaf {
+    width: 28px; height: 28px; color: #6c8159;
+    display: inline-flex; align-items: center; justify-content: center;
+  }
+  .approach-tagline {
+    margin-top: 18px;
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-size: 15px;
+    color: #2d3a23;
+    line-height: 1.5;
+  }
+
+  .approach-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .approach-card {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 24px;
+    padding: 24px 30px 24px 24px;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.02), 0 18px 32px -22px rgba(45, 58, 35, 0.18);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .approach-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 1px 0 rgba(0,0,0,0.02), 0 24px 40px -22px rgba(45, 58, 35, 0.28);
+  }
+  /* Per-card tints + blob shapes, echoing the services section */
+  .approach-card:nth-child(1) {
+    background: var(--sage-100);
+    border-radius: 80px 24px 80px 24px;
+  }
+  .approach-card:nth-child(2) {
+    background: var(--cream-200);
+    border-radius: 24px 80px 24px 80px;
+  }
+  .approach-card:nth-child(3) {
+    background: var(--sky-100, #e3edf2);
+    border-radius: 80px 80px 24px 24px / 90px 90px 24px 24px;
+  }
+  /* Soften the icon backdrop so it disappears into each card's tint */
+  .approach-card .approach-card-icon {
+    background: rgba(255, 255, 255, 0.45);
+  }
+  .approach-card-icon {
+    width: 105px; height: 105px;
+    display: inline-flex; align-items: center; justify-content: center;
+    background: rgba(108, 129, 89, 0.12);
+    border-radius: 50%;
+    color: #2d3a23;
+    flex: none;
+    overflow: hidden;
+  }
+  .approach-card-icon svg { width: 36px; height: 36px; }
+  .approach-card-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 50%;
+    transform: scale(1.38);
+    transform-origin: center center;
+  }
+  .approach-card-title {
+    font-family: var(--font-hand, cursive);
+    font-size: clamp(21px, 1.6vw, 23px);
+    font-weight: 600;
+    color: var(--sage-800);
+    margin: 0 0 8px;
+    letter-spacing: -0.012em;
+  }
+  .approach-card-desc {
+    font-size: 12.5px;
+    line-height: 1.6;
+    color: var(--fg-2, #4a4a44);
+    margin: 0;
+  }
+
+  @media (max-width: 960px) {
+    .approach-grid { grid-template-columns: 1fr; gap: 16px; }
+    .approach-cards { order: 1; margin-top: 8px; }
+    .approach-grid > div:first-child > .hero-v2-ctas { order: 2; justify-content: center; }
+    .approach-grid > div:first-child { display: contents; }
+    .approach-card { padding: 20px; gap: 18px; }
+    .approach-card-icon { width: 85px; height: 85px; }
+    .approach-card-icon svg { width: 28px; height: 28px; }
+  }
+</style>
+
+<section class="approach-section" data-screen-label="Our Approach">
+  <div class="approach-grid">
+
+    <!-- LEFT: text -->
+    <div class="reveal">
+      <h2 class="approach-headline">We build communication through connection, not pressure</h2>
+
+      <div class="approach-copy">
+        <p>Your child does not need more pressure to perform. They need support that helps them feel safe, understood, and ready to communicate.</p>
+        <p>Our therapy is child-led, play-based, and built around real-life moments. We use your child's interests, strengths, and natural communication style to build confidence and skills that carry into home, school, and the community.</p>
       </div>
 
-      <div class="hero-trust-divider" aria-hidden="true"></div>
-
-      <div class="hero-trust-message">
-        <div class="hero-trust-mark" aria-hidden="true">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c0-7 4-11 10-11-1 6-5 11-10 11z"/><path d="M12 22c-1-6-4-11-10-11 0 7 4 11 10 11z"/><path d="M12 22V11"/></svg>
-        </div>
-        <p>Trusted by families. Built on connection.<br>Focused on your child&rsquo;s potential.</p>
+      <div class="hero-v2-ctas">
+        <a class="cl-cta-btn" href="contact.html">
+        Tell Us What&rsquo;s Going On
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg>
+      </a>
+        <a class="hero-v2-phone-cta" href="tel:4804904812" aria-label="Call or text us at 480-490-4812">
+          <span class="hero-v2-phone-pre">Call/Text</span>
+          <span>480-490-4812</span>
+        </a>
       </div>
     </div>
 
-  </div><!-- end hero-v4-card -->
-</section>
+    <!-- RIGHT: three cards -->
+    <div class="approach-cards reveal">
 
-<!-- ========== A SAFE SPACE (intro band) ========== -->
-<section class="section section-cream">
-  <div class="container">
-    <div style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 56px; align-items: center;" class="safe-grid">
-      <div class="reveal">
-        <span class="eyebrow-sage">Who we are</span>
-        <h2 style="font-family: var(--font-heading); font-size: clamp(30px, 4vw, 52px); font-weight: 500; letter-spacing: -0.02em; line-height: 1.05; color: var(--brand-ink); margin: 14px 0 20px;">
-          A safe space to <em style="font-family: var(--font-display); font-style: normal; color: var(--clay-400);">be yourself.</em>
-        </h2>
-        <p style="font-size: 18px; line-height: 1.65; color: var(--fg-2);">
-          Social House is a pediatric speech-language pathology practice built on a simple idea:
-          <strong style="color: var(--ink-900);">communication begins with connection.</strong>
-          We meet each child where they are — at home, online, or in the community — and
-          partner with caregivers so new skills carry into everyday moments.
-        </p>
-        <div style="margin-top: 24px; display: flex; gap: 12px; flex-wrap: wrap;">
-          <a class="btn btn-outline" href="about.html">Learn about us</a>
-          <a class="btn btn-ghost" href="services.html">Explore services →</a>
+      <div class="approach-card">
+        <div class="approach-card-icon" aria-hidden="true">
+          <img src="assets/approach-child-led.webp" alt="" loading="lazy">
+        </div>
+        <div>
+          <h3 class="approach-card-title">Consistent, Child-Led Care</h3>
+          <p class="approach-card-desc">Purposeful sessions shaped around your child&rsquo;s goals, interests, communication style, and comfort.</p>
         </div>
       </div>
-      <div class="reveal" style="position: relative;">
-        <div style="border-radius: 32px; overflow: hidden; aspect-ratio: 5/4; box-shadow: var(--shadow-md);">
-          <img src="https://images.unsplash.com/photo-1503919545889-aef636e10ad4?w=1200&auto=format&fit=crop&q=80"
-               alt="Child and parent playing together at home"
-               style="width: 100%; height: 100%; object-fit: cover;">
+
+      <div class="approach-card">
+        <div class="approach-card-icon" aria-hidden="true">
+          <img src="assets/approach-connection-focused.webp" alt="" loading="lazy">
         </div>
-        <div style="position: absolute; bottom: -18px; right: -10px; background: var(--sage-500); color: var(--cream-50); padding: 16px 22px; border-radius: 20px; font-family: var(--font-hand); font-size: 26px; line-height: 1; transform: rotate(-3deg); box-shadow: var(--shadow-md);">connection first</div>
+        <div>
+          <h3 class="approach-card-title">Meaningful Clinical Goals</h3>
+          <p class="approach-card-desc">Goals focus on what your child needs and what will make everyday life easier.</p>
+        </div>
+      </div>
+
+      <div class="approach-card">
+        <div class="approach-card-icon" aria-hidden="true">
+          <img src="assets/approach-real-life.webp" alt="" loading="lazy">
+        </div>
+        <div>
+          <h3 class="approach-card-title">Real-Life Family Support</h3>
+          <p class="approach-card-desc">You receive practical strategies that fit naturally into routines you already have.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========== WHAT FAMILIES NOTICE (outcome strip) ========== -->
+<style>
+  .wfn-section{background:var(--clay-100,#f3e3d4);padding:clamp(18px,2vw,28px) clamp(20px,3.2vw,40px);overflow:hidden}
+  .wfn-container{max-width:1240px;margin:0 auto}
+  .wfn-grid{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:10px 28px}
+  .wfn-card{display:flex;align-items:center;gap:28px}
+  .wfn-card::before{content:"";width:9px;height:9px;border-radius:50%;flex:0 0 auto}
+  .wfn-card:nth-child(4n+1)::before{background:var(--sky-500,#6fa3bd)}
+  .wfn-card:nth-child(4n+2)::before{background:var(--sage-500,#6c8a6e)}
+  .wfn-card:nth-child(4n+3)::before{background:var(--clay-400,#d98a5f)}
+  .wfn-card:nth-child(4n+4)::before{background:var(--sun-500,#e3b93c)}
+  .wfn-card p{margin:0;font-family:var(--font-hand,cursive);font-size:clamp(19px,1.6vw,23px);font-weight:600;line-height:1.2;color:var(--sage-800);white-space:nowrap}
+  @media (min-width:821px){.wfn-card:first-child::before{display:none}}
+  @media (max-width:820px){
+    .wfn-section{padding-left:0;padding-right:0}
+    .wfn-container{overflow:visible;max-width:none}
+    .wfn-grid{flex-wrap:nowrap;justify-content:flex-start;gap:0;width:max-content;animation:wfn-marquee 22s linear infinite}
+    .wfn-card{flex:0 0 auto;gap:22px;padding:0;margin-right:22px}
+    .wfn-card p{white-space:nowrap}
+  }
+  @keyframes wfn-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+</style>
+
+<section class="wfn-section" data-screen-label="What Families Notice" aria-label="What families notice">
+  <div class="wfn-container">
+    <div class="wfn-grid reveal">
+      <div class="wfn-card">
+        <p>More child-started moments</p>
+      </div>
+      <div class="wfn-card">
+        <p>Less guessing</p>
+      </div>
+      <div class="wfn-card">
+        <p>Calmer everyday routines</p>
+      </div>
+      <div class="wfn-card">
+        <p>Progress that carries over</p>
+      </div>
+    </div>
+  </div>
+  <script>
+  (function(){
+    var mq=window.matchMedia('(max-width: 820px)');
+    var grid=document.querySelector('.wfn-grid');
+    var clones=[];
+    function sync(){
+      if(mq.matches&&!clones.length){
+        Array.prototype.slice.call(grid.children).forEach(function(c){var k=c.cloneNode(true);k.setAttribute('aria-hidden','true');k.setAttribute('data-wfn-clone','');clones.push(k);grid.appendChild(k);});
+      } else if(!mq.matches&&clones.length){
+        clones.forEach(function(k){if(k.parentNode)k.parentNode.removeChild(k);});
+        clones=[];
+      }
+    }
+    (mq.addEventListener?mq.addEventListener('change',sync):mq.addListener(sync));
+    sync();
+  })();
+  </script>
+</section>
+
+<!-- ========== MEET MADISON ========== -->
+<style>
+  .meet-madison {
+    background: var(--sage-100);
+    padding: clamp(36px, 4.4vw, 60px) 28px;
+    position: relative;
+    overflow: hidden;
+  }
+  .meet-madison::before {
+    /* soft sage wash on the right side */
+    content: "";
+    position: absolute;
+    inset: 0 -10% 0 auto;
+    width: 46%;
+    background: radial-gradient(ellipse at 30% 50%, var(--sage-100) 0%, transparent 70%);
+    opacity: 0.55;
+    pointer-events: none;
+  }
+  .meet-madison-inner {
+    position: relative;
+    max-width: 980px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    gap: clamp(32px, 4.8vw, 70px);
+    align-items: center;
+  }
+
+  /* ---- Image side ---- */
+  .mm-portrait-wrap {
+    position: relative;
+    padding: 18px 14px 22px 18px;
+  }
+  .mm-portrait-wrap::before {
+    /* sage-100 offset frame behind portrait */
+    content: "";
+    position: absolute;
+    inset: 8px 32px 40px 0;
+    background: var(--sage-200);
+    border-radius: var(--radius-blob, 42% 58% 38% 62% / 48% 42% 58% 52%);
+    transform: rotate(-3deg);
+    z-index: 0;
+  }
+  .mm-portrait {
+    position: relative;
+    z-index: 1;
+    aspect-ratio: 4 / 5;
+    border-radius: 42% 58% 44% 56% / 48% 44% 56% 52%;
+    overflow: hidden;
+    background: var(--cream-50);
+    box-shadow: var(--shadow-lg);
+    transform: rotate(1.2deg);
+  }
+  .mm-portrait img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 18%;
+    display: block;
+    filter: saturate(1.02) contrast(1.02);
+  }
+  /* little floating note */
+  .mm-note {
+    position: absolute;
+    z-index: 2;
+    bottom: 8px;
+    left: -8px;
+    background: var(--white);
+    border-radius: 16px;
+    padding: 10px 14px 12px;
+    box-shadow: var(--shadow-md);
+    transform: rotate(-3deg);
+    max-width: 180px;
+    border: 1px solid var(--border-subtle);
+  }
+  .mm-note-label {
+    display: block;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--sage-600);
+    margin-bottom: 4px;
+  }
+  .mm-note-name {
+    font-family: var(--font-heading);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--ink-900);
+    line-height: 1.25;
+  }
+  .mm-note-cred {
+    font-family: var(--font-hand);
+    font-size: 18px;
+    color: var(--clay-500);
+    line-height: 1;
+    margin-top: 2px;
+    display: block;
+  }
+  /* sun accent dot */
+  .mm-portrait-wrap::after {
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: 2px;
+    width: 62px;
+    height: 62px;
+    background: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cg fill='none' stroke='%23F2C14E' stroke-width='4' stroke-linecap='round'%3E%3Cline x1='32' y1='4' x2='32' y2='13'/%3E%3Cline x1='32' y1='51' x2='32' y2='60'/%3E%3Cline x1='4' y1='32' x2='13' y2='32'/%3E%3Cline x1='51' y1='32' x2='60' y2='32'/%3E%3Cline x1='12.2' y1='12.2' x2='18.5' y2='18.5'/%3E%3Cline x1='45.5' y1='45.5' x2='51.8' y2='51.8'/%3E%3Cline x1='51.8' y1='12.2' x2='45.5' y2='18.5'/%3E%3Cline x1='18.5' y1='45.5' x2='12.2' y2='51.8'/%3E%3C/g%3E%3Ccircle cx='32' cy='32' r='13' fill='%23F2C14E'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: contain;
+    border-radius: 0;
+    z-index: 0;
+    opacity: 0.95;
+  }
+
+  /* ---- Text side ---- */
+  .mm-text { min-width: 0; }
+  .mm-eyebrow {
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--sage-600);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .mm-eyebrow::before {
+    content: "";
+    width: 28px;
+    height: 2px;
+    background: var(--clay-400);
+    border-radius: 2px;
+  }
+  .mm-title {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: clamp(32px, 4vw, 48px);
+    line-height: 1.1;
+    letter-spacing: -0.022em;
+    color: var(--sage-800);
+    margin: 14px 0 0;
+    text-wrap: balance;
+  }
+  .mm-title .mm-title-hand {
+    font-family: var(--font-hand);
+    font-weight: 400;
+    color: var(--clay-500);
+    font-size: 1.08em;
+    line-height: 1;
+    display: inline-block;
+    padding-right: 0.1em;
+  }
+  .mm-lede {
+    font-family: var(--font-body);
+    font-size: 14px;
+    line-height: 1.65;
+    color: var(--ink-700);
+    margin: 18px 0 0;
+    max-width: 60ch;
+  }
+  .mm-lede strong { color: var(--ink-900); font-weight: 600; }
+
+  .mm-noticed {
+    margin: 22px 0 0;
+    padding: 18px 20px 20px;
+    background: var(--white);
+    border: 1px solid var(--border-subtle);
+    border-radius: 18px;
+    box-shadow: var(--shadow-sm);
+    position: relative;
+  }
+  .mm-noticed-label {
+    display: inline-block;
+    font-family: var(--font-hand);
+    font-size: 19px;
+    color: var(--sage-700);
+    line-height: 1;
+    margin-bottom: 10px;
+    transform: rotate(-1.5deg);
+  }
+  .mm-noticed-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 18px;
+  }
+  .mm-noticed-list li {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    font-size: 12px;
+    line-height: 1.55;
+    color: var(--ink-700);
+  }
+  .mm-noticed-list svg {
+    flex: 0 0 auto;
+    width: 18px;
+    height: 18px;
+    color: var(--sage-600);
+    margin-top: 2px;
+  }
+  .mm-noticed-list b { color: var(--ink-900); font-weight: 600; }
+
+  .mm-close {
+    font-family: var(--font-body);
+    font-size: 13px;
+    line-height: 1.65;
+    color: var(--ink-700);
+    margin: 18px 0 0;
+    max-width: 60ch;
+  }
+
+  .mm-ctas {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 22px;
+    align-items: center;
+  }
+  .mm-cta-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--sage-600);
+    color: var(--cream-50);
+    text-decoration: none;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 13px;
+    padding: 11px 18px;
+    border-radius: var(--radius-pill);
+    transition: background 200ms var(--ease-out), transform 200ms var(--ease-out);
+  }
+  .mm-cta-primary:hover { background: var(--sage-700); transform: translateY(-1px); }
+  .mm-cta-primary svg { width: 14px; height: 14px; }
+  .mm-cta-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #000;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 13px;
+    padding: 11px 6px;
+    transition: transform 200ms var(--ease-out);
+  }
+  .mm-cta-secondary:hover { color: #000; transform: translateY(-3px); }
+
+  @media (max-width: 880px) {
+    .meet-madison { padding: 20px 22px; }
+    .meet-madison-inner { grid-template-columns: 1fr; gap: 24px; }
+    .mm-portrait-wrap { max-width: 360px; margin: 0 auto; order: 1; width: 100%; }
+    .mm-text { display: contents; }
+    .mm-title { order: 0; margin-bottom: 0; text-align: center; }
+    .meet-madison .mm-creds { order: 2; margin: 0; padding-top: 0; border-top: 0; justify-content: center; flex-wrap: nowrap; gap: 12px; }
+    .meet-madison .mm-creds img { height: 34px; }
+    .mm-lede { order: 3; margin: 0; }
+    .mm-close { order: 4; margin: 0; }
+    .mm-ctas { order: 5; margin: 0; flex-direction: column; justify-content: center; align-items: center; gap: 14px; }
+    .mm-noticed-list { grid-template-columns: 1fr; gap: 10px; }
+  }
+  .mm-creds {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px 28px;
+    margin-top: 22px;
+    padding-top: 18px;
+    border-top: 1px solid rgba(75, 99, 71, 0.16);
+  }
+  .mm-creds img {
+    height: 40px;
+    width: auto;
+    display: block;
+    mix-blend-mode: multiply;
+    opacity: 0.85;
+  }
+  /* ---- Review card on portrait (matches about page format) ---- */
+  .mm-review { position: absolute; bottom: -34px; right: -10px; left: auto; width: min(360px, 104%); margin: 0; z-index: 3; background: var(--white, #fff); border: 1px solid var(--border-subtle); border-radius: 36px 14px 36px 14px; padding: 16px 44px 16px 20px; box-shadow: 0 18px 40px -22px rgba(45,58,35,0.4); }
+  .mm-review-g { position: absolute; top: 14px; right: 16px; width: 18px; height: 18px; opacity: 0.95; }
+  .mm-review-pull { font-family: var(--font-heading); font-size: 14px; font-weight: 600; line-height: 1.4; letter-spacing: -0.01em; color: var(--sage-800); margin: 0 0 10px; text-wrap: pretty; }
+  .mm-review-attr { display: flex; align-items: center; gap: 10px; min-width: 0; }
+  .mm-review-avatar { width: 34px; height: 34px; border-radius: 999px; background: var(--clay-400); color: var(--cream-50, #fff); font-family: var(--font-heading); font-weight: 700; font-size: 14px; display: grid; place-items: center; flex-shrink: 0; }
+  .mm-review-name { font-family: var(--font-heading); font-weight: 700; font-size: 13px; color: var(--brand-ink, #2f3a27); line-height: 1.15; }
+  .mm-review-sub { font-size: 11px; color: var(--fg-3, #6b6b63); line-height: 1.2; }
+  .mm-review-stars { color: var(--sun-500); letter-spacing: 1.5px; font-size: 13px; line-height: 1; margin-left: auto; flex-shrink: 0; }
+  @media (max-width: 880px) {
+    .mm-review { position: relative; bottom: auto; right: auto; width: min(340px, 94%); margin: -70px auto 24px 0; }
+  }
+</style>
+<section class="section meet-madison" id="meet-madison">
+  <div class="meet-madison-inner">
+    <div class="mm-portrait-wrap reveal">
+      <div class="mm-portrait">
+        <img src="assets/madison-jeffery.webp" alt="Madison Jeffery, CCC-SLP, founder of Social House Therapy" width="1000" height="1409" loading="lazy" decoding="async">
+      </div>
+      <figure class="mm-review">
+        <svg class="mm-review-g" viewBox="0 0 48 48" aria-hidden="true"><path fill="#4285F4" d="M44.5 20H24v8.5h11.8C34.7 33 30 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3 0 5.7 1.1 7.8 3l6-6C34.6 6.1 29.6 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20c10.5 0 19.5-7.6 19.5-20 0-1.3-.2-2.7-.5-4z"/><path fill="#34A853" d="M6.3 14.7l6.6 4.8C14.7 16 19 13 24 13c3 0 5.7 1.1 7.8 3l6-6C34.6 6.1 29.6 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#FBBC05" d="M24 44c5.5 0 10.5-2.1 14.3-5.6l-6.6-5.4C29.6 34.6 27 36 24 36c-6 0-10.7-3-12.6-7.5l-6.6 5.1C8.6 39.7 15.7 44 24 44z"/><path fill="#EA4335" d="M44.5 20H24v8.5h11.8c-1.1 3.2-3.3 5.6-6.1 7l6.6 5.4C40.3 37 44 31.2 44 24c0-1.3-.2-2.7-.5-4z"/></svg>
+        <blockquote class="mm-review-pull">&ldquo;She is so patient and kind and really knows how to connect with her students.&rdquo;</blockquote>
+        <figcaption class="mm-review-attr">
+          <div class="mm-review-avatar" aria-hidden="true">C</div>
+          <div>
+            <div class="mm-review-name">Cynthia L.</div>
+            <div class="mm-review-sub">Parent</div>
+          </div>
+          <span class="mm-review-stars" aria-label="5 out of 5 stars">★★★★★</span>
+        </figcaption>
+      </figure>
+    </div>
+
+    <div class="mm-text reveal" data-delay="1">
+      <h2 class="mm-title">
+        This is Madison,<br>
+        <span class="mm-title-hand" style="font-family: var(--font-heading); font-style: normal; font-weight: inherit; color: inherit; transform: none; display: inline;">the SLP behind</span><br>
+        <span class="mm-title-hand">Social House Therapy.</span>
+      </h2>
+
+      <p class="mm-lede">
+        <strong>Madison Jeffery, CCC-SLP</strong> believes progress starts with feeling seen. She meets your child with <strong>patience and play</strong>, along with simple steps you can use right away. Families say sessions with Madison are calm, engaging, and tailored to their child's interests.
+      </p>
+
+      <p class="mm-close">
+        Madison has helped Arizona families see meaningful wins: speech that friends can understand, gestures turning into words, AAC used independently, and teachers noticing new participation. She turns big goals into small next actions you can start this week, and celebrates progress you can actually feel.
+      </p>
+
+      <div class="mm-ctas">
+        <a class="cl-cta-btn" href="contact.html">
+          Let&rsquo;s Talk
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="13 6 19 12 13 18"></polyline></svg>
+        </a>
+        <a class="mm-cta-secondary" href="about.html#our-story">Learn about our story →</a>
+      </div>
+
+      <div class="mm-creds" aria-label="Professional credentials and memberships">
+        <img src="assets/asha-ccc-slp.webp" alt="CCC-SLP, ASHA Certified Speech-Language Pathologist" loading="lazy" decoding="async">
+        <img src="assets/arsha-logo.png" alt="ArSHA, Arizona Speech-Language-Hearing Association member" loading="lazy" decoding="async">
       </div>
     </div>
   </div>
 </section>
+
+<!-- ========== WHEN TO REACH OUT (services grid) ========== -->
+<style>
+  .wtr-services { background: var(--sky-100, #E3EEF3); padding: clamp(20px, 2.4vw, 32px) 0; }
+  .wtr-services-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: clamp(12px, 1.6vw, 24px) clamp(22px, 4vw, 56px);
+  }
+  .wtr-services-head {
+    text-align: left;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 24px 40px;
+    flex-wrap: wrap;
+    margin: 0 0 clamp(32px, 4vw, 52px);
+  }
+  .wtr-services-head-main { max-width: 720px; }
+  @media (min-width: 861px) {
+    .wtr-services-head { flex-wrap: nowrap; }
+    .wtr-services-head-main { flex: 0 1 auto; min-width: 0; }
+  }
+  .wtr-services-head-alt {
+    align-self: stretch;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+  }
+  .wtr-services-headline {
+    font-family: var(--font-heading);
+    font-size: clamp(26px, 3.2vw, 38px);
+    font-weight: 600;
+    letter-spacing: -0.022em;
+    line-height: 1.1;
+    color: var(--sage-800);
+    margin: 0 0 18px;
+    text-wrap: balance;
+  }
+  .wtr-services-sub {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--fg-2, #4a4a44);
+    margin: 0;
+  }
+  @media (min-width:861px){.wtr-services-head-alt{flex:0 0 auto}.wtr-services-head-alt .mm-cta-secondary{white-space:nowrap}}
+  .wtr-services-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 clamp(30px,4.5vw,68px)}
+  .wtr-service-card{display:grid;grid-template-columns:34px 1fr auto;gap:14px;align-items:baseline;padding:17px 6px;border-bottom:1px solid rgba(45,58,35,.16);text-decoration:none;transition:background .2s var(--ease-out)}
+  a.wtr-service-card:hover{background:rgba(255,255,255,.55)}
+  .wtr-service-num{font-family:var(--font-hand);font-size:19px;font-weight:600;color:var(--clay-500);line-height:1}
+  .wtr-service-title{font-family:var(--font-heading);font-size:clamp(15px,1.3vw,17px);font-weight:600;letter-spacing:-.012em;color:var(--sage-800);margin:0 0 3px;line-height:1.25}
+  .wtr-service-desc{font-size:12px;line-height:1.5;color:var(--fg-2,#4a4a44);margin:0}
+  .wtr-service-arrow{color:var(--sage-800);font-size:15px;line-height:1;transition:transform .25s var(--ease-out)}
+  a.wtr-service-card:hover .wtr-service-arrow{transform:translateX(4px)}
+  .wtr-service-card.is-more{background:rgba(255,255,255,.55)}
+  .wtr-service-card.is-more:hover{background:var(--white)}
+  .wtr-service-card.is-more .wtr-service-num{font-family:var(--font-hand);color:var(--clay-500);font-size:16px}
+  .wtr-service-card.is-more .wtr-service-title{color:var(--sage-800)}
+  @media (max-width:760px){.wtr-services-grid{grid-template-columns:1fr}}
+
+</style>
+
+<section class="wtr-services wtr-section" data-screen-label="What We Help With" aria-labelledby="wtr-services-headline">
+  <div class="wtr-services-inner">
+
+    <div class="wtr-services-head reveal">
+      <div class="wtr-services-head-main">
+        <h2 id="wtr-services-headline" class="wtr-services-headline">Support for the Communication Skills Your Child Uses Every Day</h2>
+        <p class="wtr-services-sub">Child-led, play-based therapy with meaningful goals and practical support for everyday life. One starting point: understanding how your child communicates today, and what would make tomorrow easier.</p>
+      </div>
+    </div>
+
+    <div class="wtr-services-grid reveal">
+      <a class="wtr-service-card" href="early-communication-late-talkers.html"><span class="wtr-service-num">01</span><span><h3 class="wtr-service-title">Early Communication &amp; Late Talkers</h3><p class="wtr-service-desc">Fewer words, gestures, sounds, or communication attempts than expected for their age.</p></span><span class="wtr-service-arrow" aria-hidden="true">&rarr;</span></a>
+      <a class="wtr-service-card" href="autism-social-communication.html"><span class="wtr-service-num">02</span><span><h3 class="wtr-service-title">Autism &amp; Social Communication</h3><p class="wtr-service-desc">Play, connection, interaction, echolalia and gestalt language, and authentic communication.</p></span><span class="wtr-service-arrow" aria-hidden="true">&rarr;</span></a>
+      <a class="wtr-service-card" href="speech-sound-disorders.html"><span class="wtr-service-num">03</span><span><h3 class="wtr-service-title">Speech Sound Disorders</h3><p class="wtr-service-desc">Support for speech that is unclear or difficult to understand due to sound errors or motor-planning and coordination challenges.</p></span><span class="wtr-service-arrow" aria-hidden="true">&rarr;</span></a>
+      <a class="wtr-service-card" href="understanding-using-language.html"><span class="wtr-service-num">04</span><span><h3 class="wtr-service-title">Understanding &amp; Using Language</h3><p class="wtr-service-desc">Following directions, answering questions, building sentences, and telling stories.</p></span><span class="wtr-service-arrow" aria-hidden="true">&rarr;</span></a>
+      <a class="wtr-service-card" href="stuttering-fluency.html"><span class="wtr-service-num">05</span><span><h3 class="wtr-service-title">Stuttering &amp; Fluency</h3><p class="wtr-service-desc">Building confidence and ease with less pressure around speaking.</p></span><span class="wtr-service-arrow" aria-hidden="true">&rarr;</span></a>
+      <a class="wtr-service-card" href="pediatric-feeding-oral-motor.html"><span class="wtr-service-num">06</span><span><h3 class="wtr-service-title">Pediatric Feeding &amp; Oral-Motor</h3><p class="wtr-service-desc">Support for chewing, drinking, food textures, oral-motor development, and safer, calmer, more confident mealtime skills.</p></span><span class="wtr-service-arrow" aria-hidden="true">&rarr;</span></a>
+      <a class="wtr-service-card" href="aac-support.html"><span class="wtr-service-num">07</span><span><h3 class="wtr-service-title">AAC Support</h3><p class="wtr-service-desc">Communication boards, speech-generating devices, signs, and coaching for children and their communication partners.</p></span><span class="wtr-service-arrow" aria-hidden="true">&rarr;</span></a>
+      <a class="wtr-service-card is-more" href="contact.html"><span class="wtr-service-num">&plus;</span><span><h3 class="wtr-service-title">Not seeing what you&rsquo;re looking for?</h3><p class="wtr-service-desc">These are the biggest reasons families reach out, but not everything we support. Get in touch and we can talk it through.</p></span><span class="wtr-service-arrow" aria-hidden="true">&rarr;</span></a>
+    </div>
+
+  </div>
+</section>
+
+
+
 
 <!-- ========== HOW IT WORKS (process) ========== -->
-<section class="section" id="how-it-works">
-  <div class="container">
-    <div class="section-head reveal" style="display: flex; align-items: flex-end; justify-content: space-between; gap: 32px; flex-wrap: wrap; max-width: none;">
-      <div style="max-width: 620px;">
-        <span class="eyebrow-sage">How it works</span>
-        <h2>Three simple steps to get started.</h2>
-        <p>No complicated intake. No pressure. Just a conversation to see if we're the right fit, followed by care that actually fits your family.</p>
+<section class="hiw-section" data-screen-label="How It Works" aria-labelledby="hiw-headline">
+  <div class="hiw-container" style="border-width: 0px; border-style: solid">
+
+    <!-- Top: headline + chips (left) / CTA (right) -->
+    <div class="hiw-top">
+      <div class="hiw-intro reveal">
+        <span class="hiw-eyebrow"></span>
+        <h2 id="hiw-headline" class="hiw-headline">Start with a <span class="hiw-headline-hand">simple call</span>, <br>leave with a clear plan.</h2>
       </div>
-      <a class="btn btn-outline" href="contact.html">
-        Start now
-        <span class="btn-arrow">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </span>
-      </a>
+
     </div>
-    <div class="process-grid">
-      <div class="process-card reveal">
-        <div class="num">one</div>
-        <h3>Free 15-min call</h3>
-        <p>A no-pressure conversation about your child, your questions, and whether we're the right fit for your family.</p>
+
+    <!-- Steps -->
+    <div class="hiw-steps-wrap">
+      <ol class="hiw-steps" role="list">
+
+        <li class="hiw-step is-featured hiw-step-clickable reveal">
+          <style>
+            .hiw-step-clickable { cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease; }
+            .hiw-step-clickable:hover {
+              background: #d5e7ee;
+              transform: translateY(-3px);
+              box-shadow: 0 12px 26px rgba(31, 42, 35, 0.22);
+            }
+            .hiw-step-clickable:hover .hiw-step-cta svg { transform: translateX(4px); }
+            .hiw-step-clickable .hiw-step-cta svg { transition: transform 0.2s ease; }
+          </style>
+          <div class="hiw-step-head">
+            <span class="hiw-step-num">01</span>
+            <span class="hiw-step-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+            </span>
+          </div>
+          <h3>Start With a Free Call</h3>
+          <p>Tell us what has been on your mind. We will listen, answer your questions, and help you understand the next best step for your child and family.</p>
+          <a class="hiw-step-cta" href="contact.html">
+            Book a Free 15-Min Call
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+          <div class="hiw-step-detail">
+            No pressure &nbsp;&bull;&nbsp; Just guidance
+          </div>
+        </li>
+
+        <li class="hiw-step is-centered reveal">
+          <div class="hiw-step-head">
+            <span class="hiw-step-num">02</span>
+            <span class="hiw-step-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7"><rect x="4" y="5" width="16" height="17" rx="2"/><rect x="8" y="2.5" width="8" height="4" rx="1.2" fill="currentColor" stroke="none"/><polyline points="7.5 12 9 13.5 11.5 11" stroke-width="1.6"/><line x1="13" y1="12.5" x2="17" y2="12.5"/><polyline points="7.5 17 9 18.5 11.5 16" stroke-width="1.6"/><line x1="13" y1="17.5" x2="17" y2="17.5"/></svg>
+            </span>
+          </div>
+          <h3>Get a Thoughtful Evaluation</h3>
+          <p>Every family starts with an evaluation. We look at the full picture: your child's strengths, challenges, routines, communication, and connection.</p>
+          <div class="hiw-step-detail">Clear findings • Practical recommendations</div>
+        </li>
+
+        <li class="hiw-step is-centered reveal">
+          <div class="hiw-step-head">
+            <span class="hiw-step-num">03</span>
+            <span class="hiw-step-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
+            </span>
+          </div>
+          <h3>Build the Support Plan</h3>
+          <p>We review the results with you, explain what they mean, and create a plan that fits your child, your family, and your everyday life.</p>
+          <div class="hiw-step-detail">Made for your child • Explained clearly</div>
+        </li>
+
+        <li class="hiw-step is-centered reveal">
+          <div class="hiw-step-head">
+            <span class="hiw-step-num">04</span>
+            <span class="hiw-step-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5Z"/></svg>
+            </span>
+          </div>
+          <h3>Begin Therapy That Carries Over</h3>
+          <p>Therapy begins with meaningful goals designed to help your child communicate more successfully in everyday life.</p>
+          <div class="hiw-step-detail">Personalized plan  •  Built for your family</div>
+        </li>
+
+      </ol>
+    </div>
+
+  </div>
+</section>
+
+<!-- ========== PRICING (PRIVATE PAY) ========== -->
+<style>
+  .sv-pricing { background: var(--white); padding: clamp(20px, 2.2vw, 36px) 0 clamp(24px, 2.6vw, 44px); }
+  .sv-pricing .sv-shell { max-width: 1140px; margin: 0 auto; padding: 0 clamp(20px, 3.2vw, 40px); }
+  .sv-pricing-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 24px 40px;
+    flex-wrap: wrap;
+    margin: 0 0 clamp(22px, 2.4vw, 32px);
+  }
+  @media (min-width: 861px) {
+    .sv-pricing-head { flex-wrap: nowrap; }
+    .sv-pricing-head-main { flex: 0 1 auto; min-width: 0; }
+  }
+  .sv-pricing-head-main { max-width: 720px; }
+  .sv-pricing-badge {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-size: 12.5px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--clay-500);
+    background: var(--cream-100);
+    border: 1px solid var(--border-default);
+    border-radius: 999px;
+    padding: 6px 14px;
+    margin: 0 0 16px;
+  }
+  .sv-pricing-head h2 {
+    font-family: var(--font-heading);
+    font-size: clamp(26px, 3.2vw, 38px);
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -0.022em;
+    color: var(--sage-800);
+    margin: 0;
+    text-wrap: balance;
+  }
+  .sv-pricing-head-main { max-width: none; }
+  .sv-pricing-hand { font-family: var(--font-hand); font-weight: 400; color: var(--clay-500); letter-spacing: 0; }
+  .sv-pricing-subline {
+    font-family: var(--font-body);
+    font-size: clamp(14px, 1.1vw, 16px);
+    line-height: 1.6;
+    color: var(--ink-700);
+    margin: 14px 0 0;
+    max-width: none;
+  }
+  @media (min-width: 760px) { .sv-pricing-subline { white-space: nowrap; } }
+
+  .sv-pricing-bottom {
+    margin-top: clamp(24px, 2.8vw, 36px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px 28px;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+  .sv-pricing-bottom-lead { display: flex; align-items: center; justify-content: center; gap: 18px 24px; flex-wrap: wrap; flex: 1 1 0; }
+  .sv-pricing-bottom-alt { display: flex; align-items: center; gap: 14px 20px; flex-wrap: wrap; justify-content: center; flex: 1 1 auto; }
+  .sv-pricing-bottom-desc {
+    font-family: var(--font-body);
+    font-size: clamp(14px, 1.1vw, 15px);
+    line-height: 1.5;
+    color: var(--ink-700);
+    margin: 0;
+    max-width: 38ch;
+  }
+  @media (max-width: 640px) {
+    .sv-pricing-bottom { justify-content: center; text-align: center; }
+    .sv-pricing-bottom-lead, .sv-pricing-bottom-alt { justify-content: center; }
+    .sv-pricing-bottom .cl-cta-btn { width: auto; justify-content: center; margin: 0 auto; }
+  }
+  .sv-pricing-bottom .sv-pricing-alt-link {
+    flex: 0 0 auto;
+    background: transparent;
+    border-color: rgba(45, 58, 35, 0.24);
+    box-shadow: none;
+  }
+  .sv-pricing-bottom .sv-pricing-alt-link:hover {
+    background: var(--sky-100, #E3EEF3);
+    box-shadow: none;
+  }
+  @media (min-width: 700px) { .sv-pricing-head h2 { white-space: nowrap; } }
+  .sv-pricing-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border-top: 1px solid rgba(45,58,35,0.16);
+  }
+  .sv-pricing-card {
+    padding: clamp(26px, 2.6vw, 34px) clamp(24px, 2.4vw, 32px);
+  }
+  .sv-pricing-card + .sv-pricing-card { border-left: 1px solid rgba(45,58,35,0.12); }
+  .sv-pricing-eval {
+    border-top: 1px solid rgba(45,58,35,0.16);
+    padding: clamp(26px, 2.8vw, 36px) 0;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 24px 40px;
+    align-items: center;
+  }
+  .sv-pricing-eval-info h3 {
+    font-family: var(--font-heading);
+    font-size: clamp(19px, 1.6vw, 24px);
+    font-weight: 600;
+    letter-spacing: -0.014em;
+    color: var(--sage-800);
+    margin: 0 0 16px;
+    line-height: 1.18;
+  }
+  .sv-pricing-eval-feats { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px 22px; }
+  .sv-pricing-eval-feats li {
+    display: flex;
+    gap: 9px;
+    align-items: center;
+    font-family: var(--font-body);
+    font-size: 14px;
+    color: var(--ink-700);
+  }
+  .sv-pricing-eval-feats svg { flex: 0 0 auto; width: 17px; height: 17px; color: var(--sage-600); }
+  .sv-pricing-eval-title-row {
+    display: flex;
+    align-items: baseline;
+    gap: 18px;
+    margin: 0 0 16px;
+  }
+  .sv-pricing-eval-title-row h3 { margin: 0 !important; }
+  .sv-pricing-eval-link {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-size: 13.5px;
+    font-weight: 700;
+    color: var(--sage-700);
+    text-decoration: none;
+    border-bottom: 1.5px solid var(--sage-300);
+    padding-bottom: 1px;
+    white-space: nowrap;
+  }
+  .sv-pricing-eval-link:hover { color: var(--sage-600); border-bottom-color: var(--sage-600); }
+  .sv-pricing-eval-price {
+    text-align: right;
+    white-space: nowrap;
+  }
+  .sv-pricing-eval-price .num {
+    font-family: var(--font-heading);
+    font-size: clamp(34px, 3.4vw, 44px);
+    font-weight: 700;
+    color: var(--sage-800);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    display: block;
+  }
+  .sv-pricing-eval-price .lbl {
+    font-family: var(--font-body);
+    font-size: 12.5px;
+    color: var(--ink-500);
+    margin-top: 6px;
+    display: block;
+  }
+  .sv-pricing-card:nth-child(1) .sv-pricing-card-ic { color: var(--sage-600); background: var(--sage-100); }
+  .sv-pricing-card:nth-child(2) .sv-pricing-card-ic { color: var(--sky-500); background: var(--sky-100); }
+  .sv-pricing-card:nth-child(3) .sv-pricing-card-ic { color: var(--clay-500); background: var(--clay-100); }
+  .sv-pricing-card-head { display: flex; align-items: center; gap: 14px; margin-bottom: 22px; }
+  .sv-pricing-card-ic {
+    flex: 0 0 auto;
+    width: 46px; height: 46px;
+    border-radius: 14px;
+    display: grid; place-items: center;
+  }
+  .sv-pricing-card-ic svg { width: 22px; height: 22px; }
+  .sv-pricing-card-head h3 {
+    font-family: var(--font-heading);
+    font-size: clamp(17px, 1.4vw, 20px);
+    font-weight: 600;
+    letter-spacing: -0.012em;
+    color: var(--sage-800);
+    margin: 0 0 3px;
+    line-height: 1.2;
+  }
+  .sv-pricing-card-sub {
+    font-family: var(--font-body);
+    font-size: 12.5px;
+    color: var(--ink-500);
+  }
+  .sv-pricing-card-rows { display: flex; flex-direction: column; gap: 0; }
+  .sv-pricing-card-rows .row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    padding: 13px 0;
+    border-bottom: 1px solid rgba(45,58,35,0.1);
+  }
+  .sv-pricing-card-rows .row:last-child { border-bottom: 0; }
+  .sv-pricing-card-rows .dur {
+    font-family: var(--font-body);
+    font-size: 14px;
+    color: var(--ink-700);
+  }
+  .sv-pricing-card-rows .amt {
+    font-family: var(--font-heading);
+    font-size: clamp(20px, 1.8vw, 24px);
+    font-weight: 700;
+    color: var(--sage-800);
+    letter-spacing: -0.01em;
+  }
+  .sv-pricing-card-note {
+    font-family: var(--font-body);
+    font-size: 12px;
+    line-height: 1.5;
+    color: var(--ink-500);
+    margin: 14px 0 0;
+    display: flex;
+    gap: 5px;
+  }
+  .sv-pricing-card-note .ast { color: var(--clay-500); font-weight: 700; }
+  .sv-pricing-card-rows .ast-sup { color: var(--clay-500); font-weight: 700; font-size: 0.8em; margin-left: 1px; }
+  .sv-pricing-foot {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px 32px;
+    padding: clamp(26px, 2.8vw, 36px) 0 0;
+    border-top: 1px solid rgba(45,58,35,0.16);
+  }
+  .sv-pricing-promise {
+    margin: 14px 0 0;
+    padding: 0;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .sv-pricing-promise-hand {
+    font-family: var(--font-hand, cursive);
+    font-size: clamp(22px, 2.4vw, 30px);
+    color: var(--clay-500);
+    line-height: 1.2;
+  }
+  .sv-pricing-promise-sub {
+    font-family: var(--font-body);
+    font-size: 13.5px;
+    color: var(--ink-500);
+  }
+  .sv-pricing-foot p {
+    font-family: var(--font-body);
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--ink-700);
+    margin: 0;
+    max-width: 52ch;
+  }
+  @media (max-width: 860px) {
+    .sv-pricing-row { grid-template-columns: 1fr; }
+    .sv-pricing-card + .sv-pricing-card { border-left: 0; border-top: 1px solid rgba(45,58,35,0.12); }
+    .sv-pricing-card { padding-left: 0; padding-right: 0; }
+    .sv-pricing-eval { gap: 16px 20px; align-items: end; }
+    .sv-pricing-eval-price { justify-self: end; text-align: right; align-self: end; }
+  }
+  .sv-pricing-alt {
+    align-self: stretch;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+  }
+  .sv-pricing-alt p strong { color: var(--sage-800); font-weight: 600; }
+  .sv-pricing-alt-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--sage-800);
+    background: var(--sky-100, #E3EEF3);
+    border: 1px solid rgba(45, 58, 35, 0.1);
+    border-radius: 999px;
+    padding: 13px 22px;
+    text-decoration: none;
+    white-space: nowrap;
+    box-shadow: 0 10px 22px -16px rgba(45, 58, 35, 0.35);
+    transition: background 160ms ease, transform 160ms ease, box-shadow 160ms ease;
+  }
+  .sv-pricing-alt-link:hover {
+    background: #d3e4ec;
+    transform: translateY(-1px);
+    box-shadow: 0 14px 26px -16px rgba(45, 58, 35, 0.45);
+    color: var(--sage-800);
+  }
+  .sv-pricing-alt-link svg { width: 15px; height: 15px; }
+</style>
+<section class="sv-pricing" id="pricing" data-screen-label="Pricing">
+  <div class="sv-shell">
+    <div class="sv-pricing-head reveal">
+      <div class="sv-pricing-head-main">
+        <h2>Simple <span class="sv-pricing-hand">private pay</span> pricing. No surprise fees.</h2>
+        <p class="sv-pricing-subline">We accept HSA, FSA, and ESA funds (ClassWallet), plus all major debit and credit cards. Superbills available for possible out-of-network reimbursement.</p>
       </div>
-      <div class="process-card accent reveal">
-        <div class="num">two</div>
-        <h3>Evaluation &amp; plan</h3>
-        <p>A one- to two-hour session that gives us the full picture, shaped into a plan of care built around your child.</p>
+    </div>
+
+    <div class="sv-pricing-eval reveal">
+      <div class="sv-pricing-eval-info">
+        <div class="sv-pricing-eval-title-row">
+          <h3>Comprehensive Evaluation</h3>
+          <a class="sv-pricing-eval-link" href="evaluations.html">Learn more →</a>
+        </div>
+        <ul class="sv-pricing-eval-feats">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>In-person evaluation</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Written report included</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Follow-up call included</li>
+        </ul>
       </div>
-      <div class="process-card reveal">
-        <div class="num">three</div>
-        <h3>Ongoing therapy</h3>
-        <p>30- or 60-minute visits — play-based, child-led, with a quick parent check-in every session.</p>
+      <div class="sv-pricing-eval-price">
+        <span class="num">$350</span>
+        <span class="lbl">flat rate</span>
+      </div>
+    </div>
+
+    <div class="sv-pricing-row reveal" data-delay="1">
+      <div class="sv-pricing-card">
+        <div class="sv-pricing-card-head">
+          <span class="sv-pricing-card-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span>
+          <div>
+            <h3>In-home visit</h3>
+            <span class="sv-pricing-card-sub">We come to you</span>
+          </div>
+        </div>
+        <div class="sv-pricing-card-rows">
+          <div class="row"><span class="dur">30 minutes</span><span class="amt">$100</span></div>
+          <div class="row"><span class="dur">60 minutes</span><span class="amt">$180</span></div>
+        </div>
+      </div>
+
+      <div class="sv-pricing-card">
+        <div class="sv-pricing-card-head">
+          <span class="sv-pricing-card-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></span>
+          <div>
+            <h3>Telehealth</h3>
+            <span class="sv-pricing-card-sub">Available throughout Arizona</span>
+          </div>
+        </div>
+        <div class="sv-pricing-card-rows">
+          <div class="row"><span class="dur">30 minutes</span><span class="amt">$80</span></div>
+          <div class="row"><span class="dur">60 minutes</span><span class="amt">$150</span></div>
+        </div>
+      </div>
+
+      <div class="sv-pricing-card">
+        <div class="sv-pricing-card-head">
+          <span class="sv-pricing-card-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/></svg></span>
+          <div>
+            <h3>On-site</h3>
+            <span class="sv-pricing-card-sub">Childcare and ABA centers</span>
+          </div>
+        </div>
+        <div class="sv-pricing-card-rows">
+          <div class="row"><span class="dur">30 minutes<sup class="ast-sup">*</sup></span><span class="amt">$85</span></div>
+        </div>
+        <p class="sv-pricing-card-note"><span class="ast">*</span>Available when multiple children are scheduled consecutively at the same location and with facility approval.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ========== WHO WE HELP ========== -->
-<section class="section section-sage">
-  <div class="container">
-    <div class="who-grid">
-      <div class="reveal">
-        <span style="font-size: 13px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--sun-300);">Who we help</span>
-        <h2 style="font-family: var(--font-heading); font-size: clamp(30px, 4vw, 52px); font-weight: 500; letter-spacing: -0.02em; line-height: 1.05; color: var(--cream-50); margin: 14px 0 20px;">
-          From toddlers through early adulthood.
-        </h2>
-        <p style="color: rgba(251, 248, 241, 0.82); font-size: 17px; line-height: 1.6; max-width: 380px;">
-          These stages are flexible starting points, not hard cutoffs. Needs overlap —
-          we tailor services to your child, not their birthday.
-        </p>
-      </div>
-      <ul class="who-list reveal">
-        <li><span class="idx">01</span><h3>Toddlers</h3><p>First words, feeding, play-based connection.</p></li>
-        <li><span class="idx">02</span><h3>Preschoolers</h3><p>Early language, pre-literacy, social communication.</p></li>
-        <li><span class="idx">03</span><h3>School-age</h3><p>Articulation, stuttering, AAC, classroom communication.</p></li>
-        <li><span class="idx">04</span><h3>Teens &amp; young adults</h3><p>Executive function, self-advocacy, transition support.</p></li>
-        <li><span class="idx">05</span><h3>Parents &amp; caregivers</h3><p>Coaching, home routines, advocacy, and support.</p></li>
-      </ul>
-    </div>
-  </div>
-</section>
+<!-- ========== PARENT STORIES: FEATURED + LOOPING RAIL ========== -->
+<style>
+  .psv2-section{position:relative;background:var(--sky-100,#E3EEF3);padding:clamp(30px,3.4vw,48px) 0 clamp(38px,3.8vw,56px);overflow:hidden}
+  .psv2-inner{max-width:1080px;margin:0 auto;padding:0 clamp(20px,3.2vw,40px)}
+  .psv2-bleed{position:relative;width:100%}
+  .psv2-head{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:end;margin-bottom:clamp(22px,2.6vw,34px)}
+  .psv2-head-left{display:flex;flex-direction:column;gap:14px;min-width:0}
+  .psv2-title{font-family:var(--font-heading);font-size:clamp(26px,3.2vw,38px);font-weight:600;line-height:1.1;letter-spacing:-.022em;color:var(--sage-800);margin:4px 0 0;text-wrap:balance}
+  .psv2-google{display:inline-flex;align-items:center;gap:10px;background:var(--white);border:1px solid var(--border-subtle);border-radius:999px;padding:10px 18px 10px 14px;box-shadow:var(--shadow-sm);align-self:end;justify-self:end;white-space:nowrap}
+  .psv2-google svg{width:20px;height:20px;flex:none}
+  .psv2-google-text{display:flex;flex-direction:column;line-height:1.05}
+  .psv2-google-rating{display:flex;align-items:center;gap:6px;font-family:var(--font-heading);font-weight:700;font-size:12px;color:var(--brand-ink)}
+  .psv2-google-rating .psv2-stars{color:var(--sun-500);letter-spacing:2px;font-size:10.5px}
+  .psv2-google-label{font-size:9.5px;color:var(--fg-3);letter-spacing:.02em;margin-top:2px}
 
-<!-- ========== WHEN TO SEEK HELP ========== -->
-<section class="section">
-  <div class="container">
-    <div class="section-head reveal">
-      <span class="eyebrow-sage">When to seek help</span>
-      <h2>Trust your gut — earlier is always easier.</h2>
-      <p>If any of these feel familiar, a free consultation is a good next step. You don't need a diagnosis or a referral to reach out.</p>
-    </div>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px;">
-      <div class="card reveal">
-        <div style="width: 36px; height: 36px; border-radius: 10px; background: var(--sage-100); color: var(--sage-700); display: grid; place-items: center; margin-bottom: 14px;">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-        </div>
-        <h3 style="font-family: var(--font-heading); font-size: 17px; color: var(--brand-ink); margin: 0 0 6px;">Few or late first words</h3>
-        <p style="font-size: 14px; color: var(--fg-2); margin: 0;">Toddlers who use gestures more than words, or haven't hit typical milestones.</p>
-      </div>
-      <div class="card reveal">
-        <div style="width: 36px; height: 36px; border-radius: 10px; background: var(--clay-100); color: var(--clay-600); display: grid; place-items: center; margin-bottom: 14px;">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 13s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
-        </div>
-        <h3 style="font-family: var(--font-heading); font-size: 17px; color: var(--brand-ink); margin: 0 0 6px;">Hard to understand</h3>
-        <p style="font-size: 14px; color: var(--fg-2); margin: 0;">Familiar adults or peers miss words, leaving your child frustrated.</p>
-      </div>
-      <div class="card reveal">
-        <div style="width: 36px; height: 36px; border-radius: 10px; background: var(--sun-100); color: #8a6610; display: grid; place-items: center; margin-bottom: 14px;">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
-        </div>
-        <h3 style="font-family: var(--font-heading); font-size: 17px; color: var(--brand-ink); margin: 0 0 6px;">Stuttering or blocks</h3>
-        <p style="font-size: 14px; color: var(--fg-2); margin: 0;">Repetitions, blocks, or tension that's starting to affect confidence.</p>
-      </div>
-      <div class="card reveal">
-        <div style="width: 36px; height: 36px; border-radius: 10px; background: var(--sky-100); color: var(--sky-500); display: grid; place-items: center; margin-bottom: 14px;">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9"/><path d="M3 12h9V3"/></svg>
-        </div>
-        <h3 style="font-family: var(--font-heading); font-size: 17px; color: var(--brand-ink); margin: 0 0 6px;">Scripting or echolalia</h3>
-        <p style="font-size: 14px; color: var(--fg-2); margin: 0;">Natural-language support for gestalt language processors.</p>
-      </div>
-      <div class="card reveal">
-        <div style="width: 36px; height: 36px; border-radius: 10px; background: var(--sage-100); color: var(--sage-700); display: grid; place-items: center; margin-bottom: 14px;">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><line x1="7" y1="20" x2="17" y2="20"/><line x1="12" y1="16" x2="12" y2="20"/></svg>
-        </div>
-        <h3 style="font-family: var(--font-heading); font-size: 17px; color: var(--brand-ink); margin: 0 0 6px;">Needs AAC</h3>
-        <p style="font-size: 14px; color: var(--fg-2); margin: 0;">From trial and device selection to daily use at school and home.</p>
-      </div>
-      <div class="card reveal">
-        <div style="width: 36px; height: 36px; border-radius: 10px; background: var(--clay-100); color: var(--clay-600); display: grid; place-items: center; margin-bottom: 14px;">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2s-1 3-4 5-4 4-4 7a8 8 0 0 0 16 0c0-3-1-5-4-7s-4-5-4-5z"/></svg>
-        </div>
-        <h3 style="font-family: var(--font-heading); font-size: 17px; color: var(--brand-ink); margin: 0 0 6px;">Feeding challenges</h3>
-        <p style="font-size: 14px; color: var(--fg-2); margin: 0;">Sensory-informed feeding and mealtime coaching for the whole family.</p>
-      </div>
-    </div>
-  </div>
-</section>
+  /* ---- CAROUSEL ---- */
+  .psv2-rail{position:relative}
+  .psv2-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:4;width:42px;height:42px;border-radius:50%;border:1px solid var(--border-subtle);background:var(--white);color:var(--sage-800);display:grid;place-items:center;cursor:pointer;box-shadow:0 1px 0 rgba(0,0,0,.02);transition:background .18s var(--ease-out),transform .18s var(--ease-out),color .18s var(--ease-out)}
+  .psv2-arrow{box-shadow:0 8px 22px -12px rgba(45,58,35,.5)}
+  .psv2-arrow.prev{left:clamp(8px,1.6vw,22px)}
+  .psv2-arrow.next{right:clamp(8px,1.6vw,22px)}
+  .psv2-arrow svg{width:17px;height:17px}
+  .psv2-arrow:hover{background:var(--sage-600);color:var(--cream-50);border-color:var(--sage-600)}
+  .psv2-arrow:active{transform:translateY(-50%) scale(.93)}
+  .psv2-viewport{overflow:hidden;padding:4px 0 14px;cursor:grab;touch-action:pan-y}
+  .psv2-viewport.is-drag{cursor:grabbing}
+  .psv2-track{display:flex;gap:clamp(16px,2vw,26px);width:max-content;align-items:flex-start;will-change:transform;transform:translate3d(0,0,0);backface-visibility:hidden}
+  .psv2-card{--px:clamp(22px,2.1vw,30px);--py:clamp(20px,2vw,28px);position:relative;flex:0 0 auto;max-width:88vw;margin:0;background:var(--white);padding:var(--py) var(--px);display:flex;flex-direction:column;gap:13px;box-shadow:0 1px 0 rgba(0,0,0,.02),0 18px 40px -24px rgba(45,58,35,.22);transition:box-shadow 320ms var(--ease-out);transform:translateZ(0)}
+  .psv2-card:hover{box-shadow:0 1px 0 rgba(0,0,0,.02),0 26px 52px -24px rgba(45,58,35,.30)}
+  .psv2-card:nth-child(4n+1){margin-top:0}
+  .psv2-card:nth-child(4n+2){margin-top:clamp(18px,2.4vw,38px)}
+  .psv2-card:nth-child(4n+3){margin-top:clamp(6px,1vw,14px)}
+  .psv2-card:nth-child(4n+4){margin-top:clamp(26px,3.4vw,56px)}
+  .psv2-card:nth-child(4n+1){background:var(--sage-100);border-radius:80px 24px 80px 24px}
+  .psv2-card:nth-child(4n+2){background:var(--cream-200);border-radius:24px 80px 24px 80px}
+  .psv2-card:nth-child(4n+3){background:var(--clay-100,#f3e3d4);border-radius:80px 80px 24px 24px / 110px 110px 24px 24px}
+  .psv2-card:nth-child(4n+4){background:var(--white);border-radius:24px 24px 80px 80px / 24px 24px 110px 110px}
+  .psv2-card:nth-child(4n+1),.psv2-card:nth-child(4n+2){--px:clamp(30px,2.6vw,38px);--py:clamp(28px,2.5vw,36px)}
+  .psv2-card:nth-child(4n+3),.psv2-card:nth-child(4n+4){--px:clamp(34px,2.9vw,42px);--py:clamp(32px,2.8vw,40px)}
+  .psv2-pullquote{font-family:var(--font-heading);font-size:clamp(14px,1.25vw,16.5px);line-height:1.4;letter-spacing:-.012em;color:var(--sage-800);margin:0;text-wrap:pretty;quotes:none;font-weight:600;padding-left:14px;border-left:3px solid var(--clay-400)}
+  .psv2-card:nth-child(4n+1) .psv2-pullquote{border-left-color:var(--clay-400);color:var(--sage-900,#2F4A36)}
+  .psv2-card:nth-child(4n+2) .psv2-pullquote{border-left-color:var(--sage-600);color:var(--sage-800)}
+  .psv2-card:nth-child(4n+3) .psv2-pullquote{border-left-color:var(--sage-700);color:#5b3a25}
+  .psv2-card:nth-child(4n+4) .psv2-pullquote{border-left-color:var(--sky-500,#6fa3bd);color:var(--sage-800)}
+  .psv2-divider{height:1px;background:rgba(45,58,35,.10);margin:1px 0}
+  .psv2-card:nth-child(4n+3) .psv2-divider{background:rgba(91,58,37,.14)}
+  .psv2-attr{display:flex;align-items:center;gap:12px}
+  .psv2-avatar{width:36px;height:36px;border-radius:999px;background:var(--sage-400,#9aae8c);color:var(--cream-50);font-family:var(--font-heading);font-weight:700;font-size:14px;display:grid;place-items:center;flex-shrink:0;overflow:hidden}
+  .psv2-avatar.is-clay{background:var(--clay-400)}
+  .psv2-attr-text{display:flex;flex-direction:column;gap:2px;min-width:0}
+  .psv2-name{font-family:var(--font-heading);font-weight:700;font-size:13px;color:var(--brand-ink);line-height:1.15}
+  .psv2-meta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  .psv2-stars-lg{color:var(--sun-500);letter-spacing:2px;font-size:11px;line-height:1}
+  .psv2-body{font-family:var(--font-body);font-size:12px;line-height:1.6;color:var(--fg-1);margin:0;text-wrap:pretty;padding-right:34px}
+  .psv2-card:nth-child(4n+3) .psv2-body{color:#4a3b30}
+  .psv2-card .psv2-g{position:absolute;bottom:var(--py);right:var(--px);width:22px;height:22px;opacity:.95}
+  .psv2-fade{position:absolute;top:0;bottom:0;width:clamp(20px,4vw,56px);pointer-events:none;z-index:2}
+  .psv2-fade{width:clamp(28px,6vw,90px)}
+  .psv2-fade.l{left:0;background:linear-gradient(to right,var(--sky-100,#E3EEF3),rgba(227,238,243,0))}
+  .psv2-fade.r{right:0;background:linear-gradient(to left,var(--sky-100,#E3EEF3),rgba(227,238,243,0))}
+  @media (max-width:720px){
+    .psv2-head{grid-template-columns:1fr;gap:18px}
+    .psv2-google{justify-self:start;align-self:start}
+    .psv2-arrow{display:none}
+    .psv2-fade{display:none}
+    .psv2-viewport{overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;touch-action:pan-x pan-y;cursor:auto;scrollbar-width:none}
+    .psv2-viewport::-webkit-scrollbar{display:none}
+    .psv2-track{transform:none!important;padding-inline:7vw}
+    .psv2-card{width:86vw!important;max-width:86vw;margin-top:0!important;scroll-snap-align:center}
+  }
+  @media (prefers-reduced-motion:reduce){.psv2-card{transition:none}}
+</style>
 
-<!-- ========== SERVICES PREVIEW ========== -->
-<section class="section section-cream">
-  <div class="container">
-    <div class="section-head reveal">
-      <span class="eyebrow-sage">What we treat</span>
-      <h2>A full range of speech and language care, built around your child.</h2>
-    </div>
-    <div class="svc-grid">
-      <a class="svc-card reveal" href="service-language.html">
-        <span class="dot"></span>
-        <h3>Language delays &amp; disorders</h3>
-        <p>Receptive and expressive support, from first words through teens.</p>
-        <div class="arrow">Learn more →</div>
-      </a>
-      <a class="svc-card reveal" href="service-speech.html">
-        <span class="dot" style="background: var(--sage-500);"></span>
-        <h3>Speech sounds</h3>
-        <p>Articulation and phonology across motor patterns and clarity.</p>
-        <div class="arrow">Learn more →</div>
-      </a>
-      <a class="svc-card reveal" href="service-aac.html">
-        <span class="dot" style="background: var(--sky-500);"></span>
-        <h3>AAC support</h3>
-        <p>From device trials to confident daily use — at school and home.</p>
-        <div class="arrow">Learn more →</div>
-      </a>
-      <a class="svc-card reveal" href="service-feeding.html">
-        <span class="dot" style="background: var(--clay-400);"></span>
-        <h3>Pediatric feeding</h3>
-        <p>Sensory-informed feeding and mealtime coaching for families.</p>
-        <div class="arrow">Learn more →</div>
-      </a>
-      <a class="svc-card reveal" href="service-fluency.html">
-        <span class="dot" style="background: var(--sun-500);"></span>
-        <h3>Stuttering &amp; fluency</h3>
-        <p>Fluency support that builds confidence, not just smooth speech.</p>
-        <div class="arrow">Learn more →</div>
-      </a>
-      <a class="svc-card reveal" href="service-cognitive.html">
-        <span class="dot" style="background: var(--sage-700);"></span>
-        <h3>Cognitive communication</h3>
-        <p>Executive function, attention, and social communication.</p>
-        <div class="arrow">Learn more →</div>
-      </a>
-    </div>
-  </div>
-</section>
+<section class="psv2-section" data-screen-label="Parent Stories" aria-labelledby="psv2-title">
+  <div class="psv2-inner">
 
-<!-- ========== TESTIMONIAL ========== -->
-<section class="section">
-  <div class="container" style="max-width: 1000px;">
-    <div class="section-head reveal" style="text-align: center; margin: 0 auto 36px;">
-      <span class="eyebrow-sage" style="display: block; margin-bottom: 10px;">What families say</span>
-      <div style="font-family: var(--font-heading); font-size: 20px; color: var(--brand-ink);"><span style="color: var(--sun-500);">★ ★ ★ ★ ★</span>&nbsp;&nbsp;5.0 on Google</div>
-    </div>
-    <div class="quote reveal">
-      <p>Madison has such a special way and calming presence — she helped my daughter voice emotions and navigate social situations with real confidence. If I could give 10 stars, I would.</p>
-      <div class="quote-attr">
-        <div class="quote-avatar">BD</div>
-        <div>
-          <div class="quote-name">Briana D.</div>
-          <div class="quote-meta">Parent · Tempe</div>
-        </div>
+    <div class="psv2-head reveal">
+      <div class="psv2-head-left">
+        <h2 id="psv2-title" class="psv2-title">Real Stories From Parents Who Found Clarity, Confidence, and Support</h2>
       </div>
     </div>
-    <div style="text-align: center; margin-top: 28px;">
-      <a class="btn btn-ghost" href="about.html#reviews">Read more reviews →</a>
-    </div>
-  </div>
-</section>
 
-<!-- ========== CTA BANNER ========== -->
-<section style="padding: 32px 32px 112px; position: relative; z-index: 2;">
-  <div class="cta-banner reveal">
-    <div>
-      <h2>Ready when you are. No pressure.</h2>
-      <p>Book a free 15-minute call with Madison. We'll talk about your child, answer your questions, and help you figure out what's next — even if it's not us.</p>
-      <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 8px;">
-        <a class="btn btn-soft" href="contact.html">Book a free call</a>
-        <a class="btn btn-outline-light" href="faq.html">Read the FAQ →</a>
+
+
+
+  </div>
+
+  <div class="psv2-rail reveal" data-delay="1">
+    <button class="psv2-arrow prev" type="button" id="psv2Prev" aria-label="Previous reviews"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 5 8 12 15 19"/></svg></button>
+    <button class="psv2-arrow next" type="button" id="psv2Next" aria-label="More reviews"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 5 16 12 9 19"/></svg></button>
+    <div class="psv2-viewport" id="psv2Viewport" tabindex="0" aria-label="Parent reviews, scrollable">
+      <div class="psv2-track" id="psv2Track">
+    <figure class="psv2-card" style="width:348px">
+      <svg class="psv2-g" viewBox="0 0 48 48" aria-hidden="true"><path fill="#4285F4" d="M44.5 20H24v8.5h11.8C34.7 33 30 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3 0 5.7 1.1 7.8 3l6-6C34.6 6.1 29.6 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20c10.5 0 19.5-7.6 19.5-20 0-1.3-.2-2.7-.5-4z"/><path fill="#34A853" d="M6.3 14.7l6.6 4.8C14.7 16 19 13 24 13c3 0 5.7 1.1 7.8 3l6-6C34.6 6.1 29.6 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#FBBC05" d="M24 44c5.5 0 10.5-2.1 14.3-5.6l-6.6-5.4C29.6 34.6 27 36 24 36c-6 0-10.7-3-12.6-7.5l-6.6 5.1C8.6 39.7 15.7 44 24 44z"/><path fill="#EA4335" d="M44.5 20H24v8.5h11.8c-1.1 3.2-3.3 5.6-6.1 7l6.6 5.4C40.3 37 44 31.2 44 24c0-1.3-.2-2.7-.5-4z"/></svg>
+      <blockquote class="psv2-pullquote">&ldquo;She didn&rsquo;t just help him find his voice. She helped all of us better understand and connect with him.&rdquo;</blockquote>
+      <div class="psv2-divider" aria-hidden="true"></div>
+      <figcaption class="psv2-attr">
+        <div class="psv2-avatar is-clay" aria-hidden="true">N</div>
+        <div class="psv2-attr-text"><div class="psv2-name">Natasha S.</div></div>
+      </figcaption>
+      <div class="psv2-meta-row"><span class="psv2-stars-lg" aria-label="5 out of 5 stars">★★★★★</span></div>
+      <p class="psv2-body">Our 5-year-old, who is on the autism spectrum, has made such meaningful progress in his speech and communication. She always meets him where he is and finds ways to reach him that truly work. One of the most touching things was her effort to learn some Russian to support his bilingual environment. Day by day he has become more expressive, more confident, and more willing to communicate.</p>
+    </figure>
+    <figure class="psv2-card" style="width:329px">
+      <svg class="psv2-g" viewBox="0 0 48 48" aria-hidden="true"><path fill="#4285F4" d="M44.5 20H24v8.5h11.8C34.7 33 30 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3 0 5.7 1.1 7.8 3l6-6C34.6 6.1 29.6 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20c10.5 0 19.5-7.6 19.5-20 0-1.3-.2-2.7-.5-4z"/><path fill="#34A853" d="M6.3 14.7l6.6 4.8C14.7 16 19 13 24 13c3 0 5.7 1.1 7.8 3l6-6C34.6 6.1 29.6 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#FBBC05" d="M24 44c5.5 0 10.5-2.1 14.3-5.6l-6.6-5.4C29.6 34.6 27 36 24 36c-6 0-10.7-3-12.6-7.5l-6.6 5.1C8.6 39.7 15.7 44 24 44z"/><path fill="#EA4335" d="M44.5 20H24v8.5h11.8c-1.1 3.2-3.3 5.6-6.1 7l6.6 5.4C40.3 37 44 31.2 44 24c0-1.3-.2-2.7-.5-4z"/></svg>
+      <blockquote class="psv2-pullquote">&ldquo;I&rsquo;ve already noticed a difference in my son&rsquo;s enunciation.&rdquo;</blockquote>
+      <div class="psv2-divider" aria-hidden="true"></div>
+      <figcaption class="psv2-attr">
+        <div class="psv2-avatar" aria-hidden="true" style="background:#4285F4;">J</div>
+        <div class="psv2-attr-text"><div class="psv2-name">Jessica C.</div></div>
+      </figcaption>
+      <div class="psv2-meta-row"><span class="psv2-stars-lg" aria-label="5 out of 5 stars">★★★★★</span></div>
+      <p class="psv2-body">If you&rsquo;re needing speech therapy services for your child, I highly recommend Social House Therapy. Brooklyn and Madison are so kind and helpful. If your child receives services during the school year, this is a great way to continue over the summer. If you homeschool like I do, this is a convenient way to receive services and they accept ESA.</p>
+    </figure>
+    <figure class="psv2-card" style="width:277px">
+      <svg class="psv2-g" viewBox="0 0 48 48" aria-hidden="true"><path fill="#4285F4" d="M44.5 20H24v8.5h11.8C34.7 33 30 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3 0 5.7 1.1 7.8 3l6-6C34.6 6.1 29.6 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20c10.5 0 19.5-7.6 19.5-20 0-1.3-.2-2.7-.5-4z"/><path fill="#34A853" d="M6.3 14.7l6.6 4.8C14.7 16 19 13 24 13c3 0 5.7 1.1 7.8 3l6-6C34.6 6.1 29.6 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#FBBC05" d="M24 44c5.5 0 10.5-2.1 14.3-5.6l-6.6-5.4C29.6 34.6 27 36 24 36c-6 0-10.7-3-12.6-7.5l-6.6 5.1C8.6 39.7 15.7 44 24 44z"/><path fill="#EA4335" d="M44.5 20H24v8.5h11.8c-1.1 3.2-3.3 5.6-6.1 7l6.6 5.4C40.3 37 44 31.2 44 24c0-1.3-.2-2.7-.5-4z"/></svg>
+      <blockquote class="psv2-pullquote">&ldquo;Our son loves her and he made huge progress under her care.&rdquo;</blockquote>
+      <div class="psv2-divider" aria-hidden="true"></div>
+      <figcaption class="psv2-attr">
+        <div class="psv2-avatar" aria-hidden="true">A</div>
+        <div class="psv2-attr-text"><div class="psv2-name">Adreana D.</div></div>
+      </figcaption>
+      <div class="psv2-meta-row"><span class="psv2-stars-lg" aria-label="5 out of 5 stars">★★★★★</span></div>
+      <p class="psv2-body">Madison at Social House Therapy is wonderful. I would love to spread the word and will recommend her very highly to anybody looking for help with speech and emotional development for young kids.</p>
+    </figure>
+    <figure class="psv2-card" style="width:291px">
+      <svg class="psv2-g" viewBox="0 0 48 48" aria-hidden="true"><path fill="#4285F4" d="M44.5 20H24v8.5h11.8C34.7 33 30 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3 0 5.7 1.1 7.8 3l6-6C34.6 6.1 29.6 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20c10.5 0 19.5-7.6 19.5-20 0-1.3-.2-2.7-.5-4z"/><path fill="#34A853" d="M6.3 14.7l6.6 4.8C14.7 16 19 13 24 13c3 0 5.7 1.1 7.8 3l6-6C34.6 6.1 29.6 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#FBBC05" d="M24 44c5.5 0 10.5-2.1 14.3-5.6l-6.6-5.4C29.6 34.6 27 36 24 36c-6 0-10.7-3-12.6-7.5l-6.6 5.1C8.6 39.7 15.7 44 24 44z"/><path fill="#EA4335" d="M44.5 20H24v8.5h11.8c-1.1 3.2-3.3 5.6-6.1 7l6.6 5.4C40.3 37 44 31.2 44 24c0-1.3-.2-2.7-.5-4z"/></svg>
+      <blockquote class="psv2-pullquote">&ldquo;If you are looking for personal and very professional speech therapy help, you are in the best place to start.&rdquo;</blockquote>
+      <div class="psv2-divider" aria-hidden="true"></div>
+      <figcaption class="psv2-attr">
+        <div class="psv2-avatar is-clay" aria-hidden="true">I</div>
+        <div class="psv2-attr-text"><div class="psv2-name">Igor K.</div></div>
+      </figcaption>
+      <div class="psv2-meta-row"><span class="psv2-stars-lg" aria-label="5 out of 5 stars">★★★★★</span></div>
+      <p class="psv2-body">I cannot find enough kind words to express my gratitude and fascination with the Madison from Social House Therapy. Under her guidance our son made a huge developmental progress both speech and emotional.</p>
+    </figure>
+    <figure class="psv2-card" style="width:336px">
+      <svg class="psv2-g" viewBox="0 0 48 48" aria-hidden="true"><path fill="#4285F4" d="M44.5 20H24v8.5h11.8C34.7 33 30 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3 0 5.7 1.1 7.8 3l6-6C34.6 6.1 29.6 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20c10.5 0 19.5-7.6 19.5-20 0-1.3-.2-2.7-.5-4z"/><path fill="#34A853" d="M6.3 14.7l6.6 4.8C14.7 16 19 13 24 13c3 0 5.7 1.1 7.8 3l6-6C34.6 6.1 29.6 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#FBBC05" d="M24 44c5.5 0 10.5-2.1 14.3-5.6l-6.6-5.4C29.6 34.6 27 36 24 36c-6 0-10.7-3-12.6-7.5l-6.6 5.1C8.6 39.7 15.7 44 24 44z"/><path fill="#EA4335" d="M44.5 20H24v8.5h11.8c-1.1 3.2-3.3 5.6-6.1 7l6.6 5.4C40.3 37 44 31.2 44 24c0-1.3-.2-2.7-.5-4z"/></svg>
+      <blockquote class="psv2-pullquote">&ldquo;She teaches her students how to be confident with their language and is so positive.&rdquo;</blockquote>
+      <div class="psv2-divider" aria-hidden="true"></div>
+      <figcaption class="psv2-attr">
+        <div class="psv2-avatar" aria-hidden="true" style="background:#4285F4;">C</div>
+        <div class="psv2-attr-text"><div class="psv2-name">Cynthia L.</div></div>
+      </figcaption>
+      <div class="psv2-meta-row"><span class="psv2-stars-lg" aria-label="5 out of 5 stars">★★★★★</span></div>
+      <p class="psv2-body">Maddison has worked with my son for two years. She is so patient and kind and really knows how to connect with her students. He came to her with a stutter and will often remind me of the language he uses with her in class. As a parent, we love to see our son be confident about his speech, and Maddison helps us support him throughout this process.</p>
+    </figure>
+    <figure class="psv2-card" style="width:336px">
+      <svg class="psv2-g" viewBox="0 0 48 48" aria-hidden="true"><path fill="#4285F4" d="M44.5 20H24v8.5h11.8C34.7 33 30 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3 0 5.7 1.1 7.8 3l6-6C34.6 6.1 29.6 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20c10.5 0 19.5-7.6 19.5-20 0-1.3-.2-2.7-.5-4z"/><path fill="#34A853" d="M6.3 14.7l6.6 4.8C14.7 16 19 13 24 13c3 0 5.7 1.1 7.8 3l6-6C34.6 6.1 29.6 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#FBBC05" d="M24 44c5.5 0 10.5-2.1 14.3-5.6l-6.6-5.4C29.6 34.6 27 36 24 36c-6 0-10.7-3-12.6-7.5l-6.6 5.1C8.6 39.7 15.7 44 24 44z"/><path fill="#EA4335" d="M44.5 20H24v8.5h11.8c-1.1 3.2-3.3 5.6-6.1 7l6.6 5.4C40.3 37 44 31.2 44 24c0-1.3-.2-2.7-.5-4z"/></svg>
+      <blockquote class="psv2-pullquote">&ldquo;One of my daughters has a very difficult time voicing her emotions, and Madison helped her build the speech skills so others can understand her.&rdquo;</blockquote>
+      <div class="psv2-divider" aria-hidden="true"></div>
+      <figcaption class="psv2-attr">
+        <div class="psv2-avatar" aria-hidden="true">B</div>
+        <div class="psv2-attr-text"><div class="psv2-name">Briana D.</div></div>
+      </figcaption>
+      <div class="psv2-meta-row"><span class="psv2-stars-lg" aria-label="5 out of 5 stars">★★★★★</span></div>
+      <p class="psv2-body">Madison has worked with both of my daughters and words cannot express how much both of my girls have thrived under her care and guidance. Madison has such a special way and calming presence about her that supports the growth and development of every person with whom she is working. I can honestly say that both of my daughters would not be where they are today without Madison.</p>
+    </figure>
+    <figure class="psv2-card" style="width:338px">
+      <svg class="psv2-g" viewBox="0 0 48 48" aria-hidden="true"><path fill="#4285F4" d="M44.5 20H24v8.5h11.8C34.7 33 30 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3 0 5.7 1.1 7.8 3l6-6C34.6 6.1 29.6 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20c10.5 0 19.5-7.6 19.5-20 0-1.3-.2-2.7-.5-4z"/><path fill="#34A853" d="M6.3 14.7l6.6 4.8C14.7 16 19 13 24 13c3 0 5.7 1.1 7.8 3l6-6C34.6 6.1 29.6 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#FBBC05" d="M24 44c5.5 0 10.5-2.1 14.3-5.6l-6.6-5.4C29.6 34.6 27 36 24 36c-6 0-10.7-3-12.6-7.5l-6.6 5.1C8.6 39.7 15.7 44 24 44z"/><path fill="#EA4335" d="M44.5 20H24v8.5h11.8c-1.1 3.2-3.3 5.6-6.1 7l6.6 5.4C40.3 37 44 31.2 44 24c0-1.3-.2-2.7-.5-4z"/></svg>
+      <blockquote class="psv2-pullquote">&ldquo;It wasn&rsquo;t long before we all noticed the improvement in his communication skills.&rdquo;</blockquote>
+      <div class="psv2-divider" aria-hidden="true"></div>
+      <figcaption class="psv2-attr">
+        <div class="psv2-avatar is-clay" aria-hidden="true">J</div>
+        <div class="psv2-attr-text"><div class="psv2-name">Julie B.</div></div>
+      </figcaption>
+      <div class="psv2-meta-row"><span class="psv2-stars-lg" aria-label="5 out of 5 stars">★★★★★</span></div>
+      <p class="psv2-body">Madison was very patient with my son who is on the Autism spectrum. It can be difficult to hold his attention, but she incorporated his interests into his teletherapy sessions, so he enjoyed and looked forward to each new session with her. Madison stayed focused on our goals for him, was very communicative, and also flexible, which I really appreciated.</p>
+    </figure>
+    <figure class="psv2-card" style="width:294px">
+      <svg class="psv2-g" viewBox="0 0 48 48" aria-hidden="true"><path fill="#4285F4" d="M44.5 20H24v8.5h11.8C34.7 33 30 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3 0 5.7 1.1 7.8 3l6-6C34.6 6.1 29.6 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20c10.5 0 19.5-7.6 19.5-20 0-1.3-.2-2.7-.5-4z"/><path fill="#34A853" d="M6.3 14.7l6.6 4.8C14.7 16 19 13 24 13c3 0 5.7 1.1 7.8 3l6-6C34.6 6.1 29.6 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#FBBC05" d="M24 44c5.5 0 10.5-2.1 14.3-5.6l-6.6-5.4C29.6 34.6 27 36 24 36c-6 0-10.7-3-12.6-7.5l-6.6 5.1C8.6 39.7 15.7 44 24 44z"/><path fill="#EA4335" d="M44.5 20H24v8.5h11.8c-1.1 3.2-3.3 5.6-6.1 7l6.6 5.4C40.3 37 44 31.2 44 24c0-1.3-.2-2.7-.5-4z"/></svg>
+      <blockquote class="psv2-pullquote">&ldquo;Speech can be stressful, but my son looked forward to his sessions!&rdquo;</blockquote>
+      <div class="psv2-divider" aria-hidden="true"></div>
+      <figcaption class="psv2-attr">
+        <div class="psv2-avatar" aria-hidden="true" style="background:#4285F4;">S</div>
+        <div class="psv2-attr-text"><div class="psv2-name">Sabrina M.</div></div>
+      </figcaption>
+      <div class="psv2-meta-row"><span class="psv2-stars-lg" aria-label="5 out of 5 stars">★★★★★</span></div>
+      <p class="psv2-body">Madison worked with my son and was SO kind, patient and knowledgeable. Always listening to his needs as well as my concerns and making sure we were always aware of his goals and progress towards them. I would highly recommend this company.</p>
+    </figure>
       </div>
     </div>
-    <div style="position: relative; aspect-ratio: 1; border-radius: 28px; overflow: hidden; box-shadow: var(--shadow-md); max-width: 320px; justify-self: end;">
-      <img src="assets/madison-jeffery.jpg" alt="Madison Jeffery, CCC-SLP" style="width: 100%; height: 100%; object-fit: cover;">
+    <span class="psv2-fade l" aria-hidden="true"></span>
+    <span class="psv2-fade r" aria-hidden="true"></span>
+  </div>
+
+</section>
+<script>
+(function(){
+  var vp=document.getElementById('psv2Viewport'),track=document.getElementById('psv2Track'),
+      prev=document.getElementById('psv2Prev'),next=document.getElementById('psv2Next');
+  if(!vp||!track)return;
+  var originals=Array.prototype.slice.call(track.children),N=originals.length;
+  if(!N)return;
+
+  var MAX_SETS=6,setW=0,pos=0,paused=false,offsets=[],
+      HOLD=3600,          /* ms each card rests before the next step */
+      DUR=680,            /* ms per step */
+      tween=null,lastStep=0,resumeTimer=null,rafQueued=false;
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)');
+  var swipe=window.matchMedia('(max-width: 720px)');   /* mobile uses native scroll-snap instead */
+  var QUANT=1/(window.devicePixelRatio||1),drawn=null;
+
+  function gap(){var g=parseFloat(getComputedStyle(track).columnGap||getComputedStyle(track).gap);return isNaN(g)?0:g}
+  function addSet(){
+    var frag=document.createDocumentFragment();
+    originals.forEach(function(c){var k=c.cloneNode(true);k.setAttribute('aria-hidden','true');k.setAttribute('data-psv2-clone','');frag.appendChild(k)});
+    track.appendChild(frag);
+  }
+  /* Idempotent: tops the track up to the copies needed, never more. */
+  function measure(){
+    if(swipe.matches){                 /* hand control to the browser */
+      tween=null;pos=0;drawn=null;setW=0;
+      track.style.transform='';
+      Array.prototype.slice.call(track.querySelectorAll('[data-psv2-clone]')).forEach(function(c){c.remove()});
+      return;
+    }
+    var g=gap(),w=0;
+    for(var i=0;i<N;i++) w+=originals[i].getBoundingClientRect().width+g;
+    if(!(w>0))return;
+    setW=w;
+    var need=Math.min(Math.max(Math.ceil((vp.clientWidth+setW+160)/setW),3),MAX_SETS);
+    while(track.children.length/N<need) addSet();
+    offsets=Array.prototype.map.call(track.children,function(c){return c.offsetLeft});
+    wrap();draw();
+  }
+  function wrap(){if(setW>0)pos=((pos%setW)+setW)%setW}
+  function draw(){
+    var v=Math.round(pos/QUANT)*QUANT;
+    if(v===drawn)return;
+    drawn=v;
+    track.style.transform='translate3d('+(-v)+'px,0,0)';
+  }
+  /* step to the next / previous card edge, whatever its width */
+  function step(dir,now){
+    if(!offsets.length||setW<=0)return;
+    var target=null,i;
+    if(dir>0){
+      for(i=0;i<offsets.length;i++){if(offsets[i]>pos+1){target=offsets[i];break}}
+      if(target===null)target=pos+setW/N;
+    }else{
+      var p=pos;
+      for(i=offsets.length-1;i>=0;i--){if(offsets[i]<p-1){target=offsets[i];break}}
+      if(target===null){p=pos+setW;for(i=offsets.length-1;i>=0;i--){if(offsets[i]<p-1){target=offsets[i];break}}pos=p}
+      if(target===null)target=pos-setW/N;
+    }
+    tween={from:pos,to:target,t0:now||performance.now()};
+  }
+  var loopOn=false,inView=true;
+  function frame(now){
+    if(!loopOn)return;
+    if(setW>0&&!swipe.matches){
+      if(tween){
+        var k=Math.min((now-tween.t0)/DUR,1);
+        var e=1-Math.pow(1-k,3);                 /* ease-out cubic */
+        pos=tween.from+(tween.to-tween.from)*e;
+        if(k>=1){pos=tween.to;tween=null;lastStep=now;wrap()}
+        draw();
+      }else if(!paused&&!reduce.matches){
+        if(!lastStep)lastStep=now;
+        if(now-lastStep>=HOLD)step(1,now);
+      }
+    }
+    requestAnimationFrame(frame);
+  }
+  function startLoop(){if(loopOn)return;loopOn=true;lastStep=0;requestAnimationFrame(frame)}
+  function stopLoop(){loopOn=false}
+  function pause(){paused=true;clearTimeout(resumeTimer)}
+  function resume(d){clearTimeout(resumeTimer);resumeTimer=setTimeout(function(){paused=false;lastStep=performance.now()},d||0)}
+  vp.addEventListener('mouseenter',pause);
+  vp.addEventListener('mouseleave',function(){resume(0)});
+  vp.addEventListener('focusin',pause);
+  vp.addEventListener('focusout',function(){resume(0)});
+  if(prev)prev.addEventListener('click',function(){pause();step(-1);resume(HOLD)});
+  if(next)next.addEventListener('click',function(){pause();step(1);resume(HOLD)});
+  vp.addEventListener('keydown',function(e){
+    if(e.key==='ArrowRight'){e.preventDefault();pause();step(1);resume(HOLD)}
+    else if(e.key==='ArrowLeft'){e.preventDefault();pause();step(-1);resume(HOLD)}
+  });
+  /* drag / swipe */
+  var dragging=false,startX=0,startPos=0,pid=null;
+  vp.addEventListener('pointerdown',function(e){
+    if(swipe.matches)return;
+    if(e.target.closest('.psv2-arrow'))return;
+    dragging=true;startX=e.clientX;startPos=pos;pid=e.pointerId;tween=null;pause();
+    vp.classList.add('is-drag');
+    if(vp.setPointerCapture)try{vp.setPointerCapture(pid)}catch(err){}
+  });
+  vp.addEventListener('pointermove',function(e){
+    if(!dragging)return;
+    var dx=e.clientX-startX;
+    if(Math.abs(dx)>4)e.preventDefault();
+    pos=startPos-dx;wrap();draw();
+  });
+  function endDrag(){
+    if(!dragging)return;
+    dragging=false;vp.classList.remove('is-drag');
+    if(pid!==null&&vp.releasePointerCapture)try{vp.releasePointerCapture(pid)}catch(err){}
+    pid=null;resume(1400);
+  }
+  vp.addEventListener('pointerup',endDrag);
+  vp.addEventListener('pointercancel',endDrag);
+  window.addEventListener('blur',endDrag);
+  /* trackpad: horizontal wheel scroll drives the rail on desktop */
+  vp.addEventListener('wheel',function(e){
+    if(swipe.matches||setW<=0)return;
+    var dx=Math.abs(e.deltaX)>Math.abs(e.deltaY)?e.deltaX:(e.shiftKey?e.deltaY:0);
+    if(!dx)return;
+    e.preventDefault();
+    tween=null;pause();
+    pos+=dx;wrap();draw();
+    resume(1400);
+  },{passive:false});
+  function remeasure(){if(rafQueued)return;rafQueued=true;requestAnimationFrame(function(){rafQueued=false;measure()})}
+
+  /* Swipe mode (mobile) uses native scroll-snap, so autoplay steps scrollLeft
+     instead of the transform. Pauses while the reader is touching or scrolling. */
+  (function(){
+    var timer=null,idle=null,held=false;
+    function cards(){return Array.prototype.filter.call(track.children,function(c){return !c.hasAttribute('data-psv2-clone')})}
+    function targetFor(c){return Math.max(0,c.offsetLeft-(vp.clientWidth-c.offsetWidth)/2)}
+    function advance(){
+      if(held||reduce.matches||!swipe.matches||!inView)return;
+      var list=cards();if(!list.length)return;
+      var here=vp.scrollLeft,next=null;
+      for(var i=0;i<list.length;i++){var t=targetFor(list[i]);if(t>here+8){next=t;break}}
+      if(next===null)next=0;                                  /* loop to the start */
+      try{vp.scrollTo({left:next,behavior:'smooth'})}catch(e){vp.scrollLeft=next}
+    }
+    function start(){stop();if(swipe.matches&&!reduce.matches)timer=setInterval(advance,HOLD+DUR)}
+    function stop(){if(timer){clearInterval(timer);timer=null}}
+    function hold(){held=true;clearTimeout(idle)}
+    function release(){clearTimeout(idle);idle=setTimeout(function(){held=false},2600)}
+    vp.addEventListener('touchstart',hold,{passive:true});
+    vp.addEventListener('touchend',release,{passive:true});
+    vp.addEventListener('touchcancel',release,{passive:true});
+    if(swipe.addEventListener)swipe.addEventListener('change',start);
+    document.addEventListener('visibilitychange',function(){document.hidden?stop():start()});
+    start();
+  })();
+
+  measure();
+  if(swipe.addEventListener)swipe.addEventListener('change',remeasure);
+  window.addEventListener('resize',remeasure);
+  window.addEventListener('load',remeasure);
+  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(remeasure);
+  /* The transform loop only runs while the carousel is actually on screen. An
+     always-on rAF loop taxes phones for the whole session. */
+  function syncLoop(){if(inView&&!document.hidden&&!swipe.matches)startLoop();else stopLoop()}
+  if('IntersectionObserver' in window){
+    new IntersectionObserver(function(en){inView=en[0].isIntersecting;syncLoop()},{rootMargin:'150px'}).observe(vp);
+  }
+  document.addEventListener('visibilitychange',syncLoop);
+  if(swipe.addEventListener)swipe.addEventListener('change',syncLoop);
+  syncLoop();
+})();
+</script>
+
+<!-- ========== FINALE CTA ========== -->
+<style>
+  .finale-section {
+    background: url("assets/splatter-full.svg") top center/100% auto repeat-y var(--white);
+    padding: clamp(40px, 4.8vw, 72px) clamp(20px, 4vw, 52px);
+    position: relative;
+    z-index: 2;
+  }
+  .finale-inner {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .finale-eyebrow {
+    display: inline-block;
+    background: rgba(108, 129, 89, 0.16);
+    color: #4a5c3c;
+    font-family: var(--font-body);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 999px;
+    margin-bottom: 24px;
+  }
+  .finale-headline {
+    font-family: var(--font-heading);
+    font-size: clamp(26px, 3.2vw, 38px);
+    font-weight: 600;
+    letter-spacing: -0.022em;
+    line-height: 1.1;
+    color: var(--sage-800);
+    margin: 0 0 20px;
+    text-wrap: balance;
+  }
+  .finale-copy {
+    font-family: var(--font-body);
+    font-size: 14px;
+    line-height: 1.65;
+    color: var(--fg-2, #4a4a44);
+    margin: 0 auto 28px;
+    max-width: 560px;
+    text-wrap: pretty;
+  }
+  .finale-actions {
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 12px 22px;
+  }
+  .finale-call {
+    color: var(--fg-2, #4a4a44);
+    font-family: var(--font-body);
+    font-size: 13px;
+    text-decoration: none;
+  }
+  .finale-call strong {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: var(--brand-ink, #1F2A23);
+    border-bottom: 1.5px solid rgba(31, 42, 35, 0.25);
+    padding-bottom: 1px;
+    transition: border-color 200ms var(--ease-out);
+  }
+  .finale-call:hover strong { border-color: var(--clay-500); }
+
+  @media (max-width: 640px) {
+    .finale-actions { flex-direction: column; align-items: center; gap: 18px; }
+    .hiw-container .hiw-step-cta, .cl-content .cl-cta-btn { display: flex; width: fit-content; margin-left: auto; margin-right: auto; }
+  }
+</style>
+
+<section class="finale-section" data-screen-label="Finale CTA">
+  <div class="finale-inner reveal">
+    <h2 class="finale-headline">Join Arizona families who found support that fits real life.</h2>
+    <p class="finale-copy">Reach out and we'll talk about your child, answer the questions you've been carrying, and figure out together what comes next. No pressure, no commitment.</p>
+    <div class="finale-actions">
+      <a class="cl-cta-btn" href="contact.html">
+        Get Started
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg>
+      </a>
+      <a class="hero-v2-phone-cta" href="tel:4804904812" aria-label="Call us at 480-490-4812">
+        <span class="hero-v2-phone-pre">Call/Text</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <span>480-490-4812</span>
+      </a>
     </div>
   </div>
 </section>
 
 <div id="site-footer"></div>
-<script src="scripts/site.js"></script>
+<script src="scripts/site.js?v=19" defer></script>
+<script>
+  /* Make the hero (frame + reviews band) exactly fill the initial viewport */
+  (function () {
+    var hero = document.querySelector('.hero.hero-v2');
+    var nav = document.getElementById('site-nav');
+    if (!hero) return;
+    function fit() {
+      var navH = nav ? nav.getBoundingClientRect().height : 0;
+      hero.style.setProperty('--hero-fit-h', (window.innerHeight - navH) + 'px');
+    }
+    fit();
+    window.addEventListener('resize', fit);
+    /* Nav is injected by site.js, so re-fit once it lands and after fonts load */
+    if (nav) {
+      new MutationObserver(fit).observe(nav, { childList: true, subtree: true });
+    }
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
+    window.addEventListener('load', fit);
+  })();
+</script>
+
+<script>
+  /* Whole featured How-It-Works box opens the SimplePractice form with one click. */
+  (function () {
+    var box = document.querySelector('.hiw-step-clickable');
+    if (!box) return;
+    box.addEventListener('click', function (e) {
+      var cta = box.querySelector('a.hiw-step-cta');
+      if (!cta || cta.contains(e.target)) return; /* direct link clicks work normally */
+      e.preventDefault();
+      cta.click();
+    });
+  })();
+</script>
+
+<style>
+  @media (max-width: 640px) {
+    .hero-v2-ctas .hiw-step-cta,
+    .cl-content .cl-cta-btn,
+    .hiw-container .hiw-step-cta,
+    .mm-ctas .cl-cta-btn,
+    .sv-pricing-bottom .cl-cta-btn {
+      width: 75%;
+      max-width: none;
+      justify-content: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .finale-actions .cl-cta-btn,
+    .finale-actions .hero-v2-phone-cta {
+      width: fit-content;
+      max-width: 100%;
+      justify-content: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+</style>
+
+<script src="scripts/sp-widget.js?v=3" defer></script>
 </body>
 </html>
+
+<style id="__om-edit-overrides">
+#navEl >.nav-inner { height: 1px !important }
+#navEl >.nav-inner { height: 100px !important }
+#navEl [aria-label="Social House Therapy"] >:is(img,video) { width: 100px !important }
+#navEl [aria-label="Social House Therapy"] >:is(img,video) { height: 100px !important }
+#navEl >.nav-inner { height: 90px !important }
+#navEl >.nav-inner { height: 9px !important }
+#navEl >.nav-inner { height: 85px !important }
+#navEl >.nav-inner { height: 8px !important }
+#navEl >.nav-inner { height: 75px !important }
+#navEl [aria-label="Social House Therapy"] >:is(img,video) { width: 80px !important }
+#navEl [aria-label="Social House Therapy"] >:is(img,video) { height: 80px !important }
+</style>

@@ -1,50 +1,285 @@
-// Shared site chrome: nav + footer + shared utilities
-// Renders into elements with id="site-nav" and id="site-footer"
-// Set window.__PAGE = 'home' | 'about' | 'services' | 'faq' | 'contact' on each page
+// Shared site chrome: nav + footer + full-screen menu + utilities
+// Renders into #site-nav and #site-footer
+// Set window.__PAGE = 'home' | 'about' | 'services' | 'evaluations' | 'faq' | 'contact' on each page
 
 (function(){
   const PAGE = (window.__PAGE || '').toLowerCase();
-  const LINKS = [
-    { label: 'About Us',     href: 'about.html',                key: 'about' },
-    { label: 'Services',     href: 'services.html',             key: 'services' },
-    { label: 'How It Works', href: 'index.html#how-it-works',   key: 'how' },
-    { label: 'Resources',    href: 'faq.html',                  key: 'faq' },
-    { label: 'Contact',      href: 'contact.html',              key: 'contact' },
+
+  const PRIMARY = [
   ];
 
+
+  const EXTRAS = [
+    { label: 'Tempe',      href: 'speech-therapy-tempe.html' },
+    { label: 'Scottsdale', href: 'speech-therapy-scottsdale.html' },
+  ];
+
+  const SOCIALS = [
+    { label: 'Instagram', href: 'https://instagram.com/socialhousetherapy', icon: 'instagram' },
+    { label: 'Facebook',  href: 'https://facebook.com/socialhousetherapy',  icon: 'facebook' },
+    { label: 'TikTok',    href: 'https://tiktok.com/@socialhousetherapy',   icon: 'tiktok' },
+  ];
+
+  function socialIcon(name){
+    if(name === 'instagram') return '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>';
+    if(name === 'facebook')  return '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>';
+    if(name === 'tiktok')    return '<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5.8 20.1a6.34 6.34 0 0 0 10.86-4.43V8.34a8.16 8.16 0 0 0 4.77 1.52V6.41a4.85 4.85 0 0 1-1.84.28z"/></svg>';
+    return '';
+  }
+
+  // ---------- NAV ----------
   function buildNav(){
     const root = document.getElementById('site-nav');
     if(!root) return;
+
+    const inlineLinks = `
+      <div class="nav-item-drop">
+        <button class="nav-drop-btn" type="button" aria-haspopup="true" aria-expanded="false">For Families
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="nav-drop">
+          <div class="nav-drop-panel">
+            <div class="nav-sub">
+              <button class="nav-sub-btn" type="button" aria-haspopup="true" aria-expanded="false">Services
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 6 15 12 9 18"/></svg>
+              </button>
+              <div class="nav-sub-panel">
+                <div class="nav-sub-panel-inner">
+                  <a href="evaluations.html">Evaluations</a>
+                  <a href="early-communication-late-talkers.html">Early Communication &amp; Late Talkers</a>
+                  <a href="autism-social-communication.html">Autism &amp; Social Communication</a>
+                  <a href="speech-sound-disorders.html">Speech Sound Disorders</a>
+                  <a href="understanding-using-language.html">Understanding &amp; Using Language</a>
+                  <a href="stuttering-fluency.html">Stuttering &amp; Fluency</a>
+                  <a href="pediatric-feeding-oral-motor.html">Pediatric Feeding &amp; Oral Motor</a>
+                  <a href="aac-support.html">AAC Support</a>
+                </div>
+              </div>
+            </div>
+            <a href="developmental-milestones.html">Developmental Milestones</a>
+            <a href="arizona-ddd-resources.html">Arizona DDD Resources</a>
+            <a href="index.html#pricing">Pricing</a>
+            <a href="faq.html">FAQs</a>
+          </div>
+        </div>
+      </div>
+      <a href="partner-with-us.html" class="${PAGE==='partner'?'active':''}">Partner With Us</a>
+      <a href="about.html" class="${PAGE==='about'?'active':''}">About Us</a>
+      <a href="blog.html" class="${PAGE==='blog'?'active':''}">Blog</a>`;
+
+    const socialsHTML = SOCIALS.map(s => `
+      <a class="nav-social" href="${s.href}" target="_blank" rel="noopener" aria-label="${s.label}">
+        ${socialIcon(s.icon)}
+      </a>`).join('');
+
     root.innerHTML = `
       <header class="nav" id="navEl">
-        <div class="nav-inner">
+        <div class="nav-inner" style="height: 130px;">
           <a class="nav-brand" href="index.html" aria-label="Social House Therapy">
-            <span class="brand-mark" aria-hidden="true">
-              <svg viewBox="0 0 64 64" width="56" height="56" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M10 30 L32 12 L54 30 L54 54 L10 54 Z"/>
-                <path d="M22 24c0-4 3-7 8-7-1 4-3 7-8 7z"/>
-                <path d="M22 24c2 1 4 3 5 6"/>
-              </svg>
-            </span>
-            <span class="brand-text">
-              <span class="brand-line-1">SOCIAL HOUSE</span>
-              <span class="brand-line-2">THERAPY</span>
-            </span>
+            <img src="assets/logo-240.webp" alt="Social House Therapy" width="125" height="125" decoding="async" fetchpriority="high">
           </a>
-          <nav class="nav-links" aria-label="Primary">
-            ${LINKS.map(l => `<a href="${l.href}" class="${l.key===PAGE?'active':''}">${l.label}</a>`).join('')}
-          </nav>
-          <a class="nav-cta" href="contact.html">Get Started</a>
-          <button class="nav-toggle" aria-label="Toggle menu" id="navToggle">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="7"  x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
-          </button>
+          <nav class="nav-links" aria-label="Primary">${inlineLinks}</nav>
+          <div class="nav-right">
+            <a class="nav-cta" href="tel:4804904812" aria-label="Call or text us at 480-490-4812">
+              <span class="nav-cta-pre">Call/Text</span>
+              <span class="nav-cta-num">480-490-4812</span>
+            </a>
+            <a class="nav-cta-primary" href="contact.html">
+              Contact Us
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg>
+            </a>
+            <button class="nav-burger" id="navBurger" aria-label="Open menu" aria-controls="menuOverlay" aria-expanded="false" type="button">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+            </button>
+          </div>
         </div>
       </header>`;
-    const navEl = document.getElementById('navEl');
-    const toggle = document.getElementById('navToggle');
-    if(toggle) toggle.addEventListener('click', () => navEl.classList.toggle('nav-mobile-open'));
+
   }
 
+  // ---------- NAV DROPDOWN (click-based) ----------
+  function wireNavDrop(){
+    function closeAll(){
+      document.querySelectorAll('.nav-item-drop.open, .nav-sub.open').forEach(el => {
+        el.classList.remove('open');
+        const b = el.querySelector('.nav-drop-btn, .nav-sub-btn');
+        if(b) b.setAttribute('aria-expanded', 'false');
+      });
+    }
+    document.querySelectorAll('.nav-drop-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const drop = btn.closest('.nav-item-drop');
+        const open = drop.classList.toggle('open');
+        btn.setAttribute('aria-expanded', String(open));
+        if(!open) drop.querySelectorAll('.nav-sub.open').forEach(s => s.classList.remove('open'));
+      });
+    });
+    document.querySelectorAll('.nav-sub-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const sub = btn.closest('.nav-sub');
+        const open = sub.classList.toggle('open');
+        btn.setAttribute('aria-expanded', String(open));
+      });
+    });
+    document.addEventListener('click', (e) => {
+      if(!e.target.closest || !e.target.closest('.nav-item-drop')) closeAll();
+    });
+    document.addEventListener('keydown', (e) => { if(e.key === 'Escape') closeAll(); });
+  }
+
+  // ---------- FULL-SCREEN MENU ----------
+  function buildMenuOverlay(){
+    if(document.getElementById('menuOverlay')) return;
+    const overlay = document.createElement('div');
+    overlay.id = 'menuOverlay';
+    overlay.className = 'menu-overlay';
+    overlay.setAttribute('role', 'dialog');
+    overlay.setAttribute('aria-modal', 'true');
+    overlay.setAttribute('aria-label', 'Site menu');
+
+    const primaryHTML = `
+      <li class="menu-acc">
+        <button class="menu-acc-btn" type="button" aria-expanded="false">
+          <span>For Families</span>
+          <svg class="menu-acc-chev" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <ul class="menu-acc-panel">
+          <li class="menu-acc menu-acc-sub">
+            <button class="menu-acc-btn menu-acc-btn-sub" type="button" aria-expanded="false">
+              <span>Services</span>
+              <svg class="menu-acc-chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <ul class="menu-acc-panel">
+              <li><a href="evaluations.html">Evaluations</a></li>
+              <li><a href="early-communication-late-talkers.html">Early Communication &amp; Late Talkers</a></li>
+              <li><a href="autism-social-communication.html">Autism &amp; Social Communication</a></li>
+              <li><a href="speech-sound-disorders.html">Speech Sound Disorders</a></li>
+              <li><a href="understanding-using-language.html">Understanding &amp; Using Language</a></li>
+              <li><a href="stuttering-fluency.html">Stuttering &amp; Fluency</a></li>
+              <li><a href="pediatric-feeding-oral-motor.html">Pediatric Feeding &amp; Oral Motor</a></li>
+              <li><a href="aac-support.html">AAC Support</a></li>
+            </ul>
+          </li>
+          <li><a href="developmental-milestones.html">Developmental Milestones</a></li>
+          <li><a href="arizona-ddd-resources.html">Arizona DDD Resources</a></li>
+          <li><a href="index.html#pricing">Pricing</a></li>
+          <li><a href="faq.html">FAQs</a></li>
+        </ul>
+      </li>
+      <li><a href="partner-with-us.html"><span>Partner With Us</span><span class="arr">→</span></a></li>
+      <li><a href="about.html"><span>About Us</span><span class="arr">→</span></a></li>
+      <li><a href="blog.html"><span>Blog</span><span class="arr">→</span></a></li>
+      <li><a href="contact.html"><span>Contact</span><span class="arr">→</span></a></li>
+    `;
+
+    const extrasHTML = '';
+
+    overlay.innerHTML = `
+      <div class="menu-overlay-inner">
+        <div class="menu-overlay-head">
+          <a class="menu-overlay-brand" href="index.html" aria-label="Social House Therapy">
+            <img src="assets/logo-240.webp" alt="Social House Therapy" width="90" height="90" decoding="async" loading="lazy">
+          </a>
+          <button class="menu-close" id="menuClose" aria-label="Close menu" type="button">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/></svg>
+          </button>
+        </div>
+
+        <div class="menu-grid">
+          <div class="menu-col">
+            <ul class="menu-primary">${primaryHTML}</ul>
+          </div>
+        </div>
+
+        <div class="menu-foot">
+          <div>
+            <a href="tel:4804904812">(480) 490-4812</a>
+            <span style="margin: 0 10px; color: var(--ink-300);">·</span>
+            <a href="mailto:info@socialhousetherapy.com">info@socialhousetherapy.com</a>
+            <span style="margin: 0 10px; color: var(--ink-300);">·</span>
+            Tempe &amp; Scottsdale, AZ
+          </div>
+          <a class="menu-foot-cta" href="contact.html">
+            Get Started
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </div>
+    `;
+    document.body.appendChild(overlay);
+  }
+
+  function wireMenu(){
+    const burger = document.getElementById('navBurger');
+    const overlay = document.getElementById('menuOverlay');
+    const closeBtn = document.getElementById('menuClose');
+    if(!burger || !overlay) return;
+
+    let lastFocus = null;
+
+    function focusables(){
+      return overlay.querySelectorAll('a, button');
+    }
+
+    function open(){
+      lastFocus = document.activeElement;
+      overlay.classList.add('open');
+      document.body.classList.add('menu-open');
+      burger.setAttribute('aria-expanded', 'true');
+      const f = focusables();
+      if(f.length) setTimeout(() => f[0].focus(), 60);
+    }
+
+    function close(){
+      overlay.classList.remove('open');
+      document.body.classList.remove('menu-open');
+      burger.setAttribute('aria-expanded', 'false');
+      if(lastFocus && typeof lastFocus.focus === 'function') lastFocus.focus();
+    }
+
+    burger.addEventListener('click', open);
+    if(closeBtn) closeBtn.addEventListener('click', close);
+
+    // Click outside the inner panel closes
+    overlay.addEventListener('click', (e) => {
+      if(e.target === overlay) close();
+    });
+
+    // Selecting any link closes
+    overlay.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => close());
+    });
+
+    // Accordion (For Families / Services)
+    overlay.querySelectorAll('.menu-acc-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const li = btn.closest('.menu-acc');
+        const panel = li.querySelector('.menu-acc-panel');
+        const open = li.classList.toggle('open');
+        btn.setAttribute('aria-expanded', String(open));
+        panel.style.maxHeight = open ? panel.scrollHeight + 'px' : '0px';
+        let anc = li.parentElement ? li.parentElement.closest('.menu-acc-panel') : null;
+        while(anc){ anc.style.maxHeight = 'none'; anc = anc.parentElement ? anc.parentElement.closest('.menu-acc-panel') : null; }
+      });
+    });
+
+    // Escape + focus trap
+    document.addEventListener('keydown', (e) => {
+      if(!overlay.classList.contains('open')) return;
+      if(e.key === 'Escape'){ e.preventDefault(); close(); return; }
+      if(e.key === 'Tab'){
+        const f = Array.from(focusables());
+        if(!f.length) return;
+        const first = f[0], last = f[f.length - 1];
+        if(e.shiftKey && document.activeElement === first){ e.preventDefault(); last.focus(); }
+        else if(!e.shiftKey && document.activeElement === last){ e.preventDefault(); first.focus(); }
+      }
+    });
+  }
+
+  // ---------- FOOTER ----------
   function buildFooter(){
     const root = document.getElementById('site-footer');
     if(!root) return;
@@ -52,52 +287,131 @@
       <footer class="footer">
         <div class="footer-grid">
           <div>
-            <div class="foot-brand">
-              <img src="assets/favicon-48.png" alt="">
-              Social House
+            <a href="index.html" class="foot-brand-link">
+              <img src="assets/logo-240.webp" alt="Social House Therapy" width="96" height="96" decoding="async" loading="lazy">
+            </a>
+            <div class="foot-contact foot-contact-mobile">
+              <h4 class="footer-h4-stack">Contact Us</h4>
+              <ul>
+                <li><a href="tel:4804904812" aria-label="Call or text us at 480-490-4812">Call/Text 480-490-4812</a></li>
+                <li><a href="mailto:info@socialhousetherapy.com">info@socialhousetherapy.com</a></li>
+              </ul>
             </div>
-            <p class="tagline">Family-centered, child-led speech &amp; language therapy in Tempe and Scottsdale, Arizona — delivered where life happens.</p>
-            <div class="hand-sign">talk soon —</div>
+            <div class="foot-socials">
+              ${SOCIALS.map(s => `<a href="${s.href}" target="_blank" rel="noopener" aria-label="${s.label}">${socialIcon(s.icon)}</a>`).join('')}
+            </div>
+            <div class="hand-sign">talk soon!</div>
           </div>
           <div>
-            <h4>Explore</h4>
+            <h4>Site map</h4>
             <ul>
-              <li><a href="about.html">About Madison</a></li>
-              <li><a href="services.html">Services</a></li>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="partner-with-us.html">Partner With Us</a></li>
+              <li><a href="developmental-milestones.html">Developmental Milestones</a></li>
+              <li><a href="arizona-ddd-resources.html">Arizona DDD Resources</a></li>
+              <li><a href="blog.html">Blog</a></li>
               <li><a href="faq.html">FAQs</a></li>
-              <li><a href="contact.html">Book a free call</a></li>
+              <li><a href="contact.html">Contact</a></li>
             </ul>
           </div>
           <div>
             <h4>Services</h4>
             <ul>
-              <li><a href="service-language.html">Language delays</a></li>
-              <li><a href="service-speech.html">Speech sounds</a></li>
-              <li><a href="service-aac.html">AAC support</a></li>
-              <li><a href="service-feeding.html">Pediatric feeding</a></li>
-              <li><a href="service-fluency.html">Stuttering &amp; fluency</a></li>
-              <li><a href="service-cognitive.html">Cognitive communication</a></li>
+              <li><a href="evaluations.html">Evaluations</a></li>
+              <li><a href="early-communication-late-talkers.html">Early Communication &amp; Late Talkers</a></li>
+              <li><a href="autism-social-communication.html">Autism &amp; Social Communication</a></li>
+              <li><a href="speech-sound-disorders.html">Speech Sound Disorders</a></li>
+              <li><a href="understanding-using-language.html">Understanding &amp; Using Language</a></li>
+              <li><a href="stuttering-fluency.html">Stuttering &amp; Fluency</a></li>
+              <li><a href="pediatric-feeding-oral-motor.html">Pediatric Feeding &amp; Oral Motor</a></li>
+              <li><a href="aac-support.html">AAC Support</a></li>
             </ul>
           </div>
           <div>
-            <h4>Visit</h4>
+            <h4>Areas We Serve</h4>
             <ul>
-              <li>Tempe &amp; Scottsdale, AZ</li>
-              <li>In-home &amp; on-site</li>
-              <li>Telehealth statewide</li>
-              <li><a href="tel:4804904812">480-490-4812</a></li>
-              <li><a href="mailto:hello@socialhousetherapy.com">hello@socialhousetherapy.com</a></li>
+              <li><a href="speech-therapy-tempe.html">Tempe</a></li>
+              <li><a href="speech-therapy-scottsdale.html">Scottsdale</a></li>
             </ul>
+            <div class="foot-contact-desktop">
+              <h4 class="footer-h4-stack">Contact Us</h4>
+              <ul>
+                <li><a href="tel:4804904812" aria-label="Call or text us at 480-490-4812">Call/Text 480-490-4812</a></li>
+                <li><a href="mailto:info@socialhousetherapy.com">info@socialhousetherapy.com</a></li>
+              </ul>
+            </div>
           </div>
         </div>
         <div class="footer-base">
-          <div>© ${new Date().getFullYear()} Social House Therapy · Madison Jeffery, CCC-SLP</div>
-          <div>Neurodiversity-affirming · Family-centered</div>
+          <div>© ${new Date().getFullYear()} Social House Therapy</div>
+          <div class="footer-legal"><a href="privacy.html">Notice of Privacy Practices</a></div>
         </div>
       </footer>`;
   }
 
-  // Reveal on scroll
+  // ---------- FLOATING CONTACT BUTTON ----------
+  function buildContactFab(){
+    // Don't show on the contact page — the form is already there.
+    if(PAGE === 'contact') return;
+    if(document.getElementById('contactFab')) return;
+
+    const style = document.createElement('style');
+    style.id = 'contactFabStyles';
+    style.textContent = `
+      .contact-fab{
+        position: fixed; right: 22px; bottom: 22px; z-index: 900;
+        display: inline-flex; align-items: center; gap: 9px;
+        padding: 13px 18px; text-decoration: none;
+        border-radius: 999px;
+        background: var(--clay-500, #c7541f); color: var(--cream-50, #fbf8f1);
+        font-family: inherit; font-size: 14px; font-weight: 600; letter-spacing: -0.01em;
+        box-shadow: 0 12px 30px -10px rgba(40,50,40,0.5), 0 2px 6px rgba(40,50,40,0.2);
+        transition: transform .18s ease, box-shadow .18s ease, background .18s ease, opacity .2s ease, visibility .2s ease;
+      }
+      .contact-fab.is-hidden{ opacity: 0; visibility: hidden; pointer-events: none; transform: translateY(8px); }
+      .contact-fab:hover{ background: var(--clay-600, #a44318); color: var(--cream-50, #fbf8f1); transform: translateY(-2px); box-shadow: 0 16px 38px -10px rgba(199,84,31,0.55); }
+      .contact-fab:active{ transform: translateY(0); }
+      .contact-fab svg{ width: 19px; height: 19px; flex-shrink: 0; }
+      .contact-fab .cf-label{ white-space: nowrap; }
+      @media (max-width: 560px){
+        .contact-fab{ right: 16px; bottom: 16px; padding: 14px; }
+        .contact-fab .cf-label{ display: none; }
+        .contact-fab svg{ width: 22px; height: 22px; }
+      }
+    `;
+    document.head.appendChild(style);
+
+    const fab = document.createElement('a');
+    fab.id = 'contactFab';
+    fab.className = 'contact-fab';
+    fab.href = 'contact.html';
+    fab.setAttribute('aria-label', 'Contact us');
+    fab.innerHTML = `
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+      <span class="cf-label">Contact us</span>`;
+    document.body.appendChild(fab);
+
+    // Hide the button whenever the header or footer is in view.
+    // IntersectionObserver instead of a scroll handler: no layout reads per frame.
+    const header = document.getElementById('navEl') || document.querySelector('.nav');
+    const footer = document.querySelector('.footer');
+    if(!('IntersectionObserver' in window)){ return; }
+    const seen = { header: !!header, footer: false };
+    function update(){ fab.classList.toggle('is-hidden', seen.header || seen.footer); }
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(en => {
+        if(en.target === header) seen.header = en.isIntersecting;
+        else if(en.target === footer) seen.footer = en.isIntersecting;
+      });
+      update();
+    });
+    if(header) io.observe(header);
+    if(footer) io.observe(footer);
+    update();
+  }
+
+  // ---------- REVEAL ----------
   function wireReveal(){
     const els = document.querySelectorAll('.reveal');
     if(!('IntersectionObserver' in window) || !els.length){
@@ -112,24 +426,81 @@
     els.forEach(e => io.observe(e));
   }
 
-  // FAQ behavior (works on any page with .faq-item)
+  // ---------- FAQ ----------
+  // One delegated listener instead of two per question.
   function wireFaq(){
-    document.querySelectorAll('.faq-item').forEach(item => {
-      const q = item.querySelector('.faq-q');
-      const a = item.querySelector('.faq-a');
-      if(!q || !a) return;
-      q.addEventListener('click', () => {
-        const isOpen = item.classList.toggle('open');
-        if(isOpen){ a.style.maxHeight = a.scrollHeight + 'px'; }
-        else      { a.style.maxHeight = '0px'; }
-      });
+    document.addEventListener('click', (e) => {
+      const q = e.target.closest && e.target.closest('.faq-q');
+      if(!q) return;
+      const item = q.closest('.faq-item');
+      const a = item && item.querySelector('.faq-a');
+      if(!item || !a) return;
+      const isOpen = item.classList.toggle('open');
+      a.style.maxHeight = isOpen ? a.scrollHeight + 'px' : '0px';
     });
   }
 
-  document.addEventListener('DOMContentLoaded', () => {
+  // ---------- HAMBURGER VISIBILITY ----------
+  // Show the floating top-right hamburger only after the page header has
+  // scrolled fully out of view; hide it when the header is back in view.
+  function wireHamburgerVisibility(){
+    const burger = document.getElementById('navBurger');
+    const header = document.getElementById('navEl') || document.querySelector('.nav');
+    if(!burger || !header) return;
+
+    if('IntersectionObserver' in window){
+      new IntersectionObserver(entries => {
+        entries.forEach(en => burger.classList.toggle('visible', !en.isIntersecting));
+      }).observe(header);
+      return;
+    }
+
+    function update(){
+      const rect = header.getBoundingClientRect();
+      burger.classList.toggle('visible', rect.bottom <= 0);
+    }
+    window.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    update();
+  }
+
+  function boot(){
     buildNav();
+    wireNavDrop();
+    buildMenuOverlay();
+    wireMenu();
     buildFooter();
+    buildContactFab();
     wireReveal();
     wireFaq();
-  });
+    wireHamburgerVisibility();
+    wireNavHide();
+  }
+
+  // ---------- HIDE HEADER ON SCROLL DOWN, REVEAL ON SCROLL UP ----------
+  function wireNavHide(){
+    const spacer = document.getElementById('site-nav');
+    const nav = document.getElementById('navEl');
+    if(!spacer || !nav) return;
+    function sizeSpacer(){ spacer.style.height = nav.offsetHeight + 'px'; }
+    sizeSpacer();
+    window.addEventListener('resize', sizeSpacer);
+    if(document.fonts && document.fonts.ready) document.fonts.ready.then(sizeSpacer);
+    window.addEventListener('load', sizeSpacer);
+    let lastY = window.scrollY;
+    window.addEventListener('scroll', function(){
+      const y = window.scrollY;
+      const dy = y - lastY;
+      if(Math.abs(dy) < 8) return;
+      if(dy > 0 && y > nav.offsetHeight + 60 && !document.body.classList.contains('menu-open')){
+        nav.classList.add('nav-hide');
+      } else {
+        nav.classList.remove('nav-hide');
+      }
+      lastY = y;
+    }, { passive: true });
+  }
+
+  if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
+  else boot();
 })();

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Social House Therapy: Pricing</title>
+<meta name="description" content="Private-pay pricing for pediatric speech therapy with Social House Therapy in Tempe and Scottsdale, AZ.">
+<link rel="icon" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&amp;family=DM+Sans:opsz,wght@9..40,300..700&amp;family=Caveat:wght@500;600;700&amp;display=swap">
+<style>
+*{box-sizing:border-box}body{margin:0}
+doc-page:not(:defined){visibility:hidden}
+.page{container-type:size;background:#FBF8F1;color:#1F2A23;font-family:"DM Sans",system-ui,-apple-system,sans-serif;padding:4.6cqw;display:flex;flex-direction:column;gap:2.1cqh;print-color-adjust:exact;-webkit-print-color-adjust:exact}
+.pf-top{display:flex;align-items:flex-start;justify-content:space-between;gap:4cqw;padding-bottom:2.2cqh;border-bottom:1.5px solid #E0D3B3}
+.pf-brand{display:flex;align-items:center;gap:2.4cqw}
+.pf-brand img{width:11.5cqw;height:auto;flex:none}
+.pf-brand-name{font-family:"Bricolage Grotesque",system-ui,sans-serif;font-weight:600;font-size:3.5cqw;line-height:1.05;letter-spacing:-.02em;color:#364932;margin:0}
+.pf-brand-sub{font-size:1.9cqw;line-height:1.4;color:#6C7A70;margin:.5cqh 0 0}
+.pf-top-right{text-align:right;flex:none}
+.pf-top-label{font-size:1.55cqw;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#C55E3B;margin:0}
+.pf-top-phone{font-family:"Bricolage Grotesque",system-ui,sans-serif;font-weight:700;font-size:3cqw;line-height:1.15;letter-spacing:-.02em;color:#364932;margin:.5cqh 0 0}
+.pf-top-mail{font-size:1.85cqw;color:#6C7A70;margin:.4cqh 0 0}
+
+.pf-head h1{font-family:"Bricolage Grotesque",system-ui,sans-serif;font-weight:600;font-size:6.7cqw;line-height:1.02;letter-spacing:-.03em;color:#364932;margin:0;text-wrap:balance}
+.pf-hand{font-family:"Caveat",cursive;font-weight:600;color:#C55E3B;letter-spacing:0}
+.pf-head p{font-size:2.2cqw;line-height:1.5;color:#3D4C42;margin:1.3cqh 0 0;max-width:62ch}
+
+.pf-eval{background:#364932;color:#FBF8F1;border-radius:18px;padding:3.4cqw 3.8cqw;display:flex;align-items:center;justify-content:space-between;gap:4cqw}
+.pf-eval-label{font-size:1.55cqw;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#FCD870;margin:0}
+.pf-eval h2{font-family:"Bricolage Grotesque",system-ui,sans-serif;font-weight:600;font-size:3.7cqw;line-height:1.1;letter-spacing:-.02em;color:#FBF8F1;margin:.7cqh 0 1.5cqh}
+.pf-eval ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:1cqh 2.6cqw}
+.pf-eval li{display:flex;align-items:center;gap:.9cqw;font-size:2cqw;line-height:1.3;color:rgba(251,248,241,.9)}
+.pf-eval li svg{width:2.1cqw;height:2.1cqw;flex:none;color:#B1C9A5}
+.pf-eval-price{text-align:right;flex:none}
+.pf-eval-price .num{display:block;font-family:"Bricolage Grotesque",system-ui,sans-serif;font-weight:700;font-size:9cqw;line-height:.92;letter-spacing:-.035em;color:#FBF8F1}
+.pf-eval-price .lbl{display:block;font-size:1.85cqw;color:#B1C9A5;margin-top:.7cqh}
+
+.pf-rates{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+.pf-rate{padding:0 3cqw;display:flex;flex-direction:column}
+.pf-rate:first-child{padding-left:0}
+.pf-rate:last-child{padding-right:0}
+.pf-rate+.pf-rate{border-left:1.5px solid #E0D3B3}
+.pf-rate-head{display:flex;align-items:center;gap:1.5cqw;margin-bottom:1.8cqh}
+.pf-rate-ic{flex:none;width:7cqw;height:7cqw;border-radius:12px;display:grid;place-items:center}
+.pf-rate-ic svg{width:3.3cqw;height:3.3cqw}
+.pf-rate:nth-child(1) .pf-rate-ic{background:#E2EBDC;color:#637F5C}
+.pf-rate:nth-child(2) .pf-rate-ic{background:#E3EEF3;color:#5E93AC}
+.pf-rate:nth-child(3) .pf-rate-ic{background:#F6DDCF;color:#C55E3B}
+.pf-rate-head h3{font-family:"Bricolage Grotesque",system-ui,sans-serif;font-weight:600;font-size:2.7cqw;line-height:1.15;letter-spacing:-.015em;color:#364932;margin:0}
+.pf-rate-head span{display:block;font-size:1.75cqw;line-height:1.3;color:#6C7A70;margin-top:.5cqh}
+.pf-rate-rows{display:flex;flex-direction:column}
+.pf-rate-rows .row{display:flex;align-items:baseline;justify-content:space-between;gap:2cqw;padding:1.5cqh 0;border-bottom:1px solid rgba(45,58,35,.12)}
+.pf-rate-rows .row:last-child{border-bottom:0}
+.pf-rate-rows .dur{font-size:2cqw;color:#3D4C42}
+.pf-rate-rows .amt{font-family:"Bricolage Grotesque",system-ui,sans-serif;font-weight:700;font-size:3.2cqw;line-height:1;letter-spacing:-.02em;color:#364932}
+.pf-rate-note{font-size:1.6cqw;line-height:1.45;color:#6C7A70;margin:1.4cqh 0 0;display:flex;gap:.5cqw}
+.pf-ast{color:#C55E3B;font-weight:700}
+sup.pf-ast{font-size:.75em;margin-left:.15em}
+
+.pf-pay{background:#F5EFE1;border-radius:16px;padding:2.2cqw 3.2cqw;display:flex;flex-direction:column;gap:1.3cqh}
+.pf-pay-row{display:flex;align-items:center;justify-content:space-between;gap:2.5cqw}
+.pf-pay-h{font-family:"Bricolage Grotesque",system-ui,sans-serif;font-weight:600;font-size:2.35cqw;line-height:1.2;letter-spacing:-.015em;color:#364932;margin:0;flex:none}
+.pf-pay-note{font-size:1.75cqw;line-height:1.45;color:#6C7A70;margin:0}
+.pf-pay-chips{display:flex;flex-wrap:wrap;gap:.9cqh 1.2cqw;justify-content:flex-end}
+.pf-chip{background:#FFFFFF;border:1px solid rgba(45,58,35,.12);border-radius:999px;padding:1cqh 1.8cqw;font-size:1.8cqw;font-weight:500;line-height:1;color:#1F2A23;white-space:nowrap}
+
+.pf-foot{margin-top:auto;display:flex;align-items:flex-end;justify-content:space-between;gap:4cqw;padding-top:2.4cqh;border-top:1.5px solid #E0D3B3}
+.pf-promise{margin:0}
+.pf-promise-hand{display:block;font-family:"Caveat",cursive;font-weight:600;font-size:4.4cqw;line-height:1.1;color:#C55E3B}
+.pf-promise-sub{display:block;font-size:1.85cqw;line-height:1.5;color:#6C7A70;margin-top:.5cqh;max-width:46ch}
+.pf-cta{flex:none;text-align:right}
+.pf-cta-label{font-size:1.55cqw;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#C55E3B;margin:0 0 .8cqh}
+.pf-cta-phone{font-family:"Bricolage Grotesque",system-ui,sans-serif;font-weight:700;font-size:4.2cqw;line-height:1;letter-spacing:-.025em;color:#364932;margin:0;text-decoration:none;display:block}
+.pf-cta-web{font-size:1.9cqw;color:#6C7A70;margin:.9cqh 0 0;text-decoration:none;display:block}
+a{color:#C55E3B}a:hover{color:#A14A2D}
+</style>
+</head>
+<body>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#364932"/><text x="50" y="62" font-family="Georgia,serif" font-size="34" font-weight="700" fill="#FBF8F1" text-anchor="middle">$</text></svg></template>
+<doc-page size="letter">
+<section class="page" id="flier" data-screen-label="Pricing Flier">
+  <div class="pf-top">
+    <div class="pf-brand">
+      <img src="logo.webp" alt="Social House Therapy">
+      <div>
+        <p class="pf-brand-name">Social House Therapy</p>
+        <p class="pf-brand-sub">Pediatric speech therapy in Tempe &amp; Scottsdale, AZ<br>Madison Jeffery, MS, CCC-SLP</p>
+      </div>
+    </div>
+    <div class="pf-top-right">
+      <p class="pf-top-label">Questions? Call or text</p>
+      <p class="pf-top-phone">480-490-4812</p>
+      <p class="pf-top-mail">info@socialhousetherapy.com</p>
+    </div>
+  </div>
+
+  <div class="pf-head">
+    <h1>Simple <span class="pf-hand">private pay</span> pricing.<br>No surprise fees.</h1>
+    <p>Every rate is listed below. We review the full cost with you before anything is scheduled, so you always know what to expect.</p>
+  </div>
+
+  <div class="pf-eval">
+    <div>
+      <p class="pf-eval-label">Start here</p>
+      <h2>Comprehensive Evaluation</h2>
+      <ul>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>In-person evaluation</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Written report included</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Follow-up consultation included</li>
+      </ul>
+    </div>
+    <div class="pf-eval-price"><span class="num">$350</span><span class="lbl">flat rate</span></div>
+  </div>
+
+  <div class="pf-rates">
+    <div class="pf-rate">
+      <div class="pf-rate-head">
+        <span class="pf-rate-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span>
+        <div><h3>In-home visit</h3><span>We come to you</span></div>
+      </div>
+      <div class="pf-rate-rows">
+        <div class="row"><span class="dur">30 minutes</span><span class="amt">$100</span></div>
+        <div class="row"><span class="dur">60 minutes</span><span class="amt">$180</span></div>
+      </div>
+    </div>
+    <div class="pf-rate">
+      <div class="pf-rate-head">
+        <span class="pf-rate-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></span>
+        <div><h3>Telehealth</h3><span>Available throughout Arizona</span></div>
+      </div>
+      <div class="pf-rate-rows">
+        <div class="row"><span class="dur">30 minutes</span><span class="amt">$80</span></div>
+        <div class="row"><span class="dur">60 minutes</span><span class="amt">$150</span></div>
+      </div>
+    </div>
+    <div class="pf-rate">
+      <div class="pf-rate-head">
+        <span class="pf-rate-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/></svg></span>
+        <div><h3>On-site</h3><span>Childcare and ABA centers</span></div>
+      </div>
+      <div class="pf-rate-rows">
+        <div class="row"><span class="dur">30 minutes<sup class="pf-ast">*</sup></span><span class="amt">$85</span></div>
+      </div>
+      <p class="pf-rate-note"><span class="pf-ast">*</span>Available when multiple children are scheduled consecutively at the same location and with facility approval.</p>
+    </div>
+  </div>
+
+  <div class="pf-pay">
+    <div class="pf-pay-row">
+      <h3 class="pf-pay-h">Ways to pay</h3>
+      <div class="pf-pay-chips">
+        <span class="pf-chip">HSA</span>
+        <span class="pf-chip">FSA</span>
+        <span class="pf-chip">Arizona ESA</span>
+        <span class="pf-chip">Debit &amp; credit</span>
+        <span class="pf-chip">Superbill available</span>
+      </div>
+    </div>
+    <p class="pf-pay-note">We are currently a private-pay practice. Insurance participation and DDD funding are coming soon for select locations and service settings.</p>
+  </div>
+
+  <div class="pf-foot">
+    <p class="pf-promise"><span class="pf-promise-hand">Not sure where to start?</span><span class="pf-promise-sub">Reach out and we will talk through what you are noticing, then decide the right next step together. The 15-minute call is free.</span></p>
+    <div class="pf-cta">
+      <p class="pf-cta-label">Let's talk</p>
+      <a class="pf-cta-phone" href="tel:4804904812">480-490-4812</a>
+      <a class="pf-cta-web" href="https://socialhousetherapy.com">socialhousetherapy.com</a>
+    </div>
+  </div>
+</section>
+</doc-page>
+<script src="doc-page.js"></script>
+</body>
+</html>

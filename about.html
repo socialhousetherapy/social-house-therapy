@@ -3,191 +3,1155 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About Madison Jeffery, CCC-SLP — Social House Therapy</title>
-<meta name="description" content="Meet Madison Jeffery, the pediatric speech-language pathologist behind Social House Therapy. Family-centered, neurodiversity-affirming care across Tempe and Scottsdale, AZ.">
+<title>About Social House Therapy | Pediatric Speech Therapy in Tempe &amp; Scottsdale, AZ</title>
+<meta name="description" content="Meet Madison Jeffery, MS, CCC-SLP, and the story behind Social House Therapy: in-home pediatric speech therapy across Tempe, Scottsdale, and the East Valley.">
 <link rel="icon" href="assets/favicon-48.png">
+<link rel="canonical" href="https://socialhousetherapy.com/about.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&amp;family=Bricolage+Grotesque:opsz,wght@12..96,300..800&amp;family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,400..600&amp;family=Caveat:wght@500;600;700&amp;family=Instrument+Serif:ital@0;1&amp;display=swap">
 <link rel="stylesheet" href="styles/tokens.css">
-<link rel="stylesheet" href="styles/site.css">
+<link rel="stylesheet" href="styles/site.css?v=28">
+<link rel="stylesheet" href="styles/clarity.css?v=10">
 <script>window.__PAGE = 'about';</script>
+<style>
+  /* ============================================================
+     ABOUT PAGE: scoped styles (ab- prefix)
+     Story arc: reality → why we exist → what we believe →
+     who Madison is → what it feels like → next step
+     ============================================================ */
+  .ab-page { background: var(--cream-50); }
+
+  .ab-shell {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 clamp(20px, 4vw, 56px);
+  }
+
+  /* ---------- 1. HERO ---------- */
+  .ab-hero {
+    background: var(--sun-100);
+    padding: clamp(28px, 3.5vw, 52px) 0 clamp(32px, 4vw, 56px);
+    position: relative;
+    z-index: 3;
+  }
+  .ab-hero::before {
+    content: "";
+    position: absolute;
+    top: -120px; right: -100px;
+    width: 420px; height: 420px;
+    background: radial-gradient(circle at center, var(--sage-100) 0%, transparent 70%);
+    opacity: 0.7;
+    pointer-events: none;
+  }
+  .ab-hero-grid {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1.06fr 0.94fr;
+    gap: clamp(36px, 5vw, 76px);
+    align-items: center;
+  }
+  .ab-crumbs {
+    font-family: var(--font-body);
+    font-size: 12.5px;
+    color: var(--ink-500);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 22px;
+  }
+  .ab-crumbs a { color: var(--ink-500); text-decoration: none; }
+  .ab-crumbs a:hover { color: var(--clay-500); }
+  .ab-crumbs .sep { color: var(--ink-300); }
+  .ab-eyebrow {
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--sage-600);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 18px;
+  }
+  .ab-eyebrow::before {
+    content: "";
+    width: 26px; height: 2px;
+    background: var(--clay-400);
+    border-radius: 2px;
+  }
+  .ab-hero .ab-hero-h {
+    font-family: var(--font-heading);
+    font-size: clamp(26px, 3.2vw, 38px);
+    font-weight: 600;
+    line-height: 1.12;
+    letter-spacing: -0.022em;
+    color: var(--sage-800);
+    margin: 0 0 24px;
+    text-wrap: balance;
+    max-width: 21ch;
+  }
+  .ab-hero .ab-hero-h .ab-hand {
+    font-family: var(--font-hand);
+    font-weight: 600;
+    color: var(--clay-500);
+    font-size: 1.06em;
+    letter-spacing: 0;
+  }
+  .ab-hero-lede {
+    font-family: var(--font-body);
+    font-size: clamp(14px, 1.1vw, 16px);
+    line-height: 1.65;
+    color: var(--ink-700);
+    margin: 0 0 16px;
+    max-width: 44ch;
+    text-wrap: pretty;
+  }
+  .ab-hero-lede.ab-hero-lede--soft {
+    color: #56655a;
+    margin-bottom: 32px;
+  }
+  .ab-hero-lede + .ab-hero-lede { margin-top: -6px; }
+  [data-parallax] { will-change: transform; }
+  .ab-section-cta { margin-top: clamp(30px, 3.4vw, 44px); display: flex; }
+  .ab-section-cta--center { justify-content: center; }
+  .ab-hero-ctas {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px 32px;
+  }
+  .ab-hero-trust {
+    margin: 28px 0 0;
+    padding-top: 22px;
+    border-top: 1px solid var(--border-default);
+    font-family: var(--font-body);
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--ink-500);
+    max-width: 46ch;
+    display: flex;
+    gap: 12px;
+  }
+  .ab-hero-trust svg { width: 18px; height: 18px; color: var(--sage-500); flex: 0 0 auto; margin-top: 2px; }
+  .ab-hero-points {
+    margin-top: 28px;
+    padding-top: 22px;
+    border-top: 1px solid var(--border-default);
+  }
+  .ab-hero-fears {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 10px;
+  }
+  .ab-hero-fears li {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-body);
+    font-size: 13.5px;
+    color: var(--ink-700);
+    white-space: nowrap;
+  }
+  .ab-hero-fears svg { width: 16px; height: 16px; color: var(--sage-500); flex: 0 0 auto; }
+  @media (max-width: 720px) {
+    .ab-hero-fears { gap: 12px; }
+  }
+
+  .ab-hero-figure {
+    position: relative;
+    padding: 14px 0 14px 14px;
+  }
+  @media (min-width: 981px) {
+    .ab-hero-figure { margin-right: calc(-1 * (max((100vw - 1180px) / 2, 0px) + clamp(20px, 4vw, 56px))); margin-top: calc(-1 * clamp(28px, 3.5vw, 52px)); margin-bottom: calc(-1 * clamp(32px, 4vw, 56px)); align-self: stretch; padding: 0; }
+    .ab-hero-figure .ab-hero-photo { position: absolute; inset: 0 0 0 14px; aspect-ratio: auto; height: auto; min-height: 0; border-radius: 28px 0 0 28px; }
+    .ab-hero-figure .ab-hero-photo img { object-position: center 40%; }
+    .ab-hero-figure .ab-hero-card { bottom: -74px; left: -170px; }
+  }
+  .ab-hero-photo {
+    position: relative;
+    aspect-ratio: 4 / 5;
+    border-radius: 28px 0 0 28px;
+    overflow: hidden;
+    background: var(--sage-100);
+    box-shadow: var(--shadow-lg);
+  }
+  .ab-hero-photo img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+    display: block;
+  }
+  .ab-hero-card {
+    position: absolute;
+    bottom: -18px; left: -24px;
+    background: var(--white);
+    border-radius: 36px 14px 36px 14px;
+    padding: 18px 24px 16px;
+    box-shadow: var(--shadow-lg);
+    width: min(440px, 82%);
+    max-width: 440px;
+    z-index: 2;
+    border: 1px solid var(--border-subtle);
+  }
+  .ab-hero-card-g {
+    position: absolute;
+    top: 14px; right: 16px;
+    width: 20px; height: 20px;
+    opacity: 0.95;
+  }
+  .ab-hero-card-quote {
+    font-family: var(--font-heading);
+    font-size: 14px;
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+    color: var(--sage-800);
+    font-weight: 600;
+    margin: 0 0 14px;
+    padding-left: 11px;
+    border-left: 2.5px solid var(--clay-400);
+    text-wrap: pretty;
+  }
+  .ab-hero-card-attr {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 0;
+  }
+  .ab-hero-card-avatar {
+    width: 30px; height: 30px;
+    border-radius: 999px;
+    background: var(--clay-400);
+    color: var(--cream-50);
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 13px;
+    display: grid; place-items: center;
+    flex-shrink: 0;
+  }
+  .ab-hero-card-name {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 12px;
+    color: var(--brand-ink, var(--sage-800));
+    line-height: 1.15;
+  }
+  .ab-hero-card-sub {
+    font-size: 10px;
+    color: var(--fg-3, var(--sage-600));
+    line-height: 1.2;
+  }
+  .ab-hero-card-stars {
+    color: var(--sun-500);
+    letter-spacing: 1.5px;
+    font-size: 12px;
+    line-height: 1;
+    margin-left: auto;
+    flex-shrink: 0;
+  }
+
+  /* ---------- 2. WHY WE EXIST (the in-between) ---------- */
+  .ab-why {
+    background: var(--sage-50);
+    padding: clamp(40px, 5vw, 72px) 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .ab-why-inner {
+    max-width: 940px;
+    margin: 0 auto;
+    padding: 0 clamp(20px, 4vw, 40px);
+  }
+  .ab-why-rule {
+    width: 46px; height: 3px;
+    background: var(--clay-300);
+    border-radius: 3px;
+    margin: 0 0 30px;
+  }
+  .ab-why h2 {
+    font-family: var(--font-heading);
+    font-size: clamp(26px, 3.2vw, 38px);
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -0.022em;
+    color: var(--sage-800);
+    margin: 0 0 30px;
+    text-wrap: balance;
+  }
+  .ab-why p {
+    font-family: var(--font-body);
+    font-size: clamp(16px, 1.35vw, 18.5px);
+    line-height: 1.72;
+    color: var(--ink-700);
+    margin: 0 0 22px;
+    max-width: 72ch;
+    text-wrap: pretty;
+  }
+  .ab-why p strong { color: var(--sage-800); font-weight: 600; }
+  .ab-why-questions {
+    margin: 36px 0 40px;
+    display: grid;
+    gap: 14px;
+    max-width: 54ch;
+  }
+  .ab-why-questions span {
+    font-family: var(--font-hand);
+    font-size: clamp(20px, 2.1vw, 26px);
+    line-height: 1.25;
+    color: var(--clay-500);
+    display: block;
+  }
+  .ab-why-questions span:nth-child(odd) { transform: rotate(-0.6deg); }
+  .ab-why-questions span:nth-child(even) { transform: rotate(0.5deg); margin-left: 14px; }
+  .ab-why-pivot {
+    font-family: var(--font-heading);
+    font-size: clamp(23px, 2.6vw, 32px);
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.018em;
+    color: var(--sage-800);
+    margin: 46px 0 26px;
+    text-wrap: balance;
+  }
+  .ab-why p.ab-why-mean {
+    font-family: var(--font-hand);
+    text-align: center;
+    font-weight: 600;
+    font-size: clamp(25px, 3vw, 36px);
+    line-height: 1.2;
+    color: var(--clay-500);
+  }
+  .ab-why p.ab-why-sign {
+    font-family: var(--font-hand);
+    font-size: clamp(20px, 2.2vw, 27px);
+    color: var(--clay-500);
+    margin-top: 10px;
+    transform: rotate(-1.5deg);
+  }
+  .ab-why-accent {
+    font-family: var(--font-hand);
+    font-size: clamp(25px, 3vw, 36px);
+    color: var(--clay-500);
+    line-height: 1.15;
+    margin-top: 14px;
+    transform: rotate(-1.5deg);
+    display: inline-block;
+  }
+
+  /* ---------- 3. WHAT WE BELIEVE ---------- */
+  .ab-believe { background: var(--white); padding: clamp(36px, 4.2vw, 60px) 0; }
+  .ab-believe-head { max-width: 720px; margin: 0 0 clamp(38px, 4.4vw, 58px); }
+  .ab-believe-head h2 {
+    font-family: var(--font-heading);
+    font-size: clamp(26px, 3.2vw, 38px);
+    font-weight: 600;
+    line-height: 1.12;
+    letter-spacing: -0.022em;
+    color: var(--sage-800);
+    margin: 0 0 20px;
+    text-wrap: balance;
+  }
+  .ab-believe-head p {
+    font-family: var(--font-body);
+    font-size: clamp(14px, 1.1vw, 16px);
+    line-height: 1.6;
+    color: var(--ink-700);
+    margin: 0;
+    max-width: 56ch;
+  }
+  .ab-believe-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(14px, 1.8vw, 20px);
+  }
+  .ab-believe-card {
+    padding: clamp(20px, 2.2vw, 28px);
+    position: relative;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.02), 0 18px 34px -24px rgba(45,58,35,0.26);
+    transition: transform .3s var(--ease-out), box-shadow .3s var(--ease-out);
+  }
+  .ab-believe-card:hover { transform: translateY(-4px); box-shadow: 0 1px 0 rgba(0,0,0,0.02), 0 26px 44px -24px rgba(45,58,35,0.32); }
+  .ab-believe-card:nth-child(1) { background: var(--sage-100); border-radius: 56px 22px 56px 22px; }
+  .ab-believe-card:nth-child(2) { background: var(--cream-200); border-radius: 22px 56px 22px 56px; }
+  .ab-believe-card:nth-child(3) { background: var(--clay-100); border-radius: 22px 56px 22px 56px; }
+  .ab-believe-card:nth-child(4) { background: var(--sun-100); border-radius: 56px 22px 56px 22px; }
+  .ab-believe-num {
+    font-family: var(--font-hand);
+    font-size: 23px;
+    line-height: 1;
+    display: block;
+    margin-bottom: 14px;
+  }
+  .ab-believe-card:nth-child(1) .ab-believe-num { color: var(--sage-600); }
+  .ab-believe-card:nth-child(2) .ab-believe-num { color: var(--clay-500); }
+  .ab-believe-card:nth-child(3) .ab-believe-num { color: var(--clay-500); }
+  .ab-believe-card:nth-child(4) .ab-believe-num { color: var(--sun-500); }
+  .ab-believe-card h3 {
+    font-family: var(--font-heading);
+    font-size: clamp(16.5px, 1.35vw, 20px);
+    font-weight: 600;
+    letter-spacing: -0.014em;
+    color: var(--sage-800);
+    margin: 0 0 12px;
+    line-height: 1.2;
+    text-wrap: balance;
+  }
+  .ab-believe-card p {
+    font-family: var(--font-body);
+    font-size: 13.5px;
+    line-height: 1.64;
+    color: var(--ink-700);
+    margin: 0;
+    text-wrap: pretty;
+  }
+
+  /* ---------- 4. MEET MADISON ---------- */
+  .ab-madison {
+    background: var(--cream-100);
+    padding: clamp(28px, 4vw, 60px) 0 clamp(32px, 4vw, 56px);
+    position: relative;
+    overflow: hidden;
+    overflow: clip; /* clips like hidden but keeps position:sticky working */
+  }
+  .ab-madison-grid {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    grid-template-areas: "figure lead" "figure text";
+    column-gap: clamp(36px, 5vw, 76px);
+    row-gap: 0;
+    align-items: start;
+  }
+  .ab-madison-grid > .ab-madison-figure { grid-area: figure; }
+  .ab-madison-grid > .ab-madison-lead { grid-area: lead; }
+  .ab-madison-grid > .ab-madison-text { grid-area: text; }
+  /* Hero scrollytelling: photo pins while the story scrolls past it */
+  @media (min-width: 981px) {
+    .ab-madison-grid { align-items: start; }
+    .ab-madison-grid > .ab-madison-figure {
+      position: sticky;
+      top: var(--ab-fig-top, clamp(28px, 7vh, 96px));
+      margin-left: calc(-1 * (max((100vw - 1180px) / 2, 0px) + clamp(20px, 4vw, 56px)));
+      padding-left: 0;
+    }
+    .ab-madison-lead,
+    .ab-madison-text { position: relative; padding-left: 34px; }
+    .ab-madison-progress {
+      position: absolute;
+      left: 0; top: 8px; bottom: 8px;
+      width: 2px;
+      background: var(--sage-200);
+      border-radius: 2px;
+    }
+    .ab-madison-progress i {
+      position: absolute;
+      left: -1px; top: 0;
+      width: 4px; height: 0%;
+      background: var(--clay-400);
+      border-radius: 2px;
+      transition: height 0.08s linear;
+    }
+    @media (prefers-reduced-motion: no-preference) {
+      .ab-madison-text > * { opacity: 1; transform: none; }
+      .ab-madison-text [data-story] {
+        opacity: 0.25;
+        transform: translateY(14px);
+        transition: opacity 0.5s ease, transform 0.5s ease;
+      }
+      .ab-madison-text [data-story].is-read {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .ab-madison-photo { transition: transform 0.15s linear; }
+    }
+  }
+  @media (max-width: 980px) {
+    .ab-madison-progress { display: none; }
+  }
+  .ab-madison-figure { position: relative; padding: 16px 14px 22px 16px; }
+  .ab-madison-creds {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: 14px 28px;
+    margin-top: 18px;
+    padding-top: 16px;
+    position: relative;
+    z-index: 2;
+  }
+  .ab-madison-creds img { height: 40px; width: auto; display: block; mix-blend-mode: multiply; opacity: 0.85; }
+  .ab-madison-text .ab-madison-creds {
+    justify-content: flex-start;
+    margin-top: 26px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-default);
+  }
+  .ab-madison-figure::before { content: none; }
+  .ab-madison-figure::after { content: none; }
+  .ab-madison-photo {
+    position: relative;
+    z-index: 1;
+    aspect-ratio: 4 / 5;
+    border-radius: 0 28px 28px 0;
+    overflow: hidden;
+    background: var(--cream-50);
+    box-shadow: var(--shadow-lg);
+  }
+  .ab-madison-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 32%; display: block; }
+  .ab-madison-tag {
+    position: relative;
+    z-index: 2;
+    margin-top: 18px;
+    text-align: center;
+  }
+  .ab-madison-tag-name {
+    font-family: var(--font-heading);
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--sage-800);
+    line-height: 1.2;
+    white-space: nowrap;
+  }
+  .ab-madison-text { min-width: 0; }
+  .ab-madison-text .ab-eyebrow { margin-bottom: 16px; }
+  .ab-madison-lead h1,
+  .ab-madison-text h1,
+  .ab-madison-text h2 {
+    font-family: var(--font-heading);
+    font-size: clamp(28px, 4.4vw, 40px);
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -0.022em;
+    color: var(--sage-800);
+    margin: 0 0 22px;
+    text-wrap: balance;
+  }
+  .ab-madison-byline {
+    font-family: var(--font-hand, var(--font-heading));
+    font-size: clamp(26px, 6vw, 30px);
+    color: var(--clay-500, var(--sage-600));
+    line-height: 1.2;
+    margin: -8px 0 22px;
+  }
+  .ab-madison-text p {
+    font-family: var(--font-body);
+    font-size: clamp(14px, 1.1vw, 16px);
+    line-height: 1.65;
+    color: var(--ink-700);
+    margin: 0 0 16px;
+    max-width: 58ch;
+  }
+  .ab-madison-text p strong { color: var(--sage-800); font-weight: 600; }
+  .ab-madison-cred {
+    margin: 22px 0 0;
+    padding: 16px 20px;
+    background: var(--white);
+    border-radius: 16px;
+    border: 1px solid var(--border-subtle);
+    font-family: var(--font-body);
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: var(--ink-700);
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  .ab-madison-cred svg { width: 18px; height: 18px; color: var(--sage-500); flex: 0 0 auto; margin-top: 2px; }
+  .ab-madison-quote {
+    position: relative;
+    margin: 22px 0 0;
+    padding: 18px 48px 18px 22px;
+    background: var(--sage-100, #eef2e9);
+    border-radius: 36px 14px 36px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.02), 0 12px 28px -20px rgba(45,58,35,0.22);
+  }
+  .ab-madison-quote-g { position: absolute; top: 18px; right: 20px; width: 20px; height: 20px; opacity: 0.95; }
+  .ab-madison-quote-pull {
+    font-family: var(--font-heading);
+    font-size: clamp(14px, 1.05vw, 15.5px);
+    line-height: 1.5;
+    letter-spacing: -0.01em;
+    color: var(--sage-800);
+    margin: 0;
+    font-weight: 600;
+    font-style: normal;
+    padding-left: 12px;
+    border-left: 2.5px solid var(--clay-400);
+    text-wrap: pretty;
+  }
+  .ab-madison-quote-attr { display: flex; align-items: center; gap: 10px; min-width: 0; }
+  .ab-madison-quote-avatar {
+    width: 34px; height: 34px;
+    border-radius: 999px;
+    background: var(--clay-400);
+    color: var(--cream-50, #fff);
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 14px;
+    display: grid; place-items: center;
+    flex-shrink: 0;
+  }
+  .ab-madison-quote-name { font-family: var(--font-heading); font-weight: 700; font-size: 13px; color: var(--brand-ink, #2f3a27); line-height: 1.15; }
+  .ab-madison-quote-sub { font-size: 11px; color: var(--fg-3, #6b6b63); line-height: 1.2; }
+  .ab-madison-quote-stars { color: var(--sun-500); letter-spacing: 1.5px; font-size: 13px; line-height: 1; margin-left: auto; flex-shrink: 0; }
+  .ab-madison-figure .ab-madison-quote {
+    position: absolute;
+    bottom: -40px;
+    right: -16px;
+    left: auto;
+    width: min(400px, 104%);
+    margin: 0;
+    z-index: 3;
+    background: var(--white);
+    border: 1px solid var(--border-subtle);
+    border-radius: 36px 14px 36px 14px;
+    padding: 16px 44px 16px 20px;
+  }
+  @media (max-width: 980px) {
+    .ab-madison-figure::before {
+      inset: 6px 30px auto 0;
+      aspect-ratio: 4 / 4.7;
+      height: auto;
+    }
+    .ab-madison-figure .ab-madison-quote {
+      position: relative;
+      z-index: 3;
+      width: min(440px, calc(100% - 28px));
+      right: auto;
+      left: auto;
+      margin: -104px auto 52px;
+      background: var(--white);
+      border: 1px solid var(--border-subtle);
+      border-radius: 36px 14px 36px 14px;
+      padding: 16px 44px 16px 20px;
+      box-shadow: var(--shadow-lg);
+    }
+  }
+
+  /* ---------- 5. WHAT IT FEELS LIKE ---------- */
+  .ab-feels { background: var(--sky-100, #E3EEF3); padding: clamp(36px, 4.2vw, 60px) 0; }
+  .ab-feels-grid {
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: clamp(36px, 5vw, 80px);
+    align-items: start;
+  }
+  .ab-feels-head h2 {
+    font-family: var(--font-heading);
+    font-size: clamp(26px, 3.2vw, 38px);
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -0.022em;
+    color: var(--sage-800);
+    margin: 0 0 22px;
+    text-wrap: balance;
+  }
+  .ab-feels-head p {
+    font-family: var(--font-body);
+    font-size: clamp(14px, 1.1vw, 16px);
+    line-height: 1.65;
+    color: var(--ink-700);
+    margin: 0;
+    max-width: 42ch;
+  }
+  .ab-feels-reviews { margin-top: clamp(24px, 2.6vw, 34px); display: flex; flex-direction: column; gap: 14px; max-width: 380px; align-items: stretch; }
+  .ab-fr { position: relative; border: 1px solid var(--border-subtle); border-radius: 24px 10px 24px 10px; padding: 14px 44px 14px 16px; box-shadow: 0 10px 24px -16px rgba(45,58,35,0.35); margin: 0; }
+  .ab-fr:nth-child(1) { background: var(--sage-100); border-radius: 24px 10px 24px 10px; margin-left: 0; margin-right: 40px; }
+  .ab-fr:nth-child(2) { background: var(--cream-200); border-radius: 10px 24px 10px 24px; margin-left: 40px; margin-right: 0; }
+  .ab-fr:nth-child(3) { background: var(--clay-100); border-radius: 24px 10px 24px 10px; margin-left: 16px; margin-right: 24px; }
+  .ab-fr-g { position: absolute; top: 13px; right: 14px; width: 18px; height: 18px; opacity: 0.95; }
+  .ab-fr-stars { display: block; color: var(--sun-500); letter-spacing: 1.5px; font-size: 12px; line-height: 1; margin-bottom: 8px; }
+  .ab-fr-quote { font-family: var(--font-heading); font-size: 14px; font-weight: 600; line-height: 1.4; letter-spacing: -0.01em; color: var(--sage-800); margin: 0 0 10px; text-wrap: pretty; }
+  .ab-fr:nth-child(3) .ab-fr-quote { color: var(--clay-600, var(--sage-800)); }
+  .ab-fr-attr { display: flex; align-items: center; gap: 9px; }
+  .ab-fr-avatar { width: 24px; height: 24px; border-radius: 999px; background: var(--sage-500); color: var(--cream-50); font-family: var(--font-heading); font-weight: 700; font-size: 11px; display: grid; place-items: center; flex-shrink: 0; }
+  .ab-fr:nth-child(2) .ab-fr-avatar { background: var(--sun-500); }
+  .ab-fr:nth-child(3) .ab-fr-avatar { background: var(--clay-400); }
+  .ab-fr-name { font-family: var(--font-heading); font-weight: 700; font-size: 12px; color: var(--brand-ink, var(--sage-800)); }
+  .ab-feels-item {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 22px;
+    align-items: start;
+    padding: 26px 0;
+    border-bottom: 1px solid var(--border-default);
+  }
+  .ab-feels-item:first-child { padding-top: 0; }
+  .ab-feels-item:last-child { border-bottom: 0; padding-bottom: 0; }
+  .ab-feels-ic {
+    flex: 0 0 auto;
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    display: grid; place-items: center;
+  }
+  .ab-feels-item:nth-child(1) .ab-feels-ic { background: var(--sage-100); color: var(--sage-600); }
+  .ab-feels-item:nth-child(2) .ab-feels-ic { background: var(--clay-100); color: var(--clay-500); }
+  .ab-feels-item:nth-child(3) .ab-feels-ic { background: var(--sun-100); color: var(--sun-500); }
+  .ab-feels-item:nth-child(4) .ab-feels-ic { background: var(--sage-100); color: var(--sage-600); }
+  .ab-feels-ic svg { width: 21px; height: 21px; }
+  .ab-feels-item h3 {
+    font-family: var(--font-heading);
+    font-size: clamp(17px, 1.5vw, 20px);
+    font-weight: 600;
+    letter-spacing: -0.012em;
+    color: var(--sage-800);
+    margin: 0 0 8px;
+  }
+  .ab-feels-item p {
+    font-family: var(--font-body);
+    font-size: 14px;
+    line-height: 1.62;
+    color: var(--ink-700);
+    margin: 0;
+    text-wrap: pretty;
+  }
+
+  /* ---------- 6. FINAL CTA ---------- */
+  .ab-final {
+    background: url("assets/splatter-full.svg") top center/100% auto repeat-y var(--cream-100);
+    padding: clamp(44px, 5vw, 72px) 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .ab-final::before {
+    content: "";
+    position: absolute;
+    bottom: -160px; left: 50%;
+    transform: translateX(-50%);
+    width: 620px; height: 620px;
+    background: radial-gradient(circle at center, var(--sage-100) 0%, transparent 68%);
+    opacity: 0.6;
+    pointer-events: none;
+  }
+  .ab-final-inner { position: relative; max-width: 660px; margin: 0 auto; padding: 0 24px; }
+  .ab-final-hand {
+    font-family: var(--font-hand);
+    font-size: clamp(22px, 2.4vw, 30px);
+    color: var(--clay-500);
+    line-height: 1;
+    display: block;
+    margin-bottom: 14px;
+    transform: rotate(-1.5deg);
+  }
+  .ab-final h2 {
+    font-family: var(--font-heading);
+    font-size: clamp(26px, 3.2vw, 38px);
+    font-weight: 600;
+    line-height: 1.08;
+    letter-spacing: -0.024em;
+    color: var(--sage-800);
+    margin: 0 0 22px;
+    text-wrap: balance;
+  }
+  .ab-final p {
+    font-family: var(--font-body);
+    font-size: clamp(14px, 1.1vw, 16px);
+    line-height: 1.65;
+    color: var(--ink-700);
+    margin: 0 auto 34px;
+    max-width: 50ch;
+  }
+  .ab-final-ctas {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 14px 24px;
+  }
+  .ab-final-ctas .hero-v2-phone-cta { width: fit-content; max-width: 100%; }
+  @media (max-width: 640px) {
+    .ab-final-ctas { flex-direction: column; gap: 10px; }
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 980px) {
+    .ab-hero-grid,
+    .ab-madison-grid,
+    .ab-feels-grid { grid-template-columns: 1fr; }
+    .ab-madison-grid {
+      grid-template-areas: "lead" "figure" "text";
+      row-gap: clamp(20px, 4vw, 32px);
+    }
+    .ab-believe-grid { grid-template-columns: 1fr 1fr; }
+    .ab-hero-grid { gap: 4px; }
+    .ab-hero-figure { max-width: none; margin: 0 calc(-1 * clamp(20px, 4vw, 56px)); padding: 14px 0 14px; }
+    .ab-hero-figure .ab-hero-photo { border-radius: 0; }
+    .ab-hero-figure .ab-hero-card { left: 14px; right: 14px; width: auto; max-width: 440px; }
+    .ab-madison-figure { max-width: none; margin: 0 calc(-1 * clamp(20px, 4vw, 56px)); padding-left: 0; padding-right: 0; }
+    .ab-madison-photo { border-radius: 0; }
+    /* Interleave testimonials between the four topics on mobile */
+    .ab-feels-grid { display: flex; flex-direction: column; gap: 0; }
+    .ab-feels-head, .ab-feels-list, .ab-feels-reviews { display: contents; }
+    .ab-feels-head h2 { order: 1; }
+    .ab-feels-head p { order: 2; margin-bottom: clamp(20px, 5vw, 32px); }
+    .ab-feels-list .ab-feels-item:nth-child(1) { order: 3; }
+    .ab-feels-reviews .ab-fr:nth-child(1) { order: 4; }
+    .ab-feels-list .ab-feels-item:nth-child(2) { order: 5; }
+    .ab-feels-reviews .ab-fr:nth-child(2) { order: 6; }
+    .ab-feels-list .ab-feels-item:nth-child(3) { order: 7; }
+    .ab-feels-reviews .ab-fr:nth-child(3) { order: 8; }
+    .ab-feels-list .ab-feels-item:nth-child(4) { order: 9; }
+    .ab-feels-reviews .ab-fr { margin: 18px 0; max-width: none; }
+    .ab-feels-list .ab-feels-item:last-child { border-bottom: 0; padding-bottom: 0; }
+  }
+  @media (max-width: 720px) {
+    /* Tighten hero so the review card clears the fold */
+    .ab-madison { padding-top: 14px; }
+    .ab-madison-grid { row-gap: 12px; }
+    .ab-crumbs { margin-bottom: 12px; }
+    .ab-madison-lead h1 { font-size: clamp(24px, 6.2vw, 30px); margin-bottom: 10px; }
+    .ab-madison-byline { font-size: 22px; margin: -4px 0 0; }
+    .ab-madison-figure { padding: 12px 0 0; }
+    .ab-madison-figure::after { width: 50px; height: 50px; }
+    .ab-madison-figure .ab-madison-quote { width: min(440px, calc(100% - 28px)); margin: -96px auto 44px; padding: 14px 40px 14px 18px; }
+    .ab-believe-grid { grid-template-columns: 1fr; gap: 0; }
+    .ab-believe-card,
+    .ab-believe-card:nth-child(1),
+    .ab-believe-card:nth-child(2),
+    .ab-believe-card:nth-child(3) {
+      background: transparent;
+      box-shadow: none;
+      border-radius: 0;
+      padding: 22px 0;
+      border-bottom: 1px solid var(--border-default, rgba(45,58,35,0.14));
+    }
+    .ab-believe-card:hover { transform: none; box-shadow: none; }
+    .ab-believe-card:last-child { border-bottom: 0; padding-bottom: 0; }
+    .ab-believe-card:first-child { padding-top: 0; }
+  }
+</style>
 </head>
-<body>
+<body class="ab-page">
 
 <div id="site-nav"></div>
 
-<section class="page-hero">
-  <div class="page-hero-inner reveal in">
-    <div class="crumbs"><a href="index.html">Home</a><span class="sep">/</span><span>About</span></div>
-    <h1>Hi — I'm Madison. <em>Welcome home.</em></h1>
-    <p class="lead">I'm a pediatric speech-language pathologist, founder of Social House, and a lifelong believer that the best therapy doesn't feel like therapy — it feels like connection.</p>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container" style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 64px; align-items: start;" id="aboutGrid">
-    <div class="reveal">
-      <div style="position: relative; max-width: 440px;">
-        <div style="border-radius: var(--radius-blob); overflow: hidden; aspect-ratio: 4/5; box-shadow: var(--shadow-lg);">
-          <img src="assets/madison-jeffery.jpg" alt="Madison Jeffery, founder of Social House Therapy" style="width:100%;height:100%;object-fit:cover;">
+<!-- ========== 1. HERO: MEET MADISON ========== -->
+<section class="ab-madison" data-screen-label="Meet Madison">
+  <div class="ab-shell">
+    <div class="ab-madison-grid">
+      <div class="ab-madison-figure reveal in">
+        <div class="ab-madison-photo">
+          <img src="assets/madison-with-baby.png" alt="Madison Jeffery, CCC-SLP, pediatric speech-language pathologist and founder of Social House Therapy, holding her newborn">
         </div>
-        <div style="position: absolute; bottom: -16px; left: -14px; background: var(--white); padding: 14px 20px; border-radius: 18px; box-shadow: var(--shadow-md);">
-          <div class="hand" style="font-size: 24px; color: var(--clay-500); line-height: 1;">Madison Jeffery</div>
-          <div style="font-family: var(--font-heading); font-size: 14px; font-weight: 600; color: var(--ink-900); margin-top: 2px;">CCC-SLP · Founder</div>
+        <figure class="ab-madison-quote">
+          <svg class="ab-madison-quote-g" viewBox="0 0 48 48" aria-hidden="true"><path fill="#4285F4" d="M44.5 20H24v8.5h11.8C34.7 33 30 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3 0 5.7 1.1 7.8 3l6-6C34.6 6.1 29.6 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20c10.5 0 19.5-7.6 19.5-20 0-1.3-.2-2.7-.5-4z"/><path fill="#34A853" d="M6.3 14.7l6.6 4.8C14.7 16 19 13 24 13c3 0 5.7 1.1 7.8 3l6-6C34.6 6.1 29.6 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#FBBC05" d="M24 44c5.5 0 10.5-2.1 14.3-5.6l-6.6-5.4C29.6 34.6 27 36 24 36c-6 0-10.7-3-12.6-7.5l-6.6 5.1C8.6 39.7 15.7 44 24 44z"/><path fill="#EA4335" d="M44.5 20H24v8.5h11.8c-1.1 3.2-3.3 5.6-6.1 7l6.6 5.4C40.3 37 44 31.2 44 24c0-1.3-.2-2.7-.5-4z"/></svg>
+          <blockquote class="ab-madison-quote-pull">&ldquo;Both of my girls have thrived under Madison&rsquo;s care and guidance. She has such a special way and calming presence about her&rdquo;</blockquote>
+          <figcaption class="ab-madison-quote-attr">
+            <div class="ab-madison-quote-avatar" aria-hidden="true">B</div>
+            <div>
+              <div class="ab-madison-quote-name">Brianna D.</div>
+              <div class="ab-madison-quote-sub">Parent</div>
+            </div>
+            <span class="ab-madison-quote-stars" aria-label="5 out of 5 stars">★★★★★</span>
+          </figcaption>
+        </figure>
+      </div>
+
+      <div class="ab-madison-lead reveal in">
+        <div class="ab-crumbs"><a href="index.html">Home</a><span class="sep">/</span><span>About</span></div>
+        <h1>The Heart Behind Social House Therapy.</h1>
+        <div class="ab-madison-byline">Madison Jeffery, CCC-SLP</div>
+      </div>
+
+      <div class="ab-madison-text reveal in" data-delay="1">
+        <span class="ab-madison-progress" aria-hidden="true"><i></i></span>
+        <p>Meet the clinician, founder, and steady presence guiding each family with care.</p>
+        <p data-story="">For Madison, speech therapy has always been about more than words. As a child, she worked with a speech-language pathologist who helped her connect more meaningfully with the people around her. That experience shaped her career and the belief behind Social House Therapy: communication begins with feeling seen, understood, and supported.</p>
+        <p data-story="">Madison earned her bachelor&rsquo;s degree in Speech and Hearing Sciences from Arizona State University and her master&rsquo;s degree from Northern Arizona University. Before becoming an SLP, she spent four years as a speech-language pathology assistant. Her experience now spans homes, schools, clinics, ABA centers, community settings, and virtual care.</p>
+        <p data-story="">Her areas of focus include autism, gestalt language processing, AAC, speech sound disorders, childhood apraxia of speech, and stuttering. Madison builds trust through each child&rsquo;s interests, creating a calm, playful space where trying something new never feels like getting it wrong. Parents are included with clear explanations and practical strategies that fit naturally into everyday routines.</p>
+        <p data-story="">Madison founded Social House Therapy to provide care that feels personal, thoughtful, and handcrafted for each family. Her vision is to build a team of supported, continually learning clinicians who share that same commitment to relationship-based, family-centered care.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ========== 2. OUR APPROACH: the parent's reality ========== -->
+<section class="ab-hero" data-screen-label="About Hero">
+  <div class="ab-shell">
+    <div class="ab-hero-grid">
+      <div class="ab-hero-text reveal in">
+        <h2 class="ab-hero-h">When your child is misunderstood, everyday moments can <span class="ab-hand">feel harder.</span></h2>
+        <p class="ab-hero-lede">You may see the frustration without knowing exactly what is getting in the way. The difficulty may involve speech, language, motor planning, fluency, or not yet having a reliable way to communicate.</p>
+        <p class="ab-hero-lede ab-hero-lede--soft">At Social House Therapy, we help you understand what you are seeing and what to do next, so your child has more reliable ways to express themselves and be understood throughout everyday life. We work with toddlers through elementary-age kids, roughly ages 2 to 12, from first words through the grade-school years.</p>
+      </div>
+
+      <div class="ab-hero-figure reveal in" data-delay="1">
+        <div class="ab-hero-photo">
+          <img src="assets/aac-play-session.png" alt="A child playing with toy cars while using an AAC communication device on a tablet">
+        </div>
+        <figure class="ab-hero-card" data-parallax="-0.12">
+          <svg class="ab-hero-card-g" viewBox="0 0 48 48" aria-hidden="true">
+            <path fill="#4285F4" d="M44.5 20H24v8.5h11.8C34.7 33 30 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3 0 5.7 1.1 7.8 3l6-6C34.6 6.1 29.6 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20c10.5 0 19.5-7.6 19.5-20 0-1.3-.2-2.7-.5-4z"/>
+            <path fill="#34A853" d="M6.3 14.7l6.6 4.8C14.7 16 19 13 24 13c3 0 5.7 1.1 7.8 3l6-6C34.6 6.1 29.6 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/>
+            <path fill="#FBBC05" d="M24 44c5.5 0 10.5-2.1 14.3-5.6l-6.6-5.4C29.6 34.6 27 36 24 36c-6 0-10.7-3-12.6-7.5l-6.6 5.1C8.6 39.7 15.7 44 24 44z"/>
+            <path fill="#EA4335" d="M44.5 20H24v8.5h11.8c-1.1 3.2-3.3 5.6-6.1 7l6.6 5.4C40.3 37 44 31.2 44 24c0-1.3-.2-2.7-.5-4z"/>
+          </svg>
+          <blockquote class="ab-hero-card-quote">&ldquo;Day by day he has become more expressive, more confident, and more willing to communicate.&rdquo;</blockquote>
+          <figcaption class="ab-hero-card-attr">
+            <div class="ab-hero-card-avatar" aria-hidden="true">N</div>
+            <div>
+              <div class="ab-hero-card-name">Natasha S.</div>
+              <div class="ab-hero-card-sub">Caregiver</div>
+            </div>
+            <span class="ab-hero-card-stars" aria-label="5 out of 5 stars">★★★★★</span>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 3. WHY WE EXIST: the in-between place ========== -->
+<section class="ab-why" id="our-story" data-screen-label="Why We Exist">
+  <div class="ab-why-inner reveal">
+    <div class="ab-why-rule" aria-hidden="true"></div>
+    <h2>We created Social House Therapy because families deserve more.</h2>
+    <p>Too often, parents arrive after feeling rushed, overlooked, or unsure what to do next. They may have received a plan that did not fully fit their child, experienced frequent therapist changes, or left sessions without understanding what was being worked on or why.</p>
+    <p>We built Social House Therapy to offer a more thoughtful experience, one where concerns are taken seriously, children are seen as whole people, and families are included throughout the process. Our goal is to pair high-level clinical care with clear communication, practical strategies, and the consistency needed to build trust.</p>
+    <p>As the practice grows, that standard will remain the same. Every clinician will be supported and equipped to provide personal, relationship-based care shaped around the child and the life their family already lives.</p>
+    <p>We never want therapy to feel like just another appointment. We want families to feel understood, informed, and genuinely supported by a team that is in their corner.</p>
+    <p class="ab-why-mean">Because connection comes first, and that is where meaningful progress begins.</p>
+  </div>
+</section>
+
+<!-- ========== 4. WHAT WE BELIEVE ========== -->
+<section class="ab-believe" data-screen-label="What We Believe">
+  <div class="ab-shell">
+    <div class="ab-believe-head reveal">
+      <h2>A few things we hold to, no matter the child.</h2>
+      <p>These aren&rsquo;t taglines on a wall. They&rsquo;re the reasons sessions look the way they do, and the reasons families tend to exhale a little once they&rsquo;re in the room.</p>
+    </div>
+    <div class="ab-believe-grid">
+      <div class="ab-believe-card reveal">
+        <span class="ab-believe-num">01</span>
+        <h3>Children communicate more when they feel safe, not pressured.</h3>
+        <p>When a child feels rushed, they may pull back. When they feel regulated, understood, and genuinely enjoyed, they begin reaching out. That is why every plan begins with trust and play, long before any drill.</p>
+      </div>
+      <div class="ab-believe-card reveal" data-delay="1">
+        <span class="ab-believe-num">02</span>
+        <h3>You should never need a dictionary after a session.</h3>
+        <p>You&rsquo;ll hear what we&rsquo;re seeing and why it matters in sentences you can repeat to your partner that same night. No acronyms, no homework you have to decode.</p>
+      </div>
+      <div class="ab-believe-card reveal" data-delay="1">
+        <span class="ab-believe-num">03</span>
+        <h3>Your child isn&rsquo;t a problem to fix.</h3>
+        <p>We build on who your child already is, including their interests, humor, strengths, and way of relating, rather than trying to change who they are.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 5. WHAT IT FEELS LIKE ========== -->
+<section class="ab-feels" data-screen-label="What It Feels Like">
+  <div class="ab-shell">
+    <div class="ab-feels-grid">
+      <div class="ab-feels-head reveal">
+        <h2>What working together feels like.</h2>
+        <p>No mystery, no performance. Here&rsquo;s the rhythm most families settle into once we begin.</p>
+        <div class="ab-feels-reviews" aria-label="What families are saying">
+          <figure class="ab-fr">
+            <svg class="ab-fr-g" viewBox="0 0 48 48" aria-hidden="true"><path fill="#4285F4" d="M44.5 20H24v8.5h11.8C34.7 33 30 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3 0 5.7 1.1 7.8 3l6-6C34.6 6.1 29.6 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20c10.5 0 19.5-7.6 19.5-20 0-1.3-.2-2.7-.5-4z"/><path fill="#34A853" d="M6.3 14.7l6.6 4.8C14.7 16 19 13 24 13c3 0 5.7 1.1 7.8 3l6-6C34.6 6.1 29.6 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#FBBC05" d="M24 44c5.5 0 10.5-2.1 14.3-5.6l-6.6-5.4C29.6 34.6 27 36 24 36c-6 0-10.7-3-12.6-7.5l-6.6 5.1C8.6 39.7 15.7 44 24 44z"/><path fill="#EA4335" d="M44.5 20H24v8.5h11.8c-1.1 3.2-3.3 5.6-6.1 7l6.6 5.4C40.3 37 44 31.2 44 24c0-1.3-.2-2.7-.5-4z"/></svg>
+            <span class="ab-fr-stars" aria-label="5 out of 5 stars">★★★★★</span>
+            <blockquote class="ab-fr-quote">&ldquo;Our son loves her and has made huge progress under her care.&rdquo;</blockquote>
+            <figcaption class="ab-fr-attr"><span class="ab-fr-avatar" aria-hidden="true">A</span><span class="ab-fr-name">Adreana D.</span></figcaption>
+          </figure>
+          <figure class="ab-fr">
+            <svg class="ab-fr-g" viewBox="0 0 48 48" aria-hidden="true"><path fill="#4285F4" d="M44.5 20H24v8.5h11.8C34.7 33 30 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3 0 5.7 1.1 7.8 3l6-6C34.6 6.1 29.6 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20c10.5 0 19.5-7.6 19.5-20 0-1.3-.2-2.7-.5-4z"/><path fill="#34A853" d="M6.3 14.7l6.6 4.8C14.7 16 19 13 24 13c3 0 5.7 1.1 7.8 3l6-6C34.6 6.1 29.6 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#FBBC05" d="M24 44c5.5 0 10.5-2.1 14.3-5.6l-6.6-5.4C29.6 34.6 27 36 24 36c-6 0-10.7-3-12.6-7.5l-6.6 5.1C8.6 39.7 15.7 44 24 44z"/><path fill="#EA4335" d="M44.5 20H24v8.5h11.8c-1.1 3.2-3.3 5.6-6.1 7l6.6 5.4C40.3 37 44 31.2 44 24c0-1.3-.2-2.7-.5-4z"/></svg>
+            <span class="ab-fr-stars" aria-label="5 out of 5 stars">★★★★★</span>
+            <blockquote class="ab-fr-quote">&ldquo;Madison was so kind, patient, and knowledgeable.&rdquo;</blockquote>
+            <figcaption class="ab-fr-attr"><span class="ab-fr-avatar" aria-hidden="true">S</span><span class="ab-fr-name">Sabrina M.</span></figcaption>
+          </figure>
+          <figure class="ab-fr">
+            <svg class="ab-fr-g" viewBox="0 0 48 48" aria-hidden="true"><path fill="#4285F4" d="M44.5 20H24v8.5h11.8C34.7 33 30 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3 0 5.7 1.1 7.8 3l6-6C34.6 6.1 29.6 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20c10.5 0 19.5-7.6 19.5-20 0-1.3-.2-2.7-.5-4z"/><path fill="#34A853" d="M6.3 14.7l6.6 4.8C14.7 16 19 13 24 13c3 0 5.7 1.1 7.8 3l6-6C34.6 6.1 29.6 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#FBBC05" d="M24 44c5.5 0 10.5-2.1 14.3-5.6l-6.6-5.4C29.6 34.6 27 36 24 36c-6 0-10.7-3-12.6-7.5l-6.6 5.1C8.6 39.7 15.7 44 24 44z"/><path fill="#EA4335" d="M44.5 20H24v8.5h11.8c-1.1 3.2-3.3 5.6-6.1 7l6.6 5.4C40.3 37 44 31.2 44 24c0-1.3-.2-2.7-.5-4z"/></svg>
+            <span class="ab-fr-stars" aria-label="5 out of 5 stars">★★★★★</span>
+            <blockquote class="ab-fr-quote">&ldquo;Madison was very patient with my son.&rdquo;</blockquote>
+            <figcaption class="ab-fr-attr"><span class="ab-fr-avatar" aria-hidden="true">J</span><span class="ab-fr-name">Julie B.</span></figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="ab-feels-list reveal" data-delay="1">
+        <div class="ab-feels-item">
+          <span class="ab-feels-ic" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg>
+          </span>
+          <div>
+            <h3>Therapy comes to your child</h3>
+            <p>In your living room, at the park, at an ABA or child care center, or on a screen at the kitchen table. Kids show us the most on ground that already feels like theirs, so that&rsquo;s where we meet them.</p>
+          </div>
+        </div>
+        <div class="ab-feels-item">
+          <span class="ab-feels-ic" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </span>
+          <div>
+            <h3>You&rsquo;re in it, not outside it</h3>
+            <p>You&rsquo;ll always know what we&rsquo;re working on and why, and you&rsquo;ll leave with one small, doable thing to try before the next visit. One thing, never a stack.</p>
+          </div>
+        </div>
+        <div class="ab-feels-item">
+          <span class="ab-feels-ic" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+          </span>
+          <div>
+            <h3>Sessions look a lot like play</h3>
+            <p>Because for a young child, play is the work. We build communication into whatever they&rsquo;re already into: trains, snacks, dinosaurs, the lot.</p>
+          </div>
+        </div>
+        <div class="ab-feels-item">
+          <span class="ab-feels-ic" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a5 5 0 0 0-5 5c0 2 1 3 1 5h8c0-2 1-3 1-5a5 5 0 0 0-5-5z"/><line x1="9" y1="17" x2="15" y2="17"/><line x1="10" y1="20" x2="14" y2="20"/></svg>
+          </span>
+          <div>
+            <h3>We build for real-life moments.</h3>
+            <p>The moments that matter happen at the dinner table and in the back seat, so that&rsquo;s where the strategies are pointed: toward the routines you live every day.</p>
+          </div>
         </div>
       </div>
     </div>
-
-    <div class="reveal">
-      <span class="eyebrow-sage">Meet your SLP</span>
-      <h2 style="font-family: var(--font-heading); font-size: clamp(28px, 3.2vw, 42px); font-weight: 500; letter-spacing: -0.02em; line-height: 1.1; color: var(--brand-ink); margin: 14px 0 22px;">
-        Relationship-first, research-informed, deeply human.
-      </h2>
-      <p style="font-size: 18px; line-height: 1.7; color: var(--fg-2);">
-        I started Social House because I believe the best therapy happens in the places
-        kids actually live — at the kitchen table, on the floor with their favorite toys,
-        or in a quiet corner of the preschool classroom. Clinics can feel sterile. Connection
-        can't be forced. So we don't.
-      </p>
-      <p style="font-size: 17px; line-height: 1.7; color: var(--fg-2);">
-        My approach is <strong style="color: var(--ink-900);">neurodiversity-affirming</strong>,
-        <strong style="color: var(--ink-900);">child-led</strong>, and
-        <strong style="color: var(--ink-900);">family-partnered</strong>. That means we
-        follow your child's lead, honor how their brain is wired, and treat caregivers as
-        the most important people in the process — because they are.
-      </p>
-      <p style="font-size: 17px; line-height: 1.7; color: var(--fg-2);">
-        Outside of sessions, I'm likely hiking a desert trail, re-reading a good novel,
-        or planning a weekend with my own family. I know what it feels like to want the
-        best for a child you love. That's the only lens I bring to work.
-      </p>
-
-      <div style="margin-top: 28px; display: flex; gap: 12px; flex-wrap: wrap;">
-        <a class="btn btn-primary" href="contact.html">Book a free call</a>
-        <a class="btn btn-ghost" href="services.html">See how I can help →</a>
-      </div>
-    </div>
   </div>
 </section>
 
-<!-- Values band -->
-<section class="section section-cream">
-  <div class="container">
-    <div class="section-head reveal">
-      <span class="eyebrow-sage">What we believe</span>
-      <h2>Five promises we make to every family.</h2>
-    </div>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px;">
-      <div class="card reveal">
-        <div style="font-family: var(--font-hand); font-size: 32px; color: var(--clay-500); line-height: 1;">one</div>
-        <h3 style="font-family: var(--font-heading); font-size: 19px; margin: 10px 0 8px; color: var(--brand-ink);">Connection before curriculum</h3>
-        <p style="font-size: 15px; color: var(--fg-2); margin: 0;">A trusting relationship is the therapy. Everything else is the tool.</p>
-      </div>
-      <div class="card reveal">
-        <div style="font-family: var(--font-hand); font-size: 32px; color: var(--clay-500); line-height: 1;">two</div>
-        <h3 style="font-family: var(--font-heading); font-size: 19px; margin: 10px 0 8px; color: var(--brand-ink);">Child-led, always</h3>
-        <p style="font-size: 15px; color: var(--fg-2); margin: 0;">We follow your child's interests. Engagement is what makes new skills stick.</p>
-      </div>
-      <div class="card reveal">
-        <div style="font-family: var(--font-hand); font-size: 32px; color: var(--clay-500); line-height: 1;">three</div>
-        <h3 style="font-family: var(--font-heading); font-size: 19px; margin: 10px 0 8px; color: var(--brand-ink);">Caregivers as partners</h3>
-        <p style="font-size: 15px; color: var(--fg-2); margin: 0;">You know your child best. We coach, you carry it into everyday life.</p>
-      </div>
-      <div class="card reveal">
-        <div style="font-family: var(--font-hand); font-size: 32px; color: var(--clay-500); line-height: 1;">four</div>
-        <h3 style="font-family: var(--font-heading); font-size: 19px; margin: 10px 0 8px; color: var(--brand-ink);">Neurodiversity-affirming</h3>
-        <p style="font-size: 15px; color: var(--fg-2); margin: 0;">Different brains belong. Our goal is communication that fits your child — not fixing them.</p>
-      </div>
-      <div class="card reveal">
-        <div style="font-family: var(--font-hand); font-size: 32px; color: var(--clay-500); line-height: 1;">five</div>
-        <h3 style="font-family: var(--font-heading); font-size: 19px; margin: 10px 0 8px; color: var(--brand-ink);">Where life happens</h3>
-        <p style="font-size: 15px; color: var(--fg-2); margin: 0;">Home, preschool, telehealth. Carryover is easier when we're already there.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Credentials -->
-<section class="section">
-  <div class="container" style="display: grid; grid-template-columns: 1fr 1.3fr; gap: 56px; align-items: start;">
-    <div class="reveal">
-      <span class="eyebrow-sage">Credentials &amp; training</span>
-      <h2 style="font-family: var(--font-heading); font-size: clamp(26px, 3vw, 36px); font-weight: 500; letter-spacing: -0.02em; color: var(--brand-ink); margin: 14px 0 16px;">Trained where it matters, certified where it counts.</h2>
-      <p style="color: var(--fg-2); font-size: 16px;">Continuing education is a commitment to the families we serve — not a checkbox.</p>
-    </div>
-    <ul class="reveal" style="list-style: none; padding: 0; margin: 0; display: grid; gap: 2px;">
-      <li style="padding: 18px 0; border-bottom: 1px solid var(--border-default); display: flex; gap: 16px; align-items: baseline;">
-        <span class="hand" style="font-size: 22px; color: var(--clay-500);">·</span>
-        <div><strong style="color: var(--ink-900); display: block; font-size: 16px;">Certified Clinical Competence (CCC-SLP)</strong><span style="color: var(--fg-2); font-size: 14px;">American Speech-Language-Hearing Association</span></div>
-      </li>
-      <li style="padding: 18px 0; border-bottom: 1px solid var(--border-default); display: flex; gap: 16px; align-items: baseline;">
-        <span class="hand" style="font-size: 22px; color: var(--clay-500);">·</span>
-        <div><strong style="color: var(--ink-900); display: block; font-size: 16px;">Licensed in Arizona</strong><span style="color: var(--fg-2); font-size: 14px;">Speech-Language Pathology</span></div>
-      </li>
-      <li style="padding: 18px 0; border-bottom: 1px solid var(--border-default); display: flex; gap: 16px; align-items: baseline;">
-        <span class="hand" style="font-size: 22px; color: var(--clay-500);">·</span>
-        <div><strong style="color: var(--ink-900); display: block; font-size: 16px;">Gestalt Language Processing</strong><span style="color: var(--fg-2); font-size: 14px;">Advanced training in natural-language approaches</span></div>
-      </li>
-      <li style="padding: 18px 0; border-bottom: 1px solid var(--border-default); display: flex; gap: 16px; align-items: baseline;">
-        <span class="hand" style="font-size: 22px; color: var(--clay-500);">·</span>
-        <div><strong style="color: var(--ink-900); display: block; font-size: 16px;">AAC specialization</strong><span style="color: var(--fg-2); font-size: 14px;">Device trials, onboarding, and daily support</span></div>
-      </li>
-      <li style="padding: 18px 0; display: flex; gap: 16px; align-items: baseline;">
-        <span class="hand" style="font-size: 22px; color: var(--clay-500);">·</span>
-        <div><strong style="color: var(--ink-900); display: block; font-size: 16px;">Pediatric feeding</strong><span style="color: var(--fg-2); font-size: 14px;">Sensory-informed, responsive feeding</span></div>
-      </li>
-    </ul>
-  </div>
-</section>
-
-<!-- Reviews -->
-<section class="section section-sage" id="reviews">
-  <div class="container">
-    <div class="section-head reveal">
-      <span style="font-size: 13px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--sun-300);">Kind words</span>
-      <h2 style="color: var(--cream-50);">Real families. Real growth.</h2>
-    </div>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
-      <div class="reveal" style="background: rgba(255,255,255,0.06); border: 1px solid rgba(251,248,241,0.16); border-radius: 24px; padding: 28px;">
-        <div style="color: var(--sun-300); letter-spacing: 2px; margin-bottom: 12px;">★ ★ ★ ★ ★</div>
-        <p style="color: var(--cream-50); font-family: var(--font-heading); font-size: 18px; line-height: 1.45; margin: 0 0 20px;">Madison helped my daughter voice emotions and navigate social situations with real confidence. If I could give 10 stars, I would.</p>
-        <div style="color: rgba(251,248,241,0.72); font-size: 14px;"><strong style="color: var(--cream-50);">Briana D.</strong> · Parent, Tempe</div>
-      </div>
-      <div class="reveal" style="background: rgba(255,255,255,0.06); border: 1px solid rgba(251,248,241,0.16); border-radius: 24px; padding: 28px;">
-        <div style="color: var(--sun-300); letter-spacing: 2px; margin-bottom: 12px;">★ ★ ★ ★ ★</div>
-        <p style="color: var(--cream-50); font-family: var(--font-heading); font-size: 18px; line-height: 1.45; margin: 0 0 20px;">She incorporated his interests into every teletherapy session, and he looked forward to every visit. We noticed the improvement as a family.</p>
-        <div style="color: rgba(251,248,241,0.72); font-size: 14px;"><strong style="color: var(--cream-50);">Julie B.</strong> · Parent, Scottsdale</div>
-      </div>
-      <div class="reveal" style="background: rgba(255,255,255,0.06); border: 1px solid rgba(251,248,241,0.16); border-radius: 24px; padding: 28px;">
-        <div style="color: var(--sun-300); letter-spacing: 2px; margin-bottom: 12px;">★ ★ ★ ★ ★</div>
-        <p style="color: var(--cream-50); font-family: var(--font-heading); font-size: 18px; line-height: 1.45; margin: 0 0 20px;">Two years in — my son came in with a stutter and leaves sessions proud of his voice.</p>
-        <div style="color: rgba(251,248,241,0.72); font-size: 14px;"><strong style="color: var(--cream-50);">Cynthia L.</strong> · Parent</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
-<section style="padding: 80px 32px 112px;">
-  <div class="cta-banner reveal">
-    <div>
-      <h2>Think we might be a fit?</h2>
-      <p>A free 15-minute call is the best place to start. No forms, no pressure — just a conversation.</p>
-      <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 8px;">
-        <a class="btn btn-soft" href="contact.html">Book a free call</a>
-        <a class="btn btn-outline-light" href="faq.html">Read the FAQ →</a>
-      </div>
-    </div>
-    <div style="position: relative; aspect-ratio: 1; border-radius: 28px; overflow: hidden; box-shadow: var(--shadow-md); max-width: 320px; justify-self: end;">
-      <img src="assets/madison-jeffery.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover;">
+<!-- ========== 6. FINAL CTA ========== -->
+<section class="ab-final" data-screen-label="Final CTA">
+  <div class="ab-final-inner reveal">
+    <h2>Start with a conversation, not a commitment.</h2>
+    <p>A free 15-minute call gives you space to share what you&rsquo;re noticing and hear an honest, jargon-free perspective on what may come next. There is no pressure to schedule an evaluation and no script to follow.</p>
+    <div class="ab-final-ctas">
+      <a class="cl-cta-btn" href="contact.html">
+        Get Started
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg>
+      </a>
+      <a class="hero-v2-phone-cta" href="tel:4804904812" aria-label="Call us at 480-490-4812">
+        <span class="hero-v2-phone-pre">Call/Text</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <span>480-490-4812</span>
+      </a>
     </div>
   </div>
 </section>
 
 <div id="site-footer"></div>
-<script src="scripts/site.js"></script>
-<style>
-@media (max-width: 900px){
-  #aboutGrid { grid-template-columns: 1fr !important; gap: 40px !important; }
-}
-</style>
+<script src="scripts/site.js?v=19"></script>
+<script>
+/* Subtle scroll parallax on decorative elements and photos */
+(function () {
+  var mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+  var items = [];
+  function measure() {
+    items = [].slice.call(document.querySelectorAll('[data-parallax]')).map(function (el) {
+      var host = el.closest('section') || el.parentElement;
+      var saved = el.style.transform;
+      el.style.transform = '';
+      var rect = host.getBoundingClientRect();
+      el.style.transform = saved;
+      return {
+        el: el,
+        top: rect.top + window.pageYOffset,
+        h: rect.height,
+        speed: parseFloat(el.getAttribute('data-parallax')) || 0.1,
+        scale: el.hasAttribute('data-parallax-scale')
+      };
+    });
+  }
+  var ticking = false;
+  function frame() {
+    ticking = false;
+    if (mq.matches) {
+      items.forEach(function (it) { it.el.style.transform = ''; });
+      return;
+    }
+    var y = window.pageYOffset, vh = window.innerHeight;
+    items.forEach(function (it) {
+      var progress = (y + vh - it.top) / (vh + it.h);
+      if (progress < -0.25 || progress > 1.25) return;
+      var offset = (progress - 0.5) * 2 * it.speed * 100;
+      it.el.style.transform = 'translate3d(0,' + offset.toFixed(1) + 'px,0)' + (it.scale ? ' scale(1.12)' : '');
+    });
+  }
+  function onScroll() { if (!ticking) { ticking = true; requestAnimationFrame(frame); } }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', function () { measure(); onScroll(); }, { passive: true });
+  window.addEventListener('load', function () { measure(); frame(); });
+  measure(); frame();
+})();
+</script>
+<script src="scripts/sp-widget.js?v=3" defer></script>
+<script src="https://widget-cdn.simplepractice.com/assets/integration-1.0.js" defer></script>
+
+<script>
+/* Meet-Madison hero scrollytelling: pinned photo, progress rail, story reveal */
+(function () {
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+  var desktop = window.matchMedia('(min-width: 981px)');
+  var text = document.querySelector('.ab-madison-text');
+  var photo = document.querySelector('.ab-madison-photo');
+  var tag = document.querySelector('.ab-madison-tag');
+  var fill = document.querySelector('.ab-madison-progress i');
+  var figure = document.querySelector('.ab-madison-figure');
+  if (!text || !photo) return;
+
+  /* Keep the pinned photo vertically centered in the viewport */
+  function centerFigure() {
+    if (!figure) return;
+    if (!desktop.matches) { figure.style.removeProperty('--ab-fig-top'); return; }
+    var top = Math.max(16, (window.innerHeight - figure.offsetHeight) / 2);
+    figure.style.setProperty('--ab-fig-top', top.toFixed(0) + 'px');
+  }
+
+  /* Story reveal: paragraphs surface as they enter the reading zone */
+  var storyEls = [].slice.call(text.querySelectorAll('[data-story]'));
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) { en.target.classList.add('is-read'); io.unobserve(en.target); }
+      });
+    }, { rootMargin: '0px 0px -22% 0px', threshold: 0.15 });
+    storyEls.forEach(function (el) { io.observe(el); });
+  } else {
+    storyEls.forEach(function (el) { el.classList.add('is-read'); });
+  }
+
+  /* Progress rail + photo tilt, driven by how far the story has been read */
+  var ticking = false;
+  function update() {
+    ticking = false;
+    if (!desktop.matches) {
+      photo.style.transform = '';
+      if (tag) tag.style.transform = '';
+      return;
+    }
+    var rect = text.getBoundingClientRect();
+    var vh = window.innerHeight;
+    var total = rect.height - vh * 0.6;
+    var read = Math.min(1, Math.max(0, (vh * 0.6 - rect.top) / (total > 0 ? total : 1)));
+    if (fill) fill.style.height = (read * 100).toFixed(2) + '%';
+    if (!reduce.matches) {
+      if (tag) tag.style.transform = 'rotate(' + (-2 + read * 2.5).toFixed(2) + 'deg) translateY(' + (read * -4).toFixed(1) + 'px)';
+    }
+  }
+  function onScroll() {
+    if (!ticking) { ticking = true; requestAnimationFrame(update); }
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', function () { centerFigure(); onScroll(); });
+  if (document.readyState === 'complete') { centerFigure(); }
+  else { window.addEventListener('load', centerFigure); }
+  centerFigure();
+  update();
+})();
+</script>
 </body>
 </html>

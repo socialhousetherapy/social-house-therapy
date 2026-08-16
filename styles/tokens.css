@@ -9,7 +9,9 @@
    Body     : DM Sans             — warm geometric sans
    Accent   : Caveat              — hand-written moments ("connection first")
    -------------------------------------------------------------- */
-@import url('https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,400..600&family=Caveat:wght@500;600;700&display=swap');
+/* Fonts are loaded via <link> in each page head (faster than @import). */
+
+/* Emphasis font for accented words ("connection", "be yourself", etc.) — italic serif */
 
 :root {
   /* ---------- Brand Colors ---------- */
@@ -104,7 +106,6 @@
   /* ---------- Type Scale ---------- */
   --font-display: "Bagel Fat One", "Chewy", system-ui, sans-serif;
   --font-heading: "Bricolage Grotesque", "Inter Tight", system-ui, sans-serif;
-  --font-serif:   "Cormorant Garamond", "Playfair Display", Georgia, serif;
   --font-body:    "DM Sans", system-ui, -apple-system, sans-serif;
   --font-hand:    "Caveat", "Kalam", cursive;
   --font-mono:    ui-monospace, "JetBrains Mono", Menlo, monospace;

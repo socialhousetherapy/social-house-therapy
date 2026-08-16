@@ -1,0 +1,157 @@
+/* WHO WE HELP section */
+.who-section {
+  position: relative;
+  overflow: hidden;
+  /* Match the hero-v2 horizontal padding scheme exactly so the
+     section's left/right margins line up with the hero at every breakpoint. */
+  padding: 48px 64px;
+}
+.who-section .container {
+  max-width: 1680px;
+  margin: 0 auto;
+  padding: 0;
+}
+@media (max-width: 960px) {
+  .who-section { padding: 36px 28px; }
+}
+@media (max-width: 560px) {
+  .who-section { padding: 32px 20px; }
+}
+
+.who-content-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.who-text {
+  max-width: 580px;
+  justify-self: start;
+}
+
+.who-eyebrow {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--sage-700);
+  margin-bottom: 14px;
+}
+
+.who-title {
+  font-family: var(--font-heading);
+  font-size: clamp(32px, 4.5vw, 52px);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  color: var(--brand-ink);
+  margin: 0 0 20px;
+}
+.who-title-accent {
+  color: var(--sage-600);
+}
+.who-title em {
+  font-family: var(--font-display);
+  font-style: normal;
+  color: var(--clay-400);
+}
+
+.who-lead {
+  font-size: 18px;
+  line-height: 1.65;
+  color: var(--fg-2);
+  margin-bottom: 20px;
+}
+
+.who-conditions {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 28px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px 24px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--fg-2);
+}
+.who-conditions li {
+  position: relative;
+  padding-left: 18px;
+}
+.who-conditions li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--clay-500, #c7541f);
+}
+@media (max-width: 560px) {
+  .who-conditions { grid-template-columns: 1fr; }
+}
+
+.who-info-card {
+  background: var(--cream-50);
+  border: 1px solid var(--cream-200);
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.who-info-row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.who-info-label {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--sage-700);
+}
+
+.who-info-value {
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--brand-ink);
+  line-height: 1.4;
+}
+
+.who-image {
+  border-radius: 32px;
+  overflow: hidden;
+  aspect-ratio: 5/4;
+  box-shadow: var(--shadow-md);
+}
+
+/* Variant for transparent watercolor illustration — no card chrome,
+   let the artwork breathe against the page background */
+.who-image.who-image-illustration {
+  border-radius: 0;
+  overflow: visible;
+  aspect-ratio: 3/2;
+  box-shadow: none;
+  background: transparent;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .who-content-wrapper {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  
+  .who-image {
+    aspect-ratio: 4/3;
+    order: -1;
+  }
+}

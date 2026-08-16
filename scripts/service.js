@@ -2,7 +2,7 @@
 (function(){
   const SERVICES = {
     'language': {
-      title: 'Language delays & disorders',
+      title: 'Understanding and Using Language',
       tag: 'Receptive + expressive',
       ages: 'Toddlers through teens',
       lead: 'Whether your child is just finding their first words or navigating complex conversations, we support the full arc of language — with real-world practice built into every session.',
@@ -24,7 +24,7 @@
       ],
     },
     'speech': {
-      title: 'Speech sounds',
+      title: 'Speech Sound Disorders',
       tag: 'Articulation + phonology',
       ages: 'Ages 3 and up',
       lead: "When a child's speech is hard to understand, it affects confidence, friendships, and school. We work on the sounds they need — without making therapy feel like drills.",
@@ -45,7 +45,7 @@
       ],
     },
     'aac': {
-      title: 'AAC support',
+      title: 'AAC Support',
       tag: 'Augmentative &amp; alternative communication',
       ages: 'All ages',
       lead: 'Every child deserves a reliable way to say what they mean. AAC — from simple picture systems to speech-generating devices — can be that way.',
@@ -66,7 +66,7 @@
       ],
     },
     'feeding': {
-      title: 'Pediatric feeding',
+      title: 'Pediatric Feeding and Oral-Motor Challenges',
       tag: 'Sensory-informed feeding',
       ages: 'Toddlers through school-age',
       lead: 'Mealtimes can feel like the hardest hour of the day. We help families move from stress to connection — one safe, playful bite at a time.',
@@ -87,7 +87,7 @@
       ],
     },
     'fluency': {
-      title: 'Stuttering & fluency',
+      title: 'Stuttering and Fluency',
       tag: 'Confidence-first',
       ages: 'Ages 4 and up',
       lead: 'Our goal is a child who is proud of their voice — however it sounds. Fluency support, not fluency pressure.',
@@ -128,6 +128,69 @@
         { t: 'Self-advocacy', d: 'Teaching teens to explain their brain, ask for what they need, and own their voice.' },
       ],
     },
+'late-talkers': {
+      title: 'Early Communication & Late Talkers',
+      tag: 'Early communication',
+      ages: 'Toddlers and preschoolers',
+      lead: 'For young children who communicate less often than expected, use fewer gestures, sounds, words, or phrases, are difficult to understand, or become frustrated.',
+      color: 'sage',
+      intro: "Every child develops on their own timeline, but when first words are late or vocabulary stays small, early support makes a real difference. We meet your child in play and daily routines, building communication from whatever they already do — sounds, gestures, glances — into words and phrases that let them be understood.</p><p style=\"font-size:17px;line-height:1.7;color:var(--fg-2);margin-top:16px;\">A child may communicate less than expected for many different reasons. An evaluation can help determine whether their needs involve language development, speech sounds, motor planning, fluency, social communication, hearing, or a combination of areas.",
+      whenHelp: [
+        'Few or no words by 18 months, or no two-word phrases by age 2',
+        'Your child understands more than they can say',
+        'Frustration, tantrums, or giving up when trying to communicate',
+        'Relying mostly on pointing, pulling, or gestures',
+        'You have a feeling something is off and want answers',
+      ],
+      approach: [
+        { t: 'Child-led play', d: 'We follow your child\'s interests so communication feels worth it to them.' },
+        { t: 'Build on what works', d: 'Gestures and sounds become words; words become phrases.' },
+        { t: 'Parent coaching', d: 'Simple strategies you can use during meals, play, and routines.' },
+        { t: 'Early momentum', d: 'Small, consistent wins that grow confidence for your child and you.' },
+      ],
+    },
+    'autism': {
+      title: 'Autism and Social Communication',
+      tag: 'Connection-first support',
+      ages: 'All ages',
+      lead: 'Support for play, engagement, flexible communication, emotional regulation, scripts, and meaningful interaction with others.',
+      color: 'sky',
+      intro: "We support autistic children in ways that honor how they connect and communicate. That means following their lead, respecting regulation needs, supporting gestalt language processors, and building genuine interaction — never forcing eye contact or scripted social rules. Our goal is communication that works for your child, with the people who matter to them.",
+      whenHelp: [
+        'Your child connects deeply with interests but engagement with others is hard',
+        'Communication happens through scripts, echolalia, or memorized phrases',
+        'Play looks different and shared play is difficult',
+        'Big feelings and regulation challenges get in the way of communication',
+        'You want support that is affirming, not compliance-based',
+      ],
+      approach: [
+        { t: 'Connection before demands', d: 'Safety, trust, and regulation come first — communication follows.' },
+        { t: 'Gestalt-affirming', d: 'We work with scripts and echolalia as real language, following the natural stages.' },
+        { t: 'Play that fits', d: 'We join your child\'s play instead of redirecting it.' },
+        { t: 'Family partnership', d: 'You learn what works so connection grows outside of sessions.' },
+      ],
+    },
+    'more': {
+      title: 'Apraxia & Motor Speech',
+      tag: 'Every communicator welcome',
+      ages: 'All ages',
+      lead: 'Specialized support for children who have difficulty planning and coordinating the movements needed to say sounds, words, and phrases clearly.',
+      color: 'sun',
+      intro: "Not every concern fits neatly into a category — and it does not need to. If communication feels harder than it should, we can help you figure out what is going on and what would help. From play skills and early social communication to school participation and carryover at home, we build support around your child and your family's real life.",
+      whenHelp: [
+        'You are noticing something but are not sure what it is called',
+        'Teachers or caregivers have raised concerns',
+        'Your child communicates well at home but struggles elsewhere',
+        'Progress from past therapy is not showing up in daily life',
+        'You simply want a professional opinion and a clear next step',
+      ],
+      approach: [
+        { t: 'Start with listening', d: 'You know your child best. We start with what you are seeing.' },
+        { t: 'Whole-picture evaluation', d: 'Strengths, challenges, routines, and connection — not just test scores.' },
+        { t: 'A plan in plain language', d: 'You leave knowing what is happening and what comes next.' },
+        { t: 'Flexible support', d: 'In-home, on-site, or telehealth — built around your family.' },
+      ],
+    },
   };
 
   const COLOR = {
@@ -149,7 +212,7 @@
     root.innerHTML = `
       <section class="page-hero">
         <div class="page-hero-inner reveal in">
-          <div class="crumbs"><a href="index.html">Home</a><span class="sep">/</span><a href="services.html">Services</a><span class="sep">/</span><span>${s.title}</span></div>
+          <div class="crumbs"><a href="index.html">Home</a><span class="sep">/</span><span>${s.title}</span></div>
           <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:4px;">
             <span style="display:inline-flex;align-items:center;gap:8px;padding:6px 14px;background:${c.bg};color:${c.fg};font-size:12px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;border-radius:999px;">${s.tag}</span>
             <span style="display:inline-flex;align-items:center;gap:8px;padding:6px 14px;background:var(--cream-100);color:var(--fg-2);font-size:12px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;border-radius:999px;">${s.ages}</span>
@@ -158,7 +221,6 @@
           <p class="lead">${s.lead}</p>
           <div style="margin-top:24px;display:flex;gap:12px;flex-wrap:wrap;">
             <a class="btn btn-primary" href="contact.html">Book a free call</a>
-            <a class="btn btn-ghost" href="services.html">All services →</a>
           </div>
         </div>
       </section>
@@ -231,7 +293,7 @@
               <a class="btn btn-outline-light" href="faq.html">Read the FAQ →</a>
             </div>
           </div>
-          <div style="position:relative;aspect-ratio:1;border-radius:28px;overflow:hidden;box-shadow:var(--shadow-md);max-width:320px;justify-self:end;"><img src="assets/madison-jeffery.jpg" alt="" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div style="position:relative;aspect-ratio:1;border-radius:28px;overflow:hidden;box-shadow:var(--shadow-md);max-width:320px;justify-self:end;"><img src="assets/madison-jeffery.webp" alt="" style="width:100%;height:100%;object-fit:cover;"></div>
         </div>
       </section>
     `;

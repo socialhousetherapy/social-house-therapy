@@ -3,223 +3,141 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact — Book a Free Call | Social House Therapy</title>
-<meta name="description" content="Book a free 15-minute consultation with Madison Jeffery, CCC-SLP. Pediatric speech therapy in Tempe and Scottsdale, AZ.">
+<title>Contact: Book a Free Call | Social House Therapy</title>
+<meta name="description" content="Book a free 15-minute consultation with Madison Jeffery, CCC-SLP. Pediatric speech therapy in Tempe and Scottsdale, AZ, plus telehealth statewide.">
 <link rel="icon" href="assets/favicon-48.png">
+<link rel="canonical" href="https://socialhousetherapy.com/contact.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&amp;family=Bricolage+Grotesque:opsz,wght@12..96,300..800&amp;family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,400..600&amp;family=Caveat:wght@500;600;700&amp;family=Instrument+Serif:ital@0;1&amp;display=swap">
 <link rel="stylesheet" href="styles/tokens.css">
-<link rel="stylesheet" href="styles/site.css">
+<link rel="stylesheet" href="styles/site.css?v=28">
+<link rel="stylesheet" href="styles/clarity.css?v=10">
 <script>window.__PAGE = 'contact';</script>
 <style>
-.contact-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 48px; align-items: start; }
-@media (max-width: 900px) { .contact-grid { grid-template-columns: 1fr; } }
-.form-row { display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; }
-.form-row label {
-  font-family: var(--font-body);
-  font-size: 13px; font-weight: 600;
-  color: var(--ink-900);
-  letter-spacing: 0.02em;
+/* ============================================================
+   CONTACT: scoped styles (ct- prefix). Two blocks only:
+   reach out (details + CTA) → what happens next.
+   ============================================================ */
+.ct-page{background:var(--cream-50);overflow-x:clip}
+.ct-shell{max-width:1120px;margin:0 auto;padding:0 clamp(20px,4vw,56px)}
+.ct-crumbs{font-family:var(--font-body);font-size:12.5px;color:var(--ink-500);display:flex;align-items:center;gap:8px;margin-bottom:18px}
+.ct-crumbs a{color:var(--ink-500);text-decoration:none}
+.ct-crumbs a:hover{color:var(--clay-500)}
+.ct-crumbs .sep{color:var(--ink-300)}
+.ct-hero{background:var(--sky-100);padding:clamp(26px,3.4vw,46px) 0 clamp(34px,4vw,58px);position:relative;overflow:clip}
+.ct-hero::before{content:"";position:absolute;top:-140px;left:-120px;width:460px;height:460px;background:radial-gradient(circle at center,var(--sage-100) 0%,transparent 70%);opacity:.75;pointer-events:none}
+.ct-hero-grid{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.94fr);gap:clamp(28px,4vw,64px);align-items:center}
+@media (max-width:980px){.ct-hero-grid{grid-template-columns:1fr}.ct-hero-figure{width:100%;max-width:340px;margin:8px auto 0}}
+@media (max-width:720px){.ct-hero-figure{display:none}}
+.ct-hero h1{font-family:var(--font-heading);font-size:clamp(28px,3.6vw,42px);font-weight:600;line-height:1.08;letter-spacing:-.024em;color:var(--sage-800);margin:0 0 16px;text-wrap:balance;max-width:15ch}
+.ct-hand{font-family:var(--font-hand);font-weight:600;color:var(--clay-500);font-size:1.1em;letter-spacing:0}
+.ct-lede{font-family:var(--font-body);font-size:clamp(14px,1.1vw,16px);line-height:1.65;color:var(--ink-700);margin:0;max-width:44ch;text-wrap:pretty}
+
+/* contact rows */
+.ct-rows{margin:24px 0 0;padding:0;list-style:none}
+.ct-row{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:center;padding:14px 4px;border-bottom:1px solid var(--border-default)}
+.ct-row>span:last-child{display:flex;flex-direction:column;gap:2px;min-width:0}
+.ct-row .label,.ct-row .val,.ct-row .note{display:block}
+.ct-row .ico{width:38px;height:38px;border-radius:14px 6px 14px 6px;display:grid;place-items:center;flex-shrink:0}
+.ct-row:nth-child(2) .ico{background:var(--sage-100);color:var(--sage-600)}
+.ct-row:nth-child(3) .ico{background:var(--clay-100);color:var(--clay-500)}
+.ct-row:nth-child(4) .ico{background:var(--white);color:var(--sky-500)}
+.ct-row .ico svg{width:18px;height:18px}
+.ct-row .label{font-family:var(--font-body);font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--sage-600)}
+.ct-row .val{font-family:var(--font-heading);font-size:15px;font-weight:600;color:var(--sage-800);line-height:1.35;text-decoration:none}
+a.val{transition:color .2s var(--ease-out)}
+a.val:hover{color:var(--clay-500)}
+a{color:var(--sage-700)}
+a:hover{color:var(--clay-500)}
+.ct-row .note{font-family:var(--font-body);font-size:12.5px;font-weight:400;color:var(--ink-500);line-height:1.45}
+
+/* call-to-action: same row treatment as the contact list, all breakpoints */
+.ct-card-wrap{position:relative;border-top:1px solid var(--border-default)}
+.ct-hero-figure{position:relative;padding:14px 10px 18px 12px}
+.ct-hero-figure::before{content:"";position:absolute;inset:6px 24px 28px 0;background:var(--sage-200);border-radius:var(--radius-blob);transform:rotate(-3deg);z-index:0}
+.ct-hero-photo{position:relative;z-index:1;width:100%;aspect-ratio:4/4.4;border-radius:46% 54% 48% 52%/46% 44% 56% 54%;overflow:hidden;background:var(--cream-100);box-shadow:var(--shadow-lg);transform:rotate(1deg)}
+.ct-hero-photo image-slot,.ct-hero-photo img{width:100%;height:100%;display:block;object-fit:cover}
+.ct-card{position:relative;z-index:1;display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:start;padding:14px 4px;border-bottom:1px solid var(--border-default)}
+.ct-card .ico{display:grid;place-items:center;width:38px;height:38px;border-radius:14px 6px 14px 6px;background:var(--sun-100);color:var(--sun-500)}
+.ct-card .ico svg{width:18px;height:18px}
+.ct-card-body{min-width:0}
+.ct-card h2{font-family:var(--font-body);font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--sage-600);line-height:1.3;margin:0 0 10px;max-width:none}
+.ct-card-intro,.ct-card-list{display:none}
+.ct-card-actions{display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px}
+.ct-secondary-btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-heading);font-weight:600;font-size:14px;color:var(--ink-900,#1F241B);text-decoration:none;transition:color .2s var(--ease-out)}
+.ct-secondary-btn:hover{color:var(--clay-500)}
+.ct-secondary-btn svg{width:15px;height:15px;transition:transform .22s var(--ease-spring)}
+.ct-secondary-btn:hover svg{transform:translateX(3px)}
+.ct-card-secure{display:flex;gap:9px;align-items:flex-start;margin:12px 0 0;font-family:var(--font-body);font-size:12px;line-height:1.5;color:var(--ink-500);max-width:44ch}
+.ct-card-secure svg{width:15px;height:15px;color:var(--sage-500);flex:0 0 auto;margin-top:1px}
+
+/* ---------- Responsive ---------- */
+@media (max-width:720px){
+  .ct-hero h1{max-width:none}
 }
-.form-row input, .form-row textarea, .form-row select {
-  background: var(--white);
-  border: 1.5px solid var(--border-default);
-  border-radius: 12px;
-  padding: 12px 14px;
-  font-family: var(--font-body);
-  font-size: 15px;
-  color: var(--ink-900);
-  transition: border-color 160ms var(--ease-out), box-shadow 160ms var(--ease-out);
-}
-.form-row input:focus, .form-row textarea:focus, .form-row select:focus {
-  outline: none;
-  border-color: var(--sage-500);
-  box-shadow: 0 0 0 4px rgba(126, 158, 116, 0.18);
-}
-.form-row textarea { min-height: 120px; resize: vertical; }
-.radio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; }
-.radio-chip {
-  cursor: pointer;
-  padding: 12px 14px;
-  border: 1.5px solid var(--border-default);
-  border-radius: 12px;
-  background: var(--white);
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--ink-900);
-  text-align: center;
-  transition: all 160ms var(--ease-out);
-}
-.radio-chip input { display: none; }
-.radio-chip.selected {
-  border-color: var(--sage-500);
-  background: var(--sage-500);
-  color: var(--cream-50);
-}
-.contact-aside {
-  background: var(--sage-800);
-  color: var(--cream-50);
-  border-radius: 28px;
-  padding: 36px 32px;
-}
-.contact-aside h3 {
-  font-family: var(--font-heading);
-  font-size: 22px;
-  font-weight: 500;
-  color: var(--cream-50);
-  margin: 0 0 14px;
-}
-.contact-aside .row {
-  display: flex; gap: 14px; align-items: flex-start;
-  padding: 16px 0;
-  border-bottom: 1px solid rgba(251, 248, 241, 0.14);
-}
-.contact-aside .row:last-child { border-bottom: 0; }
-.contact-aside .ico {
-  width: 36px; height: 36px; border-radius: 10px;
-  background: rgba(255,255,255,0.08);
-  color: var(--sun-300);
-  display: grid; place-items: center;
-  flex-shrink: 0;
-}
-.contact-aside .label {
-  font-size: 12px; font-weight: 700;
-  letter-spacing: 0.14em; text-transform: uppercase;
-  color: var(--sun-300); margin-bottom: 2px;
-}
-.contact-aside .val { font-size: 15px; color: var(--cream-50); }
-.contact-aside a { color: var(--cream-50); }
-.success {
-  background: var(--sage-100);
-  border: 1.5px solid var(--sage-300);
-  color: var(--sage-800);
-  padding: 20px 22px;
-  border-radius: 16px;
-  display: none;
-}
-.success.show { display: block; }
 </style>
 </head>
-<body>
+<body class="ct-page">
 <div id="site-nav"></div>
 
-<section class="page-hero">
-  <div class="page-hero-inner reveal in">
-    <div class="crumbs"><a href="index.html">Home</a><span class="sep">/</span><span>Contact</span></div>
-    <h1>Let's <em>talk.</em></h1>
-    <p class="lead">Start with a free 15-minute call. Share a little about your child, and we'll figure out the right next step — together, no pressure.</p>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    <div class="contact-grid">
-      <aside class="contact-aside reveal in">
-        <h3>Reach us directly</h3>
-        <div class="row">
-          <div class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
-          <div><div class="label">Call</div><a class="val" href="tel:4804904812">480-490-4812</a></div>
-        </div>
-        <div class="row">
-          <div class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
-          <div><div class="label">Email</div><a class="val" href="mailto:hello@socialhousetherapy.com">hello@socialhousetherapy.com</a></div>
-        </div>
-        <div class="row">
-          <div class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-          <div><div class="label">Service area</div><div class="val">Tempe &amp; Scottsdale, AZ<br>Telehealth statewide</div></div>
-        </div>
-        <div class="row">
-          <div class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
-          <div><div class="label">Hours</div><div class="val">Mon–Fri · 8am–5pm MST<br>Responses within 1 business day</div></div>
-        </div>
-        <div style="margin-top: 24px; padding-top: 20px; border-top: 1px solid rgba(251, 248, 241, 0.14); font-family: var(--font-hand); font-size: 26px; color: var(--sun-300); transform: rotate(-2deg);">talk soon —</div>
-      </aside>
-
+<!-- ========== 1. REACH OUT ========== -->
+<section class="ct-hero" data-screen-label="Contact Hero">
+  <div class="ct-shell">
+    <div class="ct-hero-grid">
       <div class="reveal in">
-        <div class="success" id="successMsg">
-          <strong style="font-family: var(--font-heading); font-size: 17px;">Thanks — we got it.</strong><br>
-          Madison will reach out within one business day to set up your free call. Check your inbox (and spam) for a reply.
+        <div class="ct-crumbs"><a href="index.html">Home</a><span class="sep">/</span><span>Contact</span></div>
+        <h1>Start with a <span class="ct-hand">conversation.</span></h1>
+        <p class="ct-lede">Request a free 15-minute call, or just call or text us.</p>
+        <ul class="ct-rows">
+          <li class="ct-card-wrap">
+            <div class="ct-card">
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span>
+          <div class="ct-card-body">
+          <h2>Send a Secure Message</h2>
+          <p class="ct-card-intro">Tell us your child's age and what you're noticing. That's all we need to start.</p>
+          <ul class="ct-card-list">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span>Two minutes to request</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span>No cost, no referral, no commitment</span></li>
+          </ul>
+          <div class="ct-card-actions">
+            <a class="ct-secondary-btn" href="contact.html">
+              Open Secure Form
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg>
+            </a>
+          </div>
+          <p class="ct-card-secure">Opens our secure, HIPAA-compliant request form. Nothing you share is used for marketing.</p>
+            </div>
+            </div>
+          </li>
+          <li class="ct-row">
+            <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+            <span><span class="label">Call or text</span><a class="val" href="tel:4804904812">480-490-4812</a></span>
+          </li>
+          <li class="ct-row">
+            <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span>
+            <span><span class="label">Email</span><a class="val" href="mailto:info@socialhousetherapy.com">info@socialhousetherapy.com</a></span>
+          </li>
+          <li class="ct-row">
+            <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+            <span><span class="label">Where we see kids</span><span class="val">Tempe &amp; Scottsdale, AZ</span><span class="note">We are currently a mobile clinic serving families in their homes and communities. We also travel to nearby areas, so reach out to see if we can come to you.</span></span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="ct-hero-figure reveal in" data-delay="1">
+        <div class="ct-hero-photo">
+          <image-slot id="contact-hero" placeholder="Photo for the contact page: Madison with a child, or the practice space"></image-slot>
         </div>
-        <form id="contactForm" style="background: var(--white); border: 1px solid var(--border-subtle); border-radius: 24px; padding: 32px; box-shadow: var(--shadow-sm);">
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
-            <div class="form-row">
-              <label for="name">Your name</label>
-              <input id="name" name="name" type="text" required placeholder="Parent or caregiver">
-            </div>
-            <div class="form-row">
-              <label for="childAge">Child's age</label>
-              <input id="childAge" name="childAge" type="text" placeholder="e.g. 3 years">
-            </div>
-          </div>
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
-            <div class="form-row">
-              <label for="email">Email</label>
-              <input id="email" name="email" type="email" required placeholder="you@email.com">
-            </div>
-            <div class="form-row">
-              <label for="phone">Phone (optional)</label>
-              <input id="phone" name="phone" type="tel" placeholder="480-000-0000">
-            </div>
-          </div>
-
-          <div class="form-row">
-            <label>What brings you here?</label>
-            <div class="radio-grid" id="focusGroup">
-              <label class="radio-chip"><input type="radio" name="focus" value="language"> Language</label>
-              <label class="radio-chip"><input type="radio" name="focus" value="speech"> Speech sounds</label>
-              <label class="radio-chip"><input type="radio" name="focus" value="aac"> AAC</label>
-              <label class="radio-chip"><input type="radio" name="focus" value="feeding"> Feeding</label>
-              <label class="radio-chip"><input type="radio" name="focus" value="fluency"> Stuttering</label>
-              <label class="radio-chip"><input type="radio" name="focus" value="other"> Not sure</label>
-            </div>
-          </div>
-
-          <div class="form-row">
-            <label>How would you like to meet?</label>
-            <div class="radio-grid">
-              <label class="radio-chip"><input type="radio" name="modality" value="home"> In-home</label>
-              <label class="radio-chip"><input type="radio" name="modality" value="onsite"> On-site</label>
-              <label class="radio-chip"><input type="radio" name="modality" value="tele"> Telehealth</label>
-              <label class="radio-chip"><input type="radio" name="modality" value="mix"> Not sure yet</label>
-            </div>
-          </div>
-
-          <div class="form-row">
-            <label for="note">Tell us a little more (optional)</label>
-            <textarea id="note" name="note" placeholder="What's on your mind? Any specific questions?"></textarea>
-          </div>
-
-          <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center; margin-top: 6px;">
-            Send &amp; book free call
-            <span class="btn-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-          </button>
-          <p style="font-size: 12px; color: var(--fg-3); margin: 14px 0 0; text-align: center;">We reply within one business day. Your info stays between us.</p>
-        </form>
       </div>
     </div>
   </div>
 </section>
 
 <div id="site-footer"></div>
-<script src="scripts/site.js"></script>
-<script>
-// Radio chip interaction
-document.querySelectorAll('.radio-chip').forEach(chip => {
-  chip.addEventListener('click', () => {
-    const input = chip.querySelector('input');
-    const name = input.name;
-    document.querySelectorAll(`.radio-chip input[name="${name}"]`).forEach(i => i.closest('.radio-chip').classList.remove('selected'));
-    input.checked = true;
-    chip.classList.add('selected');
-  });
-});
-// Form submit
-document.getElementById('contactForm').addEventListener('submit', (e) => {
-  e.preventDefault();
-  const form = e.currentTarget;
-  const msg = document.getElementById('successMsg');
-  form.style.display = 'none';
-  msg.classList.add('show');
-  msg.scrollIntoView({ behavior: 'smooth', block: 'center' });
-});
-</script>
+<script src="image-slot.js" defer></script>
+<script src="scripts/site.js?v=19"></script>
+<script src="scripts/sp-widget.js?v=3" defer></script>
+<script src="https://widget-cdn.simplepractice.com/assets/integration-1.0.js" defer></script>
 </body>
 </html>
