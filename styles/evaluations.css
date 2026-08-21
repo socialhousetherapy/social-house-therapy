@@ -34,7 +34,7 @@
 .ev-byline-av{width:40px;height:40px;border-radius:50%;background:var(--clay-400);color:var(--cream-50);font-family:var(--font-heading);font-weight:700;font-size:15px;display:grid;place-items:center;flex:none}
 .ev-byline-name{display:block;font-family:var(--font-heading);font-size:14px;font-weight:700;color:var(--sage-800);line-height:1.25}
 .ev-byline-role{display:block;font-family:var(--font-body);font-size:11.5px;color:var(--fg-2);line-height:1.3}
-.ev-byline-meta{display:flex;flex-wrap:wrap;gap:6px 16px;margin-left:auto}
+.ev-byline-meta{display:flex;flex-wrap:nowrap;gap:6px 14px;margin-left:auto}
 .ev-byline-meta span{display:flex;align-items:center;gap:6px;white-space:nowrap;font-family:var(--font-body);font-size:11.5px;color:var(--fg-2)}
 .ev-byline-meta svg{width:13px;height:13px;color:var(--sage-500);flex:none}
 
@@ -73,7 +73,8 @@
 .ev-list{list-style:none;margin:0 0 16px;padding:0;display:grid;gap:7px}
 .ev-list li{position:relative;padding-left:19px;font-family:var(--font-body);font-size:14.5px;line-height:1.6;color:var(--fg-2)}
 .ev-list li::before{content:"";position:absolute;left:2px;top:8px;width:5px;height:5px;border-radius:50%;background:var(--sage-400)}
-.ev-list.is-two{grid-template-columns:1fr 1fr;gap:7px 24px}
+.ev-list.is-two{display:block;columns:2;column-gap:24px}
+.ev-list.is-two li{break-inside:avoid;margin-bottom:7px}
 .ev-list a{color:var(--clay-500);text-decoration:underline;text-underline-offset:3px}
 
 /* ---------- pull quotes + callouts ---------- */
@@ -271,10 +272,11 @@ span.ev-chip{background:transparent;border-style:dashed;color:var(--fg-2);cursor
   .ev-three-card span,.ev-network-list span,.ev-flow-step span.d,.ev-chip,.ev-figure figcaption,.ev-report-sub,.ev-end-note,.ev-byline-role,.ev-byline-meta span{font-size:14px}
   .ev-item-t,.ev-flow-step b,.ev-three-card b,.ev-value b,.ev-report-h,.ev-network-core b{font-size:16px}
   .ev-faq .faq-q{font-size:16px}
+  .ev-list.is-two{columns:1}
   .ev-list.is-two,.ev-qgrid,.ev-report-grid,.ev-outcomes{grid-template-columns:1fr}
   .ev-stats{grid-template-columns:1fr;gap:16px;border-radius:28px 12px 28px 12px}
   .ev-stat+.ev-stat{border-left:0;padding-left:0;padding-top:16px;border-top:1px solid var(--border-subtle)}
-  .ev-byline-meta{margin-left:0;width:100%}
+  .ev-byline-meta{margin-left:0;width:100%;flex-wrap:wrap}
   .ev-cta,.ev-end-cta{border-radius:28px 12px 28px 12px}
   .ev-cta-row .ev-btn,.ev-end-cta .ev-btn{width:100%}
   .ev-pair{grid-template-columns:1fr;gap:4px}

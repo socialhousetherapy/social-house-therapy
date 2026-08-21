@@ -5,6 +5,6 @@
 
 # Sync rules
 - Always ask the owner before pushing to GitHub or syncing from it. Do not push or sync automatically, even when changes look ready.
-- Pages under construction are intentionally shipped as coming soon stubs on main, following the arizona-ddd-resources.html pattern. As of commit a1502d9c these are: aac-support, speech-sound-disorders, early-communication-late-talkers, understanding-using-language, autism-social-communication, stuttering-fluency, pediatric-feeding-oral-motor, and evaluations.
+- Pages under construction are intentionally shipped as coming soon stubs on main, following the arizona-ddd-resources.html pattern. Currently these are the 7 service pages: aac-support, speech-sound-disorders, early-communication-late-talkers, understanding-using-language, autism-social-communication, stuttering-fluency, and pediatric-feeding-oral-motor.
 - Do not overwrite a stub with full page content until the owner confirms that page is finished. Restore pages one at a time, not in a bulk sync.
-- The full pre-stub content of those 8 pages is preserved in git history at commit 5d1c9c1c and can be restored with: git checkout 5d1c9c1c -- <page>.html
+- The full pre-stub content of those 7 pages is preserved in git history at commit 5d1c9c1c and can be restored with: git checkout 5d1c9c1c -- <page>.html

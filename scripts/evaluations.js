@@ -14,7 +14,7 @@
     readingTime: '22 min read',
     counters: [
       { n: 3,  suffix: '',  title: 'Major phases',                  desc: 'Preparation, direct assessment, and clinical interpretation' },
-      { n: 8,  suffix: '+', title: 'Potential information sources', desc: 'Selected according to the child and referral concern' },
+      { n: 7,  suffix: '+', title: 'Potential information sources', desc: 'Selected according to the child and referral concern' },
       { n: 1,  suffix: '',  title: 'Complete written report',       desc: 'Findings, interpretation, and recommendations in one place' },
       { n: 0,  suffix: '',  title: 'Required commitment to therapy', desc: 'An evaluation should result in an honest recommendation' }
     ]
