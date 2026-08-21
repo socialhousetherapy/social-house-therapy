@@ -1,4 +1,4 @@
-/* Comprehensive Speech-Language Evaluations — editorial long-form article
+/* Comprehensive Speech-Language Evaluations: editorial long-form article
    Scoped to .ev-* so it cannot collide with global site styles. */
 
 .ev-progress{position:fixed;top:0;left:0;height:3px;width:100%;background:transparent;z-index:60;pointer-events:none}
