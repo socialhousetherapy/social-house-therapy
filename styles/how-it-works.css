@@ -4,8 +4,8 @@
    ============================================================= */
 
 .hiw-section {
-  background: var(--cream-100, #f5efe3);
-  padding: clamp(10px, 1.2vw, 20px) 0 clamp(24px, 3vw, 48px);
+  background: var(--white, #fff);
+  padding: var(--band-y, 44px) 0 clamp(24px, 3vw, 40px);
   position: relative;
 }
 
@@ -452,4 +452,31 @@
     justify-content: center;
   }
   .hiw-step h3 { font-size: 18px; }
+}
+
+
+/* ===== Override: open numbered steps, matching the Tempe/Scottsdale plan rows ===== */
+.hiw-steps{max-width:1040px;margin:clamp(30px,3.4vw,44px) auto 0;gap:clamp(18px,2.2vw,28px)}
+.hiw-steps::before{content:"";position:absolute;top:27px;left:11%;right:11%;height:2px;background:repeating-linear-gradient(90deg,var(--sage-300,#B1C9A5) 0 9px,transparent 9px 18px);z-index:0}
+.hiw-steps-wrap .hiw-step, .hiw-steps-wrap .hiw-step.is-featured{background:transparent;border:0;border-radius:0;box-shadow:none;padding:0 10px;transform:none;animation:none;gap:10px}
+.hiw-steps-wrap .hiw-step.is-featured:hover, .hiw-steps-wrap .hiw-step:hover{transform:none;box-shadow:none;background:transparent}
+.hiw-step .hiw-step-icon{display:none}
+.hiw-step:not(.is-featured) .hiw-step-icon::before{display:none}
+.hiw-step .hiw-step-head, .hiw-step.is-featured .hiw-step-head{align-items:center}
+.hiw-step .hiw-step-num{width:54px;height:54px;border-radius:50%;background:var(--sage-500,#7E9E74);color:var(--cream-50,#fbf8f1);font-family:var(--font-heading);font-weight:700;font-size:18px;display:grid;place-items:center;margin:0 auto;position:relative;z-index:1;box-shadow:0 0 0 6px var(--white,#fff)}
+.hiw-step.is-featured .hiw-step-num{color:var(--cream-50,#fbf8f1)}
+.hiw-step:nth-child(1) .hiw-step-num{background:var(--clay-400,#D97854);width:62px;height:62px;font-size:20px;margin-top:-4px;box-shadow:0 0 0 7px var(--white,#fff),0 0 0 9px var(--clay-400,#D97854)}
+.hiw-step:nth-child(3) .hiw-step-num{background:var(--sage-600,#637F5C)}
+.hiw-step:nth-child(4) .hiw-step-num{background:var(--sage-700,#4B6347)}
+.hiw-step h3, .hiw-step.is-featured h3{text-align:center;margin-top:8px}
+.hiw-step p, .hiw-step.is-featured p{text-align:center;margin:0 auto;max-width:26ch}
+.hiw-step .hiw-step-detail, .hiw-step.is-featured .hiw-step-detail{margin-top:0;padding-top:8px;justify-content:center;text-align:center;color:var(--ink-700,#4a4a45)}
+.hiw-step-cta{margin-top:8px}
+@media (max-width:980px){
+  .hiw-steps::before{display:none}
+  .hiw-steps{grid-template-columns:1fr;gap:30px}
+  .hiw-steps-wrap .hiw-step:not(.is-featured){padding:0 10px}
+  .hiw-step:not(.is-featured) + .hiw-step:not(.is-featured){border-top:0;padding-top:0}
+  .hiw-step .hiw-step-num{display:grid}
+  .hiw-step:nth-child(1) .hiw-step-num{margin-top:0}
 }

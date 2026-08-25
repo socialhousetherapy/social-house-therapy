@@ -39,33 +39,14 @@
         </button>
         <div class="nav-drop">
           <div class="nav-drop-panel">
-            <div class="nav-sub">
-              <button class="nav-sub-btn" type="button" aria-haspopup="true" aria-expanded="false">Services
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 6 15 12 9 18"/></svg>
-              </button>
-              <div class="nav-sub-panel">
-                <div class="nav-sub-panel-inner">
-                  <a href="evaluations.html">Evaluations</a>
-                  <a href="early-communication-late-talkers.html">Early Communication &amp; Late Talkers</a>
-                  <a href="autism-social-communication.html">Autism &amp; Social Communication</a>
-                  <a href="speech-sound-disorders.html">Speech Sound Disorders</a>
-                  <a href="understanding-using-language.html">Understanding &amp; Using Language</a>
-                  <a href="stuttering-fluency.html">Stuttering &amp; Fluency</a>
-                  <a href="pediatric-feeding-oral-motor.html">Pediatric Feeding &amp; Oral Motor</a>
-                  <a href="aac-support.html">AAC Support</a>
-                </div>
-              </div>
-            </div>
-            <a href="developmental-milestones.html">Developmental Milestones</a>
-            <a href="arizona-ddd-resources.html">Arizona DDD Resources</a>
-            <a href="index.html#pricing">Pricing</a>
+            <a href="evaluations.html">Evaluations</a>
+            <a href="index.html#pricing-anchor">Pricing</a>
             <a href="faq.html">FAQs</a>
           </div>
         </div>
       </div>
       <a href="partner-with-us.html" class="${PAGE==='partner'?'active':''}">Partner With Us</a>
-      <a href="about.html" class="${PAGE==='about'?'active':''}">About Us</a>
-      <a href="blog.html" class="${PAGE==='blog'?'active':''}">Blog</a>`;
+      <a href="about.html" class="${PAGE==='about'?'active':''}">About Us</a>`;
 
     const socialsHTML = SOCIALS.map(s => `
       <a class="nav-social" href="${s.href}" target="_blank" rel="noopener" aria-label="${s.label}">
@@ -74,7 +55,7 @@
 
     root.innerHTML = `
       <header class="nav" id="navEl">
-        <div class="nav-inner" style="height: 130px;">
+        <div class="nav-inner">
           <a class="nav-brand" href="index.html" aria-label="Social House Therapy">
             <img src="assets/logo-240.webp" alt="Social House Therapy" width="125" height="125" decoding="async" fetchpriority="high">
           </a>
@@ -89,7 +70,7 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg>
             </a>
             <button class="nav-burger" id="navBurger" aria-label="Open menu" aria-controls="menuOverlay" aria-expanded="false" type="button">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline class="bi-roof" points="2 10.5 12 4 22 10.5"/><line class="bi-w1" x1="5" y1="8.6" x2="5" y2="21"/><line class="bi-w2" x1="19" y1="8.6" x2="19" y2="21"/><line class="bi-l3" x1="5" y1="21" x2="19" y2="21"/><polyline class="bi-door" points="10 21 10 15.5 14 15.5 14 21"/></svg>
             </button>
           </div>
         </div>
@@ -127,6 +108,11 @@
       if(!e.target.closest || !e.target.closest('.nav-item-drop')) closeAll();
     });
     document.addEventListener('keydown', (e) => { if(e.key === 'Escape') closeAll(); });
+    let navScY = window.pageYOffset;
+    window.addEventListener('scroll', () => {
+      if (Math.abs(window.pageYOffset - navScY) > 8) closeAll();
+      navScY = window.pageYOffset;
+    }, { passive: true });
   }
 
   // ---------- FULL-SCREEN MENU ----------
@@ -136,8 +122,8 @@
     overlay.id = 'menuOverlay';
     overlay.className = 'menu-overlay';
     overlay.setAttribute('role', 'dialog');
-    overlay.setAttribute('aria-modal', 'true');
     overlay.setAttribute('aria-label', 'Site menu');
+    overlay.setAttribute('tabindex', '-1');
 
     const primaryHTML = `
       <li class="menu-acc">
@@ -146,31 +132,13 @@
           <svg class="menu-acc-chev" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
         <ul class="menu-acc-panel">
-          <li class="menu-acc menu-acc-sub">
-            <button class="menu-acc-btn menu-acc-btn-sub" type="button" aria-expanded="false">
-              <span>Services</span>
-              <svg class="menu-acc-chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
-            </button>
-            <ul class="menu-acc-panel">
-              <li><a href="evaluations.html">Evaluations</a></li>
-              <li><a href="early-communication-late-talkers.html">Early Communication &amp; Late Talkers</a></li>
-              <li><a href="autism-social-communication.html">Autism &amp; Social Communication</a></li>
-              <li><a href="speech-sound-disorders.html">Speech Sound Disorders</a></li>
-              <li><a href="understanding-using-language.html">Understanding &amp; Using Language</a></li>
-              <li><a href="stuttering-fluency.html">Stuttering &amp; Fluency</a></li>
-              <li><a href="pediatric-feeding-oral-motor.html">Pediatric Feeding &amp; Oral Motor</a></li>
-              <li><a href="aac-support.html">AAC Support</a></li>
-            </ul>
-          </li>
-          <li><a href="developmental-milestones.html">Developmental Milestones</a></li>
-          <li><a href="arizona-ddd-resources.html">Arizona DDD Resources</a></li>
-          <li><a href="index.html#pricing">Pricing</a></li>
+          <li><a href="evaluations.html">Evaluations</a></li>
+            <li><a href="index.html#pricing-anchor">Pricing</a></li>
           <li><a href="faq.html">FAQs</a></li>
         </ul>
       </li>
       <li><a href="partner-with-us.html"><span>Partner With Us</span><span class="arr">→</span></a></li>
       <li><a href="about.html"><span>About Us</span><span class="arr">→</span></a></li>
-      <li><a href="blog.html"><span>Blog</span><span class="arr">→</span></a></li>
       <li><a href="contact.html"><span>Contact</span><span class="arr">→</span></a></li>
     `;
 
@@ -178,15 +146,6 @@
 
     overlay.innerHTML = `
       <div class="menu-overlay-inner">
-        <div class="menu-overlay-head">
-          <a class="menu-overlay-brand" href="index.html" aria-label="Social House Therapy">
-            <img src="assets/logo-240.webp" alt="Social House Therapy" width="90" height="90" decoding="async" loading="lazy">
-          </a>
-          <button class="menu-close" id="menuClose" aria-label="Close menu" type="button">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/></svg>
-          </button>
-        </div>
-
         <div class="menu-grid">
           <div class="menu-col">
             <ul class="menu-primary">${primaryHTML}</ul>
@@ -225,21 +184,30 @@
 
     function open(){
       lastFocus = document.activeElement;
+      // Opened from the floating burger while the header is scrolled away:
+      // drop the panel from the viewport top instead of below the (hidden) nav.
+      const nav = document.getElementById('navEl');
+      overlay.classList.toggle('from-top', !!(nav && nav.classList.contains('nav-hide')));
       overlay.classList.add('open');
       document.body.classList.add('menu-open');
+      burger.classList.add('is-open');
       burger.setAttribute('aria-expanded', 'true');
-      const f = focusables();
-      if(f.length) setTimeout(() => f[0].focus(), 60);
+      burger.setAttribute('aria-label', 'Close menu');
+      // Focus the panel itself, not the first button: a programmatic focus on a
+      // button paints the clay focus ring, which reads as a stray orange box on open.
+      setTimeout(() => overlay.focus({ preventScroll: true }), 60);
     }
 
     function close(){
       overlay.classList.remove('open');
       document.body.classList.remove('menu-open');
+      burger.classList.remove('is-open');
       burger.setAttribute('aria-expanded', 'false');
+      burger.setAttribute('aria-label', 'Open menu');
       if(lastFocus && typeof lastFocus.focus === 'function') lastFocus.focus();
     }
 
-    burger.addEventListener('click', open);
+    burger.addEventListener('click', () => { overlay.classList.contains('open') ? close() : open(); });
     if(closeBtn) closeBtn.addEventListener('click', close);
 
     // Click outside the inner panel closes
@@ -308,9 +276,6 @@
               <li><a href="index.html">Home</a></li>
               <li><a href="about.html">About</a></li>
               <li><a href="partner-with-us.html">Partner With Us</a></li>
-              <li><a href="developmental-milestones.html">Developmental Milestones</a></li>
-              <li><a href="arizona-ddd-resources.html">Arizona DDD Resources</a></li>
-              <li><a href="blog.html">Blog</a></li>
               <li><a href="faq.html">FAQs</a></li>
               <li><a href="contact.html">Contact</a></li>
             </ul>
@@ -319,13 +284,6 @@
             <h4>Services</h4>
             <ul>
               <li><a href="evaluations.html">Evaluations</a></li>
-              <li><a href="early-communication-late-talkers.html">Early Communication &amp; Late Talkers</a></li>
-              <li><a href="autism-social-communication.html">Autism &amp; Social Communication</a></li>
-              <li><a href="speech-sound-disorders.html">Speech Sound Disorders</a></li>
-              <li><a href="understanding-using-language.html">Understanding &amp; Using Language</a></li>
-              <li><a href="stuttering-fluency.html">Stuttering &amp; Fluency</a></li>
-              <li><a href="pediatric-feeding-oral-motor.html">Pediatric Feeding &amp; Oral Motor</a></li>
-              <li><a href="aac-support.html">AAC Support</a></li>
             </ul>
           </div>
           <div>
@@ -374,8 +332,21 @@
       .contact-fab:active{ transform: translateY(0); }
       .contact-fab svg{ width: 19px; height: 19px; flex-shrink: 0; }
       .contact-fab .cf-label{ white-space: nowrap; }
+      .to-top-fab{
+        position: fixed; right: 22px; bottom: 84px; z-index: 900;
+        display: none; align-items: center; justify-content: center;
+        width: 46px; height: 46px; border-radius: 999px; border: 1.5px solid var(--sage-600, #6c8a6e);
+        background: var(--white, #fff); color: var(--sage-700, #5b7150); cursor: pointer;
+        box-shadow: 0 10px 26px -12px rgba(40,50,40,.4);
+        transition: transform .18s ease, opacity .2s ease, visibility .2s ease, background .18s ease;
+      }
+      .to-top-fab.is-hidden{ opacity: 0; visibility: hidden; pointer-events: none; transform: translateY(8px); }
+      .to-top-fab:hover{ background: var(--sage-100, #e2ebdc); transform: translateY(-2px); }
+      .to-top-fab svg{ width: 20px; height: 20px; }
+      @media (max-width: 720px){ .to-top-fab{ display: inline-flex; } }
       @media (max-width: 560px){
         .contact-fab{ right: 16px; bottom: 16px; padding: 14px; }
+        .to-top-fab{ right: 16px; bottom: 76px; }
         .contact-fab .cf-label{ display: none; }
         .contact-fab svg{ width: 22px; height: 22px; }
       }
@@ -392,13 +363,26 @@
       <span class="cf-label">Contact us</span>`;
     document.body.appendChild(fab);
 
+    const topFab = document.createElement('button');
+    topFab.id = 'toTopFab';
+    topFab.className = 'to-top-fab is-hidden';
+    topFab.type = 'button';
+    topFab.setAttribute('aria-label', 'Back to top');
+    topFab.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 15 12 9 18 15"/></svg>';
+    topFab.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    document.body.appendChild(topFab);
+
     // Hide the button whenever the header or footer is in view.
     // IntersectionObserver instead of a scroll handler: no layout reads per frame.
     const header = document.getElementById('navEl') || document.querySelector('.nav');
     const footer = document.querySelector('.footer');
     if(!('IntersectionObserver' in window)){ return; }
     const seen = { header: !!header, footer: false };
-    function update(){ fab.classList.toggle('is-hidden', seen.header || seen.footer); }
+    // Mobile: visible whenever scrolled away from the top (the fixed nav re-appearing on scroll-up must not hide them); desktop: hide when header or footer is in view.
+    const mobileMq = window.matchMedia('(max-width: 720px)');
+    function update(){ const hid = mobileMq.matches ? window.scrollY < 120 : (seen.header || seen.footer); fab.classList.toggle('is-hidden', hid); topFab.classList.toggle('is-hidden', hid); }
+    if(mobileMq.addEventListener) mobileMq.addEventListener('change', update);
+    window.addEventListener('scroll', () => { if(mobileMq.matches) update(); }, { passive: true });
     const io = new IntersectionObserver(entries => {
       entries.forEach(en => {
         if(en.target === header) seen.header = en.isIntersecting;
@@ -482,7 +466,7 @@
     const spacer = document.getElementById('site-nav');
     const nav = document.getElementById('navEl');
     if(!spacer || !nav) return;
-    function sizeSpacer(){ spacer.style.height = nav.offsetHeight + 'px'; }
+    function sizeSpacer(){ spacer.style.height = nav.offsetHeight + 'px'; document.documentElement.style.setProperty('--nav-h', nav.offsetHeight + 'px'); }
     sizeSpacer();
     window.addEventListener('resize', sizeSpacer);
     if(document.fonts && document.fonts.ready) document.fonts.ready.then(sizeSpacer);

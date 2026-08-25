@@ -6,21 +6,52 @@
 <title>About Social House Therapy | Pediatric Speech Therapy in Tempe &amp; Scottsdale, AZ</title>
 <meta name="description" content="Meet Madison Jeffery, MS, CCC-SLP, and the story behind Social House Therapy: in-home pediatric speech therapy across Tempe, Scottsdale, and the East Valley.">
 <link rel="icon" href="assets/favicon-48.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="assets/favicon-512.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
 <link rel="canonical" href="https://socialhousetherapy.com/about.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Social House Therapy">
+<meta property="og:title" content="About Social House Therapy | Madison Jeffery, MS, CCC-SLP">
+<meta property="og:description" content="Meet Madison Jeffery, MS, CCC-SLP, and the story behind Social House Therapy: relationship-based, in-home pediatric speech therapy across Tempe, Scottsdale, and the East Valley.">
+<meta property="og:url" content="https://socialhousetherapy.com/about.html">
+<meta property="og:image" content="https://socialhousetherapy.com/assets/og-logo.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="About Social House Therapy | Madison Jeffery, MS, CCC-SLP">
+<meta name="twitter:description" content="The clinician and story behind Social House Therapy: family-centered pediatric speech therapy in Tempe and Scottsdale, AZ.">
+<meta name="twitter:image" content="https://socialhousetherapy.com/assets/og-logo.png">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"AboutPage","@id":"https://socialhousetherapy.com/about.html","url":"https://socialhousetherapy.com/about.html","name":"About Social House Therapy","description":"Meet Madison Jeffery, MS, CCC-SLP, and the story behind Social House Therapy: relationship-based, in-home pediatric speech therapy across Tempe, Scottsdale, and the East Valley.","isPartOf":{"@id":"https://socialhousetherapy.com/#org"},"mainEntity":{"@id":"https://socialhousetherapy.com/about.html#madison"}},{"@type":"Person","@id":"https://socialhousetherapy.com/about.html#madison","name":"Madison Jeffery","honorificSuffix":"MS, CCC-SLP","jobTitle":"Speech-Language Pathologist","image":"https://socialhousetherapy.com/assets/madison-jeffery.webp","worksFor":{"@id":"https://socialhousetherapy.com/#org"},"alumniOf":[{"@type":"CollegeOrUniversity","name":"Arizona State University"},{"@type":"CollegeOrUniversity","name":"Northern Arizona University"}],"memberOf":[{"@type":"Organization","name":"American Speech-Language-Hearing Association"},{"@type":"Organization","name":"Arizona Speech-Language-Hearing Association"}],"knowsAbout":["Autism and social communication","Gestalt language processing","Augmentative and alternative communication (AAC)","Speech sound disorders","Childhood apraxia of speech","Stuttering and fluency"],"areaServed":[{"@type":"City","name":"Tempe"},{"@type":"City","name":"Scottsdale"}]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://socialhousetherapy.com/"},{"@type":"ListItem","position":2,"name":"About","item":"https://socialhousetherapy.com/about.html"}]}]}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&amp;family=Bricolage+Grotesque:opsz,wght@12..96,300..800&amp;family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,400..600&amp;family=Caveat:wght@500;600;700&amp;family=Instrument+Serif:ital@0;1&amp;display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..700&amp;family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&amp;family=Caveat:wght@400..700&amp;display=swap">
 <link rel="stylesheet" href="styles/tokens.css">
-<link rel="stylesheet" href="styles/site.css?v=28">
-<link rel="stylesheet" href="styles/clarity.css?v=10">
+<link rel="stylesheet" href="styles/site.css?v=42">
+<link rel="stylesheet" href="styles/clarity.css?v=18">
 <script>window.__PAGE = 'about';</script>
 <style>
+  .sec-curve{position:absolute;top:-1px;left:0;width:100%;height:clamp(22px,3.4vw,48px);pointer-events:none;z-index:1}
+  .sec-curve.bottom{top:auto;bottom:-1px;transform:scaleY(-1);z-index:2}
+  .sec-curve.bottom.flip{transform:scaleY(-1) scaleX(-1)}
+  .ab-believe-grid .ab-believe-card.reveal{transition-delay:0ms}
+  .ab-believe-grid .ab-believe-card.reveal:nth-child(2){transition-delay:120ms}
+  .ab-believe-grid .ab-believe-card.reveal:nth-child(3){transition-delay:240ms}
+  .ab-feels-reviews .ab-fr{opacity:0;transform:translateY(12px);transition:opacity 550ms var(--ease-out,ease),transform 550ms var(--ease-out,ease)}
+  .ab-feels-head.in .ab-fr{opacity:1;transform:none}
+  .ab-feels-head.in .ab-fr:nth-child(2){transition-delay:140ms}
+  .ab-feels-head.in .ab-fr:nth-child(3){transition-delay:280ms}
+  @media (prefers-reduced-motion:reduce){.ab-feels-reviews .ab-fr{transition:none;opacity:1;transform:none}}
+  .sec-curve.flip{transform:scaleX(-1)}
+  .ab-hero,.ab-why,.ab-believe,.ab-feels,.ab-final{position:relative}
+  .ab-hero{overflow-x:clip}
   /* ============================================================
      ABOUT PAGE: scoped styles (ab- prefix)
      Story arc: reality → why we exist → what we believe →
      who Madison is → what it feels like → next step
      ============================================================ */
-  .ab-page { background: var(--cream-50); }
+  .ab-page { background: var(--white); }
 
   .ab-shell {
     max-width: 1180px;
@@ -30,8 +61,8 @@
 
   /* ---------- 1. HERO ---------- */
   .ab-hero {
-    background: var(--sun-100);
-    padding: clamp(28px, 3.5vw, 52px) 0 clamp(32px, 4vw, 56px);
+    background: var(--sky-100, #E3EEF3);
+    padding: var(--band-y) 0;
     position: relative;
     z-index: 3;
   }
@@ -63,24 +94,6 @@
   .ab-crumbs a { color: var(--ink-500); text-decoration: none; }
   .ab-crumbs a:hover { color: var(--clay-500); }
   .ab-crumbs .sep { color: var(--ink-300); }
-  .ab-eyebrow {
-    font-family: var(--font-body);
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--sage-600);
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 18px;
-  }
-  .ab-eyebrow::before {
-    content: "";
-    width: 26px; height: 2px;
-    background: var(--clay-400);
-    border-radius: 2px;
-  }
   .ab-hero .ab-hero-h {
     font-family: var(--font-heading);
     font-size: clamp(26px, 3.2vw, 38px);
@@ -114,65 +127,18 @@
   }
   .ab-hero-lede + .ab-hero-lede { margin-top: -6px; }
   [data-parallax] { will-change: transform; }
-  .ab-section-cta { margin-top: clamp(30px, 3.4vw, 44px); display: flex; }
-  .ab-section-cta--center { justify-content: center; }
-  .ab-hero-ctas {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px 32px;
-  }
-  .ab-hero-trust {
-    margin: 28px 0 0;
-    padding-top: 22px;
-    border-top: 1px solid var(--border-default);
-    font-family: var(--font-body);
-    font-size: 13px;
-    line-height: 1.6;
-    color: var(--ink-500);
-    max-width: 46ch;
-    display: flex;
-    gap: 12px;
-  }
-  .ab-hero-trust svg { width: 18px; height: 18px; color: var(--sage-500); flex: 0 0 auto; margin-top: 2px; }
-  .ab-hero-points {
-    margin-top: 28px;
-    padding-top: 22px;
-    border-top: 1px solid var(--border-default);
-  }
-  .ab-hero-fears {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    gap: 10px;
-  }
-  .ab-hero-fears li {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font-family: var(--font-body);
-    font-size: 13.5px;
-    color: var(--ink-700);
-    white-space: nowrap;
-  }
-  .ab-hero-fears svg { width: 16px; height: 16px; color: var(--sage-500); flex: 0 0 auto; }
-  @media (max-width: 720px) {
-    .ab-hero-fears { gap: 12px; }
-  }
+  .ab-services-link{display:inline-flex;align-items:center;gap:8px;margin-top:20px;color:#000;text-decoration:underline;text-underline-offset:3px;font-family:var(--font-heading);font-weight:600;font-size:13px;transition:transform 200ms var(--ease-out)}
+  .ab-services-link:hover{color:#000;transform:translateY(-3px)}
 
   .ab-hero-figure {
     position: relative;
     padding: 14px 0 14px 14px;
   }
   @media (min-width: 981px) {
-    .ab-hero-figure { margin-right: calc(-1 * (max((100vw - 1180px) / 2, 0px) + clamp(20px, 4vw, 56px))); margin-top: calc(-1 * clamp(28px, 3.5vw, 52px)); margin-bottom: calc(-1 * clamp(32px, 4vw, 56px)); align-self: stretch; padding: 0; }
-    .ab-hero-figure .ab-hero-photo { position: absolute; inset: 0 0 0 14px; aspect-ratio: auto; height: auto; min-height: 0; border-radius: 28px 0 0 28px; }
+    .ab-hero-figure { margin-right: calc(-1 * (max((100vw - 1180px) / 2, 0px) + clamp(20px, 4vw, 56px))); margin-top: calc(-1 * var(--band-y)); margin-bottom: calc(-1 * var(--band-y)); align-self: stretch; padding: 0; }
+    .ab-hero-figure .ab-hero-photo { position: absolute; inset: 0 0 0 -70px; aspect-ratio: auto; height: auto; min-height: 0; border-radius: 0; box-shadow: none; background: transparent; -webkit-mask-image: linear-gradient(to right, transparent 0, rgb(0 0 0/.2) 8%, rgb(0 0 0/.55) 16%, rgb(0 0 0/.85) 23%, #000 30%); mask-image: linear-gradient(to right, transparent 0, rgb(0 0 0/.2) 8%, rgb(0 0 0/.55) 16%, rgb(0 0 0/.85) 23%, #000 30%); }
     .ab-hero-figure .ab-hero-photo img { object-position: center 40%; }
-    .ab-hero-figure .ab-hero-card { bottom: -74px; left: -170px; }
+    .ab-hero-figure .ab-hero-card { bottom: -34px; left: auto; right: calc(50vw - 370px); margin-inline: 0; width: 440px; }
   }
   .ab-hero-photo {
     position: relative;
@@ -190,14 +156,15 @@
   }
   .ab-hero-card {
     position: absolute;
-    bottom: -18px; left: -24px;
+    bottom: -18px; left: 0; right: 0;
+    margin-inline: auto;
     background: var(--white);
-    border-radius: 36px 14px 36px 14px;
+    border-radius: 18px;
     padding: 18px 24px 16px;
     box-shadow: var(--shadow-lg);
     width: min(440px, 82%);
     max-width: 440px;
-    z-index: 2;
+    z-index: 3;
     border: 1px solid var(--border-subtle);
   }
   .ab-hero-card-g {
@@ -227,7 +194,7 @@
   .ab-hero-card-avatar {
     width: 30px; height: 30px;
     border-radius: 999px;
-    background: var(--clay-400);
+    background: var(--sage-600);
     color: var(--cream-50);
     font-family: var(--font-heading);
     font-weight: 700;
@@ -258,8 +225,8 @@
 
   /* ---------- 2. WHY WE EXIST (the in-between) ---------- */
   .ab-why {
-    background: var(--sage-50);
-    padding: clamp(40px, 5vw, 72px) 0;
+    background: var(--sage-100);
+    padding: var(--band-y) 0;
     position: relative;
     overflow: hidden;
   }
@@ -270,7 +237,7 @@
   }
   .ab-why-rule {
     width: 46px; height: 3px;
-    background: var(--clay-300);
+    background: var(--sage-400);
     border-radius: 3px;
     margin: 0 0 30px;
   }
@@ -294,31 +261,6 @@
     text-wrap: pretty;
   }
   .ab-why p strong { color: var(--sage-800); font-weight: 600; }
-  .ab-why-questions {
-    margin: 36px 0 40px;
-    display: grid;
-    gap: 14px;
-    max-width: 54ch;
-  }
-  .ab-why-questions span {
-    font-family: var(--font-hand);
-    font-size: clamp(20px, 2.1vw, 26px);
-    line-height: 1.25;
-    color: var(--clay-500);
-    display: block;
-  }
-  .ab-why-questions span:nth-child(odd) { transform: rotate(-0.6deg); }
-  .ab-why-questions span:nth-child(even) { transform: rotate(0.5deg); margin-left: 14px; }
-  .ab-why-pivot {
-    font-family: var(--font-heading);
-    font-size: clamp(23px, 2.6vw, 32px);
-    font-weight: 600;
-    line-height: 1.2;
-    letter-spacing: -0.018em;
-    color: var(--sage-800);
-    margin: 46px 0 26px;
-    text-wrap: balance;
-  }
   .ab-why p.ab-why-mean {
     font-family: var(--font-hand);
     text-align: center;
@@ -327,26 +269,10 @@
     line-height: 1.2;
     color: var(--clay-500);
   }
-  .ab-why p.ab-why-sign {
-    font-family: var(--font-hand);
-    font-size: clamp(20px, 2.2vw, 27px);
-    color: var(--clay-500);
-    margin-top: 10px;
-    transform: rotate(-1.5deg);
-  }
-  .ab-why-accent {
-    font-family: var(--font-hand);
-    font-size: clamp(25px, 3vw, 36px);
-    color: var(--clay-500);
-    line-height: 1.15;
-    margin-top: 14px;
-    transform: rotate(-1.5deg);
-    display: inline-block;
-  }
 
   /* ---------- 3. WHAT WE BELIEVE ---------- */
-  .ab-believe { background: var(--white); padding: clamp(36px, 4.2vw, 60px) 0; }
-  .ab-believe-head { max-width: 720px; margin: 0 0 clamp(38px, 4.4vw, 58px); }
+  .ab-believe { background: var(--white); padding: var(--band-y) 0; }
+  .ab-believe-head { max-width: 720px; margin: 0 auto clamp(26px, 3vw, 40px); text-align: center; }
   .ab-believe-head h2 {
     font-family: var(--font-heading);
     font-size: clamp(26px, 3.2vw, 38px);
@@ -354,33 +280,22 @@
     line-height: 1.12;
     letter-spacing: -0.022em;
     color: var(--sage-800);
-    margin: 0 0 20px;
-    text-wrap: balance;
-  }
-  .ab-believe-head p {
-    font-family: var(--font-body);
-    font-size: clamp(14px, 1.1vw, 16px);
-    line-height: 1.6;
-    color: var(--ink-700);
     margin: 0;
-    max-width: 56ch;
+    text-wrap: balance;
   }
   .ab-believe-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: clamp(14px, 1.8vw, 20px);
+    gap: 0;
   }
   .ab-believe-card {
-    padding: clamp(20px, 2.2vw, 28px);
+    padding: 0 clamp(18px, 2vw, 28px);
     position: relative;
-    box-shadow: 0 1px 0 rgba(0,0,0,0.02), 0 18px 34px -24px rgba(45,58,35,0.26);
-    transition: transform .3s var(--ease-out), box-shadow .3s var(--ease-out);
   }
-  .ab-believe-card:hover { transform: translateY(-4px); box-shadow: 0 1px 0 rgba(0,0,0,0.02), 0 26px 44px -24px rgba(45,58,35,0.32); }
-  .ab-believe-card:nth-child(1) { background: var(--sage-100); border-radius: 56px 22px 56px 22px; }
-  .ab-believe-card:nth-child(2) { background: var(--cream-200); border-radius: 22px 56px 22px 56px; }
-  .ab-believe-card:nth-child(3) { background: var(--clay-100); border-radius: 22px 56px 22px 56px; }
-  .ab-believe-card:nth-child(4) { background: var(--sun-100); border-radius: 56px 22px 56px 22px; }
+  .ab-believe-card + .ab-believe-card::before{content:"";position:absolute;left:0;top:0;width:1px;height:100%;background:var(--border-default,rgba(45,58,35,0.14));transform:scaleY(0);transform-origin:top;transition:transform 900ms var(--ease-out,ease) 200ms}
+  .ab-believe-card.in::before{transform:scaleY(1)}
+  .ab-believe-card:nth-child(3).in::before{transition-delay:340ms}
+  @media (prefers-reduced-motion:reduce){.ab-believe-card + .ab-believe-card::before{transition:none;transform:none}}
   .ab-believe-num {
     font-family: var(--font-hand);
     font-size: 23px;
@@ -388,10 +303,8 @@
     display: block;
     margin-bottom: 14px;
   }
-  .ab-believe-card:nth-child(1) .ab-believe-num { color: var(--sage-600); }
-  .ab-believe-card:nth-child(2) .ab-believe-num { color: var(--clay-500); }
-  .ab-believe-card:nth-child(3) .ab-believe-num { color: var(--clay-500); }
-  .ab-believe-card:nth-child(4) .ab-believe-num { color: var(--sun-500); }
+  .ab-believe-num { color: var(--clay-500); }
+  .ab-believe-num::after { content: ""; display: block; width: 30px; height: 7px; margin: 7px 0 0; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 8'%3E%3Cpath d='M2 5.5 C 8 2.5, 13 7.5, 19 4.5 S 28 3, 30 5' fill='none' stroke='%23c7541f' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat center/contain; opacity: 0.85; }
   .ab-believe-card h3 {
     font-family: var(--font-heading);
     font-size: clamp(16.5px, 1.35vw, 20px);
@@ -413,8 +326,8 @@
 
   /* ---------- 4. MEET MADISON ---------- */
   .ab-madison {
-    background: var(--cream-100);
-    padding: clamp(28px, 4vw, 60px) 0 clamp(32px, 4vw, 56px);
+    background: var(--white);
+    padding: var(--band-y) 0;
     position: relative;
     overflow: hidden;
     overflow: clip; /* clips like hidden but keeps position:sticky working */
@@ -435,43 +348,25 @@
     .ab-madison-grid { align-items: start; }
     .ab-madison-grid > .ab-madison-figure {
       position: sticky;
-      top: var(--ab-fig-top, clamp(28px, 7vh, 96px));
-      margin-left: calc(-1 * (max((100vw - 1180px) / 2, 0px) + clamp(20px, 4vw, 56px)));
+      top: calc(var(--nav-h, 96px) + 24px);
+      max-width: 96%;
       padding-left: 0;
     }
     .ab-madison-lead,
-    .ab-madison-text { position: relative; padding-left: 34px; }
-    .ab-madison-progress {
-      position: absolute;
-      left: 0; top: 8px; bottom: 8px;
-      width: 2px;
-      background: var(--sage-200);
-      border-radius: 2px;
-    }
-    .ab-madison-progress i {
-      position: absolute;
-      left: -1px; top: 0;
-      width: 4px; height: 0%;
-      background: var(--clay-400);
-      border-radius: 2px;
-      transition: height 0.08s linear;
-    }
+    .ab-madison-text { position: relative; }
     @media (prefers-reduced-motion: no-preference) {
-      .ab-madison-text > * { opacity: 1; transform: none; }
-      .ab-madison-text [data-story] {
+      .ab-madison-text > *, .ab-madison-lead > * { opacity: 1; transform: none; }
+      .ab-madison-grid [data-story] {
         opacity: 0.25;
         transform: translateY(14px);
         transition: opacity 0.5s ease, transform 0.5s ease;
       }
-      .ab-madison-text [data-story].is-read {
+      .ab-madison-grid [data-story].is-read {
         opacity: 1;
         transform: translateY(0);
       }
       .ab-madison-photo { transition: transform 0.15s linear; }
     }
-  }
-  @media (max-width: 980px) {
-    .ab-madison-progress { display: none; }
   }
   .ab-madison-figure { position: relative; padding: 16px 14px 22px 16px; }
   .ab-madison-creds {
@@ -485,7 +380,7 @@
     position: relative;
     z-index: 2;
   }
-  .ab-madison-creds img { height: 40px; width: auto; display: block; mix-blend-mode: multiply; opacity: 0.85; }
+  .ab-madison-creds img { height: auto; max-height: 40px; width: auto; max-width: 47%; display: block; mix-blend-mode: multiply; opacity: 0.85; }
   .ab-madison-text .ab-madison-creds {
     justify-content: flex-start;
     margin-top: 26px;
@@ -498,28 +393,13 @@
     position: relative;
     z-index: 1;
     aspect-ratio: 4 / 5;
-    border-radius: 0 28px 28px 0;
+    border-radius: 28px;
     overflow: hidden;
     background: var(--cream-50);
     box-shadow: var(--shadow-lg);
   }
   .ab-madison-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 32%; display: block; }
-  .ab-madison-tag {
-    position: relative;
-    z-index: 2;
-    margin-top: 18px;
-    text-align: center;
-  }
-  .ab-madison-tag-name {
-    font-family: var(--font-heading);
-    font-size: 16px;
-    font-weight: 600;
-    color: var(--sage-800);
-    line-height: 1.2;
-    white-space: nowrap;
-  }
   .ab-madison-text { min-width: 0; }
-  .ab-madison-text .ab-eyebrow { margin-bottom: 16px; }
   .ab-madison-lead h1,
   .ab-madison-text h1,
   .ab-madison-text h2 {
@@ -537,8 +417,9 @@
     font-size: clamp(26px, 6vw, 30px);
     color: var(--clay-500, var(--sage-600));
     line-height: 1.2;
-    margin: -8px 0 22px;
+    margin: -8px 0 14px;
   }
+  .ab-madison-intro { font-family: var(--font-body); font-size: clamp(14px, 1.1vw, 16px); line-height: 1.65; color: var(--ink-700); margin: 0 0 4px; max-width: 52ch; }
   .ab-madison-text p {
     font-family: var(--font-body);
     font-size: clamp(14px, 1.1vw, 16px);
@@ -548,28 +429,12 @@
     max-width: 58ch;
   }
   .ab-madison-text p strong { color: var(--sage-800); font-weight: 600; }
-  .ab-madison-cred {
-    margin: 22px 0 0;
-    padding: 16px 20px;
-    background: var(--white);
-    border-radius: 16px;
-    border: 1px solid var(--border-subtle);
-    font-family: var(--font-body);
-    font-size: 13.5px;
-    line-height: 1.6;
-    color: var(--ink-700);
-    box-shadow: var(--shadow-sm);
-    display: flex;
-    gap: 12px;
-    align-items: flex-start;
-  }
-  .ab-madison-cred svg { width: 18px; height: 18px; color: var(--sage-500); flex: 0 0 auto; margin-top: 2px; }
   .ab-madison-quote {
     position: relative;
     margin: 22px 0 0;
     padding: 18px 48px 18px 22px;
     background: var(--sage-100, #eef2e9);
-    border-radius: 36px 14px 36px 14px;
+    border-radius: 18px;
     display: flex;
     flex-direction: column;
     gap: 12px;
@@ -593,7 +458,7 @@
   .ab-madison-quote-avatar {
     width: 34px; height: 34px;
     border-radius: 999px;
-    background: var(--clay-400);
+    background: var(--sage-600);
     color: var(--cream-50, #fff);
     font-family: var(--font-heading);
     font-weight: 700;
@@ -605,47 +470,42 @@
   .ab-madison-quote-sub { font-size: 11px; color: var(--fg-3, #6b6b63); line-height: 1.2; }
   .ab-madison-quote-stars { color: var(--sun-500); letter-spacing: 1.5px; font-size: 13px; line-height: 1; margin-left: auto; flex-shrink: 0; }
   .ab-madison-figure .ab-madison-quote {
-    position: absolute;
-    bottom: -40px;
-    right: -16px;
-    left: auto;
-    width: min(400px, 104%);
-    margin: 0;
+    position: relative;
+    width: min(400px, 100%);
+    margin: -52px -40px 0 auto;
     z-index: 3;
     background: var(--white);
     border: 1px solid var(--border-subtle);
-    border-radius: 36px 14px 36px 14px;
+    border-radius: 18px;
     padding: 16px 44px 16px 20px;
+    box-shadow: var(--shadow-md);
   }
   @media (max-width: 980px) {
-    .ab-madison-figure::before {
-      inset: 6px 30px auto 0;
-      aspect-ratio: 4 / 4.7;
-      height: auto;
-    }
     .ab-madison-figure .ab-madison-quote {
       position: relative;
       z-index: 3;
-      width: min(440px, calc(100% - 28px));
+      width: min(440px, calc(100vw - 28px));
       right: auto;
       left: auto;
-      margin: -104px auto 52px;
+      margin: 14px calc((100% - min(440px, 100vw - 28px)) / 2) 0;
       background: var(--white);
       border: 1px solid var(--border-subtle);
-      border-radius: 36px 14px 36px 14px;
+      border-radius: 18px;
       padding: 16px 44px 16px 20px;
       box-shadow: var(--shadow-lg);
     }
   }
 
   /* ---------- 5. WHAT IT FEELS LIKE ---------- */
-  .ab-feels { background: var(--sky-100, #E3EEF3); padding: clamp(36px, 4.2vw, 60px) 0; }
+  .ab-feels { background: var(--sage-100); padding: var(--band-y) 0; }
   .ab-feels-grid {
     display: grid;
-    grid-template-columns: 0.85fr 1.15fr;
+    grid-template-columns: 1.15fr 0.85fr;
     gap: clamp(36px, 5vw, 80px);
     align-items: start;
   }
+  .ab-feels-grid > .ab-feels-list { order: 1; align-self: center; }
+  .ab-feels-grid > .ab-feels-head { order: 2; }
   .ab-feels-head h2 {
     font-family: var(--font-heading);
     font-size: clamp(26px, 3.2vw, 38px);
@@ -665,18 +525,17 @@
     max-width: 42ch;
   }
   .ab-feels-reviews { margin-top: clamp(24px, 2.6vw, 34px); display: flex; flex-direction: column; gap: 14px; max-width: 380px; align-items: stretch; }
-  .ab-fr { position: relative; border: 1px solid var(--border-subtle); border-radius: 24px 10px 24px 10px; padding: 14px 44px 14px 16px; box-shadow: 0 10px 24px -16px rgba(45,58,35,0.35); margin: 0; }
-  .ab-fr:nth-child(1) { background: var(--sage-100); border-radius: 24px 10px 24px 10px; margin-left: 0; margin-right: 40px; }
-  .ab-fr:nth-child(2) { background: var(--cream-200); border-radius: 10px 24px 10px 24px; margin-left: 40px; margin-right: 0; }
-  .ab-fr:nth-child(3) { background: var(--clay-100); border-radius: 24px 10px 24px 10px; margin-left: 16px; margin-right: 24px; }
+  .ab-fr { position: relative; border: 1px solid var(--border-subtle); border-radius: 18px; padding: 14px 44px 14px 16px; box-shadow: 0 10px 24px -16px rgba(45,58,35,0.35); margin: 0; }
+  .ab-fr:nth-child(1) { background: var(--white); border-radius: 18px; margin-left: 0; margin-right: 40px; }
+  .ab-fr:nth-child(2) { background: var(--sun-100); border-radius: 18px; margin-left: 40px; margin-right: 0; }
+  .ab-fr:nth-child(3) { background: var(--white); border-radius: 18px; margin-left: 16px; margin-right: 24px; }
   .ab-fr-g { position: absolute; top: 13px; right: 14px; width: 18px; height: 18px; opacity: 0.95; }
   .ab-fr-stars { display: block; color: var(--sun-500); letter-spacing: 1.5px; font-size: 12px; line-height: 1; margin-bottom: 8px; }
   .ab-fr-quote { font-family: var(--font-heading); font-size: 14px; font-weight: 600; line-height: 1.4; letter-spacing: -0.01em; color: var(--sage-800); margin: 0 0 10px; text-wrap: pretty; }
-  .ab-fr:nth-child(3) .ab-fr-quote { color: var(--clay-600, var(--sage-800)); }
   .ab-fr-attr { display: flex; align-items: center; gap: 9px; }
   .ab-fr-avatar { width: 24px; height: 24px; border-radius: 999px; background: var(--sage-500); color: var(--cream-50); font-family: var(--font-heading); font-weight: 700; font-size: 11px; display: grid; place-items: center; flex-shrink: 0; }
   .ab-fr:nth-child(2) .ab-fr-avatar { background: var(--sun-500); }
-  .ab-fr:nth-child(3) .ab-fr-avatar { background: var(--clay-400); }
+  .ab-fr:nth-child(3) .ab-fr-avatar { background: var(--sage-600); }
   .ab-fr-name { font-family: var(--font-heading); font-weight: 700; font-size: 12px; color: var(--brand-ink, var(--sage-800)); }
   .ab-feels-item {
     display: grid;
@@ -688,17 +547,6 @@
   }
   .ab-feels-item:first-child { padding-top: 0; }
   .ab-feels-item:last-child { border-bottom: 0; padding-bottom: 0; }
-  .ab-feels-ic {
-    flex: 0 0 auto;
-    width: 44px; height: 44px;
-    border-radius: 50%;
-    display: grid; place-items: center;
-  }
-  .ab-feels-item:nth-child(1) .ab-feels-ic { background: var(--sage-100); color: var(--sage-600); }
-  .ab-feels-item:nth-child(2) .ab-feels-ic { background: var(--clay-100); color: var(--clay-500); }
-  .ab-feels-item:nth-child(3) .ab-feels-ic { background: var(--sun-100); color: var(--sun-500); }
-  .ab-feels-item:nth-child(4) .ab-feels-ic { background: var(--sage-100); color: var(--sage-600); }
-  .ab-feels-ic svg { width: 21px; height: 21px; }
   .ab-feels-item h3 {
     font-family: var(--font-heading);
     font-size: clamp(17px, 1.5vw, 20px);
@@ -718,21 +566,11 @@
 
   /* ---------- 6. FINAL CTA ---------- */
   .ab-final {
-    background: url("assets/splatter-full.svg") top center/100% auto repeat-y var(--cream-100);
-    padding: clamp(44px, 5vw, 72px) 0;
+    background: url("assets/cactus-section.webp") bottom center/100% auto no-repeat var(--white);
+    padding: var(--band-y) 0;
     text-align: center;
     position: relative;
     overflow: hidden;
-  }
-  .ab-final::before {
-    content: "";
-    position: absolute;
-    bottom: -160px; left: 50%;
-    transform: translateX(-50%);
-    width: 620px; height: 620px;
-    background: radial-gradient(circle at center, var(--sage-100) 0%, transparent 68%);
-    opacity: 0.6;
-    pointer-events: none;
   }
   .ab-final-inner { position: relative; max-width: 660px; margin: 0 auto; padding: 0 24px; }
   .ab-final-hand {
@@ -780,17 +618,19 @@
     .ab-hero-grid,
     .ab-madison-grid,
     .ab-feels-grid { grid-template-columns: 1fr; }
-    .ab-madison-grid {
-      grid-template-areas: "lead" "figure" "text";
-      row-gap: clamp(20px, 4vw, 32px);
-    }
+    .ab-madison-grid { display: flex; flex-direction: column; gap: clamp(20px, 4vw, 32px); }
+    .ab-madison-figure { display: contents; }
+    .ab-madison-lead { order: 0; }
+    .ab-madison-photo { order: 1; margin: 0 calc(-1 * clamp(20px, 4vw, 56px)); width: calc(100% + 2 * clamp(20px, 4vw, 56px)); }
+    .ab-madison-text { order: 2; }
+    .ab-madison-figure .ab-madison-quote { order: 3; }
     .ab-believe-grid { grid-template-columns: 1fr 1fr; }
     .ab-hero-grid { gap: 4px; }
     .ab-hero-figure { max-width: none; margin: 0 calc(-1 * clamp(20px, 4vw, 56px)); padding: 14px 0 14px; }
-    .ab-hero-figure .ab-hero-photo { border-radius: 0; }
-    .ab-hero-figure .ab-hero-card { left: 14px; right: 14px; width: auto; max-width: 440px; }
+    .ab-hero-figure .ab-hero-photo { border-radius: 0; aspect-ratio: 4 / 3; }
+    .ab-hero-figure .ab-hero-card { position: relative; bottom: auto; left: auto; right: auto; width: min(440px, calc(100% - 28px)); max-width: 440px; margin: 14px auto 0; }
     .ab-madison-figure { max-width: none; margin: 0 calc(-1 * clamp(20px, 4vw, 56px)); padding-left: 0; padding-right: 0; }
-    .ab-madison-photo { border-radius: 0; }
+    .ab-madison-photo { border-radius: 0; aspect-ratio: 4 / 3; }
     /* Interleave testimonials between the four topics on mobile */
     .ab-feels-grid { display: flex; flex-direction: column; gap: 0; }
     .ab-feels-head, .ab-feels-list, .ab-feels-reviews { display: contents; }
@@ -803,10 +643,12 @@
     .ab-feels-list .ab-feels-item:nth-child(3) { order: 7; }
     .ab-feels-reviews .ab-fr:nth-child(3) { order: 8; }
     .ab-feels-list .ab-feels-item:nth-child(4) { order: 9; }
-    .ab-feels-reviews .ab-fr { margin: 18px 0; max-width: none; }
+    .ab-feels-reviews .ab-fr { margin: 18px 0; max-width: none; opacity: 1; transform: none; }
     .ab-feels-list .ab-feels-item:last-child { border-bottom: 0; padding-bottom: 0; }
   }
   @media (max-width: 720px) {
+    .ab-services-link { display: flex; width: fit-content; margin: 0 auto; }
+    .ab-hero-lede.ab-hero-lede--soft { margin-bottom: 14px; }
     /* Tighten hero so the review card clears the fold */
     .ab-madison { padding-top: 14px; }
     .ab-madison-grid { row-gap: 12px; }
@@ -814,36 +656,32 @@
     .ab-madison-lead h1 { font-size: clamp(24px, 6.2vw, 30px); margin-bottom: 10px; }
     .ab-madison-byline { font-size: 22px; margin: -4px 0 0; }
     .ab-madison-figure { padding: 12px 0 0; }
-    .ab-madison-figure::after { width: 50px; height: 50px; }
-    .ab-madison-figure .ab-madison-quote { width: min(440px, calc(100% - 28px)); margin: -96px auto 44px; padding: 14px 40px 14px 18px; }
+    .ab-madison-figure .ab-madison-quote { width: min(440px, calc(100vw - 28px)); margin: 14px calc((100% - min(440px, 100vw - 28px)) / 2) 0; padding: 14px 40px 14px 18px; }
     .ab-believe-grid { grid-template-columns: 1fr; gap: 0; }
-    .ab-believe-card,
-    .ab-believe-card:nth-child(1),
-    .ab-believe-card:nth-child(2),
-    .ab-believe-card:nth-child(3) {
-      background: transparent;
-      box-shadow: none;
-      border-radius: 0;
+    .ab-believe-card {
       padding: 22px 0;
       border-bottom: 1px solid var(--border-default, rgba(45,58,35,0.14));
     }
-    .ab-believe-card:hover { transform: none; box-shadow: none; }
+    .ab-believe-card + .ab-believe-card { border-left: 0; }
+    .ab-believe-card + .ab-believe-card::before { content: none; }
     .ab-believe-card:last-child { border-bottom: 0; padding-bottom: 0; }
     .ab-believe-card:first-child { padding-top: 0; }
   }
 </style>
+
 </head>
 <body class="ab-page">
 
 <div id="site-nav"></div>
 
 <!-- ========== 1. HERO: MEET MADISON ========== -->
-<section class="ab-madison" data-screen-label="Meet Madison">
+<section class="ab-madison" id="meet-madison" data-screen-label="Meet Madison">
+  <svg class="sec-curve bottom flip" viewBox="0 0 1440 56" preserveAspectRatio="none" aria-hidden="true"><path d="M0,0 L1440,0 L1440,30 C1230,10 1010,54 760,42 C520,32 250,52 0,26 Z" fill="var(--sage-100)"></path></svg>
   <div class="ab-shell">
     <div class="ab-madison-grid">
       <div class="ab-madison-figure reveal in">
         <div class="ab-madison-photo">
-          <img src="assets/madison-with-baby.png" alt="Madison Jeffery, CCC-SLP, pediatric speech-language pathologist and founder of Social House Therapy, holding her newborn">
+          <img src="assets/madison-with-baby.webp" alt="Madison Jeffery, CCC-SLP, pediatric speech-language pathologist and founder of Social House Therapy, holding her newborn">
         </div>
         <figure class="ab-madison-quote">
           <svg class="ab-madison-quote-g" viewBox="0 0 48 48" aria-hidden="true"><path fill="#4285F4" d="M44.5 20H24v8.5h11.8C34.7 33 30 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3 0 5.7 1.1 7.8 3l6-6C34.6 6.1 29.6 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20c10.5 0 19.5-7.6 19.5-20 0-1.3-.2-2.7-.5-4z"/><path fill="#34A853" d="M6.3 14.7l6.6 4.8C14.7 16 19 13 24 13c3 0 5.7 1.1 7.8 3l6-6C34.6 6.1 29.6 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#FBBC05" d="M24 44c5.5 0 10.5-2.1 14.3-5.6l-6.6-5.4C29.6 34.6 27 36 24 36c-6 0-10.7-3-12.6-7.5l-6.6 5.1C8.6 39.7 15.7 44 24 44z"/><path fill="#EA4335" d="M44.5 20H24v8.5h11.8c-1.1 3.2-3.3 5.6-6.1 7l6.6 5.4C40.3 37 44 31.2 44 24c0-1.3-.2-2.7-.5-4z"/></svg>
@@ -851,7 +689,7 @@
           <figcaption class="ab-madison-quote-attr">
             <div class="ab-madison-quote-avatar" aria-hidden="true">B</div>
             <div>
-              <div class="ab-madison-quote-name">Brianna D.</div>
+              <div class="ab-madison-quote-name">Briana D.</div>
               <div class="ab-madison-quote-sub">Parent</div>
             </div>
             <span class="ab-madison-quote-stars" aria-label="5 out of 5 stars">★★★★★</span>
@@ -861,36 +699,54 @@
 
       <div class="ab-madison-lead reveal in">
         <div class="ab-crumbs"><a href="index.html">Home</a><span class="sep">/</span><span>About</span></div>
-        <h1>The Heart Behind Social House Therapy.</h1>
-        <div class="ab-madison-byline">Madison Jeffery, CCC-SLP</div>
+        <h1 data-story="">The Heart Behind Social House Therapy.</h1>
+        <div class="ab-madison-byline" data-story="">Madison Jeffery, CCC-SLP</div>
+        <p class="ab-madison-intro" data-story="">Meet the clinician, founder, and steady presence guiding each family with care.</p>
       </div>
 
       <div class="ab-madison-text reveal in" data-delay="1">
-        <span class="ab-madison-progress" aria-hidden="true"><i></i></span>
-        <p>Meet the clinician, founder, and steady presence guiding each family with care.</p>
         <p data-story="">For Madison, speech therapy has always been about more than words. As a child, she worked with a speech-language pathologist who helped her connect more meaningfully with the people around her. That experience shaped her career and the belief behind Social House Therapy: communication begins with feeling seen, understood, and supported.</p>
         <p data-story="">Madison earned her bachelor&rsquo;s degree in Speech and Hearing Sciences from Arizona State University and her master&rsquo;s degree from Northern Arizona University. Before becoming an SLP, she spent four years as a speech-language pathology assistant. Her experience now spans homes, schools, clinics, ABA centers, community settings, and virtual care.</p>
-        <p data-story="">Her areas of focus include autism, gestalt language processing, AAC, speech sound disorders, childhood apraxia of speech, and stuttering. Madison builds trust through each child&rsquo;s interests, creating a calm, playful space where trying something new never feels like getting it wrong. Parents are included with clear explanations and practical strategies that fit naturally into everyday routines.</p>
+        <p data-story="">Her areas of focus include speech sound disorders, childhood apraxia of speech, stuttering, gestalt language processing, AAC, and autism. Madison builds trust through each child&rsquo;s interests, creating a calm, playful space where trying something new never feels like getting it wrong. Parents are included with clear explanations and practical strategies that fit naturally into everyday routines.</p>
         <p data-story="">Madison founded Social House Therapy to provide care that feels personal, thoughtful, and handcrafted for each family. Her vision is to build a team of supported, continually learning clinicians who share that same commitment to relationship-based, family-centered care.</p>
+        <div class="ab-madison-creds" data-story="" aria-label="Professional credentials and memberships">
+          <img src="assets/asha-ccc-slp.webp" alt="CCC-SLP, ASHA Certified Speech-Language Pathologist" loading="lazy" decoding="async">
+          <img src="assets/arsha-logo.png" alt="ArSHA, Arizona Speech-Language-Hearing Association member" loading="lazy" decoding="async">
+        </div>
       </div>
     </div>
   </div>
 </section>
 
 
+<!-- ========== 3. WHY WE EXIST: the in-between place ========== -->
+<section class="ab-why" id="our-story" data-screen-label="Why We Exist">
+  <div class="ab-why-inner reveal">
+    <div class="ab-why-rule" aria-hidden="true"></div>
+    <h2>We created Social House Therapy because families deserve more.</h2>
+    <p>Too often, parents arrive after feeling rushed, overlooked, or unsure what to do next. They may have received a plan that did not fully fit their child, experienced frequent therapist changes, or left sessions without understanding what was being worked on or why.</p>
+    <p>We built Social House Therapy to offer a more thoughtful experience, one where concerns are taken seriously, children are seen as whole people, and families are included throughout the process. Our goal is to pair high-level clinical care with clear communication, practical strategies, and the consistency needed to build trust.</p>
+    <p>We never want therapy to feel like just another appointment. We want families to feel like someone is finally in their corner.</p>
+    <p class="ab-why-mean">Because connection comes first, and that is where meaningful progress begins.</p>
+  </div>
+</section>
+
 <!-- ========== 2. OUR APPROACH: the parent's reality ========== -->
 <section class="ab-hero" data-screen-label="About Hero">
+  <svg class="sec-curve" viewBox="0 0 1440 56" preserveAspectRatio="none" aria-hidden="true"><path d="M0,0 L1440,0 L1440,14 C1180,52 900,56 720,44 C480,28 220,30 0,52 Z" fill="var(--sage-100)"></path></svg>
+  <svg class="sec-curve bottom flip" viewBox="0 0 1440 56" preserveAspectRatio="none" aria-hidden="true"><path d="M0,0 L1440,0 L1440,30 C1230,10 1010,54 760,42 C520,32 250,52 0,26 Z" fill="var(--white)"></path></svg>
   <div class="ab-shell">
     <div class="ab-hero-grid">
       <div class="ab-hero-text reveal in">
         <h2 class="ab-hero-h">When your child is misunderstood, everyday moments can <span class="ab-hand">feel harder.</span></h2>
         <p class="ab-hero-lede">You may see the frustration without knowing exactly what is getting in the way. The difficulty may involve speech, language, motor planning, fluency, or not yet having a reliable way to communicate.</p>
-        <p class="ab-hero-lede ab-hero-lede--soft">At Social House Therapy, we help you understand what you are seeing and what to do next, so your child has more reliable ways to express themselves and be understood throughout everyday life. We work with toddlers through elementary-age kids, roughly ages 2 to 12, from first words through the grade-school years.</p>
+        <p class="ab-hero-lede ab-hero-lede--soft">At Social House Therapy, we help you understand what you are seeing and what to do next, so your child has more reliable ways to express themselves and be understood. We work with children from infancy through the school-age years.</p>
+        <a class="ab-services-link" href="index.html#services">Check out our services &rarr;</a>
       </div>
 
       <div class="ab-hero-figure reveal in" data-delay="1">
         <div class="ab-hero-photo">
-          <img src="assets/aac-play-session.png" alt="A child playing with toy cars while using an AAC communication device on a tablet">
+          <img src="assets/aac-play-session.webp" alt="A child playing with toy cars while using an AAC communication device on a tablet">
         </div>
         <figure class="ab-hero-card" data-parallax="-0.12">
           <svg class="ab-hero-card-g" viewBox="0 0 48 48" aria-hidden="true">
@@ -914,25 +770,11 @@
   </div>
 </section>
 
-<!-- ========== 3. WHY WE EXIST: the in-between place ========== -->
-<section class="ab-why" id="our-story" data-screen-label="Why We Exist">
-  <div class="ab-why-inner reveal">
-    <div class="ab-why-rule" aria-hidden="true"></div>
-    <h2>We created Social House Therapy because families deserve more.</h2>
-    <p>Too often, parents arrive after feeling rushed, overlooked, or unsure what to do next. They may have received a plan that did not fully fit their child, experienced frequent therapist changes, or left sessions without understanding what was being worked on or why.</p>
-    <p>We built Social House Therapy to offer a more thoughtful experience, one where concerns are taken seriously, children are seen as whole people, and families are included throughout the process. Our goal is to pair high-level clinical care with clear communication, practical strategies, and the consistency needed to build trust.</p>
-    <p>As the practice grows, that standard will remain the same. Every clinician will be supported and equipped to provide personal, relationship-based care shaped around the child and the life their family already lives.</p>
-    <p>We never want therapy to feel like just another appointment. We want families to feel understood, informed, and genuinely supported by a team that is in their corner.</p>
-    <p class="ab-why-mean">Because connection comes first, and that is where meaningful progress begins.</p>
-  </div>
-</section>
-
 <!-- ========== 4. WHAT WE BELIEVE ========== -->
 <section class="ab-believe" data-screen-label="What We Believe">
   <div class="ab-shell">
     <div class="ab-believe-head reveal">
       <h2>A few things we hold to, no matter the child.</h2>
-      <p>These aren&rsquo;t taglines on a wall. They&rsquo;re the reasons sessions look the way they do, and the reasons families tend to exhale a little once they&rsquo;re in the room.</p>
     </div>
     <div class="ab-believe-grid">
       <div class="ab-believe-card reveal">
@@ -956,6 +798,7 @@
 
 <!-- ========== 5. WHAT IT FEELS LIKE ========== -->
 <section class="ab-feels" data-screen-label="What It Feels Like">
+  <svg class="sec-curve" viewBox="0 0 1440 56" preserveAspectRatio="none" aria-hidden="true"><path d="M0,0 L1440,0 L1440,30 C1230,10 1010,54 760,42 C520,32 250,52 0,26 Z" fill="var(--white)"></path></svg>
   <div class="ab-shell">
     <div class="ab-feels-grid">
       <div class="ab-feels-head reveal">
@@ -984,36 +827,24 @@
       </div>
       <div class="ab-feels-list reveal" data-delay="1">
         <div class="ab-feels-item">
-          <span class="ab-feels-ic" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg>
-          </span>
           <div>
             <h3>Therapy comes to your child</h3>
             <p>In your living room, at the park, at an ABA or child care center, or on a screen at the kitchen table. Kids show us the most on ground that already feels like theirs, so that&rsquo;s where we meet them.</p>
           </div>
         </div>
         <div class="ab-feels-item">
-          <span class="ab-feels-ic" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-          </span>
           <div>
             <h3>You&rsquo;re in it, not outside it</h3>
             <p>You&rsquo;ll always know what we&rsquo;re working on and why, and you&rsquo;ll leave with one small, doable thing to try before the next visit. One thing, never a stack.</p>
           </div>
         </div>
         <div class="ab-feels-item">
-          <span class="ab-feels-ic" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
-          </span>
           <div>
             <h3>Sessions look a lot like play</h3>
             <p>Because for a young child, play is the work. We build communication into whatever they&rsquo;re already into: trains, snacks, dinosaurs, the lot.</p>
           </div>
         </div>
         <div class="ab-feels-item">
-          <span class="ab-feels-ic" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a5 5 0 0 0-5 5c0 2 1 3 1 5h8c0-2 1-3 1-5a5 5 0 0 0-5-5z"/><line x1="9" y1="17" x2="15" y2="17"/><line x1="10" y1="20" x2="14" y2="20"/></svg>
-          </span>
           <div>
             <h3>We build for real-life moments.</h3>
             <p>The moments that matter happen at the dinner table and in the back seat, so that&rsquo;s where the strategies are pointed: toward the routines you live every day.</p>
@@ -1026,6 +857,7 @@
 
 <!-- ========== 6. FINAL CTA ========== -->
 <section class="ab-final" data-screen-label="Final CTA">
+  <svg class="sec-curve" viewBox="0 0 1440 56" preserveAspectRatio="none" aria-hidden="true"><path d="M0,0 L1440,0 L1440,14 C1180,52 900,56 720,44 C480,28 220,30 0,52 Z" fill="var(--sage-100)"></path></svg>
   <div class="ab-final-inner reveal">
     <h2>Start with a conversation, not a commitment.</h2>
     <p>A free 15-minute call gives you space to share what you&rsquo;re noticing and hear an honest, jargon-free perspective on what may come next. There is no pressure to schedule an evaluation and no script to follow.</p>
@@ -1044,7 +876,7 @@
 </section>
 
 <div id="site-footer"></div>
-<script src="scripts/site.js?v=19"></script>
+<script src="scripts/site.js?v=31" defer></script>
 <script>
 /* Subtle scroll parallax on decorative elements and photos */
 (function () {
@@ -1089,30 +921,13 @@
 })();
 </script>
 <script src="scripts/sp-widget.js?v=3" defer></script>
-<script src="https://widget-cdn.simplepractice.com/assets/integration-1.0.js" defer></script>
 
 <script>
-/* Meet-Madison hero scrollytelling: pinned photo, progress rail, story reveal */
+/* Meet-Madison story reveal: paragraphs surface as they enter the reading zone */
 (function () {
-  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
-  var desktop = window.matchMedia('(min-width: 981px)');
-  var text = document.querySelector('.ab-madison-text');
-  var photo = document.querySelector('.ab-madison-photo');
-  var tag = document.querySelector('.ab-madison-tag');
-  var fill = document.querySelector('.ab-madison-progress i');
-  var figure = document.querySelector('.ab-madison-figure');
-  if (!text || !photo) return;
-
-  /* Keep the pinned photo vertically centered in the viewport */
-  function centerFigure() {
-    if (!figure) return;
-    if (!desktop.matches) { figure.style.removeProperty('--ab-fig-top'); return; }
-    var top = Math.max(16, (window.innerHeight - figure.offsetHeight) / 2);
-    figure.style.setProperty('--ab-fig-top', top.toFixed(0) + 'px');
-  }
-
-  /* Story reveal: paragraphs surface as they enter the reading zone */
-  var storyEls = [].slice.call(text.querySelectorAll('[data-story]'));
+  var grid = document.querySelector('.ab-madison-grid');
+  if (!grid) return;
+  var storyEls = [].slice.call(grid.querySelectorAll('[data-story]'));
   if ('IntersectionObserver' in window) {
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (en) {
@@ -1123,34 +938,6 @@
   } else {
     storyEls.forEach(function (el) { el.classList.add('is-read'); });
   }
-
-  /* Progress rail + photo tilt, driven by how far the story has been read */
-  var ticking = false;
-  function update() {
-    ticking = false;
-    if (!desktop.matches) {
-      photo.style.transform = '';
-      if (tag) tag.style.transform = '';
-      return;
-    }
-    var rect = text.getBoundingClientRect();
-    var vh = window.innerHeight;
-    var total = rect.height - vh * 0.6;
-    var read = Math.min(1, Math.max(0, (vh * 0.6 - rect.top) / (total > 0 ? total : 1)));
-    if (fill) fill.style.height = (read * 100).toFixed(2) + '%';
-    if (!reduce.matches) {
-      if (tag) tag.style.transform = 'rotate(' + (-2 + read * 2.5).toFixed(2) + 'deg) translateY(' + (read * -4).toFixed(1) + 'px)';
-    }
-  }
-  function onScroll() {
-    if (!ticking) { ticking = true; requestAnimationFrame(update); }
-  }
-  window.addEventListener('scroll', onScroll, { passive: true });
-  window.addEventListener('resize', function () { centerFigure(); onScroll(); });
-  if (document.readyState === 'complete') { centerFigure(); }
-  else { window.addEventListener('load', centerFigure); }
-  centerFigure();
-  update();
 })();
 </script>
 </body>

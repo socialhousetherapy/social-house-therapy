@@ -37,3 +37,6 @@ Reviewed against ASHA guidance and primary research. Claim-by-claim verdicts; pa
 - ASHA Practice Portal AAC: https://www.asha.org/practice-portal/professional-issues/augmentative-and-alternative-communication/
 - Korsten via AssistiveWare: https://www.assistiveware.com/learn-aac/roadblock-give-up-too-soon
 - AzTAP loans: https://aztap.org/at-devices/loan-libraries/
+
+## Policy update (2026-08-16, owner direction)
+- Every evaluation, including AAC evaluation, is completed during one session; no return visits for additional evaluation time. Extended system trials continue through ongoing AAC support services instead. Service policy of the practice, not a clinical claim. Updated: assessment-and-trials phase paragraph, evaluation-and-therapy FAQ (visible and schema).

@@ -17,6 +17,8 @@
   /* ---------- Brand Colors ---------- */
 
   /* Sage — primary brand (extends the logo's ~#A8BFA0) */
+  --band-y: clamp(44px,5.4vw,76px);
+  --strip-y: clamp(20px,2.4vw,32px);
   --sage-50:  #F1F5EE;
   --sage-100: #E2EBDC;
   --sage-200: #CADBC1;

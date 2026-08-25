@@ -8,16 +8,10 @@
   var EV = window.EV_CONFIG = {
     bookingUrl: 'contact.html',            // "Schedule an Evaluation"
     consultUrl: 'contact.html',            // "Talk With an SLP First" / free consultation
-    pricingUrl: 'index.html#pricing',      // Services and pricing
+    pricingUrl: 'index.html#pricing-anchor',      // Services and pricing
     reportTurnaround: '',                  // e.g. "7 to 10 business days" (leave empty to omit)
     lastReviewed: 'August 2026',           // article "last updated" field
-    readingTime: '22 min read',
-    counters: [
-      { n: 3,  suffix: '',  title: 'Major phases',                  desc: 'Preparation, direct assessment, and clinical interpretation' },
-      { n: 7,  suffix: '+', title: 'Potential information sources', desc: 'Selected according to the child and referral concern' },
-      { n: 1,  suffix: '',  title: 'Complete written report',       desc: 'Findings, interpretation, and recommendations in one place' },
-      { n: 0,  suffix: '',  title: 'Required commitment to therapy', desc: 'An evaluation should result in an honest recommendation' }
-    ]
+    readingTime: '19 min read'
   };
 
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -97,39 +91,6 @@
     }, true);
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(remeasure);
     remeasure();
-  }
-
-  /* ---------- animated counters ---------- */
-  function counters() {
-    var wrap = document.querySelector('.ev-stats');
-    if (!wrap) return;
-    var nodes = Array.prototype.slice.call(wrap.querySelectorAll('.ev-stat-n'));
-    nodes.forEach(function (el, i) {
-      var c = EV.counters[i];
-      if (c) el.textContent = c.n + (c.suffix || '');
-    });
-    if (reduce.matches || !('IntersectionObserver' in window)) return;
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (en) {
-        if (!en.isIntersecting) return;
-        io.unobserve(en.target);
-        nodes.forEach(function (el, i) {
-          var c = EV.counters[i]; if (!c) return;
-          var target = c.n, sfx = c.suffix || '', dur = 900, t0 = null;
-          if (target === 0) { el.textContent = '0' + sfx; return; }
-          function step(now) {
-            if (!t0) t0 = now;
-            var k = Math.min((now - t0) / dur, 1);
-            var e = 1 - Math.pow(1 - k, 3);
-            el.textContent = Math.round(target * e) + (k >= 1 ? sfx : '');
-            if (k < 1) requestAnimationFrame(step);
-          }
-          el.textContent = '0';
-          requestAnimationFrame(step);
-        });
-      });
-    }, { threshold: 0.35 });
-    io.observe(wrap);
   }
 
   /* ---------- flow diagram: highlight on hover / focus / scroll ---------- */
@@ -215,7 +176,7 @@
     });
   }
 
-  function init() { fillVars(); scrollFx(); counters(); flow(); parallax(); bar(); faqAria(); }
+  function init() { fillVars(); scrollFx(); flow(); parallax(); bar(); faqAria(); }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
   else init();
 })();

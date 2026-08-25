@@ -9,7 +9,7 @@
   var EV = window.EV_CONFIG = Object.assign({
     bookingUrl: 'contact.html',
     consultUrl: 'contact.html',
-    pricingUrl: 'index.html#pricing',
+    pricingUrl: 'index.html#pricing-anchor',
     evaluationUrl: 'evaluations.html',
     reportTurnaround: '',
     lastReviewed: 'August 2026',

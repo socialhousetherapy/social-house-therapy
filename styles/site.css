@@ -2,11 +2,12 @@
 
 * { box-sizing: border-box; }
 
+html { overflow-x: clip; }
+
 body {
   background: var(--white);
   color: var(--fg-1);
   font-family: var(--font-body);
-  overflow-x: hidden;
 }
 
 /* ============================================================
@@ -51,10 +52,11 @@ img { display: block; max-width: 100%; }
   position: fixed; top: 0; left: 0; right: 0; z-index: 40;
   transform: translateY(0);
   transition: transform 300ms var(--ease-out);
-  background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%201600%20140%22%3E%3Cg%20fill%3D%22%238fa87e%22%20fill-opacity%3D%220.42%22%3E%3Cpath%20d%3D%22M59.3%20118.0C59.0%20121.1%2059.8%20126.6%2057.5%20128.3C55.2%20130.0%2048.4%20126.8%2045.5%20128.2C42.6%20129.6%2042.9%20135.1%2040.0%20136.8C37.1%20138.6%2031.2%20140.0%2028.0%20138.5C24.7%20137.0%2022.9%20131.0%2020.5%20127.6C18.1%20124.2%2012.4%20120.4%2013.8%20118.0C15.2%20115.6%2026.2%20115.2%2028.7%20112.9C31.2%20110.7%2027.1%20106.8%2029.0%20104.6C30.9%20102.5%2036.2%20100.8%2040.0%2099.9C43.8%2099.0%2048.8%2097.6%2052.1%2099.2C55.3%20100.9%2058.1%20106.8%2059.3%20110.0C60.5%20113.1%2059.6%20114.9%2059.3%20118.0Z%22%2F%3E%3Cpath%20d%3D%22M24.6%20111.5Q4.6%20112.0%20-11.7%20112.3Q4.2%20116.2%2023.6%20121.0Z%22%2F%3E%3Cellipse%20cx%3D%2230.3%22%20cy%3D%2265.1%22%20rx%3D%224.1%22%20ry%3D%221.9%22%20transform%3D%22rotate%28260%2030.3%2065.1%29%22%2F%3E%3Ccircle%20cx%3D%2235.8%22%20cy%3D%2273.8%22%20r%3D%222.6%22%2F%3E%3Ccircle%20cx%3D%22-4.2%22%20cy%3D%22139.1%22%20r%3D%221.0%22%2F%3E%3Ccircle%20cx%3D%2285.4%22%20cy%3D%22127.8%22%20r%3D%221.0%22%2F%3E%3Ccircle%20cx%3D%2226.7%22%20cy%3D%2276.2%22%20r%3D%221.1%22%2F%3E%3Ccircle%20cx%3D%222.3%22%20cy%3D%22129.7%22%20r%3D%221.9%22%2F%3E%3Ccircle%20cx%3D%2281.4%22%20cy%3D%2287.3%22%20r%3D%221.1%22%2F%3E%3C%2Fg%3E%3Cg%20fill%3D%22%23d98a5f%22%20fill-opacity%3D%220.38%22%3E%3Cpath%20d%3D%22M157.5%2018.0C156.9%2019.4%20156.9%2019.4%20157.1%2021.7C157.2%2024.0%20159.7%2030.2%20158.5%2031.8C157.3%2033.4%20152.3%2032.0%20150.0%2031.3C147.7%2030.6%20146.1%2029.1%20144.7%2027.7C143.3%2026.2%20143.3%2024.2%20141.8%2022.6C140.3%2021.0%20136.4%2020.1%20135.6%2018.0C134.8%2015.9%20135.5%2011.6%20136.9%2010.2C138.3%208.8%20141.7%2010.0%20143.9%209.8C146.0%209.5%20148.2%208.2%20150.0%208.6C151.8%208.9%20153.0%2011.2%20154.8%2011.9C156.6%2012.7%20160.3%2012.2%20160.7%2013.2C161.2%2014.2%20158.1%2016.6%20157.5%2018.0Z%22%2F%3E%3Cpath%20d%3D%22M148.2%207.4Q139.8%20-7.4%20133.0%20-19.6Q137.6%20-6.4%20143.2%209.7Z%22%2F%3E%3Ccircle%20cx%3D%22120.3%22%20cy%3D%2245.4%22%20r%3D%222.8%22%2F%3E%3Ccircle%20cx%3D%22142.9%22%20cy%3D%2254.5%22%20r%3D%221.7%22%2F%3E%3Ccircle%20cx%3D%22173.0%22%20cy%3D%22-10.6%22%20r%3D%223.1%22%2F%3E%3Ccircle%20cx%3D%22169.4%22%20cy%3D%2254.2%22%20r%3D%220.9%22%2F%3E%3Cellipse%20cx%3D%22163.4%22%20cy%3D%2237.2%22%20rx%3D%225.6%22%20ry%3D%222.6%22%20transform%3D%22rotate%2855%20163.4%2037.2%29%22%2F%3E%3Ccircle%20cx%3D%22178.1%22%20cy%3D%222.1%22%20r%3D%221.6%22%2F%3E%3Cellipse%20cx%3D%22146.6%22%20cy%3D%2258.6%22%20rx%3D%222.3%22%20ry%3D%221.0%22%20transform%3D%22rotate%2895%20146.6%2058.6%29%22%2F%3E%3C%2Fg%3E%3Cg%20fill%3D%22%236fa3bd%22%20fill-opacity%3D%220.36%22%3E%3Cpath%20d%3D%22M275.9%20108.0C276.3%20110.6%20277.9%20115.4%20276.4%20117.9C275.0%20120.3%20271.0%20121.9%20267.4%20122.7C263.9%20123.5%20257.2%20124.6%20255.2%20122.7C253.3%20120.8%20256.1%20114.3%20255.7%20111.2C255.3%20108.2%20252.2%20106.3%20252.8%20104.3C253.4%20102.2%20256.6%20100.6%20259.1%2098.9C261.6%2097.2%20265.3%2093.7%20267.7%2094.3C270.2%2094.9%20272.4%20100.2%20273.8%20102.5C275.2%20104.7%20275.5%20105.4%20275.9%20108.0Z%22%2F%3E%3Cpath%20d%3D%22M278.8%20103.7Q290.7%2091.4%20300.4%2081.4Q288.0%2087.9%20272.9%2095.9Z%22%2F%3E%3Cpath%20d%3D%22M275.6%2098.8Q285.3%2081.0%20293.2%2066.5Q282.6%2079.2%20269.7%2094.7Z%22%2F%3E%3Ccircle%20cx%3D%22214.5%22%20cy%3D%22116.8%22%20r%3D%222.6%22%2F%3E%3Ccircle%20cx%3D%22297.8%22%20cy%3D%2267.7%22%20r%3D%222.1%22%2F%3E%3Ccircle%20cx%3D%22287.7%22%20cy%3D%2281.8%22%20r%3D%223.2%22%2F%3E%3Cellipse%20cx%3D%22242.1%22%20cy%3D%22123.9%22%20rx%3D%222.0%22%20ry%3D%221.0%22%20transform%3D%22rotate%28145%20242.1%20123.9%29%22%2F%3E%3Ccircle%20cx%3D%22292.1%22%20cy%3D%22131.7%22%20r%3D%221.3%22%2F%3E%3Ccircle%20cx%3D%22282.2%22%20cy%3D%22156.2%22%20r%3D%222.1%22%2F%3E%3Ccircle%20cx%3D%22288.2%22%20cy%3D%2277.4%22%20r%3D%221.8%22%2F%3E%3Ccircle%20cx%3D%22311.3%22%20cy%3D%22131.5%22%20r%3D%222.8%22%2F%3E%3Ccircle%20cx%3D%22221.4%22%20cy%3D%22110.8%22%20r%3D%221.0%22%2F%3E%3C%2Fg%3E%3Cg%20fill%3D%22%23e3b93c%22%20fill-opacity%3D%220.34%22%3E%3Cpath%20d%3D%22M370.4%2034.0C370.4%2035.6%20369.6%2037.4%20368.5%2038.7C367.5%2040.0%20365.6%2040.7%20364.1%2041.9C362.7%2043.1%20361.7%2046.0%20360.0%2046.0C358.3%2046.1%20355.2%2043.5%20354.1%2042.0C353.0%2040.5%20354.4%2038.6%20353.3%2037.2C352.1%2035.9%20347.3%2035.1%20347.4%2034.0C347.5%2032.9%20352.9%2032.1%20354.0%2030.8C355.2%2029.6%20353.3%2027.7%20354.3%2026.3C355.3%2024.9%20358.3%2022.4%20360.0%2022.5C361.7%2022.7%20363.2%2026.2%20364.6%2027.3C366.0%2028.4%20367.4%2028.2%20368.4%2029.3C369.3%2030.4%20370.3%2032.4%20370.4%2034.0Z%22%2F%3E%3Cpath%20d%3D%22M358.4%2026.8Q354.4%2020.8%20351.1%2015.9Q353.0%2021.5%20355.3%2028.3Z%22%2F%3E%3Ccircle%20cx%3D%22375.3%22%20cy%3D%2221.3%22%20r%3D%221.8%22%2F%3E%3Ccircle%20cx%3D%22378.1%22%20cy%3D%2251.4%22%20r%3D%220.8%22%2F%3E%3Cellipse%20cx%3D%22349.5%22%20cy%3D%2249.3%22%20rx%3D%2210.0%22%20ry%3D%223.4%22%20transform%3D%22rotate%28125%20349.5%2049.3%29%22%2F%3E%3Ccircle%20cx%3D%22371.6%22%20cy%3D%2241.9%22%20r%3D%221.5%22%2F%3E%3Ccircle%20cx%3D%22380.5%22%20cy%3D%2247.7%22%20r%3D%222.2%22%2F%3E%3Ccircle%20cx%3D%22343.7%22%20cy%3D%2226.5%22%20r%3D%221.8%22%2F%3E%3C%2Fg%3E%3Cg%20fill%3D%22%23b7c9aa%22%20fill-opacity%3D%220.5%22%3E%3Cpath%20d%3D%22M495.0%2012.0C494.8%2015.0%20497.2%2017.3%20496.1%2020.5C495.0%2023.7%20491.5%2030.8%20488.5%2031.1C485.5%2031.4%20482.0%2022.8%20478.3%2022.5C474.5%2022.1%20468.7%2029.8%20465.8%2029.0C462.9%2028.2%20461.5%2021.5%20460.8%2017.9C460.1%2014.3%20460.4%2011.0%20461.6%207.5C462.8%204.0%20465.6%20-0.5%20468.2%20-2.9C470.8%20-5.3%20474.0%20-7.4%20477.0%20-6.9C480.0%20-6.4%20482.8%20-1.4%20486.2%200.2C489.6%201.8%20495.9%200.6%20497.4%202.5C498.9%204.5%20495.2%209.0%20495.0%2012.0Z%22%2F%3E%3Cpath%20d%3D%22M471.5%202.8Q452.4%20-6.4%20436.7%20-14.0Q450.7%20-3.7%20467.9%208.8Z%22%2F%3E%3Cpath%20d%3D%22M479.9%20-0.6Q473.9%20-11.5%20468.9%20-20.4Q470.5%20-10.4%20472.4%201.9Z%22%2F%3E%3Ccircle%20cx%3D%22481.1%22%20cy%3D%2236.4%22%20r%3D%222.9%22%2F%3E%3Ccircle%20cx%3D%22498.2%22%20cy%3D%22-10.7%22%20r%3D%221.2%22%2F%3E%3Ccircle%20cx%3D%22459.8%22%20cy%3D%22-5.7%22%20r%3D%222.5%22%2F%3E%3Ccircle%20cx%3D%22437.9%22%20cy%3D%2223.9%22%20r%3D%222.2%22%2F%3E%3Ccircle%20cx%3D%22472.8%22%20cy%3D%2245.0%22%20r%3D%221.9%22%2F%3E%3Ccircle%20cx%3D%22471.9%22%20cy%3D%2234.3%22%20r%3D%222.3%22%2F%3E%3Ccircle%20cx%3D%22493.7%22%20cy%3D%22-7.0%22%20r%3D%221.4%22%2F%3E%3Cellipse%20cx%3D%22492.2%22%20cy%3D%22-14.5%22%20rx%3D%222.1%22%20ry%3D%221.0%22%20transform%3D%22rotate%28295%20492.2%20-14.5%29%22%2F%3E%3Ccircle%20cx%3D%22460.9%22%20cy%3D%22-0.3%22%20r%3D%221.1%22%2F%3E%3Ccircle%20cx%3D%22509.7%22%20cy%3D%2220.9%22%20r%3D%223.2%22%2F%3E%3C%2Fg%3E%3Cg%20fill%3D%22%23e2ab84%22%20fill-opacity%3D%220.4%22%3E%3Cpath%20d%3D%22M569.2%2096.0C569.4%2097.2%20566.8%2099.0%20565.8%20100.0C564.9%20101.1%20564.6%20101.9%20563.4%20102.5C562.3%20103.0%20560.2%20103.6%20559.0%20103.2C557.8%20102.8%20557.5%20100.9%20556.2%20100.1C554.9%2099.4%20551.9%2099.7%20551.3%2098.7C550.7%2097.6%20552.1%2095.3%20552.5%2093.9C552.9%2092.4%20552.7%2090.6%20553.8%2090.0C554.8%2089.3%20557.5%2089.4%20558.8%2089.9C560.1%2090.4%20560.7%2092.6%20561.6%2093.1C562.6%2093.6%20563.2%2092.5%20564.5%2093.0C565.7%2093.5%20569.0%2094.8%20569.2%2096.0Z%22%2F%3E%3Cpath%20d%3D%22M565.6%2097.3Q574.0%2096.2%20580.9%2095.3Q574.0%2094.8%20565.5%2094.3Z%22%2F%3E%3Cpath%20d%3D%22M565.4%2093.5Q568.8%2088.6%20571.6%2084.5Q567.5%2087.3%20562.5%2090.6Z%22%2F%3E%3Cpath%20d%3D%22M562.8%20101.0Q569.7%20108.1%20575.4%20113.8Q570.5%20107.4%20564.6%2099.5Z%22%2F%3E%3Ccircle%20cx%3D%22549.5%22%20cy%3D%2279.3%22%20r%3D%222.1%22%2F%3E%3Ccircle%20cx%3D%22560.6%22%20cy%3D%22106.6%22%20r%3D%222.2%22%2F%3E%3Ccircle%20cx%3D%22566.3%22%20cy%3D%2280.2%22%20r%3D%221.2%22%2F%3E%3Ccircle%20cx%3D%22560.5%22%20cy%3D%2279.6%22%20r%3D%221.9%22%2F%3E%3Ccircle%20cx%3D%22550.3%22%20cy%3D%22114.8%22%20r%3D%221.5%22%2F%3E%3C%2Fg%3E%3Cg%20fill%3D%22%238fa87e%22%20fill-opacity%3D%220.42%22%3E%3Cpath%20d%3D%22M669.2%20124.0C669.0%20125.5%20668.3%20125.8%20668.0%20127.4C667.6%20129.0%20668.6%20132.1%20667.3%20133.4C666.0%20134.7%20662.6%20134.4%20660.0%20135.3C657.4%20136.2%20652.9%20140.3%20651.7%20138.9C650.5%20137.6%20652.6%20129.8%20652.7%20127.3C652.9%20124.9%20652.6%20125.3%20652.6%20124.0C652.6%20122.7%20652.3%20121.2%20652.7%20119.4C653.0%20117.7%20653.3%20114.4%20654.5%20113.7C655.7%20113.0%20658.5%20114.3%20660.0%20115.3C661.5%20116.2%20661.8%20118.8%20663.4%20119.3C665.0%20119.9%20668.6%20117.7%20669.6%20118.5C670.6%20119.3%20669.5%20122.5%20669.2%20124.0Z%22%2F%3E%3Cpath%20d%3D%22M668.9%20119.8Q677.3%20111.6%20684.2%20104.9Q676.1%20110.1%20666.2%20116.4Z%22%2F%3E%3Cpath%20d%3D%22M657.6%20114.4Q651.2%20105.3%20645.9%2097.9Q649.2%20106.4%20653.2%20116.7Z%22%2F%3E%3Ccircle%20cx%3D%22641.1%22%20cy%3D%22126.9%22%20r%3D%222.6%22%2F%3E%3Ccircle%20cx%3D%22660.1%22%20cy%3D%22148.4%22%20r%3D%221.2%22%2F%3E%3Ccircle%20cx%3D%22678.0%22%20cy%3D%22125.1%22%20r%3D%222.7%22%2F%3E%3Cellipse%20cx%3D%22642.1%22%20cy%3D%22130.2%22%20rx%3D%226.4%22%20ry%3D%223.1%22%20transform%3D%22rotate%28161%20642.1%20130.2%29%22%2F%3E%3Cellipse%20cx%3D%22668.5%22%20cy%3D%22110.6%22%20rx%3D%224.4%22%20ry%3D%221.9%22%20transform%3D%22rotate%28302%20668.5%20110.6%29%22%2F%3E%3Ccircle%20cx%3D%22657.4%22%20cy%3D%22153.6%22%20r%3D%222.1%22%2F%3E%3Cellipse%20cx%3D%22692.8%22%20cy%3D%22104.5%22%20rx%3D%224.9%22%20ry%3D%221.8%22%20transform%3D%22rotate%28329%20692.8%20104.5%29%22%2F%3E%3Cellipse%20cx%3D%22664.6%22%20cy%3D%22107.0%22%20rx%3D%223.3%22%20ry%3D%221.2%22%20transform%3D%22rotate%28285%20664.6%20107.0%29%22%2F%3E%3C%2Fg%3E%3Cg%20fill%3D%22%23d98a5f%22%20fill-opacity%3D%220.38%22%3E%3Cpath%20d%3D%22M768.8%2026.0C768.3%2027.2%20765.7%2027.3%20764.7%2028.4C763.7%2029.5%20763.8%2031.9%20762.9%2032.5C761.9%2033.2%20760.6%2032.4%20759.0%2032.4C757.5%2032.4%20755.2%2033.1%20753.8%2032.5C752.4%2031.8%20751.3%2030.0%20750.8%2028.4C750.2%2026.9%20750.1%2024.6%20750.7%2023.2C751.2%2021.8%20752.9%2020.9%20754.3%2020.1C755.6%2019.3%20757.3%2018.6%20758.8%2018.4C760.4%2018.2%20762.3%2018.5%20763.8%2018.9C765.3%2019.4%20766.9%2020.1%20767.7%2021.3C768.6%2022.4%20769.3%2024.8%20768.8%2026.0Z%22%2F%3E%3Cpath%20d%3D%22M765.2%2019.5Q769.0%207.4%20772.1%20-2.6Q767.1%206.6%20761.0%2017.7Z%22%2F%3E%3Cpath%20d%3D%22M761.0%2034.5Q768.1%2045.1%20773.9%2053.7Q770.4%2043.9%20766.2%2031.8Z%22%2F%3E%3Ccircle%20cx%3D%22739.5%22%20cy%3D%2227.3%22%20r%3D%221.9%22%2F%3E%3Ccircle%20cx%3D%22787.2%22%20cy%3D%2227.6%22%20r%3D%223.1%22%2F%3E%3Ccircle%20cx%3D%22754.0%22%20cy%3D%2246.5%22%20r%3D%223.3%22%2F%3E%3Ccircle%20cx%3D%22741.8%22%20cy%3D%2210.7%22%20r%3D%221.5%22%2F%3E%3Cellipse%20cx%3D%22776.5%22%20cy%3D%2226.5%22%20rx%3D%224.6%22%20ry%3D%222.0%22%20transform%3D%22rotate%282%20776.5%2026.5%29%22%2F%3E%3Ccircle%20cx%3D%22747.1%22%20cy%3D%2251.3%22%20r%3D%222.5%22%2F%3E%3Ccircle%20cx%3D%22762.3%22%20cy%3D%2254.1%22%20r%3D%223.4%22%2F%3E%3Ccircle%20cx%3D%22773.0%22%20cy%3D%2238.7%22%20r%3D%222.0%22%2F%3E%3Ccircle%20cx%3D%22754.0%22%20cy%3D%2238.6%22%20r%3D%223.1%22%2F%3E%3C%2Fg%3E%3Cg%20fill%3D%22%236fa3bd%22%20fill-opacity%3D%220.36%22%3E%3Cpath%20d%3D%22M898.5%20110.0C898.8%20112.2%20892.2%20115.8%20889.4%20117.7C886.7%20119.6%20884.2%20121.4%20881.8%20121.3C879.5%20121.1%20878.2%20118.0%20875.4%20116.8C872.5%20115.6%20866.0%20116.1%20864.7%20114.2C863.4%20112.3%20866.1%20107.8%20867.6%20105.2C869.2%20102.7%20871.4%20100.1%20873.9%2098.7C876.4%2097.4%20880.3%2096.2%20882.7%2097.1C885.0%2098.0%20885.2%20102.2%20887.8%20104.3C890.5%20106.5%20898.3%20107.8%20898.5%20110.0Z%22%2F%3E%3Cpath%20d%3D%22M887.4%2098.9Q891.3%2079.2%20894.4%2063.0Q888.0%2078.2%20880.1%2096.6Z%22%2F%3E%3Cellipse%20cx%3D%22864.7%22%20cy%3D%22129.6%22%20rx%3D%221.9%22%20ry%3D%221.1%22%20transform%3D%22rotate%28128%20864.7%20129.6%29%22%2F%3E%3Cellipse%20cx%3D%22856.4%22%20cy%3D%22130.4%22%20rx%3D%222.9%22%20ry%3D%221.4%22%20transform%3D%22rotate%28139%20856.4%20130.4%29%22%2F%3E%3Ccircle%20cx%3D%22905.0%22%20cy%3D%22114.5%22%20r%3D%222.2%22%2F%3E%3Cellipse%20cx%3D%22843.7%22%20cy%3D%22111.4%22%20rx%3D%226.4%22%20ry%3D%223.3%22%20transform%3D%22rotate%28178%20843.7%20111.4%29%22%2F%3E%3Ccircle%20cx%3D%22901.8%22%20cy%3D%22135.6%22%20r%3D%222.4%22%2F%3E%3Ccircle%20cx%3D%22880.7%22%20cy%3D%2273.7%22%20r%3D%222.3%22%2F%3E%3Ccircle%20cx%3D%22845.4%22%20cy%3D%22130.2%22%20r%3D%223.0%22%2F%3E%3Ccircle%20cx%3D%22919.0%22%20cy%3D%22114.5%22%20r%3D%222.4%22%2F%3E%3Cellipse%20cx%3D%22855.4%22%20cy%3D%2266.0%22%20rx%3D%226.9%22%20ry%3D%222.8%22%20transform%3D%22rotate%28241%20855.4%2066.0%29%22%2F%3E%3C%2Fg%3E%3Cg%20fill%3D%22%23e3b93c%22%20fill-opacity%3D%220.34%22%3E%3Cpath%20d%3D%22M986.5%2016.0C985.9%2017.0%20984.4%2016.5%20984.1%2017.7C983.8%2018.9%20985.3%2022.4%20984.7%2023.1C984.1%2023.8%20981.8%2022.5%20980.7%2021.9C979.6%2021.3%20979.2%2019.9%20978.2%2019.5C977.2%2019.1%20976.1%2019.6%20974.8%2019.3C973.5%2019.0%20971.2%2018.7%20970.5%2017.8C969.9%2016.9%20970.6%2015.2%20970.9%2013.8C971.1%2012.5%20970.7%2010.1%20971.9%209.7C973.1%209.3%20976.5%2012.3%20978.0%2011.6C979.6%2011.0%20980.6%205.6%20981.4%205.7C982.2%205.8%20981.7%2011.2%20982.7%2012.3C983.8%2013.3%20986.9%2011.2%20987.5%2011.9C988.1%2012.5%20987.0%2015.0%20986.5%2016.0Z%22%2F%3E%3Cpath%20d%3D%22M986.5%2015.9Q995.3%2013.0%201002.4%2010.7Q995.0%2011.8%20985.9%2013.2Z%22%2F%3E%3Cpath%20d%3D%22M976.4%2010.3Q970.4%206.8%20965.5%204.0Q969.2%208.3%20973.7%2013.6Z%22%2F%3E%3Cpath%20d%3D%22M974.2%2012.8Q963.3%2011.3%20954.3%2010.0Q962.9%2012.9%20973.4%2016.3Z%22%2F%3E%3Ccircle%20cx%3D%22983.2%22%20cy%3D%222.5%22%20r%3D%223.1%22%2F%3E%3Ccircle%20cx%3D%22987.3%22%20cy%3D%2239.1%22%20r%3D%221.5%22%2F%3E%3Ccircle%20cx%3D%22975.9%22%20cy%3D%22-2.0%22%20r%3D%221.0%22%2F%3E%3Cellipse%20cx%3D%22960.2%22%20cy%3D%2216.7%22%20rx%3D%222.9%22%20ry%3D%221.3%22%20transform%3D%22rotate%28178%20960.2%2016.7%29%22%2F%3E%3Cellipse%20cx%3D%22976.4%22%20cy%3D%221.1%22%20rx%3D%229.5%22%20ry%3D%223.4%22%20transform%3D%22rotate%28256%20976.4%201.1%29%22%2F%3E%3Cellipse%20cx%3D%22965.3%22%20cy%3D%2217.9%22%20rx%3D%223.8%22%20ry%3D%222.4%22%20transform%3D%22rotate%28173%20965.3%2017.9%29%22%2F%3E%3C%2Fg%3E%3Cg%20fill%3D%22%23b7c9aa%22%20fill-opacity%3D%220.5%22%3E%3Cpath%20d%3D%22M1080.6%2086.0C1081.2%2087.5%201080.4%2089.4%201079.4%2091.1C1078.4%2092.9%201076.5%2096.3%201074.7%2096.7C1072.8%2097.0%201070.5%2093.8%201068.6%2093.1C1066.6%2092.4%201064.3%2093.1%201063.0%2092.4C1061.6%2091.7%201060.3%2090.3%201060.3%2089.0C1060.3%2087.6%201061.9%2085.5%201062.8%2084.3C1063.7%2083.2%201064.8%2083.7%201065.6%2082.0C1066.5%2080.3%201066.8%2074.5%201068.0%2074.2C1069.2%2073.9%201071.6%2078.8%201072.9%2080.1C1074.1%2081.5%201074.3%2081.2%201075.6%2082.2C1076.9%2083.1%201080.0%2084.5%201080.6%2086.0Z%22%2F%3E%3Cpath%20d%3D%22M1059.8%2085.3Q1048.3%2090.4%201038.8%2094.6Q1049.1%2093.4%201061.7%2091.8Z%22%2F%3E%3Cpath%20d%3D%22M1076.4%2093.8Q1087.6%2099.1%201096.9%20103.4Q1089.2%2096.7%201079.7%2088.6Z%22%2F%3E%3Ccircle%20cx%3D%221049.5%22%20cy%3D%2298.5%22%20r%3D%222.8%22%2F%3E%3Cellipse%20cx%3D%221074.1%22%20cy%3D%22120.2%22%20rx%3D%222.8%22%20ry%3D%221.1%22%20transform%3D%22rotate%2883%201074.1%20120.2%29%22%2F%3E%3Cellipse%20cx%3D%221038.7%22%20cy%3D%2293.7%22%20rx%3D%226.3%22%20ry%3D%222.8%22%20transform%3D%22rotate%28166%201038.7%2093.7%29%22%2F%3E%3Ccircle%20cx%3D%221077.0%22%20cy%3D%22111.2%22%20r%3D%222.6%22%2F%3E%3Cellipse%20cx%3D%221060.1%22%20cy%3D%22107.4%22%20rx%3D%225.1%22%20ry%3D%223.1%22%20transform%3D%22rotate%28115%201060.1%20107.4%29%22%2F%3E%3Cellipse%20cx%3D%221042.5%22%20cy%3D%2287.7%22%20rx%3D%226.6%22%20ry%3D%223.4%22%20transform%3D%22rotate%28176%201042.5%2087.7%29%22%2F%3E%3Ccircle%20cx%3D%221080.7%22%20cy%3D%22106.2%22%20r%3D%223.0%22%2F%3E%3C%2Fg%3E%3Cg%20fill%3D%22%23e2ab84%22%20fill-opacity%3D%220.4%22%3E%3Cpath%20d%3D%22M1175.1%20124.0C1174.6%20126.0%201176.2%20126.4%201175.7%20128.2C1175.2%20130.0%201173.5%20134.9%201172.1%20134.9C1170.7%20134.9%201169.3%20129.6%201167.4%20128.3C1165.6%20126.9%201161.7%20127.9%201161.0%20126.8C1160.3%20125.8%201162.4%20123.4%201163.2%20122.0C1164.1%20120.6%201164.5%20119.4%201165.9%20118.3C1167.2%20117.2%201169.4%20115.9%201171.5%20115.5C1173.6%20115.2%201178.1%20115.0%201178.7%20116.4C1179.3%20117.8%201175.6%20122.0%201175.1%20124.0Z%22%2F%3E%3Cpath%20d%3D%22M1173.9%20130.5Q1182.2%20135.6%201188.9%20139.7Q1183.6%20133.8%201177.1%20126.7Z%22%2F%3E%3Cpath%20d%3D%22M1172.0%20131.3Q1178.4%20138.7%201183.7%20144.8Q1180.2%20137.5%201176.0%20128.7Z%22%2F%3E%3Ccircle%20cx%3D%221180.9%22%20cy%3D%22140.5%22%20r%3D%222.5%22%2F%3E%3Ccircle%20cx%3D%221149.0%22%20cy%3D%22136.9%22%20r%3D%223.3%22%2F%3E%3Ccircle%20cx%3D%221164.3%22%20cy%3D%2299.4%22%20r%3D%221.8%22%2F%3E%3Ccircle%20cx%3D%221149.7%22%20cy%3D%22110.5%22%20r%3D%221.5%22%2F%3E%3Ccircle%20cx%3D%221146.0%22%20cy%3D%22111.1%22%20r%3D%223.4%22%2F%3E%3Cellipse%20cx%3D%221152.8%22%20cy%3D%22127.7%22%20rx%3D%225.1%22%20ry%3D%222.7%22%20transform%3D%22rotate%28168%201152.8%20127.7%29%22%2F%3E%3Cellipse%20cx%3D%221166.5%22%20cy%3D%22102.8%22%20rx%3D%225.2%22%20ry%3D%222.3%22%20transform%3D%22rotate%28260%201166.5%20102.8%29%22%2F%3E%3Ccircle%20cx%3D%221146.7%22%20cy%3D%22121.8%22%20r%3D%222.6%22%2F%3E%3C%2Fg%3E%3Cg%20fill%3D%22%238fa87e%22%20fill-opacity%3D%220.42%22%3E%3Cpath%20d%3D%22M1282.9%2030.0C1283.4%2033.1%201284.1%2037.8%201282.5%2040.3C1280.8%2042.7%201276.3%2044.9%201273.2%2044.7C1270.0%2044.5%201265.9%2040.3%201263.4%2039.2C1260.9%2038.1%201259.7%2039.2%201258.0%2038.2C1256.3%2037.2%201254.0%2035.2%201253.1%2033.3C1252.2%2031.4%201251.9%2028.9%201252.5%2026.9C1253.2%2024.8%201255.3%2023.1%201257.0%2020.8C1258.7%2018.4%201259.9%2013.4%201262.5%2012.8C1265.2%2012.1%201270.1%2015.3%201272.9%2016.8C1275.8%2018.4%201277.7%2019.7%201279.4%2021.9C1281.1%2024.1%201282.4%2026.9%201282.9%2030.0Z%22%2F%3E%3Cpath%20d%3D%22M1275.1%2037.5Q1290.4%2040.4%201302.9%2042.8Q1291.5%2037.1%201277.6%2030.2Z%22%2F%3E%3Cpath%20d%3D%22M1253.3%2026.0Q1236.9%2026.1%201223.5%2026.3Q1236.7%2028.8%201252.8%2031.8Z%22%2F%3E%3Ccircle%20cx%3D%221275.5%22%20cy%3D%225.9%22%20r%3D%223.1%22%2F%3E%3Ccircle%20cx%3D%221236.2%22%20cy%3D%2240.4%22%20r%3D%221.9%22%2F%3E%3Ccircle%20cx%3D%221246.3%22%20cy%3D%22-7.5%22%20r%3D%222.4%22%2F%3E%3Ccircle%20cx%3D%221260.3%22%20cy%3D%2255.5%22%20r%3D%221.0%22%2F%3E%3Cellipse%20cx%3D%221245.7%22%20cy%3D%2262.3%22%20rx%3D%224.9%22%20ry%3D%221.9%22%20transform%3D%22rotate%28121%201245.7%2062.3%29%22%2F%3E%3Ccircle%20cx%3D%221221.3%22%20cy%3D%2249.2%22%20r%3D%221.3%22%2F%3E%3Cellipse%20cx%3D%221276.6%22%20cy%3D%2211.3%22%20rx%3D%225.3%22%20ry%3D%222.5%22%20transform%3D%22rotate%28302%201276.6%2011.3%29%22%2F%3E%3Ccircle%20cx%3D%221236.1%22%20cy%3D%2242.1%22%20r%3D%221.5%22%2F%3E%3C%2Fg%3E%3Cg%20fill%3D%22%23d98a5f%22%20fill-opacity%3D%220.38%22%3E%3Cpath%20d%3D%22M1381.0%20102.0C1380.5%20104.6%201380.1%20105.5%201379.2%20108.3C1378.4%20111.1%201378.3%20116.8%201375.6%20118.8C1372.9%20120.9%201365.5%20122.4%201363.1%20120.5C1360.8%20118.7%201363.7%20110.6%201361.5%20107.5C1359.2%20104.4%201351.2%20104.7%201349.6%20102.0C1348.1%2099.3%201349.3%2093.4%201352.0%2091.2C1354.8%2089.1%201361.9%2090.5%201366.0%2088.9C1370.1%2087.2%201374.0%2080.6%201376.8%2081.3C1379.5%2082.0%201381.9%2089.5%201382.6%2093.0C1383.3%2096.4%201381.6%2099.4%201381.0%20102.0Z%22%2F%3E%3Cpath%20d%3D%22M1360.3%2090.6Q1345.2%2083.3%201332.9%2077.4Q1343.2%2086.5%201355.7%2097.5Z%22%2F%3E%3Cpath%20d%3D%22M1374.1%20116.4Q1385.3%20130.7%201394.5%20142.3Q1388.4%20128.8%201380.9%20112.2Z%22%2F%3E%3Cellipse%20cx%3D%221358.5%22%20cy%3D%22132.0%22%20rx%3D%224.5%22%20ry%3D%222.2%22%20transform%3D%22rotate%28111%201358.5%20132.0%29%22%2F%3E%3Ccircle%20cx%3D%221363.2%22%20cy%3D%22131.5%22%20r%3D%222.5%22%2F%3E%3Ccircle%20cx%3D%221420.0%22%20cy%3D%22130.5%22%20r%3D%222.2%22%2F%3E%3Ccircle%20cx%3D%221345.3%22%20cy%3D%22122.5%22%20r%3D%222.0%22%2F%3E%3Ccircle%20cx%3D%221338.8%22%20cy%3D%22133.3%22%20r%3D%221.8%22%2F%3E%3C%2Fg%3E%3Cg%20fill%3D%22%236fa3bd%22%20fill-opacity%3D%220.36%22%3E%3Cpath%20d%3D%22M1478.4%2018.0C1479.0%2019.9%201480.5%2024.1%201479.4%2025.7C1478.3%2027.2%201474.5%2026.7%201472.0%2027.3C1469.4%2027.9%201465.9%2030.1%201464.0%2029.2C1462.2%2028.2%201461.7%2023.8%201460.9%2021.5C1460.0%2019.1%201458.4%2016.9%201459.0%2014.9C1459.7%2013.0%201462.6%2010.0%201464.6%209.7C1466.6%209.4%201469.2%2012.6%201471.0%2013.4C1472.9%2014.1%201474.4%2013.5%201475.6%2014.3C1476.8%2015.0%201477.8%2016.1%201478.4%2018.0Z%22%2F%3E%3Cpath%20d%3D%22M1464.4%2011.7Q1455.0%207.8%201447.3%204.7Q1453.8%209.9%201461.8%2016.2Z%22%2F%3E%3Cpath%20d%3D%22M1462.2%2020.6Q1456.2%2025.4%201451.2%2029.3Q1457.0%2026.8%201464.1%2023.6Z%22%2F%3E%3Ccircle%20cx%3D%221444.2%22%20cy%3D%222.8%22%20r%3D%223.1%22%2F%3E%3Ccircle%20cx%3D%221494.5%22%20cy%3D%220.0%22%20r%3D%223.3%22%2F%3E%3Cellipse%20cx%3D%221488.2%22%20cy%3D%22-0.5%22%20rx%3D%228.5%22%20ry%3D%223.1%22%20transform%3D%22rotate%28315%201488.2%20-0.5%29%22%2F%3E%3Ccircle%20cx%3D%221497.1%22%20cy%3D%228.2%22%20r%3D%221.7%22%2F%3E%3Ccircle%20cx%3D%221479.5%22%20cy%3D%228.8%22%20r%3D%223.3%22%2F%3E%3Cellipse%20cx%3D%221463.9%22%20cy%3D%2231.0%22%20rx%3D%228.8%22%20ry%3D%223.3%22%20transform%3D%22rotate%28115%201463.9%2031.0%29%22%2F%3E%3Cellipse%20cx%3D%221445.1%22%20cy%3D%2217.7%22%20rx%3D%224.6%22%20ry%3D%222.4%22%20transform%3D%22rotate%28181%201445.1%2017.7%29%22%2F%3E%3Ccircle%20cx%3D%221452.6%22%20cy%3D%2243.2%22%20r%3D%223.4%22%2F%3E%3Ccircle%20cx%3D%221496.5%22%20cy%3D%229.0%22%20r%3D%222.1%22%2F%3E%3C%2Fg%3E%3Cg%20fill%3D%22%23e3b93c%22%20fill-opacity%3D%220.34%22%3E%3Cpath%20d%3D%22M1577.5%2084.0C1577.2%2086.7%201571.7%2089.0%201569.2%2091.0C1566.7%2093.0%201565.2%2095.7%201562.4%2096.1C1559.6%2096.6%201555.2%2094.6%201552.2%2093.6C1549.2%2092.5%201544.9%2091.9%201544.2%2089.6C1543.5%2087.4%201546.3%2082.5%201548.0%2079.9C1549.7%2077.4%201551.8%2075.8%201554.2%2074.3C1556.5%2072.9%201559.4%2071.1%201562.2%2071.1C1565.0%2071.2%201568.3%2072.6%201570.9%2074.7C1573.4%2076.9%201577.7%2081.3%201577.5%2084.0Z%22%2F%3E%3Cpath%20d%3D%22M1565.7%2093.1Q1576.4%20101.0%201585.2%20107.5Q1578.2%2099.2%201569.5%2089.0Z%22%2F%3E%3Cpath%20d%3D%22M1567.2%2076.0Q1572.7%2062.1%201577.2%2050.7Q1570.5%2061.0%201562.4%2073.5Z%22%2F%3E%3Cpath%20d%3D%22M1564.3%2094.0Q1577.0%20106.1%201587.4%20116.0Q1579.3%20104.2%201569.3%2089.7Z%22%2F%3E%3Ccircle%20cx%3D%221551.3%22%20cy%3D%22110.0%22%20r%3D%222.3%22%2F%3E%3Cellipse%20cx%3D%221592.1%22%20cy%3D%2273.4%22%20rx%3D%224.5%22%20ry%3D%222.7%22%20transform%3D%22rotate%28342%201592.1%2073.4%29%22%2F%3E%3Ccircle%20cx%3D%221528.1%22%20cy%3D%22106.3%22%20r%3D%221.0%22%2F%3E%3Ccircle%20cx%3D%221573.7%22%20cy%3D%2245.4%22%20r%3D%221.8%22%2F%3E%3Cellipse%20cx%3D%221519.5%22%20cy%3D%2274.9%22%20rx%3D%224.4%22%20ry%3D%221.8%22%20transform%3D%22rotate%28193%201519.5%2074.9%29%22%2F%3E%3Ccircle%20cx%3D%221564.0%22%20cy%3D%2248.3%22%20r%3D%222.1%22%2F%3E%3Ccircle%20cx%3D%221540.4%22%20cy%3D%2278.9%22%20r%3D%221.4%22%2F%3E%3Cellipse%20cx%3D%221590.0%22%20cy%3D%2283.6%22%20rx%3D%225.7%22%20ry%3D%222.3%22%20transform%3D%22rotate%28359%201590.0%2083.6%29%22%2F%3E%3Cellipse%20cx%3D%221564.6%22%20cy%3D%22113.9%22%20rx%3D%226.0%22%20ry%3D%223.0%22%20transform%3D%22rotate%2881%201564.6%20113.9%29%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E") left center/auto 100% repeat-x white;
-  border-bottom: 1px solid var(--border-subtle);
+  background: white;
 }
-.nav.nav-hide { transform: translateY(-103%); }
+.nav { border-bottom: 1px solid var(--border-subtle); }
+
+.nav.nav-hide { transform: translateY(-100%); }
 .nav-inner {
   width: 100%;
   padding: 18px 32px;
@@ -749,18 +751,15 @@ img { display: block; max-width: 100%; }
 }
 .faq-q .chev {
   width: 32px; height: 32px; border-radius: 999px;
-  background: var(--cream-100); color: var(--sage-700);
+  background: var(--sage-100); color: var(--sage-600);
   display: grid; place-items: center;
   transition: transform 240ms var(--ease-out), background 200ms;
   flex-shrink: 0;
 }
 .faq-item.open .faq-q .chev { transform: rotate(180deg); background: var(--sage-500); color: var(--cream-50); }
-.faq-item:nth-child(4n+2) .faq-q .chev{background:var(--clay-100,#f3e3d4);color:var(--clay-500)}
-.faq-item:nth-child(4n+3) .faq-q .chev{background:var(--sky-100);color:var(--sky-500,#6fa3bd)}
-.faq-item:nth-child(4n+4) .faq-q .chev{background:var(--sun-100);color:var(--sun-500,#c99a1e)}
-.faq-item:nth-child(4n+2).open .faq-q .chev{background:var(--clay-500);color:var(--cream-50)}
-.faq-item:nth-child(4n+3).open .faq-q .chev{background:var(--sky-500,#6fa3bd);color:var(--cream-50)}
-.faq-item:nth-child(4n+4).open .faq-q .chev{background:var(--sun-500,#c99a1e);color:var(--cream-50)}
+/* On a sage-filled surface the circle inverts to white so it stays visible. */
+.section-sage .faq-q .chev{background:var(--white);color:var(--sage-700)}
+.section-sage .faq-item.open .faq-q .chev{background:var(--white);color:var(--sage-700)}
 .faq-a {
   max-height: 0;
   overflow: hidden;
@@ -1286,12 +1285,11 @@ img { display: block; max-width: 100%; }
   align-items: center; justify-content: center;
   width: 48px; height: 48px;
   border-radius: 999px;
-  border: 1px solid var(--border-subtle);
-  background: white;
+  border: 0;
+  background: transparent;
   cursor: pointer;
   color: var(--ink-900);
   padding: 0;
-  box-shadow: 0 6px 20px -8px rgba(0,0,0,0.18), 0 2px 6px -2px rgba(0,0,0,0.08);
   opacity: 0;
   visibility: hidden;
   transform: translateY(-8px);
@@ -1303,8 +1301,16 @@ img { display: block; max-width: 100%; }
   transform: translateY(0);
   transition: opacity 240ms var(--ease-out), transform 240ms var(--ease-out), visibility 0s linear 0s, color 180ms var(--ease-out), background 180ms var(--ease-out);
 }
-.nav-burger:hover { color: var(--sage-700); background: var(--cream-50, #fbf8f3); }
-.nav-burger svg { display: block; width: 22px; height: 22px; }
+.nav-burger:hover { color: var(--sage-700); background: transparent; }
+.nav-burger svg { display: block; width: 24px; height: 24px; transition: transform 480ms cubic-bezier(0.55, 0.06, 0.28, 1); }
+.nav-burger.is-open svg { transform: rotate(360deg); }
+.nav-burger svg polyline, .nav-burger svg line { transform-box: fill-box; transform-origin: center; transition: transform 280ms var(--ease-out), opacity 220ms var(--ease-out); }
+.nav-burger.is-open svg polyline, .nav-burger.is-open svg line { transition-delay: 230ms; }
+.nav-burger.is-open svg .bi-roof, .nav-burger.is-open svg .bi-door { opacity: 0; transform: translateY(4px) scale(0.5); }
+.nav-burger.is-open svg .bi-w1 { transform: translate(7px, -2.8px) rotate(45deg); }
+.nav-burger.is-open svg .bi-w2 { transform: translate(-7px, -2.8px) rotate(-45deg); }
+.nav-burger.is-open svg .bi-l3 { opacity: 0; transform: scaleX(0.2); }
+.nav-burger.is-open, .nav-burger.is-open.visible { opacity: 1; visibility: visible; transform: translateY(0); }
 @media (max-width: 1150px) {
   .nav-burger, .nav-burger.visible { position: static; top: auto; right: auto; opacity: 1; visibility: visible; transform: none; border: 0; background: transparent; box-shadow: none; width: 42px; height: 42px; }
 }
@@ -1321,75 +1327,49 @@ img { display: block; max-width: 100%; }
   .nav-mobile-open .nav-links { display: none !important; }
 }
 
-/* ============ FULL-SCREEN MENU OVERLAY ============ */
+/* ============ MENU — dropdown panel below the nav (nav stays visible) ============ */
 .menu-overlay {
   position: fixed;
-  inset: 0;
-  z-index: 100;
-  background: url("../assets/splatter-menu.svg") center/cover no-repeat var(--cream-50);
+  left: 0; right: 0; bottom: 0;
+  top: var(--nav-h, 130px);
+  z-index: 39;
+  background: rgba(41, 47, 38, 0.34);
   display: flex;
   flex-direction: column;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 280ms var(--ease-out), visibility 0s linear 280ms;
+  transition: opacity 240ms var(--ease-out), visibility 0s linear 240ms;
 }
+.menu-overlay.from-top { top: 0; }
 .menu-overlay.open {
   opacity: 1;
   visibility: visible;
-  transition: opacity 320ms var(--ease-out);
+  transition: opacity 280ms var(--ease-out);
 }
-.menu-overlay::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse at top right, var(--sage-100) 0%, transparent 55%),
-              radial-gradient(ellipse at bottom left, var(--clay-100) 0%, transparent 60%);
-  opacity: 0.3;
-  pointer-events: none;
-}
+.menu-overlay:focus, .menu-overlay:focus-visible { outline: none; }
 .menu-overlay-inner {
   position: relative;
   z-index: 1;
-  max-width: 1680px;
-  margin: 0 auto;
   width: 100%;
-  padding: 28px 32px 44px;
-  flex: 1;
+  margin: 0;
+  padding: 26px 24px 34px;
+  flex: 0 1 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   gap: 0;
   overflow-y: auto;
+  background: radial-gradient(120% 130% at 88% 0%, color-mix(in srgb, var(--sage-100) 55%, white) 0%, rgba(255,255,255,0) 52%),
+              radial-gradient(110% 130% at 8% 100%, color-mix(in srgb, var(--clay-100) 55%, white) 0%, rgba(255,255,255,0) 55%),
+              #fff;
+  border-bottom: 1px solid var(--border-subtle);
+  border-radius: 0 0 28px 28px;
+  box-shadow: 0 34px 60px -28px rgba(30, 36, 28, 0.4);
+  transform: translateY(-14px);
+  transition: transform 300ms var(--ease-out);
 }
-.menu-overlay-head {
-  display: block;
-  width: 100%;
-  margin-top: auto;
-}
-.menu-overlay-brand {
-  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
-  color: var(--sage-700);
-}
-.menu-overlay-brand img { width: 104px; height: 104px; }
-.menu-overlay-brand span {
-  font-family: var(--font-display); font-size: 20px; color: var(--sage-600);
-}
-.menu-close {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  z-index: 2;
-  width: 44px; height: 44px;
-  border-radius: 999px;
-  border: 1px solid var(--border-subtle);
-  background: var(--white);
-  cursor: pointer;
-  color: var(--ink-900);
-  display: grid; place-items: center;
-  transition: background 180ms var(--ease-out), transform 180ms var(--ease-out);
-}
-.menu-close:hover { background: var(--sage-100); transform: rotate(90deg); }
+.menu-overlay.open .menu-overlay-inner { transform: translateY(0); }
 
 .menu-grid {
   display: flex;
@@ -1417,7 +1397,7 @@ img { display: block; max-width: 100%; }
 }
 .menu-primary a {
   font-family: var(--font-heading);
-  font-size: clamp(34px, 5vw, 56px);
+  font-size: clamp(26px, 3vw, 36px);
   font-weight: 500;
   color: var(--brand-ink);
   letter-spacing: -0.025em;
@@ -1435,7 +1415,7 @@ img { display: block; max-width: 100%; }
 .menu-primary a .arr { display: none; }
 /* Overlay accordion (For Families) */
 .menu-acc { width: 100%; display: flex; flex-direction: column; align-items: center; }
-.menu-acc-btn { background: none; border: 0; cursor: pointer; font-family: var(--font-heading); font-size: clamp(34px, 5vw, 56px); font-weight: 500; color: var(--brand-ink); letter-spacing: -0.025em; line-height: 1.1; display: inline-flex; align-items: center; justify-content: center; gap: 12px; padding: 7px 0; transition: color 200ms var(--ease-out); }
+.menu-acc-btn { background: none; border: 0; cursor: pointer; font-family: var(--font-heading); font-size: clamp(26px, 3vw, 36px); font-weight: 500; color: var(--brand-ink); letter-spacing: -0.025em; line-height: 1.1; display: inline-flex; align-items: center; justify-content: center; gap: 12px; padding: 7px 0; transition: color 200ms var(--ease-out); }
 .menu-acc-btn:hover { color: var(--clay-500); }
 .menu-acc-chev { flex-shrink: 0; transition: transform 240ms var(--ease-out); }
 .menu-acc.open > .menu-acc-btn .menu-acc-chev { transform: rotate(180deg); }
@@ -1505,7 +1485,7 @@ img { display: block; max-width: 100%; }
   gap: 16px;
   width: 100%;
   max-width: 460px;
-  margin: 26px auto auto;
+  margin: 24px auto 0;
   padding: 22px 0 0;
   border-top: 1px solid var(--border-subtle);
   font-size: 14px;
@@ -1532,10 +1512,8 @@ body.menu-open { overflow: hidden; }
 
 @media (max-width: 860px) {
   .menu-overlay-inner { padding: 20px 22px 30px; }
-  .menu-overlay-brand img { width: 96px; height: 96px; }
-  .menu-close { top: 16px; right: 16px; }
-  .menu-primary a { font-size: clamp(29px, 8.4vw, 38px); padding: 8px 0; }
-  .menu-acc-btn { font-size: clamp(29px, 8.4vw, 38px); padding: 8px 0; }
+  .menu-primary a { font-size: clamp(24px, 6.6vw, 30px); padding: 7px 0; }
+  .menu-acc-btn { font-size: clamp(24px, 6.6vw, 30px); padding: 7px 0; }
   .menu-primary .menu-acc-btn-sub { font-size: 16px; padding: 7px 0; }
   .menu-acc-sub .menu-acc-chev { width: 14px; height: 14px; }
   .menu-acc-sub .menu-acc-panel a { font-size: 15px; padding: 6px 0; }
@@ -1545,8 +1523,12 @@ body.menu-open { overflow: hidden; }
 }
 @media (prefers-reduced-motion: reduce) {
   .menu-overlay,
+  .menu-overlay-inner,
+  .nav-burger svg,
+  .nav-burger svg polyline,
+  .nav-burger svg line,
   .menu-primary a,
-  .menu-extras a { transition-duration: 0ms !important; }
+  .menu-extras a { transition-duration: 0ms !important; transition-delay: 0ms !important; }
 }
 
 
@@ -1598,17 +1580,25 @@ body.menu-open { overflow: hidden; }
 .hero-v2-text { position: relative; z-index: 3; }
 .hero-v2-text { z-index: 2; }
 .hero-v2 .hero-v2-eyebrow {
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  gap: 10px;
   font-family: var(--font-body);
-  font-size: 11px;
-  color: var(--ink-700);
-  letter-spacing: 0.04em;
-  margin: 0 0 10px;
-  font-weight: 600;
+  font-size: clamp(11px, 0.95vw, 13px);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--sage-600);
+  margin: 0 0 16px;
   line-height: 1.4;
-  background: linear-gradient(135deg, rgba(195, 122, 91, 0.08) 0%, rgba(195, 122, 91, 0.05) 100%);
-  padding: 6px 14px;
-  border-radius: 8px;
+}
+.hero-v2 .hero-v2-eyebrow::before {
+  content: "";
+  width: 28px;
+  height: 2px;
+  background: var(--clay-400);
+  border-radius: 2px;
+  flex: none;
 }
 .hero-v2-display {
   font-family: var(--font-heading);

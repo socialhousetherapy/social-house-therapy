@@ -6,8 +6,9 @@
 .cl-section {
   position: relative;
   z-index: 2;
-  background: var(--clay-100, #f3e3d4);
-  padding: 36px 52px 40px;
+  background: var(--sage-100, #E2EBDC);
+  padding: calc(var(--band-y, 44px) + clamp(14px, 2.4vw, 34px)) 52px calc(var(--band-y, 44px) + clamp(2px, 0.6vw, 10px));
+  overflow: clip;
 }
 
 .cl-container {
@@ -33,6 +34,30 @@
   box-shadow:
     0 1px 2px rgba(31, 42, 35, 0.04),
     0 24px 56px -20px rgba(31, 42, 35, 0.18);
+}
+/* Two-column layout only: full-bleed left, fading into the section on the right (mirror of the contact page).
+   Insets + mask live on the CONTAINER; the img just covers it. */
+@media (min-width: 961px) {
+  .cl-row { align-items: stretch; min-height: clamp(380px, 37vw, 500px); }
+  .cl-content { align-self: center; padding: clamp(10px, 1.6vw, 24px) 0; }
+  .cl-photo {
+    aspect-ratio: auto;
+    border-radius: 0;
+    background: none;
+    box-shadow: none;
+    overflow: hidden;
+    margin: calc(-1 * (var(--band-y, 44px) + clamp(14px, 2.4vw, 34px))) 0 calc(-1 * (var(--band-y, 44px) + clamp(2px, 0.6vw, 10px))) calc(-1 * (max((100vw - 1080px) / 2, 0px) + 52px));
+    -webkit-mask-image: linear-gradient(to left, transparent 0, rgb(0 0 0/.2) 8%, rgb(0 0 0/.55) 16%, rgb(0 0 0/.85) 23%, #000 30%);
+    mask-image: linear-gradient(to left, transparent 0, rgb(0 0 0/.2) 8%, rgb(0 0 0/.55) 16%, rgb(0 0 0/.85) 23%, #000 30%);
+  }
+  .cl-photo img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 40% 50%;
+  }
 }
 .cl-photo img {
   width: 100%;
@@ -127,9 +152,9 @@
 
 .cl-intro {
   font-size: 14px;
-  line-height: 1.65;
+  line-height: 1.75;
   color: var(--ink-700);
-  margin: 0 0 18px;
+  margin: 0 0 22px;
   max-width: 560px;
   text-wrap: pretty;
 }
@@ -231,23 +256,23 @@
 
 /* ============ Responsive ============ */
 @media (max-width: 960px) {
-  .cl-section { padding: 32px 24px 32px; }
+  .cl-section { padding: 52px 24px 36px; }
   .cl-row { grid-template-columns: 1fr; gap: 14px; }
-  .cl-photo { aspect-ratio: 4 / 3; max-width: 480px; margin: 0 auto 14px; order: 0; width: 100%; }
+  .cl-photo { aspect-ratio: 4 / 3; max-width: none; margin: 0 -24px 14px; order: 0; width: calc(100% + 48px); border-radius: 0; }
   .cl-lede { margin-bottom: 0; }
   .cl-intro { margin-bottom: 0; }
   .cl-bullets { gap: 5px; margin-bottom: 0; }
   .cl-emphasis-card { margin-bottom: 0; }
   .cl-quiet { margin-bottom: 4px; }
   .cl-content { display: contents; }
-  .cl-headline { order: -1; margin-bottom: 0; }
+  .cl-headline { order: -1; margin: 10px 0 8px; }
   .cl-content > *:not(.cl-headline) { order: 1; }
   .cl-content > .cl-cta-btn { justify-self: start; width: fit-content; }
 }
 
 @media (max-width: 520px) {
-  .cl-section { padding: 28px 20px 28px; }
-  .cl-photo { border-radius: 28px; }
+  .cl-section { padding: 40px 20px 32px; }
+  .cl-photo { border-radius: 0; margin: 0 -20px 14px; width: calc(100% + 40px); }
   .cl-headline { font-size: clamp(22px, 6.4vw, 28px); }
   .cl-lede { font-size: 14px; }
   .cl-intro, .cl-bullets li { font-size: 13px; }
