@@ -276,7 +276,10 @@ span.ev-chip{background:transparent;border-style:dashed;color:var(--fg-2);cursor
   .ev-three-card span,.ev-network-list span,.ev-flow-step span.d,.ev-chip,.ev-figure figcaption,.ev-report-sub,.ev-end-note,.ev-byline-role,.ev-byline-meta span{font-size:14px}
   .ev-item-t,.ev-flow-step b,.ev-three-card b,.ev-value b,.ev-report-h,.ev-network-core b{font-size:16px}
   .ev-faq .faq-q{font-size:16px}
-  .ev-list.is-two{columns:1}
+  /* The byline is nowrap by default, which at phone widths made it wider than
+   the article and forced the whole page to scroll sideways. */
+.ev-byline-meta span{white-space:normal}
+.ev-list.is-two{columns:1}
   .ev-list.is-two,.ev-qgrid,.ev-report-grid,.ev-outcomes{grid-template-columns:1fr}
   .ev-stats{grid-template-columns:1fr;gap:16px;border-radius:28px 12px 28px 12px}
   .ev-stat+.ev-stat{border-left:0;padding-left:0;padding-top:16px;border-top:1px solid var(--border-subtle)}
