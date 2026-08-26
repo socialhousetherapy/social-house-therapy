@@ -28,7 +28,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..700&amp;family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&amp;family=Caveat:wght@400..700&amp;display=swap">
 <link rel="stylesheet" href="styles/tokens.css?v=2">
-<link rel="stylesheet" href="styles/site.css?v=57">
+<link rel="stylesheet" href="styles/site.css?v=58">
 <link rel="stylesheet" href="styles/clarity.css?v=23">
 <script>window.__PAGE = 'about';</script>
 <style>
@@ -134,16 +134,11 @@
     position: relative;
     padding: 14px 0 14px 14px;
   }
-  @media (min-width: 981px) {
-    .ab-hero-figure { margin-right: calc(-1 * (max((100vw - 1180px) / 2, 0px) + clamp(20px, 4vw, 56px))); margin-top: calc(-1 * var(--band-y)); margin-bottom: calc(-1 * var(--band-y)); align-self: stretch; padding: 0; }
-    .ab-hero-figure .ab-hero-photo { position: absolute; inset: 0 0 0 -70px; aspect-ratio: auto; height: auto; min-height: 0; border-radius: 0; box-shadow: none; background: transparent; -webkit-mask-image: linear-gradient(to right, transparent 0, rgb(0 0 0/.2) 8%, rgb(0 0 0/.55) 16%, rgb(0 0 0/.85) 23%, #000 30%); mask-image: linear-gradient(to right, transparent 0, rgb(0 0 0/.2) 8%, rgb(0 0 0/.55) 16%, rgb(0 0 0/.85) 23%, #000 30%); }
-    .ab-hero-figure .ab-hero-photo img { object-position: center; }
-    .ab-hero-figure .ab-hero-card { bottom: -34px; left: auto; right: calc(50vw - 370px); margin-inline: 0; width: 440px; }
-  }
+
   .ab-hero-photo {
     position: relative;
     aspect-ratio: 4 / 5;
-    border-radius: 28px 0 0 28px;
+    border-radius: 28px;
     overflow: hidden;
     background: var(--sage-100);
     box-shadow: var(--shadow-lg);
