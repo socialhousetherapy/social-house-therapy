@@ -787,9 +787,11 @@ img { display: block; max-width: 100%; }
 /* Neutralise a handwriting accent so it matches the surrounding heading.
    Class is doubled so it outranks the page-level .tz-hand / .sz-hand /
    .fq-hand / .ct-hand rules, which live in each page's inline <style>
-   and therefore load after this file. Tripled rather than doubled
-   because index.html scopes its rule as .hp-plan .sz-hand (0-2-0). */
-.no-hand.no-hand.no-hand { font-family: var(--font-heading); font-style: normal; font-weight: inherit; color: inherit; font-size: inherit; letter-spacing: inherit; line-height: inherit; transform: none; display: inline; }
+   and therefore load after this file. Specificity escalation was not
+   enough: page rules range from .tz-hand (0-1-0) to
+   .ab-hero .ab-hero-h .ab-hand (0-3-0), so this uses !important to stay
+   authoritative regardless of how a page scopes its accent. */
+.no-hand { font-family: var(--font-heading) !important; font-style: normal !important; font-weight: inherit !important; color: inherit !important; font-size: inherit !important; letter-spacing: inherit !important; line-height: inherit !important; transform: none !important; display: inline !important; }
 
 /* Headings kept to a single line on desktop. text-wrap is set as well as
    white-space because the pages set text-wrap: balance, which overrides
