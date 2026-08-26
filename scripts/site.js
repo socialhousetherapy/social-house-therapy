@@ -275,15 +275,10 @@
             <ul>
               <li><a href="index.html">Home</a></li>
               <li><a href="about.html">About</a></li>
+              <li><a href="evaluations.html">Evaluations</a></li>
               <li><a href="partner-with-us.html">Partner With Us</a></li>
               <li><a href="faq.html">FAQs</a></li>
               <li><a href="contact.html">Contact</a></li>
-            </ul>
-          </div>
-          <div>
-            <h4>Services</h4>
-            <ul>
-              <li><a href="evaluations.html">Evaluations</a></li>
             </ul>
           </div>
           <div>
