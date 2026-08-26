@@ -27,8 +27,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..700&amp;family=DM+Sans:opsz,wght@9..40,400..700&amp;family=Caveat:wght@400..700&amp;display=swap">
-<link rel="stylesheet" href="styles/tokens.css">
-<link rel="stylesheet" href="styles/site.css?v=46">
+<link rel="stylesheet" href="styles/tokens.css?v=2">
+<link rel="stylesheet" href="styles/site.css?v=47">
 <link rel="preload" as="image" href="assets/logo-240.webp" fetchpriority="high">
 <style>#site-nav{min-height:76px}</style>
 <script>window.__PAGE = 'tempe';</script>
@@ -121,7 +121,7 @@
 @media (prefers-reduced-motion:reduce){.tz-why-grid .tz-why-card,.tz-why-card+.tz-why-card::before{transition:none;opacity:1;transform:none}}
 
 /* ---- MEET THE TEAM (mirrors home page) ---- */
-.tz-mad{background:var(--sage-100);padding:var(--band-y) 28px;position:relative;overflow:hidden}
+.tz-mad{background:var(--sage-100);padding:var(--band-y) 28px calc(var(--band-y) + var(--curve-h));position:relative;overflow:hidden}
 .tz-mad::before{content:"";position:absolute;inset:0 -10% 0 auto;width:46%;background:radial-gradient(ellipse at 30% 50%,var(--sage-100) 0%,transparent 70%);opacity:.55;pointer-events:none}
 .tz-mad-grid{position:relative;max-width:980px;margin:0 auto;display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(32px,4.8vw,70px);align-items:center}
 .tz-mad-fig{position:relative;padding:18px 14px 22px 18px}
@@ -150,7 +150,7 @@
 .tz-link:hover{color:#000;transform:translateY(-2px)}
 
 /* ---- SERVICES INDEX ---- */
-.tz-svc{background:var(--sky-100);padding:var(--band-y) 0}
+.tz-svc{background:var(--sky-100);padding:var(--band-y) 0 calc(var(--band-y) + var(--curve-h))}
 .tz-svc-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px 40px;flex-wrap:wrap}
 .tz-svc-row.is-more{background:rgba(255,255,255,.55)}.tz-svc-row.is-more .num{font-family:var(--font-hand);color:var(--clay-500);font-size:16px}
   .tz-svc-list{display:grid;grid-template-columns:1fr 1fr;gap:0 clamp(30px,4.5vw,68px);margin-top:clamp(16px,2vw,26px)}
@@ -226,7 +226,7 @@ a.tz-step:hover .num{animation:none}
 @media (max-width:640px){.tz-plan-foot{justify-content:center;text-align:center}.tz-plan-foot-lead,.tz-plan-foot-alt{justify-content:center}}
 
 /* ---- STORIES ---- */
-.tz-rev{background:var(--sky-100, #E3EEF3);padding:var(--band-y) 0}
+.tz-rev{background:var(--sky-100, #E3EEF3);padding:calc(var(--band-y) + var(--curve-h)) 0 var(--band-y)}
 .tz-rev-head{display:grid;grid-template-columns:1fr;gap:20px;align-items:end}
 .tz-rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2vw,26px);align-items:start;margin-top:clamp(22px,2.6vw,34px)}
 .tz-rev-grid>:nth-child(2){margin-top:clamp(18px,2.4vw,38px)}
@@ -254,7 +254,7 @@ a.tz-step:hover .num{animation:none}
 .tz-faq-foot{text-align:center;margin-top:26px}
 
 /* ---- FINAL ---- */
-.tz-final{background:url("assets/cactus-section.webp") bottom center/100% auto no-repeat var(--white);padding:var(--band-y) clamp(20px,4vw,48px);position:relative;overflow:hidden}
+.tz-final{background:url("assets/cactus-section.webp") bottom center/100% auto no-repeat var(--white);padding:calc(var(--band-y) + var(--curve-h)) clamp(20px,4vw,48px) var(--band-y);position:relative;overflow:hidden}
 .tz-final-inner{max-width:760px;margin:0 auto;text-align:center;position:relative}
 .tz-final h2{font-family:var(--font-heading);font-size:clamp(28px,3.6vw,44px);font-weight:600;letter-spacing:-.022em;line-height:1.08;color:var(--sage-800);margin:16px 0 18px;text-wrap:balance}
 .tz-final p{font-size:14px;line-height:1.68;color:var(--fg-2);max-width:56ch;margin:0 auto 28px}

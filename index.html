@@ -33,10 +33,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..700&amp;family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&amp;family=Caveat:wght@400..700&amp;display=swap">
-<link rel="stylesheet" href="styles/tokens.css">
-<link rel="stylesheet" href="styles/site.css?v=46">
+<link rel="stylesheet" href="styles/tokens.css?v=2">
+<link rel="stylesheet" href="styles/site.css?v=47">
 <link rel="stylesheet" href="styles/when-to-reach.css?v=4">
-<link rel="stylesheet" href="styles/clarity.css?v=22">
+<link rel="stylesheet" href="styles/clarity.css?v=23">
 <link rel="stylesheet" href="styles/how-it-works.css?v=12">
 <style>#site-nav{min-height:76px}</style>
 <script>window.__PAGE = 'home';</script>
@@ -842,7 +842,7 @@
 
 <!-- ========== PLAN + PRICING (matches city pages) ========== -->
 <style>
-.hp-plan{background:var(--white);padding:var(--band-y) 0;position:relative}
+.hp-plan{background:var(--white);padding:calc(var(--band-y) + var(--curve-h)) 0 var(--band-y);position:relative}
 #pricing-anchor{position:absolute;top:0;left:0}
 @media (max-width:960px){#pricing-anchor{position:static;display:block;scroll-margin-top:calc(var(--nav-h, 96px) + 18px)}}
 .hp-plan .sz-shell{max-width:1160px;margin:0 auto;padding:0 clamp(20px,4vw,48px)}
@@ -1338,7 +1338,7 @@ a.sz-step:hover .num{animation:none}
 <style>
   .finale-section {
     background: url("assets/cactus-section.webp") bottom center/100% auto no-repeat var(--white);
-    padding: var(--band-y) clamp(20px, 4vw, 52px);
+    padding: calc(var(--band-y) + var(--curve-h)) clamp(20px, 4vw, 52px) var(--band-y);
     position: relative;
     z-index: 2;
   }
