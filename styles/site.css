@@ -784,14 +784,22 @@ img { display: block; max-width: 100%; }
 /* Match the final CTA phone treatment: handwriting face, footer colours unchanged */
 .footer a.foot-phone { font-family: var(--font-hand); font-size: 20px; font-weight: 600; }
 
-/* Neutralise a handwriting accent so it matches the surrounding heading */
-.no-hand { font-family: var(--font-heading); font-style: normal; font-weight: inherit; color: inherit; font-size: inherit; letter-spacing: inherit; line-height: inherit; transform: none; display: inline; }
+/* Neutralise a handwriting accent so it matches the surrounding heading.
+   Class is doubled so it outranks the page-level .tz-hand / .sz-hand /
+   .fq-hand / .ct-hand rules, which live in each page's inline <style>
+   and therefore load after this file. */
+.no-hand.no-hand { font-family: var(--font-heading); font-style: normal; font-weight: inherit; color: inherit; font-size: inherit; letter-spacing: inherit; line-height: inherit; transform: none; display: inline; }
 
-/* Headings the owner wants kept to a single line on desktop */
+/* Headings kept to a single line on desktop. text-wrap is set as well as
+   white-space because the pages set text-wrap: balance, which overrides
+   the text-wrap component of the white-space shorthand. */
 @media (min-width: 861px) {
   .ab-believe-head h2,
-  .fq-hero-h,
-  .ct-hero h1 { white-space: nowrap; }
+  .fq-hero-h.fq-hero-h,
+  .ct-hero h1 {
+    white-space: nowrap !important;
+    text-wrap: nowrap !important;
+  }
 }
 .footer-grid {
   max-width: 1680px; margin: 0 auto;
