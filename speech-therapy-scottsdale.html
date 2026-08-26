@@ -27,7 +27,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..700&amp;family=DM+Sans:opsz,wght@9..40,400..700&amp;family=Caveat:wght@400..700&amp;display=swap">
 <link rel="stylesheet" href="styles/tokens.css?v=2">
-<link rel="stylesheet" href="styles/site.css?v=50">
+<link rel="stylesheet" href="styles/site.css?v=51">
 <link rel="preload" as="image" href="assets/logo-240.webp" fetchpriority="high">
 <style>#site-nav{min-height:76px}</style>
 <script>window.__PAGE = 'scottsdale';</script>
@@ -145,7 +145,11 @@
 /* ---- SERVICES INDEX ---- */
 .sz-svc{background:var(--sky-100);padding:var(--band-y) 0 calc(var(--band-y) + var(--curve-h))}
 .sz-svc-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px 40px;flex-wrap:wrap}
-.sz-svc-row.is-more{background:rgba(255,255,255,.55)}.sz-svc-row.is-more .num{font-family:var(--font-hand);color:var(--clay-500);font-size:16px}
+.sz-svc-row.is-more{background:rgba(255,255,255,.55)}
+/* Match the home page: this card is a real link to contact, so it keeps a hover effect */
+.sz-svc-row.is-more{transition:background .2s ease,transform .22s ease}
+.sz-svc-row.is-more:hover{background:var(--white);transform:translateY(-3px)}
+.sz-svc-row.is-more .num{font-family:var(--font-hand);color:var(--clay-500);font-size:16px}
   .sz-svc-list{display:grid;grid-template-columns:1fr 1fr;gap:0 clamp(30px,4.5vw,68px);margin-top:clamp(16px,2vw,26px)}
 .sz-svc-row{display:grid;grid-template-columns:34px 1fr auto;gap:14px;align-items:baseline;padding:17px 6px;border-bottom:1px solid rgba(45,58,35,.16);text-decoration:none;transition:background .2s ease}
 a.sz-svc-row:hover{background:rgba(255,255,255,.55)}
