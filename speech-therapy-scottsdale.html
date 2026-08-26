@@ -27,7 +27,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..700&amp;family=DM+Sans:opsz,wght@9..40,400..700&amp;family=Caveat:wght@400..700&amp;display=swap">
 <link rel="stylesheet" href="styles/tokens.css?v=2">
-<link rel="stylesheet" href="styles/site.css?v=49">
+<link rel="stylesheet" href="styles/site.css?v=50">
 <link rel="preload" as="image" href="assets/logo-240.webp" fetchpriority="high">
 <style>#site-nav{min-height:76px}</style>
 <script>window.__PAGE = 'scottsdale';</script>
@@ -149,6 +149,10 @@
   .sz-svc-list{display:grid;grid-template-columns:1fr 1fr;gap:0 clamp(30px,4.5vw,68px);margin-top:clamp(16px,2vw,26px)}
 .sz-svc-row{display:grid;grid-template-columns:34px 1fr auto;gap:14px;align-items:baseline;padding:17px 6px;border-bottom:1px solid rgba(45,58,35,.16);text-decoration:none;transition:background .2s ease}
 a.sz-svc-row:hover{background:rgba(255,255,255,.55)}
+/* Coming-soon services: no hover affordance, they are not clickable yet */
+a[data-coming-soon]{cursor:default}
+a[data-coming-soon]:hover{background:transparent;transform:none;box-shadow:none}
+
 .sz-svc-row .num{font-family:var(--font-hand);font-size:19px;font-weight:600;color:var(--clay-500)}
 .sz-svc-row h3{font-family:var(--font-heading);font-size:clamp(15px,1.3vw,17px);font-weight:600;letter-spacing:-.012em;color:var(--sage-800);margin:0 0 3px;line-height:1.25}
 .sz-svc-row p{font-size:12px;line-height:1.5;color:var(--fg-2);margin:0}
@@ -540,13 +544,13 @@ a.sz-step:hover .num{animation:none}
       </div>
     </div>
     <div class="sz-svc-list reveal" data-delay="1">
-      <a class="sz-svc-row" aria-disabled="true" data-coming-soon="early-communication-late-talkers"><span class="num">01</span><span><h3>Early Communication &amp; Late Talkers</h3><p>Fewer words, gestures, sounds, or communication attempts than expected for their age.</p></span><span class="arr" aria-hidden="true">&rarr;</span></a>
-      <a class="sz-svc-row" aria-disabled="true" data-coming-soon="autism-social-communication"><span class="num">02</span><span><h3>Autism &amp; Social Communication</h3><p>Play, connection, interaction, gestalt language development, and authentic communication.</p></span><span class="arr" aria-hidden="true">&rarr;</span></a>
-      <a class="sz-svc-row" aria-disabled="true" data-coming-soon="speech-sound-disorders"><span class="num">03</span><span><h3>Speech Sound Disorders</h3><p>Support for speech that is unclear or difficult to understand due to sound errors or motor-planning and coordination challenges.</p></span><span class="arr" aria-hidden="true">&rarr;</span></a>
-      <a class="sz-svc-row" aria-disabled="true" data-coming-soon="understanding-using-language"><span class="num">04</span><span><h3>Understanding &amp; Using Language</h3><p>Following directions, answering questions, building sentences, and telling stories.</p></span><span class="arr" aria-hidden="true">&rarr;</span></a>
-      <a class="sz-svc-row" aria-disabled="true" data-coming-soon="stuttering-fluency"><span class="num">05</span><span><h3>Stuttering &amp; Fluency</h3><p>Building confidence and ease with less pressure around speaking.</p></span><span class="arr" aria-hidden="true">&rarr;</span></a>
-      <a class="sz-svc-row" aria-disabled="true" data-coming-soon="pediatric-feeding-oral-motor"><span class="num">06</span><span><h3>Pediatric Feeding &amp; Oral-Motor</h3><p>Support for chewing, drinking, food textures, oral-motor development, and safer, calmer, more confident mealtime skills.</p></span><span class="arr" aria-hidden="true">&rarr;</span></a>
-      <a class="sz-svc-row" aria-disabled="true" data-coming-soon="aac-support"><span class="num">07</span><span><h3>AAC Support</h3><p>Communication boards, speech-generating devices, signs, and coaching for children and their communication partners.</p></span><span class="arr" aria-hidden="true">&rarr;</span></a>
+      <a class="sz-svc-row" aria-disabled="true" data-coming-soon="early-communication-late-talkers"><span class="num">01</span><span><h3>Early Communication &amp; Late Talkers</h3><p>Fewer words, gestures, sounds, or communication attempts than expected for their age.</p></span></a>
+      <a class="sz-svc-row" aria-disabled="true" data-coming-soon="autism-social-communication"><span class="num">02</span><span><h3>Autism &amp; Social Communication</h3><p>Play, connection, interaction, gestalt language development, and authentic communication.</p></span></a>
+      <a class="sz-svc-row" aria-disabled="true" data-coming-soon="speech-sound-disorders"><span class="num">03</span><span><h3>Speech Sound Disorders</h3><p>Support for speech that is unclear or difficult to understand due to sound errors or motor-planning and coordination challenges.</p></span></a>
+      <a class="sz-svc-row" aria-disabled="true" data-coming-soon="understanding-using-language"><span class="num">04</span><span><h3>Understanding &amp; Using Language</h3><p>Following directions, answering questions, building sentences, and telling stories.</p></span></a>
+      <a class="sz-svc-row" aria-disabled="true" data-coming-soon="stuttering-fluency"><span class="num">05</span><span><h3>Stuttering &amp; Fluency</h3><p>Building confidence and ease with less pressure around speaking.</p></span></a>
+      <a class="sz-svc-row" aria-disabled="true" data-coming-soon="pediatric-feeding-oral-motor"><span class="num">06</span><span><h3>Pediatric Feeding &amp; Oral-Motor</h3><p>Support for chewing, drinking, food textures, oral-motor development, and safer, calmer, more confident mealtime skills.</p></span></a>
+      <a class="sz-svc-row" aria-disabled="true" data-coming-soon="aac-support"><span class="num">07</span><span><h3>AAC Support</h3><p>Communication boards, speech-generating devices, signs, and coaching for children and their communication partners.</p></span></a>
       <a class="sz-svc-row is-more" href="contact.html"><span class="num">+</span><span><h3>Not seeing what you&rsquo;re looking for?</h3><p>These are the biggest reasons families reach out, but not everything we support. Get in touch and we can talk it through.</p></span><span class="arr">→</span></a>
     </div>
   </div>

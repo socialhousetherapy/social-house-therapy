@@ -34,7 +34,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..700&amp;family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&amp;family=Caveat:wght@400..700&amp;display=swap">
 <link rel="stylesheet" href="styles/tokens.css?v=2">
-<link rel="stylesheet" href="styles/site.css?v=49">
+<link rel="stylesheet" href="styles/site.css?v=50">
 <link rel="stylesheet" href="styles/when-to-reach.css?v=4">
 <link rel="stylesheet" href="styles/clarity.css?v=23">
 <link rel="stylesheet" href="styles/how-it-works.css?v=12">
@@ -811,6 +811,10 @@
   .wtr-service-card.is-more .wtr-service-title{color:var(--sage-800)}
   @media (max-width:760px){.wtr-services-grid{grid-template-columns:1fr}}
 
+/* Coming-soon services: no hover affordance, they are not clickable yet */
+a[data-coming-soon]{cursor:default}
+a[data-coming-soon]:hover{background:transparent;transform:none;box-shadow:none}
+
 </style>
 
 <section class="wtr-services wtr-section" id="services" data-screen-label="What We Help With" aria-labelledby="wtr-services-headline">
@@ -824,13 +828,13 @@
     </div>
 
     <div class="wtr-services-grid reveal">
-      <a class="wtr-service-card" aria-disabled="true" data-coming-soon="early-communication-late-talkers"><span class="wtr-service-num">01</span><span><h3 class="wtr-service-title">Early Communication &amp; Late Talkers</h3><p class="wtr-service-desc">Fewer words, gestures, sounds, or communication attempts than expected for their age.</p></span><span class="wtr-service-arrow" aria-hidden="true">&rarr;</span></a>
-      <a class="wtr-service-card" aria-disabled="true" data-coming-soon="autism-social-communication"><span class="wtr-service-num">02</span><span><h3 class="wtr-service-title">Autism &amp; Social Communication</h3><p class="wtr-service-desc">Play, connection, interaction, echolalia and gestalt language, and authentic communication.</p></span><span class="wtr-service-arrow" aria-hidden="true">&rarr;</span></a>
-      <a class="wtr-service-card" aria-disabled="true" data-coming-soon="speech-sound-disorders"><span class="wtr-service-num">03</span><span><h3 class="wtr-service-title">Speech Sound Disorders</h3><p class="wtr-service-desc">Support for speech that is unclear or difficult to understand due to sound errors or motor-planning and coordination challenges.</p></span><span class="wtr-service-arrow" aria-hidden="true">&rarr;</span></a>
-      <a class="wtr-service-card" aria-disabled="true" data-coming-soon="understanding-using-language"><span class="wtr-service-num">04</span><span><h3 class="wtr-service-title">Understanding &amp; Using Language</h3><p class="wtr-service-desc">Following directions, answering questions, building sentences, and telling stories.</p></span><span class="wtr-service-arrow" aria-hidden="true">&rarr;</span></a>
-      <a class="wtr-service-card" aria-disabled="true" data-coming-soon="stuttering-fluency"><span class="wtr-service-num">05</span><span><h3 class="wtr-service-title">Stuttering &amp; Fluency</h3><p class="wtr-service-desc">Building confidence and ease with less pressure around speaking.</p></span><span class="wtr-service-arrow" aria-hidden="true">&rarr;</span></a>
-      <a class="wtr-service-card" aria-disabled="true" data-coming-soon="pediatric-feeding-oral-motor"><span class="wtr-service-num">06</span><span><h3 class="wtr-service-title">Pediatric Feeding &amp; Oral-Motor</h3><p class="wtr-service-desc">Support for chewing, drinking, food textures, oral-motor development, and safer, calmer, more confident mealtime skills.</p></span><span class="wtr-service-arrow" aria-hidden="true">&rarr;</span></a>
-      <a class="wtr-service-card" aria-disabled="true" data-coming-soon="aac-support"><span class="wtr-service-num">07</span><span><h3 class="wtr-service-title">AAC Support</h3><p class="wtr-service-desc">Communication boards, speech-generating devices, signs, and coaching for children and their communication partners.</p></span><span class="wtr-service-arrow" aria-hidden="true">&rarr;</span></a>
+      <a class="wtr-service-card" aria-disabled="true" data-coming-soon="early-communication-late-talkers"><span class="wtr-service-num">01</span><span><h3 class="wtr-service-title">Early Communication &amp; Late Talkers</h3><p class="wtr-service-desc">Fewer words, gestures, sounds, or communication attempts than expected for their age.</p></span></a>
+      <a class="wtr-service-card" aria-disabled="true" data-coming-soon="autism-social-communication"><span class="wtr-service-num">02</span><span><h3 class="wtr-service-title">Autism &amp; Social Communication</h3><p class="wtr-service-desc">Play, connection, interaction, echolalia and gestalt language, and authentic communication.</p></span></a>
+      <a class="wtr-service-card" aria-disabled="true" data-coming-soon="speech-sound-disorders"><span class="wtr-service-num">03</span><span><h3 class="wtr-service-title">Speech Sound Disorders</h3><p class="wtr-service-desc">Support for speech that is unclear or difficult to understand due to sound errors or motor-planning and coordination challenges.</p></span></a>
+      <a class="wtr-service-card" aria-disabled="true" data-coming-soon="understanding-using-language"><span class="wtr-service-num">04</span><span><h3 class="wtr-service-title">Understanding &amp; Using Language</h3><p class="wtr-service-desc">Following directions, answering questions, building sentences, and telling stories.</p></span></a>
+      <a class="wtr-service-card" aria-disabled="true" data-coming-soon="stuttering-fluency"><span class="wtr-service-num">05</span><span><h3 class="wtr-service-title">Stuttering &amp; Fluency</h3><p class="wtr-service-desc">Building confidence and ease with less pressure around speaking.</p></span></a>
+      <a class="wtr-service-card" aria-disabled="true" data-coming-soon="pediatric-feeding-oral-motor"><span class="wtr-service-num">06</span><span><h3 class="wtr-service-title">Pediatric Feeding &amp; Oral-Motor</h3><p class="wtr-service-desc">Support for chewing, drinking, food textures, oral-motor development, and safer, calmer, more confident mealtime skills.</p></span></a>
+      <a class="wtr-service-card" aria-disabled="true" data-coming-soon="aac-support"><span class="wtr-service-num">07</span><span><h3 class="wtr-service-title">AAC Support</h3><p class="wtr-service-desc">Communication boards, speech-generating devices, signs, and coaching for children and their communication partners.</p></span></a>
       <a class="wtr-service-card is-more" href="contact.html"><span class="wtr-service-num">&plus;</span><span><h3 class="wtr-service-title">Not seeing what you&rsquo;re looking for?</h3><p class="wtr-service-desc">These are the biggest reasons families reach out, but not everything we support. Get in touch and we can talk it through.</p></span><span class="wtr-service-arrow" aria-hidden="true">&rarr;</span></a>
     </div>
 
