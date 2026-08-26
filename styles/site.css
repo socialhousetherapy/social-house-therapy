@@ -781,6 +781,8 @@ img { display: block; max-width: 100%; }
 }
 .footer a { color: var(--sage-700); transition: color .2s var(--ease-out); }
 .footer a:hover { color: var(--clay-500); text-decoration-color: var(--clay-500); }
+/* Match the final CTA phone treatment: handwriting face, footer colours unchanged */
+.footer a.foot-phone { font-family: var(--font-hand); font-size: 20px; font-weight: 600; }
 .footer-grid {
   max-width: 1680px; margin: 0 auto;
   display: grid;

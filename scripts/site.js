@@ -261,7 +261,7 @@
             <div class="foot-contact foot-contact-mobile">
               <h4 class="footer-h4-stack">Contact Us</h4>
               <ul>
-                <li><a href="tel:4804904812" aria-label="Call or text us at 480-490-4812">Call/Text 480-490-4812</a></li>
+                <li><a class="foot-phone" href="tel:4804904812" aria-label="Call or text us at 480-490-4812">Call/Text 480-490-4812</a></li>
                 <li><a href="mailto:info@socialhousetherapy.com">info@socialhousetherapy.com</a></li>
                   <li><a href="https://share.google/xTUNuque8RDOZr5IY" target="_blank" rel="noopener">Find us on Google</a></li>
               </ul>
@@ -291,7 +291,7 @@
             <div class="foot-contact-desktop">
               <h4 class="footer-h4-stack">Contact Us</h4>
               <ul>
-                <li><a href="tel:4804904812" aria-label="Call or text us at 480-490-4812">Call/Text 480-490-4812</a></li>
+                <li><a class="foot-phone" href="tel:4804904812" aria-label="Call or text us at 480-490-4812">Call/Text 480-490-4812</a></li>
                 <li><a href="mailto:info@socialhousetherapy.com">info@socialhousetherapy.com</a></li>
                   <li><a href="https://share.google/xTUNuque8RDOZr5IY" target="_blank" rel="noopener">Find us on Google</a></li>
               </ul>
