@@ -28,7 +28,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..700&amp;family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&amp;family=Caveat:wght@400..700&amp;display=swap">
 <link rel="stylesheet" href="styles/tokens.css?v=2">
-<link rel="stylesheet" href="styles/site.css?v=56">
+<link rel="stylesheet" href="styles/site.css?v=57">
 <link rel="stylesheet" href="styles/clarity.css?v=23">
 <script>window.__PAGE = 'about';</script>
 <style>
@@ -137,7 +137,7 @@
   @media (min-width: 981px) {
     .ab-hero-figure { margin-right: calc(-1 * (max((100vw - 1180px) / 2, 0px) + clamp(20px, 4vw, 56px))); margin-top: calc(-1 * var(--band-y)); margin-bottom: calc(-1 * var(--band-y)); align-self: stretch; padding: 0; }
     .ab-hero-figure .ab-hero-photo { position: absolute; inset: 0 0 0 -70px; aspect-ratio: auto; height: auto; min-height: 0; border-radius: 0; box-shadow: none; background: transparent; -webkit-mask-image: linear-gradient(to right, transparent 0, rgb(0 0 0/.2) 8%, rgb(0 0 0/.55) 16%, rgb(0 0 0/.85) 23%, #000 30%); mask-image: linear-gradient(to right, transparent 0, rgb(0 0 0/.2) 8%, rgb(0 0 0/.55) 16%, rgb(0 0 0/.85) 23%, #000 30%); }
-    .ab-hero-figure .ab-hero-photo img { object-position: center 40%; }
+    .ab-hero-figure .ab-hero-photo img { object-position: center; }
     .ab-hero-figure .ab-hero-card { bottom: -34px; left: auto; right: calc(50vw - 370px); margin-inline: 0; width: 440px; }
   }
   .ab-hero-photo {
@@ -150,8 +150,8 @@
   }
   .ab-hero-photo img {
     width: 100%; height: 100%;
-    object-fit: cover;
-    object-position: center 30%;
+    object-fit: contain;
+    object-position: center;
     display: block;
   }
   .ab-hero-card {
@@ -707,7 +707,7 @@
       <div class="ab-madison-text reveal in" data-delay="1">
         <p data-story="">For Madison, speech therapy has always been about more than words. As a child, she worked with a speech-language pathologist who helped her connect more meaningfully with the people around her. That experience shaped her career and the belief behind Social House Therapy: communication begins with feeling seen, understood, and supported.</p>
         <p data-story="">Madison earned her bachelor&rsquo;s degree in Speech and Hearing Sciences from Arizona State University and her master&rsquo;s degree from Northern Arizona University. Before becoming an SLP, she spent four years as a speech-language pathology assistant. Her experience now spans homes, schools, clinics, ABA centers, community settings, and virtual care.</p>
-        <p data-story="">Her areas of focus include speech sound disorders, childhood apraxia of speech, stuttering, gestalt language processing, AAC, and autism. Madison builds trust through each child&rsquo;s interests, creating a calm, playful space where trying something new never feels like getting it wrong. Parents are included with clear explanations and practical strategies that fit naturally into everyday routines.</p>
+        <p data-story="">Her areas of focus include late talkers and language delays, speech sound disorders, childhood apraxia of speech, stuttering, gestalt language processing, AAC, and autism. Madison builds trust through each child&rsquo;s interests, creating a calm, playful space where trying something new never feels like getting it wrong. Parents are included with clear explanations and practical strategies that fit naturally into everyday routines.</p>
         <p data-story="">Madison founded Social House Therapy to provide care that feels personal, thoughtful, and handcrafted for each family. Her vision is to build a team of supported, continually learning clinicians who share that same commitment to relationship-based, family-centered care.</p>
         <div class="ab-madison-creds" data-story="" aria-label="Professional credentials and memberships">
           <img src="assets/asha-ccc-slp.webp" alt="CCC-SLP, ASHA Certified Speech-Language Pathologist" loading="lazy" decoding="async">
@@ -829,7 +829,7 @@
         <div class="ab-feels-item">
           <div>
             <h3>Therapy comes to your child</h3>
-            <p>In your living room, at the park, at an ABA or child care center, or on a screen at the kitchen table. Kids show us the most on ground that already feels like theirs, so that&rsquo;s where we meet them.</p>
+            <p>In your living room, at the park, at the local library, at an ABA or child care center, or on a screen at the kitchen table. Kids show us the most on ground that already feels like theirs, so that&rsquo;s where we meet them.</p>
           </div>
         </div>
         <div class="ab-feels-item">
