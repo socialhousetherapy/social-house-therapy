@@ -341,10 +341,12 @@
       .to-top-fab:hover{ background: var(--sage-100, #e2ebdc); transform: translateY(-2px); }
       .to-top-fab svg{ width: 20px; height: 20px; }
       @media (max-width: 560px){
-        .contact-fab{ right: 16px; bottom: 16px; padding: 14px; }
-        .to-top-fab{ right: 16px; bottom: 76px; }
+        /* Lifted 15vh clear of the browser chrome, and scaled up about 10%. */
+        .contact-fab{ right: 16px; bottom: calc(16px + 15vh); padding: 15px; }
+        .to-top-fab{ right: 16px; bottom: calc(80px + 15vh); width: 51px; height: 51px; }
         .contact-fab .cf-label{ display: none; }
-        .contact-fab svg{ width: 22px; height: 22px; }
+        .contact-fab svg{ width: 24px; height: 24px; }
+        .to-top-fab svg{ width: 22px; height: 22px; }
       }
     `;
     document.head.appendChild(style);
