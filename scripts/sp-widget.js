@@ -14,8 +14,8 @@
      plus the nav/menu booking buttons. Plain "Contact" nav/footer text links stay as links. */
   var BOOKING_SELECTOR = 'a.hiw-step-cta, a.cl-cta-btn, a.menu-foot-cta, ' +
     'a.ct-secondary-btn, a.sv-fit-step-cta, a.btn[href$="contact.html"], a.t-path-cta[href$="contact.html"], ' +
-    'a.tz-btn[href$="contact.html"], a.tz-step, ' +
-    'a.sz-btn[href$="contact.html"], a.sz-step, ' +
+    'a.tz-btn, a.tz-step, ' +
+    'a.sz-btn, a.sz-step, ' +
     'a.hand-note[href$="contact.html"], ' +
     'a.ev-btn[href$="contact.html"], a.ev-link[href$="contact.html"], ' +
     '.faq-a a[href$="contact.html"]';
