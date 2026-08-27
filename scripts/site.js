@@ -488,20 +488,28 @@
       const style = document.createElement('style');
       style.textContent = `
         .pc-backdrop{position:fixed;inset:0;z-index:1000;background:rgba(28,36,26,.55);
-          display:flex;align-items:flex-end;justify-content:center;padding:16px;
+          display:flex;align-items:flex-end;justify-content:center;
+          padding:16px 16px calc(16px + 10vh);
           opacity:0;transition:opacity .18s ease}
         .pc-backdrop.is-open{opacity:1}
-        .pc-sheet{width:100%;max-width:420px;background:var(--sky-100,#E3EEF3);
-          border-radius:22px;padding:18px;box-shadow:0 24px 60px -12px rgba(28,36,26,.5);
+        .pc-sheet{position:relative;width:100%;max-width:420px;background:var(--sky-100,#E3EEF3);
+          border-radius:22px;padding:44px 18px 16px;box-shadow:0 24px 60px -12px rgba(28,36,26,.5);
           transform:translateY(14px);transition:transform .2s ease}
         .pc-backdrop.is-open .pc-sheet{transform:translateY(0)}
+        .pc-close{position:absolute;top:10px;right:10px;width:32px;height:32px;
+          display:flex;align-items:center;justify-content:center;
+          background:transparent;border:0;border-radius:999px;cursor:pointer;
+          color:var(--sage-700,#5b7150);-webkit-tap-highlight-color:transparent}
+        .pc-close svg{width:17px;height:17px}
         .pc-actions{display:grid;gap:10px}
         .pc-btn{display:flex;align-items:center;justify-content:center;gap:10px;
           padding:15px 18px;border-radius:999px;text-decoration:none;font-weight:600;font-size:15px;
           font-family:inherit;cursor:pointer;
           background:var(--white,#fff);color:var(--sage-700,#5b7150);
-          border:1.5px solid rgba(45,58,35,.12)}
+          border:0;-webkit-tap-highlight-color:transparent}
         .pc-btn svg{width:19px;height:19px}
+        .pc-note{margin:14px 0 0;text-align:center;font-size:12.5px;line-height:1.5;
+          color:var(--sage-800,#364932);opacity:.85}
       `;
       document.head.appendChild(style);
 
@@ -512,6 +520,9 @@
       sheet.setAttribute('aria-label','Call or text ' + PRETTY);
       sheet.innerHTML = `
         <div class="pc-sheet">
+          <button type="button" class="pc-close" aria-label="Close">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </button>
           <div class="pc-actions">
             <a class="pc-btn pc-call" href="tel:${PHONE}">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.2 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
@@ -522,11 +533,12 @@
               Text
             </a>
           </div>
+          <p class="pc-note">We try to answer as soon as possible, and within 1 business day at most.</p>
         </div>`;
       document.body.appendChild(sheet);
 
       sheet.addEventListener('click', function(e){
-        if(e.target === sheet) close();
+        if(e.target === sheet || e.target.closest('.pc-close')) close();
         else if(e.target.closest('.pc-btn')) close();
       });
     }
