@@ -491,23 +491,17 @@
           display:flex;align-items:flex-end;justify-content:center;padding:16px;
           opacity:0;transition:opacity .18s ease}
         .pc-backdrop.is-open{opacity:1}
-        .pc-sheet{width:100%;max-width:420px;background:var(--cream-50,#fbf8f1);
-          border-radius:22px;padding:20px 18px 16px;box-shadow:0 24px 60px -12px rgba(28,36,26,.5);
+        .pc-sheet{width:100%;max-width:420px;background:var(--sky-100,#E3EEF3);
+          border-radius:22px;padding:18px;box-shadow:0 24px 60px -12px rgba(28,36,26,.5);
           transform:translateY(14px);transition:transform .2s ease}
         .pc-backdrop.is-open .pc-sheet{transform:translateY(0)}
-        .pc-title{font-family:var(--font-heading,inherit);font-weight:600;font-size:17px;
-          color:var(--sage-800,#364932);margin:0 0 4px;text-align:center}
-        .pc-num{font-size:13px;color:var(--fg-2,#4a4a44);margin:0 0 16px;text-align:center}
         .pc-actions{display:grid;gap:10px}
         .pc-btn{display:flex;align-items:center;justify-content:center;gap:10px;
           padding:15px 18px;border-radius:999px;text-decoration:none;font-weight:600;font-size:15px;
-          font-family:inherit;border:1.5px solid transparent;cursor:pointer}
+          font-family:inherit;cursor:pointer;
+          background:var(--white,#fff);color:var(--sage-700,#5b7150);
+          border:1.5px solid rgba(45,58,35,.12)}
         .pc-btn svg{width:19px;height:19px}
-        .pc-call{background:var(--clay-500,#c7541f);color:var(--cream-50,#fbf8f1)}
-        .pc-text{background:var(--white,#fff);color:var(--sage-700,#5b7150);
-          border-color:var(--sage-600,#6c8a6e)}
-        .pc-cancel{background:transparent;color:var(--fg-2,#4a4a44);font-size:14px;
-          padding:12px;border:0;width:100%;font-family:inherit;cursor:pointer}
       `;
       document.head.appendChild(style);
 
@@ -515,11 +509,9 @@
       sheet.className = 'pc-backdrop';
       sheet.setAttribute('role','dialog');
       sheet.setAttribute('aria-modal','true');
-      sheet.setAttribute('aria-labelledby','pcTitle');
+      sheet.setAttribute('aria-label','Call or text ' + PRETTY);
       sheet.innerHTML = `
         <div class="pc-sheet">
-          <p class="pc-title" id="pcTitle">Call or text us</p>
-          <p class="pc-num">${PRETTY}</p>
           <div class="pc-actions">
             <a class="pc-btn pc-call" href="tel:${PHONE}">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.2 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
@@ -530,12 +522,11 @@
               Text
             </a>
           </div>
-          <button type="button" class="pc-cancel">Cancel</button>
         </div>`;
       document.body.appendChild(sheet);
 
       sheet.addEventListener('click', function(e){
-        if(e.target === sheet || e.target.classList.contains('pc-cancel')) close();
+        if(e.target === sheet) close();
         else if(e.target.closest('.pc-btn')) close();
       });
     }
