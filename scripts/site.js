@@ -544,7 +544,10 @@
       if(!sheet) build();
       lastFocus = document.activeElement;
       sheet.style.display = 'flex';
-      requestAnimationFrame(function(){ sheet.classList.add('is-open'); });
+      /* Force a reflow so the transition runs, rather than relying on rAF,
+         which is throttled when the tab is not compositing. */
+      void sheet.offsetHeight;
+      sheet.classList.add('is-open');
       const first = sheet.querySelector('.pc-call');
       if(first) first.focus();
       document.addEventListener('keydown', onKey);
