@@ -375,11 +375,19 @@
     const footer = document.querySelector('.footer');
     if(!('IntersectionObserver' in window)){ return; }
     const seen = { header: !!header, footer: false };
-    // Mobile: visible whenever scrolled away from the top (the fixed nav re-appearing on scroll-up must not hide them); desktop: hide when header or footer is in view.
+    // The nav is position:fixed, so it is always intersecting and cannot be used
+    // to decide visibility. Both breakpoints therefore key off scroll distance;
+    // desktop additionally hides the buttons once the footer is in view, since
+    // the footer carries its own contact links.
     const mobileMq = window.matchMedia('(max-width: 720px)');
-    function update(){ const hid = mobileMq.matches ? window.scrollY < 120 : (seen.header || seen.footer); fab.classList.toggle('is-hidden', hid); topFab.classList.toggle('is-hidden', hid); }
+    function update(){
+      const nearTop = window.scrollY < 120;
+      const hid = mobileMq.matches ? nearTop : (nearTop || seen.footer);
+      fab.classList.toggle('is-hidden', hid);
+      topFab.classList.toggle('is-hidden', hid);
+    }
     if(mobileMq.addEventListener) mobileMq.addEventListener('change', update);
-    window.addEventListener('scroll', () => { if(mobileMq.matches) update(); }, { passive: true });
+    window.addEventListener('scroll', update, { passive: true });
     const io = new IntersectionObserver(entries => {
       entries.forEach(en => {
         if(en.target === header) seen.header = en.isIntersecting;
