@@ -331,7 +331,7 @@
       .contact-fab .cf-label{ white-space: nowrap; }
       .to-top-fab{
         position: fixed; right: 22px; bottom: 84px; z-index: 900;
-        display: none; align-items: center; justify-content: center;
+        display: inline-flex; align-items: center; justify-content: center;
         width: 46px; height: 46px; border-radius: 999px; border: 1.5px solid var(--sage-600, #6c8a6e);
         background: var(--white, #fff); color: var(--sage-700, #5b7150); cursor: pointer;
         box-shadow: 0 10px 26px -12px rgba(40,50,40,.4);
@@ -340,7 +340,6 @@
       .to-top-fab.is-hidden{ opacity: 0; visibility: hidden; pointer-events: none; transform: translateY(8px); }
       .to-top-fab:hover{ background: var(--sage-100, #e2ebdc); transform: translateY(-2px); }
       .to-top-fab svg{ width: 20px; height: 20px; }
-      @media (max-width: 720px){ .to-top-fab{ display: inline-flex; } }
       @media (max-width: 560px){
         .contact-fab{ right: 16px; bottom: 16px; padding: 14px; }
         .to-top-fab{ right: 16px; bottom: 76px; }
@@ -382,12 +381,18 @@
     const mobileMq = window.matchMedia('(max-width: 720px)');
     function update(){
       const nearTop = window.scrollY < 120;
-      const hid = mobileMq.matches ? nearTop : (nearTop || seen.footer);
+      /* The nav is fixed, so "is the header showing" is the nav-hide class the
+         scroll handler toggles, not an IntersectionObserver entry. */
+      const headerShown = !!header && !header.classList.contains('nav-hide');
+      const hid = mobileMq.matches ? nearTop : (nearTop || seen.footer || headerShown);
       fab.classList.toggle('is-hidden', hid);
       topFab.classList.toggle('is-hidden', hid);
     }
     if(mobileMq.addEventListener) mobileMq.addEventListener('change', update);
     window.addEventListener('scroll', update, { passive: true });
+    if(header && 'MutationObserver' in window){
+      new MutationObserver(update).observe(header, { attributes: true, attributeFilter: ['class'] });
+    }
     const io = new IntersectionObserver(entries => {
       entries.forEach(en => {
         if(en.target === header) seen.header = en.isIntersecting;
