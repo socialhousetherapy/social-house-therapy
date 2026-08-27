@@ -482,6 +482,14 @@
     const PHONE = '4804904812';
     const PRETTY = '480-490-4812';
     const mq = window.matchMedia('(max-width: 720px)');
+    /* Macs can place calls and send texts through Continuity, so offer the
+       choice there too. Anything else keeps the plain tel: link. */
+    function isApplePlatform(){
+      const uad = navigator.userAgentData;
+      if(uad && uad.platform) return /mac/i.test(uad.platform);
+      return /Mac|iPhone|iPad|iPod/i.test(navigator.platform || navigator.userAgent || '');
+    }
+    function shouldOffer(){ return mq.matches || isApplePlatform(); }
     let sheet = null, lastFocus = null;
 
     function build(){
@@ -511,6 +519,10 @@
         .pc-btn svg{width:19px;height:19px}
         .pc-note{margin:14px 0 0;text-align:center;font-size:12.5px;line-height:1.5;
           color:var(--sage-800,#364932);opacity:.85}
+        @media (min-width: 721px){
+          .pc-backdrop{align-items:center;padding:24px}
+          .pc-sheet{max-width:380px}
+        }
       `;
       document.head.appendChild(style);
 
@@ -572,7 +584,7 @@
       if(!link) return;
       if(link.closest('.pc-sheet')) return;
       if(link.getAttribute('href').replace(/[^0-9]/g,'').slice(-10) !== PHONE) return;
-      if(!mq.matches) return;
+      if(!shouldOffer()) return;
       e.preventDefault();
       open();
     });
