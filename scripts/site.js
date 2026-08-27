@@ -492,6 +492,7 @@
           padding:16px 16px calc(16px + 10vh);
           opacity:0;transition:opacity .18s ease}
         .pc-backdrop.is-open{opacity:1}
+        .pc-sheet:focus{outline:none}
         .pc-sheet{position:relative;width:100%;max-width:420px;background:var(--sky-100,#E3EEF3);
           border-radius:22px;padding:44px 18px 16px;box-shadow:0 24px 60px -12px rgba(28,36,26,.5);
           transform:translateY(14px);transition:transform .2s ease}
@@ -519,7 +520,7 @@
       sheet.setAttribute('aria-modal','true');
       sheet.setAttribute('aria-label','Call or text ' + PRETTY);
       sheet.innerHTML = `
-        <div class="pc-sheet">
+        <div class="pc-sheet" tabindex="-1">
           <button type="button" class="pc-close" aria-label="Close">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
           </button>
@@ -551,8 +552,10 @@
          which is throttled when the tab is not compositing. */
       void sheet.offsetHeight;
       sheet.classList.add('is-open');
-      const first = sheet.querySelector('.pc-call');
-      if(first) first.focus();
+      /* Focus the panel, not a button: focusing a button paints a focus ring
+         around it the moment the sheet opens. Tab still reaches the options. */
+      const panel = sheet.querySelector('.pc-sheet');
+      if(panel) panel.focus();
       document.addEventListener('keydown', onKey);
     }
     function close(){
