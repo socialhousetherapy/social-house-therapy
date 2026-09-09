@@ -39,16 +39,18 @@
    Insets + mask live on the CONTAINER; the img just covers it. */
 @media (min-width: 961px) {
   .cl-row { align-items: stretch; min-height: clamp(380px, 37vw, 500px); }
-  .cl-content { align-self: center; padding: clamp(10px, 1.6vw, 24px) 0; }
+  .cl-content { align-self: center; padding: clamp(10px, 1.6vw, 24px) 0; position: relative; z-index: 1; }
   .cl-photo {
     aspect-ratio: auto;
+    align-self: stretch;
     border-radius: 0;
     background: none;
     box-shadow: none;
     overflow: hidden;
-    margin: calc(-1 * (var(--band-y, 44px) + clamp(14px, 2.4vw, 34px))) 0 calc(-1 * (var(--band-y, 44px) + clamp(2px, 0.6vw, 10px))) calc(-1 * (max((100vw - 1080px) / 2, 0px) + 52px));
-    -webkit-mask-image: linear-gradient(to left, transparent 0, rgb(0 0 0/.2) 8%, rgb(0 0 0/.55) 16%, rgb(0 0 0/.85) 23%, #000 30%);
-    mask-image: linear-gradient(to left, transparent 0, rgb(0 0 0/.2) 8%, rgb(0 0 0/.55) 16%, rgb(0 0 0/.85) 23%, #000 30%);
+    /* Bleeds to the section's top and bottom edges (the curves overlap it) and to the left edge of the viewport, never past it */
+    margin: calc(-1 * var(--band-y, 44px)) calc(-1 * clamp(40px, 6vw, 110px)) calc(-1 * var(--band-y, 44px)) calc(-1 * max((100vw - 1080px) / 2, 52px));
+    -webkit-mask-image: linear-gradient(to left, transparent 0, rgb(0 0 0/.18) 10%, rgb(0 0 0/.5) 20%, rgb(0 0 0/.82) 30%, #000 40%);
+    mask-image: linear-gradient(to left, transparent 0, rgb(0 0 0/.18) 10%, rgb(0 0 0/.5) 20%, rgb(0 0 0/.82) 30%, #000 40%);
   }
   .cl-photo img {
     position: absolute;
@@ -56,9 +58,11 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: 40% 50%;
+    /* Anchor to the left edge so Madison stays fully in frame; any width cropping happens on the faded right side */
+    object-position: 0% 35%;
   }
 }
+.cl-photo picture { display: block; width: 100%; height: 100%; }
 .cl-photo img {
   width: 100%;
   height: 100%;

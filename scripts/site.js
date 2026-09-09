@@ -45,7 +45,6 @@
           </div>
         </div>
       </div>
-      <a href="partner-with-us.html" class="${PAGE==='partner'?'active':''}">Partner With Us</a>
       <a href="about.html" class="${PAGE==='about'?'active':''}">About Us</a>`;
 
     const socialsHTML = SOCIALS.map(s => `
@@ -137,7 +136,6 @@
           <li><a href="faq.html">FAQs</a></li>
         </ul>
       </li>
-      <li><a href="partner-with-us.html"><span>Partner With Us</span><span class="arr">→</span></a></li>
       <li><a href="about.html"><span>About Us</span><span class="arr">→</span></a></li>
       <li><a href="contact.html"><span>Contact</span><span class="arr">→</span></a></li>
     `;
@@ -158,7 +156,7 @@
             <span style="margin: 0 10px; color: var(--ink-300);">·</span>
             <a href="mailto:info@socialhousetherapy.com">info@socialhousetherapy.com</a>
             <span style="margin: 0 10px; color: var(--ink-300);">·</span>
-            Tempe &amp; Scottsdale, AZ
+            <span class="menu-foot-loc"><a href="speech-therapy-tempe.html">Tempe</a> &amp; <a href="speech-therapy-scottsdale.html">Scottsdale</a>, AZ</span>
           </div>
           <a class="menu-foot-cta" href="contact.html">
             Get Started
@@ -177,6 +175,7 @@
     if(!burger || !overlay) return;
 
     let lastFocus = null;
+    let lockY = 0;
 
     function focusables(){
       return overlay.querySelectorAll('a, button');
@@ -189,6 +188,20 @@
       const nav = document.getElementById('navEl');
       overlay.classList.toggle('from-top', !!(nav && nav.classList.contains('nav-hide')));
       overlay.classList.add('open');
+      // Pin sticky elements (e.g. the "On this page" bar) at their current
+      // viewport spot: the body lock below un-sticks them otherwise, making
+      // them jump away and glide back when the menu closes.
+      document.querySelectorAll('[data-sticky-pin]').forEach((el) => {
+        if (getComputedStyle(el).display === 'none' || el.__pin !== undefined) return;
+        const r = el.getBoundingClientRect();
+        el.__pin = el.getAttribute('style') || '';
+        el.style.transition = 'none';
+        el.style.position = 'fixed';
+        el.style.top = r.top + 'px'; el.style.left = r.left + 'px';
+        el.style.width = r.width + 'px'; el.style.margin = '0';
+      });
+      lockY = window.scrollY;                       // iOS-proof scroll lock
+      document.body.style.top = (-lockY) + 'px';
       document.body.classList.add('menu-open');
       burger.classList.add('is-open');
       burger.setAttribute('aria-expanded', 'true');
@@ -201,14 +214,95 @@
     function close(){
       overlay.classList.remove('open');
       document.body.classList.remove('menu-open');
+      document.body.style.top = '';
+      window.scrollTo(0, lockY);
+      document.querySelectorAll('[data-sticky-pin]').forEach((el) => {
+        if (el.__pin === undefined) return;
+        if (el.__pin) el.setAttribute('style', el.__pin); else el.removeAttribute('style');
+        delete el.__pin;
+      });
       burger.classList.remove('is-open');
       burger.setAttribute('aria-expanded', 'false');
       burger.setAttribute('aria-label', 'Open menu');
       if(lastFocus && typeof lastFocus.focus === 'function') lastFocus.focus();
+      // Reset internal accordions so the menu always reopens folded
+      overlay.querySelectorAll('.menu-acc.open').forEach(li => {
+        li.classList.remove('open');
+        const b = li.querySelector('.menu-acc-btn');
+        if(b) b.setAttribute('aria-expanded', 'false');
+        const p = li.querySelector('.menu-acc-panel');
+        if(p) p.style.maxHeight = '0px';
+      });
     }
 
     burger.addEventListener('click', () => { overlay.classList.contains('open') ? close() : open(); });
     if(closeBtn) closeBtn.addEventListener('click', close);
+
+    // Any scroll attempt while the menu is open folds it away (and never moves
+    // the page behind it). The panel follows the finger: drag up and it slides
+    // with you, pull back down and it returns; past the threshold on release it
+    // folds, otherwise it springs back.
+    const inner = overlay.querySelector('.menu-overlay-inner');
+    let touchY = null, dragging = false;
+    function setDrag(px){
+      if(!inner) return;
+      inner.style.transition = 'none';
+      inner.style.transform = 'translateY(' + (-px) + 'px)';
+      overlay.style.background = 'rgba(41, 47, 38, ' + Math.max(0, 0.34 * (1 - px / 420)) + ')';
+    }
+    function resetDrag(animate){
+      if(!inner) return;
+      inner.style.transition = animate ? 'transform 260ms cubic-bezier(0.22, 1, 0.36, 1)' : 'none';
+      inner.style.transform = '';
+      overlay.style.background = '';
+      if(animate) setTimeout(() => { inner.style.transition = ''; }, 280);
+      else inner.style.transition = '';
+    }
+    function dragClose(px){
+      if(!inner){ close(); return; }
+      inner.style.transition = 'transform 300ms ease-in';
+      inner.style.transform = 'translateY(-110%)';
+      overlay.style.background = 'rgba(41, 47, 38, 0)';
+      setTimeout(() => {
+        // Hide instantly: the overlay's own 240ms fade would re-show the panel
+        // once its transform is cleared.
+        overlay.style.transition = 'none';
+        close();
+        resetDrag(false);
+        requestAnimationFrame(() => { overlay.style.transition = ''; });
+      }, 300);
+    }
+    document.addEventListener('touchstart', (e) => {
+      touchY = overlay.classList.contains('open') ? e.touches[0].clientY : null;
+      dragging = false;
+    }, { passive: true });
+    document.addEventListener('touchmove', (e) => {
+      if(!overlay.classList.contains('open')) return;
+      if(e.cancelable) e.preventDefault();
+      if(touchY === null) return;
+      const dy = touchY - e.touches[0].clientY;   // positive = dragging up
+      if(dy > 4){ dragging = true; setDrag(dy); }
+      else if(dragging){ setDrag(Math.max(0, dy)); }
+    }, { passive: false });
+    document.addEventListener('touchend', (e) => {
+      if(!overlay.classList.contains('open') || touchY === null) return;
+      const endY = e.changedTouches && e.changedTouches.length ? e.changedTouches[0].clientY : touchY;
+      const dy = touchY - endY;
+      const inPanel = e.target.closest && e.target.closest('.menu-overlay-inner');
+      // Inside the menu a deliberate 160px pull folds it; on the dimmed page 100px.
+      if(dragging && dy > (inPanel ? 160 : 100)) dragClose(dy);
+      else if(dragging) resetDrag(true);
+      touchY = null; dragging = false;
+    }, { passive: true });
+    document.addEventListener('touchcancel', () => {
+      if(dragging) resetDrag(true);
+      touchY = null; dragging = false;
+    }, { passive: true });
+    document.addEventListener('wheel', (e) => {
+      if(!overlay.classList.contains('open')) return;
+      if(e.cancelable) e.preventDefault();
+      close();
+    }, { passive: false });
 
     // Click outside the inner panel closes
     overlay.addEventListener('click', (e) => {
@@ -277,7 +371,6 @@
               <li><a href="index.html">Home</a></li>
               <li><a href="about.html">About</a></li>
               <li><a href="evaluations.html">Evaluations</a></li>
-              <li><a href="partner-with-us.html">Partner With Us</a></li>
               <li><a href="faq.html">FAQs</a></li>
               <li><a href="contact.html">Contact</a></li>
             </ul>
@@ -338,6 +431,7 @@
         transition: transform .18s ease, opacity .2s ease, visibility .2s ease, background .18s ease;
       }
       .to-top-fab.is-hidden{ opacity: 0; visibility: hidden; pointer-events: none; transform: translateY(8px); }
+      body.menu-open .contact-fab, body.menu-open .to-top-fab{ opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; transition: none !important; }
       .to-top-fab:hover{ background: var(--sage-100, #e2ebdc); transform: translateY(-2px); }
       .to-top-fab svg{ width: 20px; height: 20px; }
       @media (max-width: 560px){
@@ -601,13 +695,17 @@
     if(document.fonts && document.fonts.ready) document.fonts.ready.then(sizeSpacer);
     window.addEventListener('load', sizeSpacer);
     let lastY = window.scrollY;
+    let downAccum = 0;   // downward travel since the nav was last shown
     window.addEventListener('scroll', function(){
       const y = window.scrollY;
       const dy = y - lastY;
       if(Math.abs(dy) < 8) return;
-      if(dy > 0 && y > nav.offsetHeight + 60 && !document.body.classList.contains('menu-open')){
-        nav.classList.add('nav-hide');
+      if(dy > 0 && !document.body.classList.contains('menu-open')){
+        downAccum += dy;
+        // From anywhere on the page it takes 150px of downward scroll to hide.
+        if(downAccum >= 150 && y > nav.offsetHeight + 150) nav.classList.add('nav-hide');
       } else {
+        downAccum = 0;
         nav.classList.remove('nav-hide');
       }
       lastY = y;

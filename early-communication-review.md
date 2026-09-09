@@ -1,4 +1,37 @@
-# Early Communication and Late Talkers page: accuracy review (August 2026)
+# Early Communication and Late Talkers page: accuracy review
+
+## September 2026 pass: deep research, parent audits, readability
+
+Second full pass. Every August verdict below was rechecked and stands. New sources were verified against the publisher record before being cited. Three parent-persona read-throughs were run against the page before editing; their findings and what was done about each are listed here so the reasoning is auditable.
+
+### New evidence added (all verified this pass)
+1. **Pointing as an early predictor now has a citation.** The August page called gestures "the strongest early predictor most families can actually observe" without a source. Lüke, Grimminger, Rohlfing, Liszkowski & Ritterfeld (2017), Child Development 88(2):484-492: index-finger pointing at 12 months predicted language at 24 months better than parent-report screening. Lüke, Ritterfeld & Liszkowski (2022), Frontiers in Pediatrics 10:878163, replicated it in 42 bilingual infants. Added to the 6-to-12-month callout and the reference list.
+2. **Ear infections were overstated as a cause.** The page implied repeated infections and fluid explain late talking. Roberts, Rosenfeld & Zeisel (2004), Pediatrics 113(3):e238-e248, meta-analysis of prospective studies: no to very small associations between early otitis media with effusion and later speech and language. Rewritten in the hearing accordion and the causes list. A current hearing test is still recommended as the first thing to rule out, which is standard practice and unaffected by this finding.
+3. **Parent-implemented intervention now has a second, larger meta-analysis.** Heidlage et al. (2020), Early Childhood Research Quarterly 50:6-23: 25 randomized trials, significant effects on expressive language, larger for children whose primary difficulty is language. Added beside Roberts & Kaiser (2011) in the coaching phase. Honest limit: receptive effects were not significant in that analysis, so the page attributes the receptive gain only to Roberts & Kaiser.
+4. **Tongue-tie myth now cites the AAP 2024 clinical report.** Thomas et al., Pediatrics 154(2):e2024067605: frenotomy to prevent speech problems is not evidence-based; no evidence supports intervention on lip or cheek ties. Added to the myth answer.
+5. **Bilingual vocabulary counting.** Core, Hoff, Rumiche & Señor (2013), JSLHR 56(5):1637-1649: total vocabulary across both languages tracked monolingual norms and identified the same proportion of children below the 25th percentile; single-language counts undercounted bilingual toddlers. Added to the bilingual FAQ so the page says how we count, not only that bilingualism is fine.
+6. **"Wait and see" answer made more precise.** Rescorla & Dale (2013) and Rice et al. (2008) put persistence at around 20 percent of late talkers, consistent with the page's "a fifth to a quarter." The page now also states plainly that the evidence is stronger for early support building skills now than for it preventing a later language disorder. That is the honest version and it still favors acting.
+
+### Parent audits (three personas, run before editing)
+**A. First-time parent, 22-month-old with about ten words, reading on a phone at 11 pm.** Wanted three things in the first screen: is this a problem, what do I do tomorrow, will anyone judge me. Found: the page opened with a metaphor and a diagram; the 24-month line was in section 2; "nothing you did caused this" was at the bottom of section 4; the stats block appeared before the numbers were explained. Done: added "The short version" box under the lede (the line, the two things that matter more than the count, what to do this week, and the reassurance); moved the stats block to sit directly after the explanation of median, CDC benchmark, and cut-point.
+**B. Skeptical, research-minded parent who dislikes being sold to.** Checked the numbers and found them sourced. Pushed back on ear infections as a cause (fixed, item 2), on "single most useful step" for audiology (softened to "first thing to rule out"), and asked whether early therapy is proven to prevent later disorder (answered honestly, item 6). Noted the "0 reasons to simply wait" card is rhetoric rather than a statistic; kept, because the description under it says what it means and the tone matches the rest of the site.
+**C. Parent already told to wait by a pediatrician, bilingual household, private-pay budget.** Wanted cost, what the appointment is like, whether a referral is needed, and how a Spanish-English toddler is assessed fairly. Found: cost was absent from the page, the appointment was never described, and the bilingual answer said only that bilingualism is fine. Done: added a value ("One appointment, one flat fee" linking to the evaluations page), two FAQs ("What does a toddler evaluation actually look like?" and "What does an evaluation cost?"), and the total-vocabulary sentence in the bilingual FAQ. The referral FAQ already existed.
+
+### Character added (kept honest)
+- "Toddlers do not respect flashcards anyway."
+- "Einstein also did not have a hearing test, a milestone checklist, or an evaluation available in his living room. You do."
+- "If a session looks like two adults on the floor making a toy cow say moo for the fortieth time, that is because it is. Every one of the forty was counted."
+
+### Housekeeping
+- FAQ 10 to 12; schema rebuilt from the page, 12/12 in sync. References 16 to 22. Reading time 20 to 22 minutes. Last reviewed September 2026; dateModified 2026-09-02. Em dashes: 0.
+
+### Still to confirm (Madison)
+- The two new FAQs describe the toddler appointment (play-based, parent-report vocabulary checklist, one visit, results explained in person) and say the fee covers the report and results meeting. Both match the evaluations page; confirm they match practice.
+- Fisher (2017) found family history did not predict late-talker outcomes across studies; Bishop et al. (2012) found it did in a single cohort. The page follows the meta-analysis. If you would rather hedge, the "boys talk later" answer is the place.
+
+---
+
+# August 2026 review (retained)
 
 Reviewed against ASHA guidance and primary research, same standard as `aac-review.md`. Claim-by-claim verdicts; page updated same day. Zero em dashes.
 

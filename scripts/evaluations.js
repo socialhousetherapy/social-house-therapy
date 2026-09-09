@@ -10,7 +10,7 @@
     consultUrl: 'contact.html',            // "Talk With an SLP First" / free consultation
     pricingUrl: 'index.html#pricing-anchor',      // Services and pricing
     reportTurnaround: '',                  // e.g. "7 to 10 business days" (leave empty to omit)
-    lastReviewed: 'August 2026',           // article "last updated" field
+    lastReviewed: 'September 2026',           // article "last updated" field
     readingTime: '19 min read'
   };
 
@@ -43,8 +43,188 @@
     var mob = document.querySelector('.ev-toc-mobile');
     if (mob) {
       mob.querySelectorAll('a').forEach(function (a) {
-        a.addEventListener('click', function () { mob.open = false; });
+        a.addEventListener('click', function () { closeList(); });
       });
+      /* The bar stays in view while you read; a thumb-drag upward on the bar
+         itself slides it off, tracking the finger like the site menu. Drags are
+         wired to the summary strip only, so tapping links never dismisses it. */
+      /* Drags are wired to the WHOLE bar (strip + open list), not just the
+         summary; taps on links still work because clicks are only swallowed
+         after an actual drag. */
+      var strip = mob;
+      var sum = mob.querySelector('summary');
+      var list = mob.querySelector('ol');
+      var tocEase = 'cubic-bezier(0.32,0.72,0.24,1)';
+      var sv = sum && sum.querySelector('svg');
+      var foldTimer = null, listClosing = false;
+      /* Smooth open/close: <details> pops instantly by default, so the list
+         height and opacity are animated by hand. Interruptible: a tap mid-
+         animation cancels the pending cleanup and animates from the current
+         height to the new target, so rapid taps always respond. */
+      function openList() {
+        clearTimeout(foldTimer); foldTimer = null; listClosing = false;
+        var fresh = !mob.open;
+        mob.open = true;
+        document.body.classList.add('toc-open');
+        if (sv) sv.style.transform = '';           /* [open] CSS turns the chevron */
+        if (!list) return;
+        var cur = fresh ? 0 : list.getBoundingClientRect().height;
+        var full = list.scrollHeight;
+        list.style.transition = 'none';
+        list.style.overflow = 'hidden';
+        list.style.height = cur + 'px';
+        if (fresh) list.style.opacity = '0';
+        void list.offsetHeight;
+        list.style.transition = 'height 420ms ' + tocEase + ', opacity 420ms ' + tocEase;
+        list.style.height = full + 'px'; list.style.opacity = '1';
+        foldTimer = setTimeout(function () { list.style.cssText = ''; foldTimer = null; }, 440);
+      }
+      function closeList() {
+        if (!mob.open || listClosing) return;
+        clearTimeout(foldTimer); foldTimer = null; listClosing = true;
+        document.body.classList.remove('toc-open');
+        if (!list) { mob.open = false; listClosing = false; return; }
+        if (sv) sv.style.transform = 'none';       /* chevron turns back right away */
+        var cur = list.getBoundingClientRect().height;
+        list.style.transition = 'none';
+        list.style.overflow = 'hidden';
+        list.style.height = cur + 'px';
+        void list.offsetHeight;
+        list.style.transition = 'height 420ms ' + tocEase + ', opacity 420ms ' + tocEase;
+        list.style.height = '0px'; list.style.opacity = '0';
+        foldTimer = setTimeout(function () {
+          mob.open = false; list.style.cssText = '';
+          if (sv) sv.style.transform = '';
+          foldTimer = null; listClosing = false;
+        }, 430);
+      }
+      /* Listen on the whole bar: with mouse pointer capture active (see below) the
+         browser dispatches the click to the capturing element, not the summary,
+         so a summary-only listener never fires and the bar would not open. */
+      strip.addEventListener('click', function (e) {
+        if (!e.target.closest || !e.target.closest('summary')) return;
+        e.preventDefault();                    /* we animate instead of the instant toggle */
+        if (tocSuppress) { tocSuppress = false; return; }
+        if (!mob.open || listClosing) openList(); else closeList();
+      });
+      var tocStartY = null, tocDrag = 0, tocDragging = false, tocPid = null, tocSuppress = false, tocWasOpen = false, tocInList = false;
+      function tocSet(px) {
+        mob.style.transition = 'none';
+        mob.style.transform = 'translateY(' + (-px) + 'px)';
+        mob.style.opacity = String(Math.max(0.55, 1 - px / 900));   /* stays visible while dragging */
+      }
+      function tocReset(animate) {
+        mob.style.transition = animate ? 'transform 560ms cubic-bezier(0.32,0.72,0.24,1), opacity 560ms cubic-bezier(0.32,0.72,0.24,1)' : 'none';
+        mob.style.transform = '';
+        mob.style.opacity = '';
+        if (animate) setTimeout(function () { mob.style.transition = ''; }, 580);
+        else mob.style.transition = '';
+      }
+      function tocDismiss() {
+        void mob.offsetHeight;   /* commit the dragged position so the glide starts from it */
+        mob.style.transition = 'transform 560ms cubic-bezier(0.32,0.72,0.24,1), opacity 560ms cubic-bezier(0.32,0.72,0.24,1)';
+        mob.style.transform = 'translateY(-160%)';
+        mob.style.opacity = '0';
+        mob.open = false;
+        document.body.classList.remove('toc-open');
+        setTimeout(function () { mob.classList.add('toc-hide'); tocReset(false); }, 560);
+      }
+      /* Mouse drag (desktop): pointer capture */
+      strip.addEventListener('pointerdown', function (e) {
+        if (e.pointerType !== 'mouse' || e.button !== 0) return;
+        tocStartY = e.clientY; tocDrag = 0; tocDragging = false; tocPid = e.pointerId; tocWasOpen = mob.open;
+        try { strip.setPointerCapture(tocPid); } catch (err) {}
+      });
+      strip.addEventListener('pointermove', function (e) {
+        if (e.pointerType !== 'mouse' || tocStartY === null || e.pointerId !== tocPid) return;
+        tocDrag = tocStartY - e.clientY;   /* positive = up */
+        if (!tocDragging && Math.abs(tocDrag) > 6) tocDragging = true;
+        if (tocDragging) tocSet(Math.max(0, tocDrag));
+      });
+      function tocPointerEnd(e) {
+        if (e.pointerType !== 'mouse' || tocStartY === null || e.pointerId !== tocPid) return;
+        tocSuppress = tocDragging;
+        tocEnd(); tocPid = null;
+      }
+      strip.addEventListener('pointerup', tocPointerEnd);
+      strip.addEventListener('pointercancel', tocPointerEnd);
+      /* Finger drag (phones): plain touch events, the same pattern as the site
+         menu, which is proven to track reliably on iOS. */
+      strip.addEventListener('touchstart', function (e) {
+        tocSuppress = false;
+        tocStartY = e.touches[0].clientY; tocDrag = 0; tocDragging = false; tocWasOpen = mob.open;
+        tocInList = !!(list && list.contains(e.target));
+      }, { passive: true });
+      strip.addEventListener('touchmove', function (e) {
+        if (tocStartY === null) return;
+        if (e.cancelable) e.preventDefault();      /* gesture is ours, not a scroll */
+        var curY = e.touches[0].clientY;
+        /* A long list scrolls internally first; the bar only starts sliding
+           once the list has no more room in that direction. */
+        if (tocInList && list) {
+          var max = list.scrollHeight - list.clientHeight;
+          var delta = tocStartY - curY;             /* finger up = positive */
+          if (max > 2 && ((delta > 0 && list.scrollTop < max) || (delta < 0 && list.scrollTop > 0))) {
+            list.scrollTop = Math.min(max, Math.max(0, list.scrollTop + delta));
+            tocStartY = curY;                       /* hand-off point for the slide */
+            return;
+          }
+        }
+        tocDrag = tocStartY - curY;
+        if (!tocDragging && Math.abs(tocDrag) > 4) tocDragging = true;
+        if (tocDragging) tocSet(Math.max(0, tocDrag));
+      }, { passive: false });
+      strip.addEventListener('touchend', function () { tocSuppress = tocDragging; tocEnd(); }, { passive: true });
+      strip.addEventListener('touchcancel', function () { tocSuppress = false; tocEnd(); }, { passive: true });
+      /* A drag release fires a click; swallow it so it can't re-toggle the
+         list (that toggle was the appear/disappear glitch). */
+      strip.addEventListener('click', function (e) {
+        if (tocSuppress) { e.preventDefault(); e.stopPropagation(); tocSuppress = false; }
+      }, true);
+      function tocEnd() {
+        if (tocStartY === null) return;
+        if (tocDragging && tocDrag > 150) {
+          /* Open list: the drag folds the list closed and the bar glides back.
+             Closed strip: the drag sends the whole bar off screen. */
+          if (tocWasOpen) { closeList(); tocReset(true); }
+          else tocDismiss();
+        }
+        else if (tocDragging) tocReset(true);
+        tocStartY = null; tocDragging = false; tocDrag = 0; tocWasOpen = false;
+      }
+      /* FABs hide while the list is open, same as the site menu */
+      mob.addEventListener('toggle', function () {
+        document.body.classList.toggle('toc-open', mob.open);
+      });
+      /* Open list: tap below closes it; drags below slide the bar like the menu */
+      document.addEventListener('touchstart', function (e) {
+        if (!mob.open || mob.contains(e.target)) return;
+        tocStartY = e.touches[0].clientY; tocDrag = 0; tocDragging = false; tocWasOpen = true;
+      }, { passive: true });
+      document.addEventListener('touchmove', function (e) {
+        if (!mob.open || mob.contains(e.target) || tocStartY === null) return;
+        if (e.cancelable) e.preventDefault();      /* page behind stays put */
+        tocDrag = tocStartY - e.touches[0].clientY;
+        if (!tocDragging && tocDrag > 4) tocDragging = true;
+        if (tocDragging) tocSet(Math.max(0, tocDrag));
+      }, { passive: false });
+      document.addEventListener('touchend', function (e) {
+        if (!mob.open || mob.contains(e.target) || tocStartY === null) return;
+        if (!tocDragging) { closeList(); tocStartY = null; return; }  /* plain tap */
+        tocEnd();
+      }, { passive: true });
+      document.addEventListener('click', function (e) {
+        if (mob.open && !mob.contains(e.target)) closeList();
+      });
+      /* Scrolling up brings a dismissed bar back. */
+      var tLastY = window.pageYOffset;
+      window.addEventListener('scroll', function () {
+        var y = window.pageYOffset;
+        var dy = y - tLastY;
+        if (Math.abs(dy) < 8) return;
+        if (dy < 0) mob.classList.remove('toc-hide');
+        tLastY = y;
+      }, { passive: true });
     }
     if ((!bar || !art) && !secs.length) return;
 

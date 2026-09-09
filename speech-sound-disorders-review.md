@@ -1,4 +1,37 @@
-# Speech Sound Disorders page: accuracy review (August 2026)
+# Speech Sound Disorders page: accuracy review
+
+## September 2026 pass: deep research, parent audits, readability
+
+Second full pass. Every August verdict below was rechecked and stands. New sources verified against the publisher record before citing.
+
+### New evidence added (all verified this pass)
+1. **CAS prevalence and diagnostic honesty.** Shriberg, Kwiatkowski & Mabie (2019), Clinical Linguistics & Phonetics 33(8):679-706, via the ASHA CAS portal: point prevalence about 1 in 1,000 children aged 4 to 8; about 2.4% of children with idiopathic speech delay. Murray, Iuzzini-Seigel, Maas, Terband & Ballard (2021), AJSLP 30(1):279-300: no single validated diagnostic feature differentiates CAS; diagnosis rests on consensus features across tasks. Page now gives the number and states plainly that there is no single test.
+2. **Dose frequency.** Allen (2013), JSLHR 56(3):865-877, randomized trial of 54 preschoolers: multiple oppositions three times a week for 8 weeks outperformed once a week for 24 weeks with total sessions held constant, and the once-weekly group did not differ significantly from a storybook control. Added to a new FAQ ("How often will we need to come?") and a new value ("Frequency is set by the evidence, not the calendar"). Stated as one trial of one approach, not a universal rule.
+3. **Parents vs clinicians.** Law, Garrett & Nye (2004), JSLHR 47(4):924-943, meta-analysis: therapy effective for phonological difficulties; no significant difference between interventions delivered by trained parents and by clinicians; longer duration associated with better outcomes. Used to back "home practice is not a nice-to-have" and the coached-practice model.
+4. **Literacy risk made precise.** Hayiou-Thomas, Carroll, Leavett, Hulme & Snowling (2017), JCPP 58(2):197-205: early SSD alone conferred a small but significant risk; persistence to school entry, atypical ("disordered") errors, and co-occurring language impairment raised it substantially. The August page said "higher risk" without qualification; it now says where the risk concentrates, which also justifies assessing language alongside sounds.
+5. **Persistence at age eight.** Wren, Miller, Peters, Emond & Roulstone (2016), JSLHR 59(4):647-673, ALSPAC: persistent SSD at 8 was 3.6%, excluding common residual distortions. Used in the therapy intro to say honestly that most children get there and therapy speeds and completes the process.
+6. **Tongue tie.** AAP clinical report (Thomas et al., 2024), Pediatrics 154(2):e2024067605, added beside Chinnadurai (2015): frenotomy to prevent speech problems is not evidence-based.
+7. **Ear infections softened.** Roberts, Rosenfeld & Zeisel (2004) and Wren (2016) both find otitis media with effusion is not a meaningful predictor of SSD. The hearing aside and the signs list no longer imply that infections explain speech errors; a current hearing check is still recommended.
+
+### Parent audits (three personas, run before editing)
+**A. Parent of a 3-and-a-half-year-old nobody outside the family understands, reading on a phone.** Wanted: is this behind, is it fixable, what do I do now. Found the page opened with a clinical taxonomy (four types) before answering any of that, and the intelligibility numbers sat under four accordions. Done: "The short version" box under the lede with the two intelligibility benchmarks, the age-four assessment line, the "type decides the method" point, and three concrete actions.
+**B. Research-minded skeptic.** Pushed on "the single biggest factor" (softened to "one of the biggest"), on the 66% threshold resting on one study from 2000 (now labeled), on apraxia being "much less common" with no number (fixed, item 1), and on ear infections as a cause (fixed, item 7). Asked whether therapy beats maturation: answered with Law 2004 and Wren 2016 rather than assertion.
+**C. Budget- and time-conscious parent.** Wanted cost, what the appointment involves, and how many sessions a week, because frequency is the real cost driver in this area. Found none of the three on the page. Done: three new FAQs (frequency, what the evaluation involves, cost with a link to the evaluations page) and the frequency value.
+
+### Character added (kept honest)
+- "To a listener, they can be indistinguishable: wabbit is wabbit."
+- "we tell you that up front rather than discovering it in month six."
+
+### Housekeeping
+- FAQ 10 to 13; schema rebuilt from the page, 13/13 in sync. References 17 to 24. Reading time 17 to 19 minutes. Last reviewed September 2026; dateModified 2026-09-02. Em dashes: 0.
+
+### Still to confirm (Madison)
+- The frequency FAQ and value describe practice: weekly plus daily home practice for single articulation errors, more frequent for phonological patterns and apraxia, coached home practice when more sessions are not realistic. Confirm this matches how you schedule.
+- The evaluation FAQ describes the speech battery (speech sample, single-word test, stimulability, oral mechanism, hearing history, motor speech tasks when indicated) in one appointment. Confirm.
+
+---
+
+# August 2026 review (retained)
 
 Reviewed against the ASHA Practice Portal (Speech Sound Disorders; CAS Technical Report) and primary research. Claim-by-claim verdicts; page updated same day. Same process as aac-review.md and autism-social-communication-review.md.
 

@@ -1,5 +1,7 @@
 # Evaluations page: accuracy review (August 2026)
 
+> September 7, 2026 update: the practice is not offering pediatric feeding and oral-motor services, so all feeding and mealtime content was removed from evaluations.html (the Feeding and Mealtime area and its safety note, feeding items in the intake and records lists, the Dietitians and Feeding teams collaborators, feeding mentions in three FAQ answers, and the ASHA feeding portal and Calvo 2016 references). Items below that refer to feeding, aspiration, or ARFID describe removed content.
+
 Same method as aac-review.md: claim-by-claim verdicts against ASHA guidance, federal regulations, and primary research. Page updated same day. House style rule applied and recorded in CLAUDE.md: no em dashes ever; nine were removed from this page and reworded with commas, colons, parentheses, or split sentences. (This file replaces the earlier code/transcript dump, which was stale and fully regenerable from source.)
 
 ## Verified and kept (now cited more precisely)

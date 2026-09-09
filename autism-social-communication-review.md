@@ -1,4 +1,29 @@
-# Autism & Social Communication page: accuracy review (August 2026)
+# Autism & Social Communication page: accuracy review
+
+## September 2026 pass: deep research, parent audits, readability
+
+Second full pass. Every August verdict below was rechecked and stands.
+
+### New evidence added (all verified this pass)
+1. **Prevalence.** Shaw et al. (2025), MMWR Surveillance Summaries 74(SS-2):1-22 (CDC ADDM, 2022 data): about 1 in 31 eight-year-olds (3.2%) identified as autistic; the Arizona site reported about 1 in 32. Added to section 01 and to the counters, replacing the "6 stages of gestalt language" card, which presented a clinical framework the page itself labels "useful, not gospel" as if it were a statistic.
+2. **Evidence for child-led approaches, stated with its limits.** Sandbank et al. (2023), BMJ 383:e076733 (Project AIM update, 252 studies): in randomized trials, developmental interventions (g = 0.28) and naturalistic developmental behavioral interventions (g = 0.35) improved social communication; when caregiver- and teacher-report outcomes were excluded, only developmental interventions retained a significant effect. New paragraph in the therapy section says both halves: the evidence favors this approach, and the gains are modest. Effect sizes are in the reference entry rather than the body.
+3. **Regulation-first now has a named source.** Prizant, Wetherby, Rubin & Laurent (2003), Infants & Young Children 16(4):296-316 (SCERTS). The August review listed regulation-first as clinical consensus without a citation; the page now names the model. Still framed as practice, not as a measured effect.
+
+### Parent audits (three personas, run before editing)
+**A. Parent of a newly diagnosed 3-year-old, overwhelmed, reading on a phone.** Wanted: what do we do first, is speech therapy the right first step, will my child talk. Found a long philosophical opening and no one-screen summary. Done: "The short version" box with the four ideas that carry the page and three things to do this week. The "nonspeaking" FAQ already answers the talking question honestly.
+**B. Research-minded skeptic.** Flagged the six-stages counter (fixed, item 1); asked what evidence supports child-led therapy over other approaches (answered, item 2, with the honest caveat about modest effects); accepted the GLP "where the science stands" aside as already candid.
+**C. Practical parent.** Wanted cost, what the appointment is like for an autistic child (and whether eye contact would be demanded), whether we diagnose autism, and whether a diagnosis is needed to start. Done: three FAQs (can you tell us whether our child is autistic; what an evaluation looks like for an autistic child; cost) and a new value ("One appointment, one flat fee, no diagnosis required"). The diagnosis FAQ matches the evaluations page word for word in substance: we do not diagnose autism; we document and refer.
+
+### Housekeeping
+- FAQ 10 to 13; schema rebuilt from the page, 13/13 in sync. References 22 to 25. Values 6 to 7. Reading time 20 to 22 minutes. Last reviewed September 2026; dateModified 2026-09-02. Em dashes: 0.
+
+### Still to confirm (Madison)
+- The evaluation FAQ says nobody is asked for eye contact and that structured tasks are attempted only when the child is regulated. Confirm this matches practice.
+- The SCERTS reference links to the journal page rather than a DOI (the article predates routine DOI assignment at that journal). Confirm the link resolves.
+
+---
+
+# August 2026 review (retained)
 
 Reviewed against the ASHA Practice Portal (Autism; Social Communication Disorder), the NJC, and primary research. Claim-by-claim verdicts; page updated same day. Same process as aac-review.md.
 

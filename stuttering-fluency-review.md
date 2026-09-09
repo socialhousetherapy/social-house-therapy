@@ -1,4 +1,31 @@
-# Stuttering & Fluency page: accuracy review (August 2026)
+# Stuttering & Fluency page: accuracy review
+
+## September 2026 pass: deep research, parent audits, readability
+
+Second full pass. Every August verdict below was rechecked and stands.
+
+### New evidence added (all verified this pass)
+1. **Recovery now has a number.** Kefalianos et al. (2017), JSLHR 60(10):2828-2839 (Early Language in Victoria Study): 65% of children who had begun stuttering by age 4 had recovered by 7. The page still says recovery is unpredictable for the individual child; it now also says how common it is.
+2. **Persistence factors now cite a meta-analysis.** Singer, Hessling, Kelly, Singer & Jones (2020), JSLHR 63(9):2995-3018: across 11 longitudinal studies, male sex, family history, later onset, lower speech sound and language scores, and greater stuttering frequency or severity were associated with persistence. The "Reach out if" list already matched these; the intro now says where it comes from and that no single factor settles the question.
+3. **Preschool treatment evidence stated with its certainty.** Sjøstrand et al. (2021), Cochrane CD013489.pub2: four RCTs (151 children), all Lidcombe versus wait list, stuttering frequency reduced, certainty rated low to very low, no other preschool approach tested against waiting. Added to the preschool phase verbatim in substance. This is the honest version and it still supports treating.
+4. **Telehealth for preschool stuttering.** Bridgman, Onslow, O'Brian, Jones & Block (2016), JSLHR 59(5):932-939: noninferiority RCT, 49 children aged 3 to 5, webcam delivery not inferior to clinic. Used in a new telehealth FAQ and the preschool phase.
+
+### Parent audits (three personas, run before editing)
+**A. Parent of a 3-year-old who began stuttering two months ago, frightened, reading at night.** Wanted: did I cause it, will it go away, what do I say tonight. Found the answers spread across sections 01, 04, and 05 with no one-screen summary. Done: "The short version" box under the lede with all three, plus the six-month line and permission to reach out on worry alone.
+**B. Research-minded skeptic.** Asked for the recovery figure (added), the source for the risk-factor list (added), and how strong the preschool treatment evidence really is (added, with the Cochrane certainty rating rather than a marketing gloss).
+**C. Practical parent.** Wanted cost, what the evaluation involves, and whether telehealth works for stuttering. None were on the page. Done: three FAQs and a value ("One appointment, one flat fee").
+
+### Housekeeping
+- FAQ 10 to 13; schema rebuilt from the page, 13/13 in sync. References 11 to 15. Values 5 to 6. Reading time 17 to 19 minutes. Last reviewed September 2026; dateModified 2026-09-02. Em dashes: 0.
+
+### Still to confirm (Madison)
+- The evaluation FAQ describes recording speech in more than one situation, asking older children directly about impact, and checking speech sounds and language in the same appointment. Confirm.
+- The telehealth FAQ says school-age work translates well to a screen. Confirm this matches your experience.
+
+---
+
+# August 2026 review (retained)
+
 
 Reviewed against the ASHA Practice Portal (Fluency Disorders) and primary research. Claim-by-claim verdicts; page updated same day. Same process as the AAC, autism, speech-sound, and language reviews.
 

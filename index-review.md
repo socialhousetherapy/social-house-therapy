@@ -1,5 +1,7 @@
 # Home page (index.html): accuracy review (August 2026)
 
+> September 7, 2026 update: the Pediatric Feeding & Oral-Motor card (item 5 under Services cards below) was removed from the home page, along with "feeding" in the About paragraph and the feeding serviceType in the schema, because the practice is not offering that service.
+
 Reviewed against ASHA guidance, NIDCD/NCHS statistics, and primary research. Claim-by-claim verdicts; page updated same day. Same standard as `aac-review.md`.
 
 ## Fixed (data errors)
