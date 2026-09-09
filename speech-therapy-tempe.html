@@ -36,7 +36,8 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://socialhousetherapy.com/speech-therapy-tempe.html#webpage","url":"https://socialhousetherapy.com/speech-therapy-tempe.html","name":"Speech Therapy in Tempe, AZ | Social House Therapy","description":"In-home, on-site, and telehealth pediatric speech therapy across Tempe, AZ: late talkers, speech sounds, autism, and AAC. Private pay, no referral.","inLanguage":"en-US","about":{"@id":"https://socialhousetherapy.com/#org"},"primaryImageOfPage":{"@type":"ImageObject","url":"https://socialhousetherapy.com/assets/tempe-hero-desktop-1448.webp"},"breadcrumb":{"@id":"https://socialhousetherapy.com/speech-therapy-tempe.html#breadcrumb"}},{"@type":"BreadcrumbList","@id":"https://socialhousetherapy.com/speech-therapy-tempe.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://socialhousetherapy.com/"},{"@type":"ListItem","position":2,"name":"Speech Therapy in Tempe"}]},{"@type":"MedicalBusiness","@id":"https://socialhousetherapy.com/#org","name":"Social House Therapy","description":"Pediatric speech therapy for Tempe, AZ families: in-home, on-site, and telehealth sessions with licensed speech-language pathologists.","url":"https://socialhousetherapy.com/","logo":"https://socialhousetherapy.com/assets/logo-240.webp","image":"https://socialhousetherapy.com/assets/tempe-hero-desktop-1448.webp","telephone":"+1-480-490-4812","email":"info@socialhousetherapy.com","priceRange":"$80-$350","address":{"@type":"PostalAddress","addressLocality":"Tempe","addressRegion":"AZ","postalCode":"85282","addressCountry":"US"},"geo":{"@type":"GeoCoordinates","latitude":33.3939,"longitude":-111.9268},"contactPoint":[{"@type":"ContactPoint","contactType":"New client inquiries","telephone":"+1-480-490-4812","email":"info@socialhousetherapy.com","availableLanguage":"English","areaServed":"US-AZ"}],"founder":{"@type":"Person","name":"Madison Jeffery","jobTitle":"Speech-Language Pathologist, MS, CCC-SLP"},"sameAs":["https://instagram.com/socialhousetherapy","https://facebook.com/socialhousetherapy","https://tiktok.com/@socialhousetherapy"],"areaServed":[{"@type":"City","name":"Tempe"},{"@type":"City","name":"Scottsdale"},{"@type":"Place","name":"Arcadia"},{"@type":"City","name":"Paradise Valley"},{"@type":"City","name":"Chandler"},{"@type":"City","name":"Mesa"},{"@type":"City","name":"Phoenix"},{"@type":"State","name":"Arizona"},{"@type":"GeoCircle","geoMidpoint":{"@type":"GeoCoordinates","latitude":33.3939,"longitude":-111.9268},"geoRadius":40000}],"serviceType":["Pediatric speech therapy","Speech and language evaluations","In-home speech therapy","Telehealth speech therapy","AAC support"]}]}</script>
 <style>
 /* ===== TEMPE LANDING (tz-* scope), layered on site tokens ===== */
-.tz-shell{max-width:1160px;margin:0 auto;padding:0 clamp(20px,4vw,48px)}
+:root{--tz-gutter:clamp(20px,4vw,48px)}
+.tz-shell{max-width:1160px;margin:0 auto;padding:0 var(--tz-gutter)}
 .tz-h2{font-family:var(--font-heading);font-size:clamp(26px,3.2vw,38px);font-weight:600;letter-spacing:-.022em;line-height:1.1;color:var(--sage-800);margin:14px 0 0;text-wrap:balance}
 .tz-sub{font-size:14px;line-height:1.65;color:var(--fg-2);margin:14px 0 0;max-width:64ch}
 .tz-hand{font-family:var(--font-hand);font-weight:600;color:var(--clay-500)}
@@ -277,12 +278,18 @@ a.tz-step:hover .num{animation:none}
 .tz-hero-lead{margin-left:auto;margin-right:auto}
 .tz-hero-ctas{justify-content:center}
 .tz-hero-points{justify-content:center}
-.tz-hero-photo{position:relative;top:auto;right:auto;bottom:auto;left:auto;z-index:0;pointer-events:auto;aspect-ratio:3/2;margin:14px calc(-1 * clamp(22px,4vw,52px)) 18px;-webkit-mask-image:none;mask-image:none}
+.tz-hero{padding-left:var(--tz-gutter);padding-right:var(--tz-gutter)}
+.tz-hero-photo{position:relative;top:auto;right:auto;bottom:auto;left:auto;z-index:0;pointer-events:auto;aspect-ratio:3/2;margin:14px calc(-1 * var(--tz-gutter)) 18px;-webkit-mask-image:none;mask-image:none}
 .tz-hero-photo img{object-position:50% 40%}
-.tz-fam-grid{grid-template-columns:1fr;gap:34px;min-height:0}
-.tz-fam-grid>.tz-fam-text{grid-column:auto}
-.tz-fam-fig{display:none}
-.tz-mad{padding:20px 22px calc(30px + clamp(22px,3.4vw,48px))}
+/* Phones: heading, then the photo full-bleed to the gutters, then the body (same stack as the home page clarity section) */
+.tz-fam-grid{display:flex;flex-direction:column;align-items:stretch;gap:0;min-height:0}
+.tz-fam-grid>.tz-fam-text{display:contents}
+.tz-fam-text>.tz-h2{order:0}
+.tz-fam-fig{order:1;position:relative;inset:auto;width:calc(100% + 2 * var(--tz-gutter));aspect-ratio:4/3;margin:18px calc(-1 * var(--tz-gutter)) 22px;-webkit-mask-image:none;mask-image:none}
+.tz-fam-photo img{object-position:50% 35%}
+.tz-moments{order:2;margin-top:0}
+.tz-fam-copy{order:3}
+.tz-mad{padding:20px var(--tz-gutter) calc(30px + clamp(22px,3.4vw,48px))}
 .tz-mad-grid{grid-template-columns:1fr;gap:24px}
 .tz-mad-fig{max-width:360px;margin:0 auto;width:100%;order:1}
 .tz-mad-rev{position:relative;bottom:auto;right:auto;width:min(340px,94%);margin:-70px auto 24px 0}
@@ -298,6 +305,7 @@ a.tz-step:hover .num{animation:none}
 .tz-steps{grid-template-columns:1fr 1fr;gap:36px 24px}
 .tz-steps::before{display:none}
 .tz-svc-list{grid-template-columns:1fr}
+.tz-svc-row{grid-template-columns:26px 1fr auto;gap:10px;padding:15px 0}
 .tz-price-row{grid-template-columns:1fr}
 .tz-price-card{padding-left:0;padding-right:0}
 .tz-price-card+.tz-price-card{border-left:0;border-top:1px solid rgba(45,58,35,.12)}
@@ -414,7 +422,7 @@ a.tz-step:hover .num{animation:none}
     <div class="tz-fam-grid">
       <div class="tz-fam-fig reveal">
         <div class="tz-fam-photo">
-          <picture><source media="(max-width: 960px)" srcset="assets/tempe-girl-phone-night-600.webp"><img src="assets/tempe-girl-phone-night-600.webp" srcset="assets/tempe-girl-phone-night-600.webp 600w, assets/tempe-girl-phone-night-1086.webp 1086w" sizes="45vw" alt="A young girl curled up on a couch at night, face lit by the phone she is looking at, with a lamp glowing behind her" width="1086" height="1448" loading="lazy" decoding="async"></picture>
+          <picture><source media="(max-width: 960px)" srcset="assets/tempe-girl-phone-night-600.webp 600w, assets/tempe-girl-phone-night-1086.webp 1086w" sizes="100vw"><img src="assets/tempe-girl-phone-night-600.webp" srcset="assets/tempe-girl-phone-night-600.webp 600w, assets/tempe-girl-phone-night-1086.webp 1086w" sizes="45vw" alt="A young girl curled up on a couch at night, face lit by the phone she is looking at, with a lamp glowing behind her" width="1086" height="1448" loading="lazy" decoding="async"></picture>
         </div>
       </div>
       <div class="tz-fam-text reveal" data-delay="1">
@@ -754,6 +762,5 @@ a.tz-step:hover .num{animation:none}
 <div id="site-footer"></div>
 <script src="scripts/site.js?v=46" defer></script>
 <script src="scripts/sp-widget.js?v=5" defer></script>
-<style>@media (max-width:720px){.tz-hero{background:url("assets/cactus-section.webp") bottom center/100% auto no-repeat var(--sky-100)}}</style>
 </body>
 </html>

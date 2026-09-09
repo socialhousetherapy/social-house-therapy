@@ -35,7 +35,8 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"MedicalBusiness","@id":"https://socialhousetherapy.com/#org","name":"Social House Therapy","description":"Pediatric speech therapy for Scottsdale, AZ families: in-home, on-site, and telehealth sessions with licensed speech language therapists.","url":"https://socialhousetherapy.com/speech-therapy-scottsdale.html","telephone":"+1-480-490-4812","priceRange":"$80-$350","founder":{"@type":"Person","name":"Madison Jeffery","jobTitle":"Speech-Language Pathologist, CCC-SLP"},"areaServed":[{"@type":"City","name":"Tempe"},{"@type":"City","name":"Scottsdale"},{"@type":"Place","name":"Arcadia"},{"@type":"City","name":"Paradise Valley"},{"@type":"City","name":"Chandler"},{"@type":"City","name":"Mesa"},{"@type":"City","name":"Phoenix"},{"@type":"State","name":"Arizona"},{"@type":"GeoCircle","geoMidpoint":{"@type":"GeoCoordinates","latitude":33.3939,"longitude":-111.9268},"geoRadius":40000}],"serviceType":["Pediatric speech therapy","Speech and language evaluations","In-home speech therapy","Telehealth speech therapy","AAC support"],"address":{"@type":"PostalAddress","addressLocality":"Tempe","addressRegion":"AZ","postalCode":"85282","addressCountry":"US"},"geo":{"@type":"GeoCoordinates","latitude":33.3939,"longitude":-111.9268}}</script>
 <style>
 /* ===== SCOTTSDALE LANDING (sz-* scope), layered on site tokens ===== */
-.sz-shell{max-width:1160px;margin:0 auto;padding:0 clamp(20px,4vw,48px)}
+:root{--sz-gutter:clamp(20px,4vw,48px)}
+.sz-shell{max-width:1160px;margin:0 auto;padding:0 var(--sz-gutter)}
 .sz-h2{font-family:var(--font-heading);font-size:clamp(26px,3.2vw,38px);font-weight:600;letter-spacing:-.022em;line-height:1.1;color:var(--sage-800);margin:14px 0 0;text-wrap:balance}
 .sz-sub{font-size:14px;line-height:1.65;color:var(--fg-2);margin:14px 0 0;max-width:64ch}
 .sz-hand{font-family:var(--font-hand);font-weight:600;color:var(--clay-500)}
@@ -256,13 +257,20 @@ a.sz-step:hover .num{animation:none}
 .sz-hero-lead{margin-left:auto;margin-right:auto}
 .sz-hero-ctas{justify-content:center}
 .sz-hero-points{justify-content:center}
-.sz-hero-photo{position:relative;top:auto;right:auto;bottom:auto;left:auto;z-index:0;pointer-events:auto;aspect-ratio:3/2;margin:14px calc(-1 * clamp(22px,4vw,52px)) 18px;-webkit-mask-image:none;mask-image:none}
+.sz-hero{padding-left:var(--sz-gutter);padding-right:var(--sz-gutter)}
+.sz-hero-photo{position:relative;top:auto;right:auto;bottom:auto;left:auto;z-index:0;pointer-events:auto;aspect-ratio:3/2;margin:14px calc(-1 * var(--sz-gutter)) 18px;-webkit-mask-image:none;mask-image:none}
 .sz-hero-photo img{object-position:50% 45%}
 .sz-count-num{grid-template-columns:repeat(3,1fr)}
 .sz-cquote{grid-column:1/-1;padding:10px 0 18px;margin:6px 0 18px;border-bottom:1px solid rgba(45,58,35,.14)}
-.sz-fam-grid{grid-template-columns:1fr;gap:34px;min-height:0}
-.sz-fam-fig{display:none}
-.sz-mad{padding:20px 22px calc(30px + clamp(22px,3.4vw,48px))}
+/* Phones: heading, then the photo full-bleed to the gutters, then the body (same stack as the home page clarity section) */
+.sz-fam-grid{display:flex;flex-direction:column;align-items:stretch;gap:0;min-height:0}
+.sz-fam-text{display:contents}
+.sz-fam-text>.sz-h2{order:0}
+.sz-fam-fig{order:1;width:calc(100% + 2 * var(--sz-gutter));aspect-ratio:4/3;margin:18px calc(-1 * var(--sz-gutter)) 22px}
+.sz-fam-photo{inset:0;-webkit-mask-image:none;mask-image:none}
+.sz-fam-photo img{object-position:50% 50%}
+.sz-fam-copy{order:2;margin-top:0}
+.sz-mad{padding:20px var(--sz-gutter) calc(30px + clamp(22px,3.4vw,48px))}
 .sz-mad-grid{grid-template-columns:1fr;gap:24px}
 .sz-mad-fig{max-width:360px;margin:0 auto;width:100%;order:1}
 .sz-mad-rev{position:relative;bottom:auto;right:auto;width:min(340px,94%);margin:-70px auto 24px 0}
@@ -279,6 +287,7 @@ a.sz-step:hover .num{animation:none}
 .sz-steps::before{display:none}
 .sz-svc-row.is-more .num{font-family:var(--font-hand);color:var(--clay-500);font-size:16px}
   .sz-svc-list{grid-template-columns:1fr}
+.sz-svc-row{grid-template-columns:26px 1fr auto;gap:10px;padding:15px 0}
 .sz-price-row{grid-template-columns:1fr}
 .sz-price-card{padding-left:0;padding-right:0}
 .sz-price-card+.sz-price-card{border-left:0;border-top:1px solid rgba(45,58,35,.12)}
@@ -396,10 +405,10 @@ a.sz-step:hover .num{animation:none}
     <div class="sz-fam-grid">
       <div class="sz-fam-fig reveal">
         <div class="sz-fam-photo">
-          <img src="assets/scottsdale-playroom-900.webp" srcset="assets/scottsdale-playroom-900.webp 900w, assets/scottsdale-playroom-1448.webp 1448w" sizes="60vw" alt="Madison Jeffery sitting on a playroom rug with a baby on her lap while a young boy kneels across from her playing with a toy car ramp" width="1448" height="1086" loading="lazy" decoding="async">
+          <img src="assets/scottsdale-playroom-900.webp" srcset="assets/scottsdale-playroom-900.webp 900w, assets/scottsdale-playroom-1448.webp 1448w" sizes="(max-width: 960px) 100vw, 60vw" alt="Madison Jeffery sitting on a playroom rug with a baby on her lap while a young boy kneels across from her playing with a toy car ramp" width="1448" height="1086" loading="lazy" decoding="async">
         </div>
       </div>
-      <div class="reveal" data-delay="1">
+      <div class="sz-fam-text reveal" data-delay="1">
         <h2 class="sz-h2">You suspected it before anyone said it out loud. <span class="sz-hand no-hand">Trust that.</span></h2>
         <p class="sz-fam-copy">Here is the honest part: a milestone chart cannot tell you whether your child is on track. An evaluation can, right in your Scottsdale living room, and your child is very likely old enough. We use language measures normed from 8 months and speech measures from around 18 months. Either way you leave with a plain next step. Parents almost never tell us they checked too soon. What we hear is &ldquo;I wish we had started sooner.&rdquo;</p>
       </div>
@@ -731,6 +740,5 @@ a.sz-step:hover .num{animation:none}
 <div id="site-footer"></div>
 <script src="scripts/site.js?v=46" defer></script>
 <script src="scripts/sp-widget.js?v=5" defer></script>
-<style>@media (max-width:720px){.sz-hero{background:url("assets/cactus-section.webp") bottom center/100% auto no-repeat var(--sky-100)}}</style>
 </body>
 </html>

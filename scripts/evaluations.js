@@ -31,7 +31,7 @@
     });
   }
 
-  /* ---------- scroll progress + TOC scroll spy ----------
+  /* ---------- scroll progress + TOC scroll spy + mobile "On this page" bar ----------
      One passive listener, one rAF per frame, and offsets measured only when the
      layout can actually have changed. Reading offsetTop on every scroll event
      forces a synchronous layout and is what makes long pages stutter on phones. */
@@ -41,22 +41,87 @@
     var links = Array.prototype.slice.call(document.querySelectorAll('.ev-toc a, .ev-toc-mobile a'));
     var secs = Array.prototype.slice.call(document.querySelectorAll('.ev-sec[id]'));
     var mob = document.querySelector('.ev-toc-mobile');
-    if (mob) {
-      mob.querySelectorAll('a').forEach(function (a) {
-        a.addEventListener('click', function () { closeList(); });
+    var nav = document.getElementById('navEl');
+    var GAP = 12;   /* breathing room between the bar and the heading that lands under it */
+    var jumpUntil = 0;   /* while a scripted jump is in flight the bar ignores scroll direction */
+
+    /* What can sit on top of the viewport. The bar is display:none on desktop, so it measures 0 there. */
+    function navFull() { return nav ? nav.offsetHeight : 0; }
+    function navShown() { return !!nav && !nav.classList.contains('nav-hide'); }
+    function barHeight() { return mob ? mob.offsetHeight : 0; }
+
+    var toc = mob ? mobileToc() : null;
+
+    /* TOC links scroll by script so a heading always lands just under the bar.
+       A plain anchor jump only knows scroll-margin-top; it cannot know whether
+       the nav will be showing once the scroll settles. site.js shows the nav on
+       any upward scroll and hides it after 150px downward, so that outcome is
+       predicted here from the direction and length of the jump. */
+    function jumpTo(sec, instant, keepHash) {
+      var y = window.pageYOffset;
+      var base = sec.offsetTop - barHeight() - GAP;
+      var nh = navFull();
+      var up = base - (navShown() ? nh : 0) < y;
+      var navAfter = up ? true : (navShown() && !(base - y >= 150 && base > nh + 150));
+      var top = Math.max(0, Math.round(base - (navAfter ? nh : 0)));
+      if (!sec.hasAttribute('tabindex')) sec.setAttribute('tabindex', '-1');
+      try { sec.focus({ preventScroll: true }); } catch (e) {}
+      var smooth = !(instant || reduce.matches || !('scrollBehavior' in document.documentElement.style));
+      jumpUntil = Date.now() + (smooth ? 900 : 200);
+      if (toc) toc.show();                         /* the bar rides along and names the section on arrival */
+      if (smooth) window.scrollTo({ top: top, left: 0, behavior: 'smooth' }); else window.scrollTo(0, top);
+      if (!keepHash) { try { history.pushState(null, '', '#' + sec.id); } catch (e) {} }
+    }
+    links.forEach(function (a) {
+      a.addEventListener('click', function (e) {
+        var id = (a.getAttribute('href') || '').replace(/^#/, '');
+        var sec = id && document.getElementById(id);
+        if (!sec) return;
+        e.preventDefault();
+        if (toc) toc.close();
+        jumpTo(sec, false, false);
       });
-      /* The bar stays in view while you read; a thumb-drag upward on the bar
-         itself slides it off, tracking the finger like the site menu. Drags are
-         wired to the summary strip only, so tapping links never dismisses it. */
-      /* Drags are wired to the WHOLE bar (strip + open list), not just the
-         summary; taps on links still work because clicks are only swallowed
-         after an actual drag. */
-      var strip = mob;
+    });
+    /* Arriving with a hash, the browser lands the heading under the nav. Re-land
+       it once layout has settled, unless the reader has already scrolled away. */
+    if (location.hash) {
+      window.addEventListener('load', function () {
+        var sec = document.getElementById(location.hash.slice(1));
+        if (!sec || !sec.classList.contains('ev-sec')) return;
+        if (Math.abs(window.pageYOffset - (sec.offsetTop - 20)) > 160) return;
+        jumpTo(sec, true, true);
+      });
+    }
+
+    function mobileToc() {
       var sum = mob.querySelector('summary');
       var list = mob.querySelector('ol');
-      var tocEase = 'cubic-bezier(0.32,0.72,0.24,1)';
       var sv = sum && sum.querySelector('svg');
-      var foldTimer = null, listClosing = false;
+      var EASE = 'cubic-bezier(0.32,0.72,0.24,1)';
+      var GLIDE = 'transform 560ms ' + EASE + ', opacity 560ms ' + EASE;
+      var SLOP = 8;        /* finger travel before a touch counts as a drag rather than a tap */
+      var DISMISS = 150;   /* travel that commits the gesture */
+      var foldTimer = null, listClosing = false, suppress = false, g = null;
+      /* The strip names the section being read. Number and title come from the
+         section label and the TOC link, so there is one source of truth. */
+      var now = sum && sum.querySelector('.ev-toc-now'), nowN = now && now.querySelector('.n'), nowT = now && now.querySelector('.t'), nowSr = sum && sum.querySelector('.ev-sr');
+      var labels = {}, labelled;
+      secs.forEach(function (s) {
+        var a = null; links.some(function (l) { if (l.getAttribute('href') === '#' + s.id) { a = l; return true; } return false; });
+        var n = s.querySelector('.ev-sec-num');
+        labels[s.id] = { n: n ? n.textContent.trim() : '', t: a ? a.textContent.trim() : s.id };
+      });
+      function label(id) {
+        if (!nowT || id === labelled) return;
+        labelled = id;
+        var l = id && labels[id];
+        if (nowN) nowN.textContent = l ? l.n : '';
+        nowT.textContent = l ? l.t : 'On this page';
+        if (nowSr) nowSr.textContent = l ? 'On this page: ' : '';
+        if (reduce.matches) return;
+        now.classList.remove('is-swap'); void now.offsetWidth; now.classList.add('is-swap');
+      }
+
       /* Smooth open/close: <details> pops instantly by default, so the list
          height and opacity are animated by hand. Interruptible: a tap mid-
          animation cancels the pending cleanup and animates from the current
@@ -75,7 +140,7 @@
         list.style.height = cur + 'px';
         if (fresh) list.style.opacity = '0';
         void list.offsetHeight;
-        list.style.transition = 'height 420ms ' + tocEase + ', opacity 420ms ' + tocEase;
+        list.style.transition = 'height 420ms ' + EASE + ', opacity 420ms ' + EASE;
         list.style.height = full + 'px'; list.style.opacity = '1';
         foldTimer = setTimeout(function () { list.style.cssText = ''; foldTimer = null; }, 440);
       }
@@ -90,7 +155,7 @@
         list.style.overflow = 'hidden';
         list.style.height = cur + 'px';
         void list.offsetHeight;
-        list.style.transition = 'height 420ms ' + tocEase + ', opacity 420ms ' + tocEase;
+        list.style.transition = 'height 420ms ' + EASE + ', opacity 420ms ' + EASE;
         list.style.height = '0px'; list.style.opacity = '0';
         foldTimer = setTimeout(function () {
           mob.open = false; list.style.cssText = '';
@@ -98,141 +163,177 @@
           foldTimer = null; listClosing = false;
         }, 430);
       }
-      /* Listen on the whole bar: with mouse pointer capture active (see below) the
-         browser dispatches the click to the capturing element, not the summary,
-         so a summary-only listener never fires and the bar would not open. */
-      strip.addEventListener('click', function (e) {
+
+      /* A tap on the strip toggles the list. The release at the end of a drag
+         also fires a click; it is swallowed here in the capture phase so it can
+         never re-toggle the list (that re-toggle was the appear/disappear glitch).
+         No pointer capture is used anywhere, so a mouse click reaches the summary. */
+      mob.addEventListener('click', function (e) {
+        if (suppress) { e.preventDefault(); e.stopPropagation(); return; }
         if (!e.target.closest || !e.target.closest('summary')) return;
-        e.preventDefault();                    /* we animate instead of the instant toggle */
-        if (tocSuppress) { tocSuppress = false; return; }
+        e.preventDefault();                        /* animate instead of the instant toggle */
         if (!mob.open || listClosing) openList(); else closeList();
-      });
-      var tocStartY = null, tocDrag = 0, tocDragging = false, tocPid = null, tocSuppress = false, tocWasOpen = false, tocInList = false;
-      function tocSet(px) {
-        mob.style.transition = 'none';
-        mob.style.transform = 'translateY(' + (-px) + 'px)';
-        mob.style.opacity = String(Math.max(0.55, 1 - px / 900));   /* stays visible while dragging */
-      }
-      function tocReset(animate) {
-        mob.style.transition = animate ? 'transform 560ms cubic-bezier(0.32,0.72,0.24,1), opacity 560ms cubic-bezier(0.32,0.72,0.24,1)' : 'none';
-        mob.style.transform = '';
-        mob.style.opacity = '';
-        if (animate) setTimeout(function () { mob.style.transition = ''; }, 580);
-        else mob.style.transition = '';
-      }
-      function tocDismiss() {
-        void mob.offsetHeight;   /* commit the dragged position so the glide starts from it */
-        mob.style.transition = 'transform 560ms cubic-bezier(0.32,0.72,0.24,1), opacity 560ms cubic-bezier(0.32,0.72,0.24,1)';
-        mob.style.transform = 'translateY(-160%)';
-        mob.style.opacity = '0';
-        mob.open = false;
-        document.body.classList.remove('toc-open');
-        setTimeout(function () { mob.classList.add('toc-hide'); tocReset(false); }, 560);
-      }
-      /* Mouse drag (desktop): pointer capture */
-      strip.addEventListener('pointerdown', function (e) {
-        if (e.pointerType !== 'mouse' || e.button !== 0) return;
-        tocStartY = e.clientY; tocDrag = 0; tocDragging = false; tocPid = e.pointerId; tocWasOpen = mob.open;
-        try { strip.setPointerCapture(tocPid); } catch (err) {}
-      });
-      strip.addEventListener('pointermove', function (e) {
-        if (e.pointerType !== 'mouse' || tocStartY === null || e.pointerId !== tocPid) return;
-        tocDrag = tocStartY - e.clientY;   /* positive = up */
-        if (!tocDragging && Math.abs(tocDrag) > 6) tocDragging = true;
-        if (tocDragging) tocSet(Math.max(0, tocDrag));
-      });
-      function tocPointerEnd(e) {
-        if (e.pointerType !== 'mouse' || tocStartY === null || e.pointerId !== tocPid) return;
-        tocSuppress = tocDragging;
-        tocEnd(); tocPid = null;
-      }
-      strip.addEventListener('pointerup', tocPointerEnd);
-      strip.addEventListener('pointercancel', tocPointerEnd);
-      /* Finger drag (phones): plain touch events, the same pattern as the site
-         menu, which is proven to track reliably on iOS. */
-      strip.addEventListener('touchstart', function (e) {
-        tocSuppress = false;
-        tocStartY = e.touches[0].clientY; tocDrag = 0; tocDragging = false; tocWasOpen = mob.open;
-        tocInList = !!(list && list.contains(e.target));
-      }, { passive: true });
-      strip.addEventListener('touchmove', function (e) {
-        if (tocStartY === null) return;
-        if (e.cancelable) e.preventDefault();      /* gesture is ours, not a scroll */
-        var curY = e.touches[0].clientY;
-        /* A long list scrolls internally first; the bar only starts sliding
-           once the list has no more room in that direction. */
-        if (tocInList && list) {
-          var max = list.scrollHeight - list.clientHeight;
-          var delta = tocStartY - curY;             /* finger up = positive */
-          if (max > 2 && ((delta > 0 && list.scrollTop < max) || (delta < 0 && list.scrollTop > 0))) {
-            list.scrollTop = Math.min(max, Math.max(0, list.scrollTop + delta));
-            tocStartY = curY;                       /* hand-off point for the slide */
-            return;
-          }
-        }
-        tocDrag = tocStartY - curY;
-        if (!tocDragging && Math.abs(tocDrag) > 4) tocDragging = true;
-        if (tocDragging) tocSet(Math.max(0, tocDrag));
-      }, { passive: false });
-      strip.addEventListener('touchend', function () { tocSuppress = tocDragging; tocEnd(); }, { passive: true });
-      strip.addEventListener('touchcancel', function () { tocSuppress = false; tocEnd(); }, { passive: true });
-      /* A drag release fires a click; swallow it so it can't re-toggle the
-         list (that toggle was the appear/disappear glitch). */
-      strip.addEventListener('click', function (e) {
-        if (tocSuppress) { e.preventDefault(); e.stopPropagation(); tocSuppress = false; }
       }, true);
-      function tocEnd() {
-        if (tocStartY === null) return;
-        if (tocDragging && tocDrag > 150) {
-          /* Open list: the drag folds the list closed and the bar glides back.
-             Closed strip: the drag sends the whole bar off screen. */
-          if (tocWasOpen) { closeList(); tocReset(true); }
-          else tocDismiss();
-        }
-        else if (tocDragging) tocReset(true);
-        tocStartY = null; tocDragging = false; tocDrag = 0; tocWasOpen = false;
-      }
-      /* FABs hide while the list is open, same as the site menu */
-      mob.addEventListener('toggle', function () {
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && mob.open) { closeList(); if (sum) sum.focus(); }
+      });
+      mob.addEventListener('toggle', function () {   /* FABs hide while the list is open, same as the site menu */
         document.body.classList.toggle('toc-open', mob.open);
       });
-      /* Open list: tap below closes it; drags below slide the bar like the menu */
+
+      function slide(px) {
+        mob.style.transition = 'none';
+        mob.style.transform = 'translateY(' + (-px) + 'px)';
+        mob.style.opacity = String(Math.max(0.55, 1 - px / 900));   /* stays legible while dragging */
+      }
+      function settle() {                          /* glide back to the resting spot */
+        mob.style.transition = GLIDE;
+        mob.style.transform = ''; mob.style.opacity = '';
+        setTimeout(function () { mob.style.transition = ''; }, 580);
+      }
+      function dismiss() {                         /* glide off the top; scrolling up brings it back */
+        void mob.offsetHeight;                     /* commit the dragged position so the glide starts from it */
+        mob.style.transition = GLIDE;
+        mob.style.transform = 'translateY(-160%)'; mob.style.opacity = '0';
+        setTimeout(function () {
+          mob.classList.add('toc-hide');           /* the class now holds the off-screen state */
+          mob.style.transition = 'none'; mob.style.transform = ''; mob.style.opacity = '';
+          void mob.offsetHeight; mob.style.transition = '';
+        }, 560);
+      }
+      /* Stuck to the top of the viewport, as opposed to sitting in its own place
+         in the article, where sliding it away would leave a hole in the text. */
+      function stuck() {
+        var top = parseFloat(getComputedStyle(mob).top) || 0;
+        return mob.getBoundingClientRect().top <= top + 1;
+      }
+
+      /* One gesture model for finger and mouse. The bar either OWNS the movement
+         (it slides and the page must not scroll) or PASSES it to the browser
+         (the reader is scrolling the page or the list). The call is made once,
+         after SLOP, from the direction of travel:
+           list open ............................ own, any direction; a long pull up folds it
+           closed, stuck, moving up ............. own: the dismiss gesture
+           closed, not stuck or moving down ..... pass: the reader is scrolling the page
+           started on a list with room to scroll  pass: native momentum scrolling */
+      function begin(y, wasOpen, target, mouse) {
+        var inList = !!(list && target && list.contains(target));
+        g = { y0: y, drag: 0, mode: null, wasOpen: wasOpen, mouse: mouse, stuck: stuck(),
+              scrollable: inList && mob.open && list.scrollHeight > list.clientHeight + 2 };
+      }
+      function move(y, ev) {
+        if (!g) return;
+        g.drag = g.y0 - y;                          /* finger up = positive */
+        if (!g.mode) {
+          if (Math.abs(g.drag) < (g.mouse ? 6 : SLOP)) return;
+          var up = g.drag > 0;
+          if (g.scrollable) {
+            var room = up ? list.scrollTop < list.scrollHeight - list.clientHeight - 1 : list.scrollTop > 0;
+            g.mode = room ? 'pass' : 'own';
+          } else g.mode = (g.wasOpen || (g.stuck && up)) ? 'own' : 'pass';
+          if (g.mode === 'own') { g.y0 = y; g.drag = 0; }   /* the bar starts moving from where the call was made, no jump */
+        }
+        if (g.mode !== 'own') return;
+        if (ev) {
+          if (ev.cancelable) ev.preventDefault();   /* the page stays put */
+          else if (!g.wasOpen) { g.mode = 'pass'; settle(); return; }   /* the browser is already scrolling: it keeps the gesture */
+        }
+        slide(Math.max(0, g.drag));
+      }
+      function end() {
+        if (!g) return;
+        var gg = g; g = null;
+        if (gg.mode !== 'own') return;
+        suppress = true; setTimeout(function () { suppress = false; }, 0);   /* the click that follows a drag must not toggle */
+        if (gg.drag > DISMISS) { if (gg.wasOpen) { closeList(); settle(); } else dismiss(); }
+        else settle();
+      }
+      function cancel() {
+        if (!g) return;
+        var gg = g; g = null;
+        if (gg.mode === 'own') settle();
+      }
+
+      /* Finger: touch events, the same pattern as the site menu, which is proven
+         to track reliably on iOS. Undecided moves are not cancelled, so the
+         browser can still turn them into a scroll when the call is "pass". */
+      mob.addEventListener('touchstart', function (e) {
+        if (e.touches.length !== 1) { cancel(); return; }
+        begin(e.touches[0].clientY, mob.open, e.target, false);
+      }, { passive: true });
+      mob.addEventListener('touchmove', function (e) { if (g && !g.mouse && !g.outside) move(e.touches[0].clientY, e); }, { passive: false });
+      mob.addEventListener('touchend', function () { if (g && !g.mouse && !g.outside) end(); }, { passive: true });
+      mob.addEventListener('touchcancel', function () { if (g && !g.mouse && !g.outside) cancel(); }, { passive: true });
+      /* Mouse: pointer events tracked on the window for the length of the drag. */
+      mob.addEventListener('pointerdown', function (e) {
+        if (e.pointerType !== 'mouse' || e.button !== 0) return;
+        begin(e.clientY, mob.open, e.target, true);
+        window.addEventListener('pointermove', mouseMove);
+        window.addEventListener('pointerup', mouseUp);
+        window.addEventListener('pointercancel', mouseUp);
+      });
+      function mouseMove(e) { if (g && g.mouse) move(e.clientY, null); }
+      function mouseUp() {
+        window.removeEventListener('pointermove', mouseMove);
+        window.removeEventListener('pointerup', mouseUp);
+        window.removeEventListener('pointercancel', mouseUp);
+        if (g && g.mouse) end();
+      }
+
+      /* Open list: a tap anywhere else closes it; a pull upward anywhere else
+         slides the bar like the site menu and folds the list past DISMISS. */
       document.addEventListener('touchstart', function (e) {
-        if (!mob.open || mob.contains(e.target)) return;
-        tocStartY = e.touches[0].clientY; tocDrag = 0; tocDragging = false; tocWasOpen = true;
+        if (!mob.open || mob.contains(e.target) || e.touches.length !== 1) return;
+        begin(e.touches[0].clientY, true, null, false); g.outside = true;
       }, { passive: true });
       document.addEventListener('touchmove', function (e) {
-        if (!mob.open || mob.contains(e.target) || tocStartY === null) return;
+        if (!g || !g.outside) return;
         if (e.cancelable) e.preventDefault();      /* page behind stays put */
-        tocDrag = tocStartY - e.touches[0].clientY;
-        if (!tocDragging && tocDrag > 4) tocDragging = true;
-        if (tocDragging) tocSet(Math.max(0, tocDrag));
+        move(e.touches[0].clientY, null);
       }, { passive: false });
-      document.addEventListener('touchend', function (e) {
-        if (!mob.open || mob.contains(e.target) || tocStartY === null) return;
-        if (!tocDragging) { closeList(); tocStartY = null; return; }  /* plain tap */
-        tocEnd();
+      document.addEventListener('touchend', function () {
+        if (!g || !g.outside) return;
+        if (!g.mode) { g = null; closeList(); return; }   /* plain tap */
+        end();
       }, { passive: true });
+      document.addEventListener('touchcancel', function () { if (g && g.outside) cancel(); }, { passive: true });
       document.addEventListener('click', function (e) {
         if (mob.open && !mob.contains(e.target)) closeList();
       });
-      /* Scrolling up brings a dismissed bar back. */
-      var tLastY = window.pageYOffset;
+
+      /* The strip stays pinned at the top while you read: when the header
+         retracts (150px of downward scroll, site.js) the strip simply rides up
+         to the top edge via its sticky top. Scrolling with the list open closes
+         the list. Scrolling up brings back a strip that was swiped away, in
+         step with the header. A scripted jump is exempt, so the strip is still
+         there to name the section you tapped. The rubber-band bounce at either
+         end of the page is not a scroll direction. */
+      function show() { mob.classList.remove('toc-hide'); }
+      var lastY = window.pageYOffset;
       window.addEventListener('scroll', function () {
         var y = window.pageYOffset;
-        var dy = y - tLastY;
+        if (y < 0 || y > document.documentElement.scrollHeight - window.innerHeight + 1) return;
+        var dy = y - lastY;
         if (Math.abs(dy) < 8) return;
-        if (dy < 0) mob.classList.remove('toc-hide');
-        tLastY = y;
+        lastY = y;
+        if (Date.now() < jumpUntil) return;
+        if (mob.open) closeList();
+        if (dy < 0) show();
       }, { passive: true });
+
+      return { close: closeList, show: show, label: label };
     }
+
     if ((!bar || !art) && !secs.length) return;
 
-    var artTop = 0, artRange = 0, tops = [], active = null, queued = false;
+    var artTop = 0, artRange = 0, tops = [], spy = 130, active = null, queued = false;
 
     function measure() {
       if (art) { artTop = art.offsetTop; artRange = art.offsetHeight - window.innerHeight; }
       tops = secs.map(function (s) { return s.offsetTop; });
+      /* The spy line sits just below where jumpTo lands a heading, so the section
+         you tapped is the one that lights up. Never tighter than 130px. */
+      spy = Math.max(130, navFull() + barHeight() + GAP + 8);
     }
 
     function frame() {
@@ -243,8 +344,9 @@
         bar.style.transform = 'scaleX(' + Math.max(0, Math.min(1, p)).toFixed(4) + ')';
       }
       if (secs.length && links.length) {
-        var t = y + 130, cur = secs[0].id;
+        var t = y + spy, cur = secs[0].id;
         for (var i = 0; i < tops.length; i++) { if (tops[i] <= t) cur = secs[i].id; }
+        if (toc) toc.label(t < tops[0] ? null : cur);   /* above the first section the strip still says "On this page" */
         if (cur !== active) {
           active = cur;
           links.forEach(function (a) {
@@ -270,6 +372,7 @@
       if (e.target.closest && e.target.closest('.faq-q')) setTimeout(remeasure, 340);
     }, true);
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(remeasure);
+    window.addEventListener('load', remeasure);
     remeasure();
   }
 
