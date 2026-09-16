@@ -30,13 +30,10 @@
 <meta name="ext-resource-dependency" content="https://widget-cdn.simplepractice.com/assets/integration-1.0.js">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..700&amp;family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&amp;family=Caveat:wght@400..700&amp;display=swap">
-<link rel="stylesheet" href="styles/tokens.css?v=2">
-<link rel="stylesheet" href="styles/site.css?v=75">
-<link rel="stylesheet" href="styles/when-to-reach.css?v=4">
-<link rel="stylesheet" href="styles/clarity.css?v=26">
-<link rel="stylesheet" href="styles/how-it-works.css?v=12">
-<style>#site-nav{min-height:76px}</style>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..700&amp;family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&amp;family=Caveat:wght@400..700&amp;display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..700&amp;family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&amp;family=Caveat:wght@400..700&amp;display=swap"></noscript>
+<style>:root{--band-y:clamp(44px,5.4vw,76px);--curve-h:clamp(22px,3.4vw,48px);--strip-y:clamp(20px,2.4vw,32px);--sage-50:#F1F5EE;--sage-100:#E2EBDC;--sage-200:#CADBC1;--sage-300:#B1C9A5;--sage-400:#9AB68E;--sage-500:#7E9E74;--sage-600:#637F5C;--sage-700:#4B6347;--sage-800:#364932;--sage-900:#243121;--cream-50:#FBF8F1;--cream-100:#F5EFE1;--cream-200:#EDE3CD;--cream-300:#E0D3B3;--cream-400:#C8B791;--clay-50:#FBF0EA;--clay-100:#F6DDCF;--clay-200:#EFBFA6;--clay-300:#E6997A;--clay-400:#D97854;--clay-500:#C55E3B;--clay-600:#A14A2D;--sun-100:#FFF4CB;--sun-300:#FCD870;--sun-400:#F6C13C;--sun-500:#E0A51A;--sky-100:#E3EEF3;--sky-300:#A7C9D8;--sky-500:#5E93AC;--ink-900:#1F2A23;--ink-700:#3D4C42;--ink-500:#6C7A70;--ink-300:#B6BEB7;--ink-100:#E8EAE6;--white:#FFFFFF;--off-white:#FDFCF8;--bg-page:var(--cream-50);--bg-surface:var(--white);--bg-raised:var(--off-white);--bg-muted:var(--cream-100);--bg-inverse:var(--ink-900);--fg-1:var(--ink-900);--fg-2:var(--ink-700);--fg-3:var(--ink-500);--fg-disabled:var(--ink-300);--fg-on-brand:var(--cream-50);--fg-on-inverse:var(--cream-50);--brand:var(--sage-500);--brand-hover:var(--sage-600);--brand-soft:var(--sage-100);--brand-ink:var(--sage-800);--accent:var(--clay-400);--accent-hover:var(--clay-500);--accent-soft:var(--clay-100);--highlight:var(--sun-300);--border-subtle:var(--ink-100);--border-default:var(--cream-300);--border-strong:var(--ink-700);--focus-ring:var(--clay-400);--success:#5E8C5A;--warning:#D08A2B;--danger:#B94A3B;--info:#5E93AC;--font-display:"Bagel Fat One","Chewy",system-ui,sans-serif;--font-heading:"Bricolage Grotesque","Inter Tight",system-ui,sans-serif;--font-body:"DM Sans",system-ui,-apple-system,sans-serif;--font-hand:"Caveat","Kalam",cursive;--font-mono:ui-monospace,"JetBrains Mono",Menlo,monospace;--fs-display-xl:clamp(3.5rem,7vw + 1rem,8rem);--fs-display-lg:clamp(2.75rem,5vw + 1rem,5.5rem);--fs-display-md:clamp(2.25rem,3.5vw + 1rem,4rem);--fs-h1:clamp(2rem,2.5vw + 1rem,3.25rem);--fs-h2:clamp(1.625rem,1.5vw + 1rem,2.5rem);--fs-h3:clamp(1.375rem,1vw + 1rem,1.875rem);--fs-h4:1.25rem;--fs-eyebrow:0.8125rem;--fs-body-lg:1.1875rem;--fs-body:1.0625rem;--fs-body-sm:0.9375rem;--fs-caption:0.8125rem;--lh-tight:1.05;--lh-snug:1.2;--lh-normal:1.45;--lh-relaxed:1.6;--lh-loose:1.8;--tracking-tight:-0.02em;--tracking-normal:0;--tracking-wide:0.04em;--tracking-uppercase:0.12em;--space-1:4px;--space-2:8px;--space-3:12px;--space-4:16px;--space-5:20px;--space-6:24px;--space-8:32px;--space-10:40px;--space-12:48px;--space-16:64px;--space-20:80px;--space-24:96px;--space-32:128px;--radius-xs:6px;--radius-sm:10px;--radius-md:16px;--radius-lg:24px;--radius-xl:32px;--radius-2xl:48px;--radius-pill:999px;--radius-blob:62% 38% 58% 42% / 55% 55% 45% 45%;--shadow-xs:0 1px 2px rgba(31,42,35,0.06);--shadow-sm:0 2px 6px rgba(31,42,35,0.06),0 1px 2px rgba(31,42,35,0.04);--shadow-md:0 6px 20px -6px rgba(31,42,35,0.12),0 2px 6px rgba(31,42,35,0.05);--shadow-lg:0 18px 40px -12px rgba(31,42,35,0.18),0 6px 14px rgba(31,42,35,0.06);--shadow-xl:0 32px 64px -16px rgba(31,42,35,0.25),0 12px 22px rgba(31,42,35,0.08);--shadow-focus:0 0 0 4px rgba(217,120,84,0.35);--ease-out:cubic-bezier(0.22,0.7,0.3,1);--ease-spring:cubic-bezier(0.34,1.35,0.4,1);--ease-soft:cubic-bezier(0.4,0,0.2,1);--dur-fast:140ms;--dur-base:240ms;--dur-slow:420ms;--dur-slower:700ms}html{color:var(--fg-1);background:var(--bg-page);font-family:var(--font-body);font-size:17px;line-height:var(--lh-normal);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}body{margin:0}h1,.h1{font-family:var(--font-heading);font-weight:500;font-size:var(--fs-h1);line-height:var(--lh-snug);letter-spacing:var(--tracking-tight);color:var(--brand-ink);margin:0 0 0.4em;text-wrap:balance}h2,.h2{font-family:var(--font-heading);font-weight:500;font-size:var(--fs-h2);line-height:var(--lh-snug);letter-spacing:var(--tracking-tight);color:var(--brand-ink);margin:0 0 0.4em;text-wrap:balance}h3,.h3{font-family:var(--font-heading);font-weight:600;font-size:var(--fs-h3);line-height:1.25;color:var(--fg-1);margin:0 0 0.4em}h4,.h4{font-family:var(--font-heading);font-weight:600;font-size:var(--fs-h4);line-height:1.3;color:var(--fg-1);margin:0 0 0.4em}.display-xl,.display-lg,.display-md{font-family:var(--font-display);font-weight:400;color:var(--brand-ink);line-height:var(--lh-tight);letter-spacing:-0.01em;text-wrap:balance;margin:0 0 0.3em}.display-xl{font-size:var(--fs-display-xl)}.display-lg{font-size:var(--fs-display-lg)}.display-md{font-size:var(--fs-display-md)}.eyebrow{font-family:var(--font-body);font-size:var(--fs-eyebrow);font-weight:600;letter-spacing:var(--tracking-uppercase);text-transform:uppercase;color:var(--accent);margin:0 0 var(--space-4)}.hand{font-family:var(--font-hand);font-weight:600;color:var(--clay-500);font-size:1.5em;line-height:1}p,.body{font-size:var(--fs-body);line-height:var(--lh-relaxed);color:var(--fg-2);margin:0 0 1em;text-wrap:pretty}.lead{font-size:var(--fs-body-lg);line-height:var(--lh-relaxed);color:var(--fg-1);font-weight:400}.small{font-size:var(--fs-body-sm)}.caption{font-size:var(--fs-caption);color:var(--fg-3);line-height:var(--lh-normal)}a{color:var(--clay-500);text-decoration-thickness:1.5px;text-underline-offset:3px;text-decoration-color:color-mix(in oklab,var(--clay-500),transparent 60%);transition:color var(--dur-fast) var(--ease-out),text-decoration-color var(--dur-fast) var(--ease-out)}a:hover{color:var(--clay-600);text-decoration-color:var(--clay-500)}::selection{background:var(--sage-200);color:var(--ink-900)}:focus-visible{outline:2px solid var(--focus-ring);outline-offset:3px;border-radius:4px}#site-nav{min-height:76px}</style>
+<link rel="stylesheet" href="styles/home.css?v=1">
 <script>window.__PAGE = 'home';</script>
 
 </head>
@@ -97,7 +94,7 @@
         </p>
         <div class="hero-v2-image reveal in">
           <picture>
-            <source media="(max-width: 960px)" srcset="assets/hero-playroom-phone-600.webp 600w, assets/hero-playroom-phone-876.webp 876w" sizes="100vw">
+            <source media="(max-width: 960px)" srcset="assets/hero-playroom-phone-600.webp 600w, assets/hero-playroom-phone-720.webp 720w, assets/hero-playroom-phone-876.webp 876w" sizes="100vw">
             <img src="assets/hero-playroom-desktop-800.webp" srcset="assets/hero-playroom-desktop-800.webp 800w, assets/hero-playroom-desktop-1325.webp 1325w" sizes="62vw" width="1325" height="1024" alt="Madison Jeffery, speech-language pathologist, sitting on a playroom floor and smiling up at a young boy as he hands her a toy monster truck" fetchpriority="high" decoding="async">
           </picture>
         </div>
@@ -175,7 +172,7 @@
       <!-- LEFT: photograph -->
       <div class="cl-photo">
         <picture>
-          <source media="(max-width: 960px)" srcset="assets/clarity-madison-girl-800.webp 800w, assets/clarity-madison-girl-1400.webp 1109w" sizes="100vw">
+          <source media="(max-width: 960px)" srcset="assets/clarity-madison-girl-600.webp 600w, assets/clarity-madison-girl-800.webp 800w, assets/clarity-madison-girl-1400.webp 1109w" sizes="100vw">
           <img src="assets/clarity-madison-girl-sq-900.webp"
                srcset="assets/clarity-madison-girl-sq-900.webp 900w, assets/clarity-madison-girl-sq-1400.webp 1086w"
                sizes="50vw"
@@ -720,7 +717,7 @@
   <div class="meet-madison-inner">
     <div class="mm-portrait-wrap reveal">
       <div class="mm-portrait">
-        <img src="assets/madison-jeffery.webp" alt="Madison Jeffery, CCC-SLP, founder of Social House Therapy" width="1000" height="1409" loading="lazy" decoding="async">
+        <img src="assets/madison-jeffery-560.webp" srcset="assets/madison-jeffery-560.webp 560w, assets/madison-jeffery.webp 1000w" sizes="(max-width: 880px) min(360px, 100vw), 330px" alt="Madison Jeffery, CCC-SLP, founder of Social House Therapy" width="560" height="789" loading="lazy" decoding="async">
       </div>
       <figure class="mm-review">
         <svg class="mm-review-g" viewBox="0 0 48 48" aria-hidden="true"><path fill="#4285F4" d="M44.5 20H24v8.5h11.8C34.7 33 30 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3 0 5.7 1.1 7.8 3l6-6C34.6 6.1 29.6 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20c10.5 0 19.5-7.6 19.5-20 0-1.3-.2-2.7-.5-4z"/><path fill="#34A853" d="M6.3 14.7l6.6 4.8C14.7 16 19 13 24 13c3 0 5.7 1.1 7.8 3l6-6C34.6 6.1 29.6 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#FBBC05" d="M24 44c5.5 0 10.5-2.1 14.3-5.6l-6.6-5.4C29.6 34.6 27 36 24 36c-6 0-10.7-3-12.6-7.5l-6.6 5.1C8.6 39.7 15.7 44 24 44z"/><path fill="#EA4335" d="M44.5 20H24v8.5h11.8c-1.1 3.2-3.3 5.6-6.1 7l6.6 5.4C40.3 37 44 31.2 44 24c0-1.3-.2-2.7-.5-4z"/></svg>
@@ -760,8 +757,8 @@
       </div>
 
       <div class="mm-creds" aria-label="Professional credentials and memberships">
-        <img src="assets/asha-ccc-slp.webp" alt="CCC-SLP, ASHA Certified Speech-Language Pathologist" loading="lazy" decoding="async">
-        <img src="assets/arsha-logo.png" alt="ArSHA, Arizona Speech-Language-Hearing Association member" loading="lazy" decoding="async">
+        <img src="assets/asha-ccc-slp-340.webp" alt="CCC-SLP, ASHA Certified Speech-Language Pathologist" width="340" height="69" loading="lazy" decoding="async">
+        <img src="assets/arsha-logo-300.webp" alt="ArSHA, Arizona Speech-Language-Hearing Association member" width="300" height="71" loading="lazy" decoding="async">
       </div>
     </div>
   </div>
@@ -879,9 +876,9 @@ a.sz-step{display:block;text-decoration:none;color:inherit;border-radius:18px;pa
 a.sz-step:hover{background:var(--cream-50);transform:translateY(-3px);box-shadow:0 10px 24px rgba(0,0,0,.07)}
 a.sz-step:hover .num{transform:scale(1.06)}
 a.sz-step .num{transition:transform .2s ease}
-@keyframes sz-step-pulse{0%{box-shadow:0 0 0 0 rgba(126,158,116,.5)}70%{box-shadow:0 0 0 18px rgba(126,158,116,0)}100%{box-shadow:0 0 0 0 rgba(126,158,116,0)}}
-.sz-steps a.sz-step:first-child{animation:sz-step-pulse 1.1s ease-out infinite}
-.sz-steps a.sz-step:first-child:hover{animation:none}
+@keyframes sz-step-pulse{0%{transform:scale(1);opacity:.5}70%{transform:scale(1.12);opacity:0}100%{transform:scale(1);opacity:0}}
+.sz-steps a.sz-step:first-child::after{content:"";position:absolute;inset:-1px;border-radius:19px;border:2px solid rgb(126 158 116);opacity:0;pointer-events:none;animation:sz-step-pulse 1.1s ease-out infinite;will-change:transform,opacity}
+.sz-steps a.sz-step:first-child:hover::after{animation:none}
 .sz-step-link{display:inline-flex;align-items:center;gap:7px;margin-top:12px;font-family:var(--font-body);font-size:13.5px;font-weight:700;color:var(--clay-500)}
 .sz-step-link svg{width:15px;height:15px;transition:transform .2s ease}
 a.sz-step:hover .sz-step-link svg{transform:translateX(4px)}
@@ -893,7 +890,7 @@ a.sz-step:hover .num{animation:none}
 .sz-step:nth-child(4) .num{background:var(--sage-700)}
 .sz-step h3{font-family:var(--font-heading);font-size:clamp(16px,1.4vw,19px);font-weight:600;letter-spacing:-.012em;color:var(--sage-800);margin:0 0 10px;line-height:1.25;text-wrap:balance}
 .sz-step p{font-family:var(--font-body);font-size:13.5px;line-height:1.6;color:var(--ink-700);margin:0 auto;max-width:24ch;text-wrap:pretty}
-@media (prefers-reduced-motion:reduce){.sz-steps a.sz-step:first-child{animation:none}}
+@media (prefers-reduced-motion:reduce){.sz-steps a.sz-step:first-child::after{animation:none}}
 .sz-price-eval{border-top:1px solid rgba(45,58,35,.16);margin-top:clamp(28px,3.2vw,42px);padding:clamp(22px,2.6vw,32px) 0;display:grid;grid-template-columns:1fr auto;gap:20px 40px;align-items:center}
 .sz-price-eval h3{font-family:var(--font-heading);font-size:clamp(18px,1.6vw,22px);font-weight:600;color:var(--sage-800);margin:0 0 12px;letter-spacing:-.014em}
 .sz-eval-title-row{display:flex;align-items:baseline;gap:18px;margin:0 0 16px}
@@ -1470,10 +1467,16 @@ a.sz-step:hover .num{animation:none}
     var nav = document.getElementById('site-nav');
     var band = document.querySelector('.hero-v2-reviews');
     if (!hero) return;
+    var queued = false;
     function fit() {
-      var navH = nav ? nav.getBoundingClientRect().height : 0;
-      var bandH = band ? band.getBoundingClientRect().height : 0;
-      hero.style.setProperty('--hero-fit-h', (window.innerHeight - navH - bandH) + 'px');
+      if (queued) return;
+      queued = true;
+      requestAnimationFrame(function () {
+        queued = false;
+        var navH = nav ? nav.offsetHeight : 0;
+        var bandH = band ? band.offsetHeight : 0;
+        hero.style.setProperty('--hero-fit-h', (window.innerHeight - navH - bandH) + 'px');
+      });
     }
     fit();
     window.addEventListener('resize', fit);
@@ -1510,7 +1513,7 @@ a.sz-step:hover .num{animation:none}
   }
 </style>
 
-<script src="scripts/sp-widget.js?v=5" defer></script>
+<script src="scripts/sp-widget.js?v=6" defer></script>
 </body>
 </html>
 

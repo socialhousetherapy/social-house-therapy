@@ -66,8 +66,25 @@
   ['pointerdown', 'touchstart', 'keydown', 'wheel', 'scroll'].forEach(function (t) {
     window.addEventListener(t, function () { loadSP(); }, { once: true, passive: true, capture: true });
   });
-  if (window.requestIdleCallback) requestIdleCallback(function () { loadSP(); }, { timeout: 4000 });
-  else setTimeout(function () { loadSP(); }, 2500);
+  /* No idle-time preload: with nothing else to do, the browser would spend
+     several seconds parsing this bundle and its dependencies (Stripe, reCAPTCHA,
+     tag manager) right after first paint. Instead, warm the connection as soon
+     as a booking CTA is hovered or focused, so the tap-then-load path is short. */
+  var preconnected = false;
+  function preconnectSP() {
+    if (preconnected) return;
+    preconnected = true;
+    ['https://widget-cdn.simplepractice.com', 'https://spwidget-socialhousetherapy.clientsecure.me'].forEach(function (origin) {
+      var l = document.createElement('link');
+      l.rel = 'preconnect'; l.href = origin; l.crossOrigin = 'anonymous';
+      document.head.appendChild(l);
+    });
+  }
+  ['pointerover', 'focusin'].forEach(function (t) {
+    document.addEventListener(t, function (e) {
+      if (e.target.closest && e.target.closest(BOOKING_SELECTOR)) { preconnectSP(); loadSP(); }
+    }, { passive: true, capture: true });
+  });
 
   /* Sizing strategy: ONE scroll surface: the form's own page inside the iframe.
      The iframe fills the whole viewport and the form scrolls natively inside it.
