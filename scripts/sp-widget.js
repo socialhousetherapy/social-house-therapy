@@ -40,7 +40,7 @@
   /* ---- lazy loading of the SimplePractice bundle ------------------------
      The third-party script is by far the heaviest request on the page, and
      nothing on screen depends on it. So it is fetched on the first sign of
-     interaction (or when the browser goes idle), instead of during load.
+     visitor interaction, instead of during load.
      Behaviour is unchanged: if a CTA is clicked before the bundle is ready,
      the click waits for it and then re-fires. */
   var SP_SRC = 'https://widget-cdn.simplepractice.com/assets/integration-1.0.js';
@@ -64,7 +64,14 @@
     document.head.appendChild(s);
   }
   ['pointerdown', 'touchstart', 'keydown', 'wheel', 'scroll'].forEach(function (t) {
-    window.addEventListener(t, function () { loadSP(); }, { once: true, passive: true, capture: true });
+    window.addEventListener(t, function onFirst(e) {
+      /* Only the page's own scroll counts. A capturing listener also hears
+         scrolls inside elements, and the reviews carousel scrolls itself on
+         phones, which would otherwise load the bundle with no visitor input. */
+      if (t === 'scroll' && e.target !== document) return;
+      window.removeEventListener(t, onFirst, { capture: true });
+      loadSP();
+    }, { passive: true, capture: true });
   });
   /* No idle-time preload: with nothing else to do, the browser would spend
      several seconds parsing this bundle and its dependencies (Stripe, reCAPTCHA,

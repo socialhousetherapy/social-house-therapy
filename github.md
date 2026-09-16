@@ -13,7 +13,6 @@ commit: 05acd7d7 (from 9a50ab73)
 - Fix: the three "Reach out" links inside FAQ answers now open the booking widget as the selector intended. Netlify's pretty-URL processing had been rewriting them to /contact, which the old contact.html selector never matched
 - New rule for future work: write internal links as root paths without .html (href="/about", not href="about.html")
 - Follow-up for a future bundle: add sameAs (Facebook) to the business schema nodes in about.html and speech-therapy-scottsdale.html
-- Follow-up: in sp-widget.js, the load-on-scroll listener also fires for the reviews carousel's own scroll on phones, which starts the SimplePractice download with no user action
 
 ## Screen map
 | Project screen | Repo files |
@@ -32,6 +31,7 @@ commit: 05acd7d7 (from 9a50ab73)
 | (drafts, not in repo) | aac-support, speech-sound-disorders, early-communication-late-talkers, language-thinking-executive-function, autism-social-communication, stuttering-fluency |
 
 ## Sync history
+- 2026-09-16: pushed from Claude Code (see git log for sha): mobile speed fixes from the PageSpeed review (mobile 55). scripts/sp-widget.js: the load-on-scroll trigger now ignores scrolls inside elements, because the reviews carousel scrolls itself on phones and was loading SimplePractice, Stripe, reCAPTCHA, and tag scripts (about 3 MB) with no visitor input. index.html: Meet Madison portrait srcset gains a 720w step (new assets/madison-jeffery-720.webp, 74 KB) so phones stop downloading the 175 KB 1000w file (3 files)
 - 2026-09-16: pushed 9cb3e7a3 (from 3c43eb41) directly from Claude Code: pricing link is now /#pricing instead of /#pricing-anchor (header menu, mobile menu, evaluations page and script, FAQ). In index.html the pricing section id is now pricing-section and the scroll target span is id="pricing"; a second pricing-anchor span is kept so old links land in the same place (6 files)
 - 2026-09-16T21:33:36Z: pushed 05acd7d7 (from 9a50ab73) directly from Claude Code: clean URLs across 8 pages, 404.html, site.js, evaluations.js, sp-widget.js, sitemap.xml, and _redirects (14 files); nothing deleted
 - 2026-09-16T21:16:12Z: pushed 9a50ab73 (from 2443c950) via design_handoff_home_speed_sept16/: home page speed pass, index.html, new styles/home.css, sp-widget.js (no idle preload), 4 new sized webp images (7 files; no github.md in bundle); PageSpeed after deploy: mobile 76, desktop 90+ (was mobile 55)
