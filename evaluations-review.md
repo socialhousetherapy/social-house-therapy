@@ -28,6 +28,25 @@ Same method as aac-review.md: claim-by-claim verdicts against ASHA guidance, fed
 - The three CAS consensus features (ASHA 2007) have researcher consensus but are not validated markers; the page deliberately presents no diagnostic checklist.
 - The four-questions framing and the 3/8+/1/0 stats are the practice's own organizing language, not clinical claims; no citation needed.
 
+## Fluency sample detail (2026-09-15, owner direction)
+
+Added to the Communication samples Fluency bullet: observing the confidence cost of stuttering (holding back from initiating, looking away when a word gets stuck). Accurate: ASHA's Fluency Disorders Practice Portal frames assessment as covering affective, behavioral, and cognitive components alongside observable disfluencies, including avoidance, reduced participation, and attitudes toward communication. Worded as observation ("watch for", "may be costing"), not measurement, since no standardized attitude scale is named.
+
+## Screening FAQ (2026-09-15, owner direction)
+
+Rewritten to describe a screening as a short, pass/fail look at age-appropriate skills, typically completed by an SLP after a concern is raised, with a failed screen leading to a recommended comprehensive evaluation that the family chooses whether to pursue. Accurate: ASHA defines screening as a pass/fail procedure to identify individuals who require further assessment, distinct from comprehensive assessment; the family decision point reflects informed consent. Removed the pediatrician/preschool/school framing so the answer describes the practice's own screening rather than developmental surveillance by others.
+
+## Hearing testing FAQ (2026-09-16, owner direction)
+
+Added: "Hearing screenings are available through your pediatrician or your child’s school." Ages and grade details left out at owner direction. Accurate:
+- AAP/Bright Futures Periodicity Schedule (2025 edition, no clinical changes from 2024): audiometry at the 4, 5, 6, 8, and 10 year visits, plus once in each of the 11 to 14, 15 to 17, and 18 to 21 year windows. https://www.aap.org/en/practice-management/care-delivery-approaches/periodicity-schedule/
+- Arizona Administrative Code Title 9, Chapter 13, Article 1 (Hearing Screening Rules, updated for the 2024-2025 school year): schools must screen students in the grades and circumstances listed in Table 13.1 within 90 school days of the start of the year, with a rescreen and parent notification for students who do not pass. Parents may opt out under ARS 36-899.04. https://www.azdhs.gov/prevention/womens-childrens-health/ocshcn/index.php#sensory-screening
+Wording kept to "required grades" rather than listing them, since districts may screen beyond the minimum and the table is subject to rule changes.
+
+## Autism FAQ (2026-09-16, owner direction)
+
+Rewritten to drop the co-occurring diagnosis examples (speech sound delays, apraxia, stuttering). Reason: "often occur alongside autism" was not well supported. Speech sound disorder co-occurrence is reported at roughly 15 to 20 percent (Shriberg et al., 2011, PMC3033475; Mody and Belliveau review, PMC9578461); apraxia evidence is mixed (Tierney et al., 2015, 64 percent in a 30-child referral sample vs. Shriberg et al., 2011, no statistical support in 46 verbal children); stuttering co-occurs at elevated odds (Briley and Ellis, 2018, NHIS, OR 5.48 for autism) but is uncommon in absolute terms. Retained claims: SLP scope covers social communication, late talking, and language processing (ASHA Scope of Practice, 2016); SLPs recognize and refer for autism traits (ASHA Autism Practice Portal, screening and referral roles). Wording avoids asserting frequency.
+
 ## Source URLs
 - 34 CFR 300.304 (evaluation procedures): https://sites.ed.gov/idea/regs/b/d/300.304
 - 34 CFR 300.502 (independent educational evaluations): https://sites.ed.gov/idea/regs/b/e/300.502

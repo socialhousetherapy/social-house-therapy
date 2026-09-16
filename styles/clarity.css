@@ -1,5 +1,5 @@
 /* ============================================================
-   CLARITY — pain-points → clear-answers section
+   CLARITY: pain-points → clear-answers section
    Two-column: warm photo on the left, content on the right.
    ============================================================ */
 
@@ -111,7 +111,7 @@
   align-items: flex-start;
 }
 
-/* Small sprout icon — sits above headline */
+/* Small sprout icon: sits above headline */
 .cl-top-ico {
   width: 44px;
   height: 44px;

@@ -1,5 +1,5 @@
 /* =============================================================
-   How It Works — premium / editorial refinement
+   How It Works: premium / editorial refinement
    Scoped under .hiw-section to avoid clashing with site styles.
    ============================================================= */
 
@@ -32,7 +32,7 @@
   margin-bottom: 28px;
 }
 
-/* Editorial headline — matches site heading family (Bricolage Grotesque) */
+/* Editorial headline: matches site heading family (Bricolage Grotesque) */
 .hiw-headline {
   font-family: var(--font-heading);
   font-weight: 600;
@@ -50,7 +50,7 @@
   letter-spacing: 0;
 }
 
-/* ---------- CTA block (right) — inline, no card ---------- */
+/* ---------- CTA block (right): inline, no card ---------- */
 .hiw-cta {
   align-self: end;
   padding-bottom: 4px;
@@ -227,7 +227,7 @@
   gap: 16px;
 }
 
-/* Script-style step numbers — Caveat to match other hand accents */
+/* Script-style step numbers: Caveat to match other hand accents */
 .hiw-step-num {
   font-family: var(--font-hand);
   font-style: normal;
@@ -383,7 +383,7 @@
   text-align: center;
 }
 
-/* ---------- Bottom info strip — narrow capsule, sage-tinted ---------- */
+/* ---------- Bottom info strip: narrow capsule, sage-tinted ---------- */
 .hiw-strip {
   margin: clamp(40px, 5vw, 64px) auto 0;
   background: var(--sage-100, #e0e7d7);
@@ -418,7 +418,7 @@
 }
 
 /* =============================================================
-   Responsive — mobile / tablet
+   Responsive: mobile / tablet
    ============================================================= */
 
 @media (max-width: 980px) {

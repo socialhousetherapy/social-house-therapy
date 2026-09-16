@@ -1,22 +1,22 @@
 /* =============================================================
-   Social House Therapy — Design Tokens
+   Social House Therapy: Design Tokens
    colors_and_type.css
    ============================================================= */
 
 /* ---- Webfonts (Google Fonts) ---------------------------------
-   Display  : Bagel Fat One       — groovy echo of the logo
-   Heading  : Bricolage Grotesque — modern, friendly, distinctive
-   Body     : DM Sans             — warm geometric sans
-   Accent   : Caveat              — hand-written moments ("connection first")
+   Display  : Bagel Fat One      : groovy echo of the logo
+   Heading  : Bricolage Grotesque: modern, friendly, distinctive
+   Body     : DM Sans            : warm geometric sans
+   Accent   : Caveat             : hand-written moments ("connection first")
    -------------------------------------------------------------- */
 /* Fonts are loaded via <link> in each page head (faster than @import). */
 
-/* Emphasis font for accented words ("connection", "be yourself", etc.) — italic serif */
+/* Emphasis font for accented words ("connection", "be yourself", etc.): italic serif */
 
 :root {
   /* ---------- Brand Colors ---------- */
 
-  /* Sage — primary brand (extends the logo's ~#A8BFA0) */
+  /* Sage: primary brand (extends the logo's ~#A8BFA0) */
   --band-y: clamp(44px,5.4vw,76px);
   --curve-h: clamp(22px,3.4vw,48px);
   --strip-y: clamp(20px,2.4vw,32px);
@@ -31,14 +31,14 @@
   --sage-800: #364932;
   --sage-900: #243121;
 
-  /* Cream — warm neutrals (home, calm, paper) */
+  /* Cream: warm neutrals (home, calm, paper) */
   --cream-50:  #FBF8F1;   /* page bg */
   --cream-100: #F5EFE1;   /* card bg */
   --cream-200: #EDE3CD;
   --cream-300: #E0D3B3;
   --cream-400: #C8B791;
 
-  /* Clay — warm accent (terracotta, AZ desert, connection) */
+  /* Clay: warm accent (terracotta, AZ desert, connection) */
   --clay-50:  #FBF0EA;
   --clay-100: #F6DDCF;
   --clay-200: #EFBFA6;
@@ -47,19 +47,19 @@
   --clay-500: #C55E3B;
   --clay-600: #A14A2D;
 
-  /* Sun — high-energy joy accent (sparingly) */
+  /* Sun: high-energy joy accent (sparingly) */
   --sun-100: #FFF4CB;
   --sun-300: #FCD870;
   --sun-400: #F6C13C;
   --sun-500: #E0A51A;
 
-  /* Sky — supportive cool (rare; for variety / chips) */
+  /* Sky: supportive cool (rare; for variety / chips) */
   --sky-100: #E3EEF3;
   --sky-300: #A7C9D8;
   --sky-500: #5E93AC;
 
-  /* Ink — text + lines (warm near-black, never pure) */
-  --ink-900: #1F2A23;   /* primary text — warm green-black */
+  /* Ink: text + lines (warm near-black, never pure) */
+  --ink-900: #1F2A23;   /* primary text: warm green-black */
   --ink-700: #3D4C42;   /* body secondary */
   --ink-500: #6C7A70;   /* tertiary / captions */
   --ink-300: #B6BEB7;   /* disabled */
@@ -113,7 +113,7 @@
   --font-hand:    "Caveat", "Kalam", cursive;
   --font-mono:    ui-monospace, "JetBrains Mono", Menlo, monospace;
 
-  /* Fluid type (clamp(min, preferred, max)) — desktop-ish defaults */
+  /* Fluid type (clamp(min, preferred, max)): desktop-ish defaults */
   --fs-display-xl: clamp(3.5rem, 7vw + 1rem, 8rem);    /* 56–128 */
   --fs-display-lg: clamp(2.75rem, 5vw + 1rem, 5.5rem); /* 44–88 */
   --fs-display-md: clamp(2.25rem, 3.5vw + 1rem, 4rem); /* 36–64 */
@@ -124,7 +124,7 @@
   --fs-h4: 1.25rem;                                /* 20 */
   --fs-eyebrow: 0.8125rem;                         /* 13 */
 
-  --fs-body-lg: 1.1875rem;  /* 19 — lead paragraph */
+  --fs-body-lg: 1.1875rem;  /* 19: lead paragraph */
   --fs-body:    1.0625rem;  /* 17 */
   --fs-body-sm: 0.9375rem;  /* 15 */
   --fs-caption: 0.8125rem;  /* 13 */
@@ -185,7 +185,7 @@
 }
 
 /* =============================================================
-   Semantic Type classes — use these for text roles
+   Semantic Type classes: use these for text roles
    ============================================================= */
 
 html {
@@ -241,7 +241,7 @@ h4, .h4 {
   margin: 0 0 0.4em;
 }
 
-/* Display = Bagel Fat One, use SPARINGLY — hero moments only */
+/* Display = Bagel Fat One, use SPARINGLY: hero moments only */
 .display-xl, .display-lg, .display-md {
   font-family: var(--font-display);
   font-weight: 400; /* Bagel Fat One only has 400 */
@@ -255,7 +255,7 @@ h4, .h4 {
 .display-lg { font-size: var(--fs-display-lg); }
 .display-md { font-size: var(--fs-display-md); }
 
-/* Eyebrow / kicker — tiny label above a heading */
+/* Eyebrow / kicker: tiny label above a heading */
 .eyebrow {
   font-family: var(--font-body);
   font-size: var(--fs-eyebrow);
@@ -266,7 +266,7 @@ h4, .h4 {
   margin: 0 0 var(--space-4);
 }
 
-/* Handwriting accents — for little margin notes, "connection first" moments */
+/* Handwriting accents: for little margin notes, "connection first" moments */
 .hand {
   font-family: var(--font-hand);
   font-weight: 600;

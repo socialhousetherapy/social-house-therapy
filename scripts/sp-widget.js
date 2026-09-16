@@ -1,5 +1,5 @@
 /* SimplePractice appointment-request widget: every "book a free call" CTA opens the overlay in-page.
-   Shared across pages — include this file, then the SimplePractice CDN script:
+   Shared across pages: include this file, then the SimplePractice CDN script:
    <script src="scripts/sp-widget.js"></script>
    <script src="https://widget-cdn.simplepractice.com/assets/integration-1.0.js"></script> */
 (function () {
@@ -10,7 +10,7 @@
     'data-spwidget-channel': 'embedded_widget',
     'data-spwidget-type': 'Contact form'
   };
-  /* Every booking/contact CTA opens the widget — any CTA-styled link pointing at contact.html,
+  /* Every booking/contact CTA opens the widget: any CTA-styled link pointing at contact.html,
      plus the nav/menu booking buttons. Plain "Contact" nav/footer text links stay as links. */
   var BOOKING_SELECTOR = 'a.hiw-step-cta, a.cl-cta-btn, a.menu-foot-cta, ' +
     'a.ct-secondary-btn, a.sv-fit-step-cta, a.btn[href$="contact.html"], a.t-path-cta[href$="contact.html"], ' +
@@ -69,13 +69,13 @@
   if (window.requestIdleCallback) requestIdleCallback(function () { loadSP(); }, { timeout: 4000 });
   else setTimeout(function () { loadSP(); }, 2500);
 
-  /* Sizing strategy: ONE scroll surface — the form's own page inside the iframe.
+  /* Sizing strategy: ONE scroll surface: the form's own page inside the iframe.
      The iframe fills the whole viewport and the form scrolls natively inside it.
      This means:
-       — no double scroll (the page behind is locked while the overlay is open),
-       — the bottom of the form is always reachable no matter how long it grows
+       - no double scroll (the page behind is locked while the overlay is open),
+       - the bottom of the form is always reachable no matter how long it grows
          (e.g. choosing "Someone else" adds fields),
-       — wheel/touch scrolling never hands off between two scroll areas, so it
+       - wheel/touch scrolling never hands off between two scroll areas, so it
          can't stall mid-gesture. */
   var MOBILE_MAX = 700; /* below this width, treat as mobile (hint copy only) */
 
@@ -166,7 +166,7 @@
     while (root && root.parentNode !== document.body) root = root.parentNode;
 
     /* The widget closes itself (and resets its own open/closed state) when the
-       dimmed backdrop is clicked — trigger that native path instead of ripping
+       dimmed backdrop is clicked: trigger that native path instead of ripping
        the overlay out of the DOM, so the booking CTAs keep working afterwards. */
     [root, scroller.parentNode, scroller].forEach(function (el) {
       if (!el || el === document.body) return;
@@ -273,7 +273,7 @@
   function fitWidget() {
     var scroller = document.querySelector('.spwidget--scroller');
     var iframe = scroller && scroller.querySelector('iframe');
-    /* The widget may hide (not remove) its overlay on close — treat invisible as closed. */
+    /* The widget may hide (not remove) its overlay on close: treat invisible as closed. */
     var open = !!(scroller && iframe) && scroller.getBoundingClientRect().width > 0;
     if (!open) {
       hideHint(); removeExitUI(); removeX(); lockPage(false);
@@ -284,14 +284,13 @@
 
     lockPage(true);
 
-    /* Chrome (cue + X) is managed every tick — NOT behind the style guard below —
-       so it reliably comes back each time the form is reopened. */
+    /* Chrome (cue + X) is managed every tick: NOT behind the style guard below, so it reliably comes back each time the form is reopened. */
     if (!wasOpen) { wasOpen = true; showHint(); }
     showX();
     removeExitUI();
 
     var hPx = window.innerHeight + 'px';
-    /* Idempotence guard — constant style writes cause janky scrolling. Re-apply
+    /* Idempotence guard: constant style writes cause janky scrolling. Re-apply
        only when the viewport changes or the widget overrides our sizing. */
     var key = 'v:' + window.innerWidth + 'x' + window.innerHeight;
     if (iframe.getAttribute('data-sp-fit') === key && iframe.style.height === hPx) return;
@@ -311,7 +310,7 @@
     iframe.style.height = hPx;
     iframe.removeAttribute('scrolling');   /* let the iframe scroll its content */
 
-    /* The outer overlay must NOT scroll — one scroll surface only. */
+    /* The outer overlay must NOT scroll: one scroll surface only. */
     scroller.style.setProperty('overflow', 'hidden', 'important');
     scroller.style.setProperty('height', '100vh', 'important');
   }
@@ -336,7 +335,7 @@
         return nodes.some(function (n) { return !isOurs(n); });
       });
       if (!relevant || pending) return;
-      /* Coalesce bursts of mutations into one pass — re-querying the whole
+      /* Coalesce bursts of mutations into one pass: re-querying the whole
          document per mutation is expensive on long pages. */
       pending = true;
       requestAnimationFrame(function () { pending = false; stamp(); fitWidget(); });

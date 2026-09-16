@@ -16,7 +16,7 @@
 
   const SOCIALS = [
     { label: 'Instagram', href: 'https://instagram.com/socialhousetherapy', icon: 'instagram' },
-    { label: 'Facebook',  href: 'https://facebook.com/socialhousetherapy',  icon: 'facebook' },
+    { label: 'Facebook',  href: 'https://www.facebook.com/people/Social-House-Therapy/61579063274199/',  icon: 'facebook' },
     { label: 'TikTok',    href: 'https://tiktok.com/@socialhousetherapy',   icon: 'tiktok' },
   ];
 
@@ -400,7 +400,7 @@
 
   // ---------- FLOATING CONTACT BUTTON ----------
   function buildContactFab(){
-    // Don't show on the contact page — the form is already there.
+    // Don't show on the contact page: the form is already there.
     if(PAGE === 'contact') return;
     if(document.getElementById('contactFab')) return;
 

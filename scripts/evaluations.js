@@ -11,7 +11,6 @@
     pricingUrl: 'index.html#pricing-anchor',      // Services and pricing
     reportTurnaround: '',                  // e.g. "7 to 10 business days" (leave empty to omit)
     lastReviewed: 'September 2026',           // article "last updated" field
-    readingTime: '19 min read'
   };
 
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');

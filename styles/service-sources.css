@@ -1,5 +1,5 @@
 /* Sources / references block for the long-form service articles.
-   Additive only — extends the .ev-* system in evaluations.css. */
+   Additive only: extends the .ev-* system in evaluations.css. */
 .svc-evidence{margin:22px 0;background:var(--cream-100);border-radius:24px 8px 24px 8px;padding:18px 22px}
 .svc-evidence p{font-family:var(--font-body);font-size:14.5px;line-height:1.65;color:var(--fg-1);margin:0}
 .svc-evidence p+p{margin-top:10px}
