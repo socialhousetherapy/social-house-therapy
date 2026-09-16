@@ -863,8 +863,8 @@ a[data-coming-soon]:hover{background:transparent;transform:none;box-shadow:none}
 <!-- ========== PLAN + PRICING (matches city pages) ========== -->
 <style>
 .hp-plan{background:var(--white);padding:calc(var(--band-y) + var(--curve-h)) 0 var(--band-y);position:relative}
-#pricing-anchor{position:absolute;top:0;left:0}
-@media (max-width:960px){#pricing-anchor{position:static;display:block;scroll-margin-top:calc(var(--nav-h, 96px) + 18px)}}
+#pricing,#pricing-anchor{position:absolute;top:0;left:0}
+@media (max-width:960px){#pricing,#pricing-anchor{position:static;display:block;scroll-margin-top:calc(var(--nav-h, 96px) + 18px)}}
 .hp-plan .sz-shell{max-width:1160px;margin:0 auto;padding:0 clamp(20px,4vw,48px)}
 .hp-plan .sz-h2{font-family:var(--font-heading);font-size:clamp(26px,3.2vw,38px);font-weight:600;letter-spacing:-.022em;line-height:1.1;color:var(--sage-800);margin:14px 0 0;text-wrap:balance}
 .hp-plan .sz-sub{font-size:14px;line-height:1.65;color:var(--fg-2);margin:14px 0 0;max-width:64ch}
@@ -940,7 +940,7 @@ a.sz-step:hover .num{animation:none}
 .sz-eval-note{justify-content:center;text-align:center;margin-left:auto;margin-right:auto}
 }
 </style>
-<section class="hp-plan" id="pricing" data-screen-label="Plan and Pricing">
+<section class="hp-plan" id="pricing-section" data-screen-label="Plan and Pricing">
   <svg class="sec-curve" viewBox="0 0 1440 56" preserveAspectRatio="none" aria-hidden="true"><path d="M0,0 L1440,0 L1440,14 C1180,52 900,56 720,44 C480,28 220,30 0,52 Z" fill="var(--sky-100, #E3EEF3)"></path></svg>
   <div class="sz-shell">
     <div class="reveal">
@@ -972,7 +972,7 @@ a.sz-step:hover .num{animation:none}
         <p>Therapy begins with meaningful goals designed to help your child communicate more successfully.</p>
       </div>
     </div>
-    <span id="pricing-anchor" aria-hidden="true"></span>
+    <span id="pricing" aria-hidden="true"></span><span id="pricing-anchor" aria-hidden="true"></span><!-- old link target, kept so /#pricing-anchor still lands here -->
     <div class="sz-price-eval reveal">
       <div>
         <div class="sz-eval-title-row">

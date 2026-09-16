@@ -40,7 +40,7 @@
         <div class="nav-drop">
           <div class="nav-drop-panel">
             <a href="/evaluations">Evaluations</a>
-            <a href="/#pricing-anchor">Pricing</a>
+            <a href="/#pricing">Pricing</a>
             <a href="/faq">FAQs</a>
           </div>
         </div>
@@ -132,7 +132,7 @@
         </button>
         <ul class="menu-acc-panel">
           <li><a href="/evaluations">Evaluations</a></li>
-            <li><a href="/#pricing-anchor">Pricing</a></li>
+            <li><a href="/#pricing">Pricing</a></li>
           <li><a href="/faq">FAQs</a></li>
         </ul>
       </li>

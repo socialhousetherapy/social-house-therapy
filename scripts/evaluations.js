@@ -8,7 +8,7 @@
   var EV = window.EV_CONFIG = {
     bookingUrl: '/contact',            // "Schedule an Evaluation"
     consultUrl: '/contact',            // "Talk With an SLP First" / free consultation
-    pricingUrl: '/#pricing-anchor',      // Services and pricing
+    pricingUrl: '/#pricing',      // Services and pricing
     reportTurnaround: '',                  // e.g. "7 to 10 business days" (leave empty to omit)
     lastReviewed: 'September 2026',           // article "last updated" field
   };

@@ -7,7 +7,7 @@ date: 2026-09-16T21:33:36Z
 commit: 05acd7d7 (from 9a50ab73)
 ### Updated in this project
 - Nothing yet: this push was made directly in the repo by Claude Code. Bring these 14 files into the design project before the next bundle, or the bundle will put .html links back (the redirects still keep addresses clean, at the cost of one extra hop)
-- Clean URLs: every internal link now uses extensionless root paths (/, /about, /contact, /evaluations, /faq, /privacy, /speech-therapy-tempe, /speech-therapy-scottsdale; /#pricing-anchor, /#services, /faq#payment). Changed in all 8 pages plus 404.html, scripts/site.js (nav, menu, footer, contact button), scripts/evaluations.js (bookingUrl, consultUrl, pricingUrl), and scripts/sp-widget.js (booking selectors now match href$="/contact")
+- Clean URLs: every internal link now uses extensionless root paths (/, /about, /contact, /evaluations, /faq, /privacy, /speech-therapy-tempe, /speech-therapy-scottsdale; /#pricing, /#services, /faq#payment). Changed in all 8 pages plus 404.html, scripts/site.js (nav, menu, footer, contact button), scripts/evaluations.js (bookingUrl, consultUrl, pricingUrl), and scripts/sp-widget.js (booking selectors now match href$="/contact")
 - Canonical tags, og:url, schema @id/url values, and sitemap.xml use the clean addresses
 - _redirects: forced 301s from each .html address (and /index.html) to its clean path; the Squarespace redirects now point at /faq, /, and /evaluations
 - Fix: the three "Reach out" links inside FAQ answers now open the booking widget as the selector intended. Netlify's pretty-URL processing had been rewriting them to /contact, which the old contact.html selector never matched
