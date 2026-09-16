@@ -10,8 +10,8 @@
 
 
   const EXTRAS = [
-    { label: 'Tempe',      href: 'speech-therapy-tempe.html' },
-    { label: 'Scottsdale', href: 'speech-therapy-scottsdale.html' },
+    { label: 'Tempe',      href: '/speech-therapy-tempe' },
+    { label: 'Scottsdale', href: '/speech-therapy-scottsdale' },
   ];
 
   const SOCIALS = [
@@ -39,13 +39,13 @@
         </button>
         <div class="nav-drop">
           <div class="nav-drop-panel">
-            <a href="evaluations.html">Evaluations</a>
-            <a href="index.html#pricing-anchor">Pricing</a>
-            <a href="faq.html">FAQs</a>
+            <a href="/evaluations">Evaluations</a>
+            <a href="/#pricing-anchor">Pricing</a>
+            <a href="/faq">FAQs</a>
           </div>
         </div>
       </div>
-      <a href="about.html" class="${PAGE==='about'?'active':''}">About Us</a>`;
+      <a href="/about" class="${PAGE==='about'?'active':''}">About Us</a>`;
 
     const socialsHTML = SOCIALS.map(s => `
       <a class="nav-social" href="${s.href}" target="_blank" rel="noopener" aria-label="${s.label}">
@@ -55,7 +55,7 @@
     root.innerHTML = `
       <header class="nav" id="navEl">
         <div class="nav-inner">
-          <a class="nav-brand" href="index.html" aria-label="Social House Therapy">
+          <a class="nav-brand" href="/" aria-label="Social House Therapy">
             <img src="assets/logo-240.webp" alt="Social House Therapy" width="125" height="125" decoding="async" fetchpriority="high">
           </a>
           <nav class="nav-links" aria-label="Primary">${inlineLinks}</nav>
@@ -64,7 +64,7 @@
               <span class="nav-cta-pre">Call/Text</span>
               <span class="nav-cta-num">480-490-4812</span>
             </a>
-            <a class="nav-cta-primary" href="contact.html">
+            <a class="nav-cta-primary" href="/contact">
               Contact Us
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg>
             </a>
@@ -131,13 +131,13 @@
           <svg class="menu-acc-chev" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
         <ul class="menu-acc-panel">
-          <li><a href="evaluations.html">Evaluations</a></li>
-            <li><a href="index.html#pricing-anchor">Pricing</a></li>
-          <li><a href="faq.html">FAQs</a></li>
+          <li><a href="/evaluations">Evaluations</a></li>
+            <li><a href="/#pricing-anchor">Pricing</a></li>
+          <li><a href="/faq">FAQs</a></li>
         </ul>
       </li>
-      <li><a href="about.html"><span>About Us</span><span class="arr">→</span></a></li>
-      <li><a href="contact.html"><span>Contact</span><span class="arr">→</span></a></li>
+      <li><a href="/about"><span>About Us</span><span class="arr">→</span></a></li>
+      <li><a href="/contact"><span>Contact</span><span class="arr">→</span></a></li>
     `;
 
     const extrasHTML = '';
@@ -156,9 +156,9 @@
             <span style="margin: 0 10px; color: var(--ink-300);">·</span>
             <a href="mailto:info@socialhousetherapy.com">info@socialhousetherapy.com</a>
             <span style="margin: 0 10px; color: var(--ink-300);">·</span>
-            <span class="menu-foot-loc"><a href="speech-therapy-tempe.html">Tempe</a> &amp; <a href="speech-therapy-scottsdale.html">Scottsdale</a>, AZ</span>
+            <span class="menu-foot-loc"><a href="/speech-therapy-tempe">Tempe</a> &amp; <a href="/speech-therapy-scottsdale">Scottsdale</a>, AZ</span>
           </div>
-          <a class="menu-foot-cta" href="contact.html">
+          <a class="menu-foot-cta" href="/contact">
             Get Started
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
           </a>
@@ -349,7 +349,7 @@
       <footer class="footer">
         <div class="footer-grid">
           <div>
-            <a href="index.html" class="foot-brand-link">
+            <a href="/" class="foot-brand-link">
               <img src="assets/logo-240.webp" alt="Social House Therapy" width="96" height="96" decoding="async" loading="lazy">
             </a>
             <div class="foot-contact foot-contact-mobile">
@@ -368,18 +368,18 @@
           <div>
             <h4>Site map</h4>
             <ul>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="about.html">About</a></li>
-              <li><a href="evaluations.html">Evaluations</a></li>
-              <li><a href="faq.html">FAQs</a></li>
-              <li><a href="contact.html">Contact</a></li>
+              <li><a href="/">Home</a></li>
+              <li><a href="/about">About</a></li>
+              <li><a href="/evaluations">Evaluations</a></li>
+              <li><a href="/faq">FAQs</a></li>
+              <li><a href="/contact">Contact</a></li>
             </ul>
           </div>
           <div>
             <h4>Areas We Serve</h4>
             <ul>
-              <li><a href="speech-therapy-tempe.html">Tempe</a></li>
-              <li><a href="speech-therapy-scottsdale.html">Scottsdale</a></li>
+              <li><a href="/speech-therapy-tempe">Tempe</a></li>
+              <li><a href="/speech-therapy-scottsdale">Scottsdale</a></li>
             </ul>
             <div class="foot-contact-desktop">
               <h4 class="footer-h4-stack">Contact Us</h4>
@@ -393,7 +393,7 @@
         </div>
         <div class="footer-base">
           <div>© ${new Date().getFullYear()} Social House Therapy</div>
-          <div class="footer-legal"><a href="privacy.html">Notice of Privacy Practices</a></div>
+          <div class="footer-legal"><a href="/privacy">Notice of Privacy Practices</a></div>
         </div>
       </footer>`;
   }
@@ -448,7 +448,7 @@
     const fab = document.createElement('a');
     fab.id = 'contactFab';
     fab.className = 'contact-fab';
-    fab.href = 'contact.html';
+    fab.href = '/contact';
     fab.setAttribute('aria-label', 'Contact us');
     fab.innerHTML = `
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>

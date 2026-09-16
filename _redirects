@@ -1,4 +1,15 @@
 # Old Squarespace URLs that have no matching page on this site
-/faqs      /faq.html          301
-/home      /                  301
-/services  /evaluations.html  301
+/faqs      /faq          301
+/home      /             301
+/services  /evaluations  301
+
+# Clean URLs: send .html addresses to the extensionless version
+# (the ! forces the redirect even though the .html file exists)
+/index.html                      /                            301!
+/about.html                      /about                       301!
+/contact.html                    /contact                     301!
+/evaluations.html                /evaluations                 301!
+/faq.html                        /faq                         301!
+/privacy.html                    /privacy                     301!
+/speech-therapy-tempe.html       /speech-therapy-tempe        301!
+/speech-therapy-scottsdale.html  /speech-therapy-scottsdale   301!

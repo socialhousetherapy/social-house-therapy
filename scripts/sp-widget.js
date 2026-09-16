@@ -10,15 +10,15 @@
     'data-spwidget-channel': 'embedded_widget',
     'data-spwidget-type': 'Contact form'
   };
-  /* Every booking/contact CTA opens the widget: any CTA-styled link pointing at contact.html,
+  /* Every booking/contact CTA opens the widget: any CTA-styled link pointing at /contact,
      plus the nav/menu booking buttons. Plain "Contact" nav/footer text links stay as links. */
   var BOOKING_SELECTOR = 'a.hiw-step-cta, a.cl-cta-btn, a.menu-foot-cta, ' +
-    'a.ct-secondary-btn, a.sv-fit-step-cta, a.btn[href$="contact.html"], a.t-path-cta[href$="contact.html"], ' +
+    'a.ct-secondary-btn, a.sv-fit-step-cta, a.btn[href$="/contact"], a.t-path-cta[href$="/contact"], ' +
     'a.tz-btn, a.tz-step, ' +
     'a.sz-btn, a.sz-step, ' +
-    'a.hand-note[href$="contact.html"], ' +
-    'a.ev-btn[href$="contact.html"], a.ev-link[href$="contact.html"], ' +
-    '.faq-a a[href$="contact.html"]';
+    'a.hand-note[href$="/contact"], ' +
+    'a.ev-btn[href$="/contact"], a.ev-link[href$="/contact"], ' +
+    '.faq-a a[href$="/contact"]';
   function stamp() {
     var found = 0;
     document.querySelectorAll(BOOKING_SELECTOR).forEach(function (el) {
