@@ -3,15 +3,15 @@ repo: socialhousetherapy/social-house-therapy
 branch: main
 
 ## Last sync
-date: 2026-09-16T21:33:36Z
-commit: 05acd7d7 (from 9a50ab73)
+date: 2026-09-16T23:15:57Z
+commit: 30b4fb78 (from d9087baf)
 ### Updated in this project
-- Nothing yet: this push was made directly in the repo by Claude Code. Bring these 14 files into the design project before the next bundle, or the bundle will put .html links back (the redirects still keep addresses clean, at the cost of one extra hop)
-- Clean URLs: every internal link now uses extensionless root paths (/, /about, /contact, /evaluations, /faq, /privacy, /speech-therapy-tempe, /speech-therapy-scottsdale; /#pricing, /#services, /faq#payment). Changed in all 8 pages plus 404.html, scripts/site.js (nav, menu, footer, contact button), scripts/evaluations.js (bookingUrl, consultUrl, pricingUrl), and scripts/sp-widget.js (booking selectors now match href$="/contact")
-- Canonical tags, og:url, schema @id/url values, and sitemap.xml use the clean addresses
-- _redirects: forced 301s from each .html address (and /index.html) to its clean path; the Squarespace redirects now point at /faq, /, and /evaluations
-- Fix: the three "Reach out" links inside FAQ answers now open the booking widget as the selector intended. Netlify's pretty-URL processing had been rewriting them to /contact, which the old contact.html selector never matched
-- New rule for future work: write internal links as root paths without .html (href="/about", not href="about.html")
+- Nothing yet: pushed directly from Claude Code. Bring these 18 files into the design project before the next bundle: all 9 pages, scripts/site.js, and the 8 files in assets/fonts/
+- Fonts are self-hosted: the exact woff2 files Google serves for Bricolage Grotesque, DM Sans (upright and italic), and Caveat now live in assets/fonts/ (latin and latin-ext subsets). Every page preloads the three latin files and declares the @font-face rules inline in the head, replacing the Google preconnect and stylesheet links. Same bytes, so rendering is unchanged; text metrics verified identical against the previous version on Home, About, Tempe, and FAQ
+- Cactus art on the final CTA (index, about, faq, tempe, scottsdale) is applied by site.js after load (class bg-ready; the sections carry data-bg-defer) so the 76 KB image no longer shares bandwidth with the hero photo and fonts. site.js cache version bumped to v=47 on every page
+- Why: PageSpeed mobile sat at 76-77 with TBT 0 and CLS 0; the whole remaining gap was the Google Fonts chain (two extra origins plus a stylesheet round trip) counted before first paint (FCP 3.5 s, LCP 4.1 s)
+- Rule for new pages: copy the font preload lines and @font-face block from an existing page head; do not link fonts.googleapis.com. Internal links stay root paths without .html (href="/about")
+- Earlier direct pushes still to bring into the design project: clean URLs (05acd7d7, 14 files: all pages, 404.html, site.js, evaluations.js, sp-widget.js, sitemap.xml, _redirects), pricing link /#pricing (9cb3e7a3, 6 files), mobile speed fix (08fc380a: sp-widget.js, index.html, assets/madison-jeffery-720.webp)
 - Follow-up for a future bundle: add sameAs (Facebook) to the business schema nodes in about.html and speech-therapy-scottsdale.html
 
 ## Screen map
@@ -27,10 +27,12 @@ commit: 05acd7d7 (from 9a50ab73)
 | privacy.html | privacy.html |
 | 404.html | 404.html |
 | (no screen) | _redirects |
+| (no screen) | assets/fonts/ (8 woff2 files, referenced from every page head) |
 | partner-with-us.html (held) | not on main; local page + styles/partner.css + scripts/partner.js |
 | (drafts, not in repo) | aac-support, speech-sound-disorders, early-communication-late-talkers, language-thinking-executive-function, autism-social-communication, stuttering-fluency |
 
 ## Sync history
+- 2026-09-16T23:15:57Z: pushed 30b4fb78 (from d9087baf) directly from Claude Code: self-hosted fonts on all 9 pages plus 8 woff2 files in assets/fonts/, cactus art deferred via site.js v=47 (18 files); nothing deleted
 - 2026-09-16: pushed 08fc380a (from 967a5043) directly from Claude Code: mobile speed fixes from the PageSpeed review (mobile 55). scripts/sp-widget.js: the load-on-scroll trigger now ignores scrolls inside elements, because the reviews carousel scrolls itself on phones and was loading SimplePractice, Stripe, reCAPTCHA, and tag scripts (about 3 MB) with no visitor input. index.html: Meet Madison portrait srcset gains a 720w step (new assets/madison-jeffery-720.webp, 74 KB) so phones stop downloading the 175 KB 1000w file (3 files)
 - 2026-09-16: pushed 9cb3e7a3 (from 3c43eb41) directly from Claude Code: pricing link is now /#pricing instead of /#pricing-anchor (header menu, mobile menu, evaluations page and script, FAQ). In index.html the pricing section id is now pricing-section and the scroll target span is id="pricing"; a second pricing-anchor span is kept so old links land in the same place (6 files)
 - 2026-09-16T21:33:36Z: pushed 05acd7d7 (from 9a50ab73) directly from Claude Code: clean URLs across 8 pages, 404.html, site.js, evaluations.js, sp-widget.js, sitemap.xml, and _redirects (14 files); nothing deleted
