@@ -4,10 +4,12 @@ Goal: get AI assistants (ChatGPT, Perplexity, Gemini, Google AI Overviews) to ci
 
 ## One-time setup
 
-- [ ] Push robots.txt and sitemap.xml to the live site (files are ready in this project; needs your GitHub sync confirmation)
+- [x] robots.txt and sitemap.xml are live on main (pushed 2026-09-08, verified identical 2026-09-16)
+- [ ] Sitemap lists live, linked pages only (8 today). Add each page the day it is published and linked, per the project sync rules; never list drafts, unlinked pages (blog, DDD resources), or the on-hold partner page
 - [ ] Bing Webmaster Tools: create free account at bing.com/webmasters, verify the site, submit sitemap.xml (Perplexity and ChatGPT retrieve from Bing's index)
 - [ ] Google Search Console: confirm the site is verified and sitemap.xml is submitted
 - [ ] Hosting check: if the site ever moves behind Cloudflare or similar, make sure any "block AI bots" toggle is OFF (some hosts enable it by default)
+- [ ] Netlify: in Site configuration, confirm any AI crawler blocking or bot protection setting is OFF (edge-level blocks override robots.txt)
 - [ ] Never add Disallow rules for GPTBot, ClaudeBot, PerplexityBot, Google-Extended, or Bingbot to robots.txt
 
 ## Off-site reputation (Madison)
@@ -33,4 +35,5 @@ Goal: get AI assistants (ChatGPT, Perplexity, Gemini, Google AI Overviews) to ci
 
 ## Log
 
-- 2026-08-25: checklist created; robots.txt and sitemap.xml drafted, awaiting push confirmation
+- 2026-08-25: checklist created
+- 2026-09-16: confirmed robots.txt and sitemap.xml already live and matching; no push required

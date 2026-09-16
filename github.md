@@ -3,12 +3,15 @@ repo: socialhousetherapy/social-house-therapy
 branch: main
 
 ## Last sync
-date: 2026-09-16T20:24:41Z
-commit: 1af419a9 (from 3e757462)
+date: 2026-09-16T21:00:00Z
+commit: (owner pastes sha after push)
 ### Updated in this project
-- Nothing; this push was made directly in the repo by Claude Code, so copy _redirects into the design project to stay identical
-- Added _redirects: old Squarespace URLs /faqs to /faq.html, /home to /, /services to /evaluations.html (all 301)
-- Domain moved off Squarespace the same day: socialhousetherapy.com now points at this Netlify project (DNS at GoDaddy, apex primary, www redirects to it, HTTPS on); Microsoft 365 email records carried over unchanged
+- About page: bio wording from owner review, photo kept inside the layout at 96% width, sticky photo while the story scrolls, scroll-reveal extended to heading, byline, intro, and credential badges; eager SimplePractice CDN script removed, site.js deferred
+- FAQ: ages answer "from infancy through the school-age years", DDD answer softened to "in the coming months" with reach-out-and-ask wording, new "Who will be working with my child?" question, progress opener reworded, hero apostrophe fixed, CDN script removed, site.js deferred; schema synced
+- New docs: about-review.md (three bio claims verified by owner), ai-visibility-checklist.md
+- Pushed via design_handoff_about_faq_sept16/ (4 files plus github.md); nothing deleted, drafts still unlinked, sitemap unchanged
+- Push note: main was at 5ddf46c7, not the 3e757462 base, so this receipt was merged with the two entries below. about.html, faq.html, and about-review.md were already identical on main (their changes shipped in 3e757462); only ai-visibility-checklist.md and github.md changed. main has 73 files, including _redirects
+- Follow-up for a future bundle: add sameAs (Facebook) to the business schema nodes in about.html and speech-therapy-scottsdale.html
 
 ## Screen map
 | Project screen | Repo files |
@@ -27,8 +30,9 @@ commit: 1af419a9 (from 3e757462)
 | (drafts, not in repo) | aac-support, speech-sound-disorders, early-communication-late-talkers, language-thinking-executive-function, autism-social-communication, stuttering-fluency |
 
 ## Sync history
-- 2026-09-16T20:24:41Z: pushed 1af419a9 (from 3e757462) directly from Claude Code: added _redirects for old Squarespace URLs (1 file); nothing deleted
-- 2026-09-16T20:14:27Z: pushed 3e757462 (from ecab0fa8) via design_handoff_content_sept16/: evaluations and FAQ copy edits, Facebook URL, em dashes removed from code comments (17 files plus github.md); nothing deleted, drafts still unlinked
+- 2026-09-16T20:47:30Z: pushed 5ddf46c7 (from 1af419a9) directly from Claude Code: github.md notes only
+- 2026-09-16T20:24:41Z: pushed 1af419a9 (from 3e757462) directly from Claude Code: added _redirects (301s for old Squarespace URLs /faqs, /home, /services). Same day the domain moved off Squarespace: socialhousetherapy.com now points at this Netlify project (DNS at GoDaddy, apex primary, www redirects to it, HTTPS on); Microsoft 365 email records carried over unchanged. Copy _redirects into the design project
+- 2026-09-16T20:14:27Z: pushed 3e757462 (from ecab0fa8) via design_handoff_content_sept16/: evaluations and FAQ copy edits, Facebook URL on six pages, em dashes removed from code comments (17 files plus github.md); nothing deleted
 - 2026-09-09T02:00:00Z: pushed ecab0fa8 (from 93da2d7b) via design_handoff_mobile_toc/: Tempe and Scottsdale phone layout, evaluations "On this page" strip rewrite (5 files plus github.md); nothing deleted
 - 2026-09-08T22:05:00Z: pushed 93da2d7b (from 42ac7176) via design_handoff_live_match/: 9 pages, sitemap, site.js, evaluations.js, site.css, evaluations.css, clarity.css, CLAUDE.md, github.md, 8 review docs, 20 new photo assets; deleted partner-with-us.html, pediatric-feeding-oral-motor-review.md, understanding-using-language-review.md, scripts/service-article.js, 3 cactus-hero skylines, clarity-mother-child.webp, speech-evaluation-camera.webp, tempe-boy-phone-560.webp, 3 paint-* textures
 - 2026-08-28T04:26:21Z: pulled main at 42ac7176 (66 commits / 74 files since deploy push); project made identical to repo for all live-site files; drafts kept unlinked; nothing pushed
