@@ -562,10 +562,28 @@
     buildFooter();
     buildContactFab();
     wireReveal();
+    wireDeferredBg();
     wireFaq();
     wireHamburgerVisibility();
     wireNavHide();
     wirePhoneChooser();
+  }
+
+  // ---------- DEFERRED BACKGROUND ART ----------
+  // The cactus art on the final CTA is a 76 KB image far below the fold. Adding
+  // it once the page has loaded (or when the section comes close) keeps it from
+  // sharing bandwidth with the hero photo and fonts during the first paint.
+  function wireDeferredBg(){
+    const els = document.querySelectorAll('[data-bg-defer]');
+    if(!els.length) return;
+    const show = el => el.classList.add('bg-ready');
+    if(document.readyState === 'complete'){ els.forEach(show); return; }
+    window.addEventListener('load', () => els.forEach(show), { once: true });
+    if(!('IntersectionObserver' in window)) return;
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(en => { if(en.isIntersecting){ show(en.target); io.unobserve(en.target); } });
+    }, { rootMargin: '1200px 0px' });
+    els.forEach(e => io.observe(e));
   }
 
   // ---------- CALL OR TEXT CHOOSER (mobile) ----------
