@@ -3,16 +3,22 @@ repo: socialhousetherapy/social-house-therapy
 branch: main
 
 ## Last sync
-date: 2026-09-16T23:15:57Z
-commit: 30b4fb78 (from d9087baf)
+date: 2026-09-17T17:15:30Z
+commit: e360b545 (from 48ef0994)
 ### Updated in this project
-- Nothing yet: pushed directly from Claude Code. Bring these 18 files into the design project before the next bundle: all 9 pages, scripts/site.js, and the 8 files in assets/fonts/
+- Nothing yet: pushed directly from Claude Code. Design project notice: bring these 10 files into the design project before the next bundle, or the bundle will undo this work: all 9 pages (404, about, contact, evaluations, faq, index, privacy, speech-therapy-scottsdale, speech-therapy-tempe) and CLAUDE.md. scripts/site.js is unchanged (still v=47)
+- Business schema (the #org node) on index, contact, evaluations, speech-therapy-tempe, and speech-therapy-scottsdale now carries the same sameAs list of 4 URLs (Instagram, Facebook, TikTok, Google Business Profile) plus hasMap. The permanent Google Business Profile URL is https://www.google.com/maps?cid=12574984060774163496 (Google entity id /g/11xv33bc3d). Do not use share.google short links in schema: they redirect to a search page with tracking codes
+- speech-therapy-scottsdale.html: the #org node said its url was /speech-therapy-scottsdale while every other page said the home page. One @id must carry one url, so it is now https://socialhousetherapy.com/. Founder jobTitle now matches the other pages (Speech-Language Pathologist, MS, CCC-SLP); logo and email added. This closes the earlier follow-up about sameAs on Scottsdale. about.html has no business node of its own (it points at #org), so there is nothing to add there
+- index.html pricing section: the In-home visit card sub line now reads "We come to you in Tempe and Scottsdale", with each city name linked to its location page. Two new rules follow .sz-price-card .sub in the inline styles (links inherit the grey text color, thin underline, clay on hover). Checked at 1280 and 375 wide: one line, no overflow
+- Static footer: every page now ships a static copy of the footer inside #site-footer, generated from the buildFooter template in scripts/site.js (identical markup; verified against the script-built footer). site.js still replaces it on load, so visitors see no change. The static copy shows 2026; site.js shows the current year
+- Why: crawlers that do not run scripts (Bing, most AI crawlers) saw home page links to /about, /evaluations, and /contact only, and could reach the Tempe and Scottsdale pages only through the sitemap and /evaluations. Backlinks will mostly land on the home page, so plain links from it pass that value on to the location pages
+- Rule for the footer: when the footer template in site.js changes, update the static copy on every page. New pages copy the block from an existing page. Both rules are now in CLAUDE.md, along with a rule that every push carries a notice like this one
+- Still to bring in from the previous direct push, 30b4fb78 (from d9087baf, 2026-09-16T23:15:57Z), 18 files: all 9 pages, scripts/site.js, and the 8 files in assets/fonts/. Take the pages from main as it stands now, so they carry both pushes
 - Fonts are self-hosted: the exact woff2 files Google serves for Bricolage Grotesque, DM Sans (upright and italic), and Caveat now live in assets/fonts/ (latin and latin-ext subsets). Every page preloads the three latin files and declares the @font-face rules inline in the head, replacing the Google preconnect and stylesheet links. Same bytes, so rendering is unchanged; text metrics verified identical against the previous version on Home, About, Tempe, and FAQ
 - Cactus art on the final CTA (index, about, faq, tempe, scottsdale) is applied by site.js after load (class bg-ready; the sections carry data-bg-defer) so the 76 KB image no longer shares bandwidth with the hero photo and fonts. site.js cache version bumped to v=47 on every page
 - Why: PageSpeed mobile sat at 76-77 with TBT 0 and CLS 0; the whole remaining gap was the Google Fonts chain (two extra origins plus a stylesheet round trip) counted before first paint (FCP 3.5 s, LCP 4.1 s)
 - Rule for new pages: copy the font preload lines and @font-face block from an existing page head; do not link fonts.googleapis.com. Internal links stay root paths without .html (href="/about")
 - Earlier direct pushes still to bring into the design project: clean URLs (05acd7d7, 14 files: all pages, 404.html, site.js, evaluations.js, sp-widget.js, sitemap.xml, _redirects), pricing link /#pricing (9cb3e7a3, 6 files), mobile speed fix (08fc380a: sp-widget.js, index.html, assets/madison-jeffery-720.webp)
-- Follow-up for a future bundle: add sameAs (Facebook) to the business schema nodes in about.html and speech-therapy-scottsdale.html
 
 ## Screen map
 | Project screen | Repo files |
@@ -32,6 +38,7 @@ commit: 30b4fb78 (from d9087baf)
 | (drafts, not in repo) | aac-support, speech-sound-disorders, early-communication-late-talkers, language-thinking-executive-function, autism-social-communication, stuttering-fluency |
 
 ## Sync history
+- 2026-09-17T17:15:30Z: pushed e360b545 (from 48ef0994) directly from Claude Code: Google Business Profile URL in the business schema (sameAs plus hasMap) on index, contact, evaluations, tempe, and scottsdale; Scottsdale #org url corrected to the home page; home pricing card links to the Tempe and Scottsdale pages; static footer copy inside #site-footer on all 9 pages; CLAUDE.md rules for design project notices and the static footer (10 files); nothing deleted
 - 2026-09-16T23:15:57Z: pushed 30b4fb78 (from d9087baf) directly from Claude Code: self-hosted fonts on all 9 pages plus 8 woff2 files in assets/fonts/, cactus art deferred via site.js v=47 (18 files); nothing deleted
 - 2026-09-16: pushed 08fc380a (from 967a5043) directly from Claude Code: mobile speed fixes from the PageSpeed review (mobile 55). scripts/sp-widget.js: the load-on-scroll trigger now ignores scrolls inside elements, because the reviews carousel scrolls itself on phones and was loading SimplePractice, Stripe, reCAPTCHA, and tag scripts (about 3 MB) with no visitor input. index.html: Meet Madison portrait srcset gains a 720w step (new assets/madison-jeffery-720.webp, 74 KB) so phones stop downloading the 175 KB 1000w file (3 files)
 - 2026-09-16: pushed 9cb3e7a3 (from 3c43eb41) directly from Claude Code: pricing link is now /#pricing instead of /#pricing-anchor (header menu, mobile menu, evaluations page and script, FAQ). In index.html the pricing section id is now pricing-section and the scroll target span is id="pricing"; a second pricing-anchor span is kept so old links land in the same place (6 files)
