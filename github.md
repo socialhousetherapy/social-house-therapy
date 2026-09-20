@@ -3,19 +3,17 @@ repo: socialhousetherapy/social-house-therapy
 branch: main
 
 ## Last sync
-date: 2026-09-20T19:33:43Z
-commit: cef118c4 (from 566cef7e)
+date: 2026-09-20T19:47:53Z
+commit: PENDING (from 361c686e)
 ### Updated in this project
-- Four pages changed: index.html, about.html, faq.html, contact.html. Take all four from main as they stand now. Titles only; no layout, copy, or schema structure changed
-- Titles the owner chose, replacing ones that ran past the length Google displays (about 60 characters). Lengths below are rendered, with &amp; counted as one character
-- index.html 73 to 58: "Pediatric Speech Therapy in Arizona | Social House Therapy". Replaced in three places (title, og:title, twitter:title)
-- about.html 79 to 53: "About Social House Therapy | Pediatric Speech Therapy". Title only. og:title and twitter:title on this page were already different on purpose ("About Social House Therapy | Madison Jeffery, MS, CCC-SLP") and were left alone
-- faq.html 76 to 52: "Pediatric Speech Therapy FAQs | Social House Therapy". Replaced in three places (title, og:title, twitter:title)
-- contact.html 48 to 42: "Let's Talk! | Contact Social House Therapy". Replaced in four places (title, og:title, twitter:title, and the WebPage "name" in the JSON-LD, which mirrored the old title)
-- The owner typed "Lets Talk!" without the apostrophe. Applied as "Let's Talk!" using a straight apostrophe, which is what the rest of the pages use. Flagged to the owner; revert if the missing apostrophe was intended
-- Unchanged on purpose, the owner reviewed and kept them: evaluations, speech-therapy-tempe, speech-therapy-scottsdale, privacy, 404
-- Open item: evaluations.html is still 61 characters, one over, so it may truncate slightly. The owner chose to keep it
-- Note on the home page title: it no longer names Tempe or Scottsdale, trading the two city keywords for "Arizona". The dedicated city pages still carry them in their own titles, h1s, and schema
+- All nine pages changed: index, about, evaluations, speech-therapy-tempe, speech-therapy-scottsdale, faq, contact, privacy, 404. Take all nine from main as they stand now. Meta descriptions only; no layout, copy, or schema structure changed
+- New descriptions written by the owner, replacing the previous ones. They move from feature lists to the practice voice. All nine land between 114 and 147 characters, inside what Google displays
+- Where each page also carried the same text in og:description, twitter:description, or a JSON-LD "description", those copies were updated with it: index 3 slots, evaluations 3, faq 3, contact 3, privacy 3, tempe 2, about 1, scottsdale 1
+- og:description and twitter:description on about, tempe, and scottsdale were already written differently on purpose and were left alone. The same is true of the JSON-LD entity descriptions on index, about, tempe, and evaluations: those describe the business or the service, not the search snippet, so they keep their own wording
+- 404.html had no meta description at all and now has one. Note it carries meta robots noindex, so this text cannot appear in search results. It was added because the owner asked for it; it is cosmetic
+- The owner's 404 text used an em dash ("Oops, this page wandered off"). CLAUDE.md forbids em dashes anywhere, so it was written with a comma instead. Flagged to the owner
+- Curly punctuation is intentional and verified as UTF-8 in the files: left and right double quotation marks on evaluations, and right single quotation marks on faq, contact, and 404. Straight double quotes were not used, since they would end the HTML attribute early
+- Note on the home page: the meta description now says Arizona and the East Valley rather than naming Tempe and Scottsdale, matching the new title. The JSON-LD business description on that page still names Tempe and Scottsdale, so the city signal is not lost
 - JSON-LD on all nine pages re-parsed clean after the edit
 
 ## Screen map
@@ -36,6 +34,7 @@ commit: cef118c4 (from 566cef7e)
 | (drafts, not in repo) | aac-support, speech-sound-disorders, early-communication-late-talkers, language-thinking-executive-function, autism-social-communication, stuttering-fluency |
 
 ## Sync history
+- 2026-09-20T19:47:53Z: pushed PENDING (from 361c686e) directly from Claude Code: new meta descriptions on all nine pages in the practice voice, with og:description, twitter:description, and mirrored JSON-LD description fields kept in sync, plus a first meta description on 404.html (9 files); nothing deleted
 - 2026-09-20T19:33:43Z: pushed cef118c4 (from 566cef7e) directly from Claude Code: page titles shortened to fit Google's display length on index, about, and faq, and a new contact title, with og:title, twitter:title, and the contact WebPage schema name kept in sync (4 files); nothing deleted
 - 2026-09-20T19:15:07Z: pushed 57f6674e (from 8274308f) directly from Claude Code: netlify.toml added, a build ignore command so pushes that touch only .md files stop consuming Netlify deploy credits (1 file). Earlier the same day 8274308f added the /pages/* splat redirect to _redirects (1 file), pushed without a notice; this entry covers both. Nothing deleted
 - 2026-09-17T17:23:17Z: pushed 4a9dfc9f (from b0a8de1f) directly from Claude Code: compact business node (#org) added to the about.html schema so worksFor and isPartOf resolve on the page; details copied from the home page node (1 file); nothing deleted
