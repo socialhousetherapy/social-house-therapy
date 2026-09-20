@@ -3,17 +3,20 @@ repo: socialhousetherapy/social-house-therapy
 branch: main
 
 ## Last sync
-date: 2026-09-20T19:15:07Z
-commit: 57f6674e (from 8274308f)
+date: 2026-09-20T19:33:43Z
+commit: PENDING (from 566cef7e)
 ### Updated in this project
-- Two files changed since the design project caught up at ff0adc8: _redirects and netlify.toml. Neither maps to a design screen; take both from main as they stand now
-- _redirects (8274308f): added the line "/pages/*   /:splat       301". Search Console reported https://socialhousetherapy.com/pages/speech-therapy-scottsdale as a 404, a leftover Squarespace URL prefix with no matching rule, so any inbound link using it died on the 404 page. The splat sends every old /pages/... address to its current path. Verified live: /pages/speech-therapy-scottsdale now returns 301 and resolves 200 at /speech-therapy-scottsdale. The three existing legacy rules (/faqs, /home, /services) are unchanged
-- netlify.toml (new file, this push): a [build] section whose only key is "ignore", a command Netlify runs before a deploy. Exit 0 skips the deploy, non-zero deploys. The command is: git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF -- . ':(exclude)*.md'
-- Why: Netlify paused the whole site on 2026-09-20 for running out of credits, and every page was offline for roughly an hour. The usage breakdown shows production deploys, not traffic, consumed almost all of them: 15 credits in the Jul 20 to Aug 19 period against 1.3K credits in Aug 20 to Sep 19, with the daily chart dominated by the production deploys band. Bandwidth over that same month was 187 MB, which is negligible. The repo has 41 commits on 2026-08-26 and 24 on 2026-08-27, and 12 commits in its history touch only .md files, each of which triggered a full production deploy that changed nothing a visitor sees
-- The rule still deploys everything else, including any push that mixes .md files with real site files. Verified against real commits before pushing: docs-only ff0adc8 skips, site-file 8274308 deploys, mixed md plus html 93da2d7 deploys, and an empty CACHED_COMMIT_REF falls through to deploying
-- Netlify build settings carry no build command and no publish directory, so the new [build] section sets only "ignore" and overrides nothing
-- Consequence for this workflow: the follow-up docs commit that records the sha no longer triggers a deploy, which is the intended behaviour. Pushes that change site files still deploy exactly as before
-- Open item for the owner, nothing changed in billing: auto recharge on Netlify credits is Disabled. The Pro plan grants 3,000 credits per period (Sep 20 to Oct 19). If they run out with auto recharge off, the site pauses again the same way
+- Four pages changed: index.html, about.html, faq.html, contact.html. Take all four from main as they stand now. Titles only; no layout, copy, or schema structure changed
+- Titles the owner chose, replacing ones that ran past the length Google displays (about 60 characters). Lengths below are rendered, with &amp; counted as one character
+- index.html 73 to 58: "Pediatric Speech Therapy in Arizona | Social House Therapy". Replaced in three places (title, og:title, twitter:title)
+- about.html 79 to 53: "About Social House Therapy | Pediatric Speech Therapy". Title only. og:title and twitter:title on this page were already different on purpose ("About Social House Therapy | Madison Jeffery, MS, CCC-SLP") and were left alone
+- faq.html 76 to 52: "Pediatric Speech Therapy FAQs | Social House Therapy". Replaced in three places (title, og:title, twitter:title)
+- contact.html 48 to 42: "Let's Talk! | Contact Social House Therapy". Replaced in four places (title, og:title, twitter:title, and the WebPage "name" in the JSON-LD, which mirrored the old title)
+- The owner typed "Lets Talk!" without the apostrophe. Applied as "Let's Talk!" using a straight apostrophe, which is what the rest of the pages use. Flagged to the owner; revert if the missing apostrophe was intended
+- Unchanged on purpose, the owner reviewed and kept them: evaluations, speech-therapy-tempe, speech-therapy-scottsdale, privacy, 404
+- Open item: evaluations.html is still 61 characters, one over, so it may truncate slightly. The owner chose to keep it
+- Note on the home page title: it no longer names Tempe or Scottsdale, trading the two city keywords for "Arizona". The dedicated city pages still carry them in their own titles, h1s, and schema
+- JSON-LD on all nine pages re-parsed clean after the edit
 
 ## Screen map
 | Project screen | Repo files |
@@ -33,6 +36,7 @@ commit: 57f6674e (from 8274308f)
 | (drafts, not in repo) | aac-support, speech-sound-disorders, early-communication-late-talkers, language-thinking-executive-function, autism-social-communication, stuttering-fluency |
 
 ## Sync history
+- 2026-09-20T19:33:43Z: pushed PENDING (from 566cef7e) directly from Claude Code: page titles shortened to fit Google's display length on index, about, and faq, and a new contact title, with og:title, twitter:title, and the contact WebPage schema name kept in sync (4 files); nothing deleted
 - 2026-09-20T19:15:07Z: pushed 57f6674e (from 8274308f) directly from Claude Code: netlify.toml added, a build ignore command so pushes that touch only .md files stop consuming Netlify deploy credits (1 file). Earlier the same day 8274308f added the /pages/* splat redirect to _redirects (1 file), pushed without a notice; this entry covers both. Nothing deleted
 - 2026-09-17T17:23:17Z: pushed 4a9dfc9f (from b0a8de1f) directly from Claude Code: compact business node (#org) added to the about.html schema so worksFor and isPartOf resolve on the page; details copied from the home page node (1 file); nothing deleted
 - 2026-09-17T17:15:30Z: pushed e360b545 (from 48ef0994) directly from Claude Code: Google Business Profile URL in the business schema (sameAs plus hasMap) on index, contact, evaluations, tempe, and scottsdale; Scottsdale #org url corrected to the home page; home pricing card links to the Tempe and Scottsdale pages; static footer copy inside #site-footer on all 9 pages; CLAUDE.md rules for design project notices and the static footer (10 files); nothing deleted
