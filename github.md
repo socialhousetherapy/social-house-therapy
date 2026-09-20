@@ -4,7 +4,7 @@ branch: main
 
 ## Last sync
 date: 2026-09-20T19:47:53Z
-commit: PENDING (from 361c686e)
+commit: 10ff3c95 (from 361c686e)
 ### Updated in this project
 - All nine pages changed: index, about, evaluations, speech-therapy-tempe, speech-therapy-scottsdale, faq, contact, privacy, 404. Take all nine from main as they stand now. Meta descriptions only; no layout, copy, or schema structure changed
 - New descriptions written by the owner, replacing the previous ones. They move from feature lists to the practice voice. All nine land between 114 and 147 characters, inside what Google displays
@@ -34,7 +34,7 @@ commit: PENDING (from 361c686e)
 | (drafts, not in repo) | aac-support, speech-sound-disorders, early-communication-late-talkers, language-thinking-executive-function, autism-social-communication, stuttering-fluency |
 
 ## Sync history
-- 2026-09-20T19:47:53Z: pushed PENDING (from 361c686e) directly from Claude Code: new meta descriptions on all nine pages in the practice voice, with og:description, twitter:description, and mirrored JSON-LD description fields kept in sync, plus a first meta description on 404.html (9 files); nothing deleted
+- 2026-09-20T19:47:53Z: pushed 10ff3c95 (from 361c686e) directly from Claude Code: new meta descriptions on all nine pages in the practice voice, with og:description, twitter:description, and mirrored JSON-LD description fields kept in sync, plus a first meta description on 404.html (9 files); nothing deleted
 - 2026-09-20T19:33:43Z: pushed cef118c4 (from 566cef7e) directly from Claude Code: page titles shortened to fit Google's display length on index, about, and faq, and a new contact title, with og:title, twitter:title, and the contact WebPage schema name kept in sync (4 files); nothing deleted
 - 2026-09-20T19:15:07Z: pushed 57f6674e (from 8274308f) directly from Claude Code: netlify.toml added, a build ignore command so pushes that touch only .md files stop consuming Netlify deploy credits (1 file). Earlier the same day 8274308f added the /pages/* splat redirect to _redirects (1 file), pushed without a notice; this entry covers both. Nothing deleted
 - 2026-09-17T17:23:17Z: pushed 4a9dfc9f (from b0a8de1f) directly from Claude Code: compact business node (#org) added to the about.html schema so worksFor and isPartOf resolve on the page; details copied from the home page node (1 file); nothing deleted
