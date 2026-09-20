@@ -1,0 +1,11 @@
+# Netlify runs this command before a deploy.
+# Exit 0  -> skip the deploy (nothing the site serves actually changed)
+# Non-zero -> run the deploy as normal
+#
+# Production deploys are what consume Netlify credits on this account, and
+# documentation-only pushes (github.md sync notices, *-review.md working notes)
+# were triggering full deploys that changed nothing a visitor ever sees.
+# This skips those and deploys everything else, including any push that mixes
+# .md files with real site files.
+[build]
+  ignore = "git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF -- . ':(exclude)*.md'"
