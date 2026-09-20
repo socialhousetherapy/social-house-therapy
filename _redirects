@@ -2,6 +2,7 @@
 /faqs      /faq          301
 /home      /             301
 /services  /evaluations  301
+/pages/*   /:splat       301
 
 # Clean URLs: send .html addresses to the extensionless version
 # (the ! forces the redirect even though the .html file exists)
