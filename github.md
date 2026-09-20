@@ -4,7 +4,7 @@ branch: main
 
 ## Last sync
 date: 2026-09-20T19:15:07Z
-commit: PENDING (from 8274308f)
+commit: 57f6674e (from 8274308f)
 ### Updated in this project
 - Two files changed since the design project caught up at ff0adc8: _redirects and netlify.toml. Neither maps to a design screen; take both from main as they stand now
 - _redirects (8274308f): added the line "/pages/*   /:splat       301". Search Console reported https://socialhousetherapy.com/pages/speech-therapy-scottsdale as a 404, a leftover Squarespace URL prefix with no matching rule, so any inbound link using it died on the 404 page. The splat sends every old /pages/... address to its current path. Verified live: /pages/speech-therapy-scottsdale now returns 301 and resolves 200 at /speech-therapy-scottsdale. The three existing legacy rules (/faqs, /home, /services) are unchanged
@@ -33,7 +33,7 @@ commit: PENDING (from 8274308f)
 | (drafts, not in repo) | aac-support, speech-sound-disorders, early-communication-late-talkers, language-thinking-executive-function, autism-social-communication, stuttering-fluency |
 
 ## Sync history
-- 2026-09-20T19:15:07Z: pushed PENDING (from 8274308f) directly from Claude Code: netlify.toml added, a build ignore command so pushes that touch only .md files stop consuming Netlify deploy credits (1 file). Earlier the same day 8274308f added the /pages/* splat redirect to _redirects (1 file), pushed without a notice; this entry covers both. Nothing deleted
+- 2026-09-20T19:15:07Z: pushed 57f6674e (from 8274308f) directly from Claude Code: netlify.toml added, a build ignore command so pushes that touch only .md files stop consuming Netlify deploy credits (1 file). Earlier the same day 8274308f added the /pages/* splat redirect to _redirects (1 file), pushed without a notice; this entry covers both. Nothing deleted
 - 2026-09-17T17:23:17Z: pushed 4a9dfc9f (from b0a8de1f) directly from Claude Code: compact business node (#org) added to the about.html schema so worksFor and isPartOf resolve on the page; details copied from the home page node (1 file); nothing deleted
 - 2026-09-17T17:15:30Z: pushed e360b545 (from 48ef0994) directly from Claude Code: Google Business Profile URL in the business schema (sameAs plus hasMap) on index, contact, evaluations, tempe, and scottsdale; Scottsdale #org url corrected to the home page; home pricing card links to the Tempe and Scottsdale pages; static footer copy inside #site-footer on all 9 pages; CLAUDE.md rules for design project notices and the static footer (10 files); nothing deleted
 - 2026-09-16T23:15:57Z: pushed 30b4fb78 (from d9087baf) directly from Claude Code: self-hosted fonts on all 9 pages plus 8 woff2 files in assets/fonts/, cactus art deferred via site.js v=47 (18 files); nothing deleted
