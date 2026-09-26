@@ -3,18 +3,13 @@ repo: socialhousetherapy/social-house-therapy
 branch: main
 
 ## Last sync
-date: 2026-09-20T19:47:53Z
-commit: 10ff3c95 (from 361c686e)
+date: 2026-09-26T22:40:01Z
+commit: PENDING_SHA (from 1c3dbde0)
 ### Updated in this project
-- All nine pages changed: index, about, evaluations, speech-therapy-tempe, speech-therapy-scottsdale, faq, contact, privacy, 404. Take all nine from main as they stand now. Meta descriptions only; no layout, copy, or schema structure changed
-- New descriptions written by the owner, replacing the previous ones. They move from feature lists to the practice voice. All nine land between 114 and 147 characters, inside what Google displays
-- Where each page also carried the same text in og:description, twitter:description, or a JSON-LD "description", those copies were updated with it: index 3 slots, evaluations 3, faq 3, contact 3, privacy 3, tempe 2, about 1, scottsdale 1
-- og:description and twitter:description on about, tempe, and scottsdale were already written differently on purpose and were left alone. The same is true of the JSON-LD entity descriptions on index, about, tempe, and evaluations: those describe the business or the service, not the search snippet, so they keep their own wording
-- 404.html had no meta description at all and now has one. Note it carries meta robots noindex, so this text cannot appear in search results. It was added because the owner asked for it; it is cosmetic
-- The owner's 404 text used an em dash ("Oops, this page wandered off"). CLAUDE.md forbids em dashes anywhere, so it was written with a comma instead. Flagged to the owner
-- Curly punctuation is intentional and verified as UTF-8 in the files: left and right double quotation marks on evaluations, and right single quotation marks on faq, contact, and 404. Straight double quotes were not used, since they would end the HTML attribute early
-- Note on the home page: the meta description now says Arizona and the East Valley rather than naming Tempe and Scottsdale, matching the new title. The JSON-LD business description on that page still names Tempe and Scottsdale, so the city signal is not lost
-- JSON-LD on all nine pages re-parsed clean after the edit
+- privacy.html: the Notice of Privacy Practices is replaced with the approved SHT-C-03 notice (effective October 1, 2026), word for word from the form families sign in SimplePractice. HIPAA requires the posted notice to match the one given to clients, and the effective date cannot come before the date it is published, so it had to be live on or before October 1. Page design is unchanged: same hero, meta row, card, sticky contents, and contact cards. What changed inside the card: 10 sections instead of 9 (new section 05, Technology and AI Tools), both contents lists (desktop and mobile) now list 10 sections, the meta row reads Effective October 1, 2026 / Last updated September 26, 2026 / 10 sections, section 02 and 06 bullets carry bold lead labels, the old standalone "does not sell" note is gone (the sentence is now inside section 03), and the HHS Office for Civil Rights card now shows 1-800-368-1019, TDD 1-800-537-7697, Room 509F HHH Building, and hhs.gov/ocr/complaints (the old 1-877 number is retired). Take the whole file from main
+- Footer, every page: the legal row now opens with "Have a question or concern? Call or text (480) 490-4812 or email info@socialhousetherapy.com." ahead of the Notice of Privacy Practices link. Owner decision 2026-09-26: families raise concerns by call, text, or email, so the site points them there. Changed in the footer template in scripts/site.js and in the static footer copy inside #site-footer on all nine pages, with site.js cache version bumped from v=47 to v=48 on all nine pages
+- Files to bring into the design project before the next bundle: privacy.html, scripts/site.js, index.html, about.html, evaluations.html, speech-therapy-tempe.html, speech-therapy-scottsdale.html, faq.html, contact.html, 404.html. On the eight pages other than privacy, the only changes are the footer line and the v=48 script tag
+- Not changed on purpose: the FAQ answer about DDD (owner is waiting on DDD's reply to the Chapter 34 question before changing any DDD wording), community sessions and pricing, and a Good Faith Estimate page (both planned for a later push)
 
 ## Screen map
 | Project screen | Repo files |
@@ -34,6 +29,7 @@ commit: 10ff3c95 (from 361c686e)
 | (drafts, not in repo) | aac-support, speech-sound-disorders, early-communication-late-talkers, language-thinking-executive-function, autism-social-communication, stuttering-fluency |
 
 ## Sync history
+- 2026-09-26T22:40:01Z: pushed PENDING_SHA (from 1c3dbde0) directly from Claude Code: privacy.html replaced with the SHT-C-03 Notice of Privacy Practices effective October 1, 2026 (10 sections, new OCR contact details), and a question-or-concern line added to the footer legal row on all nine pages via site.js (v=48) and the static footers (10 files); nothing deleted
 - 2026-09-20T19:47:53Z: pushed 10ff3c95 (from 361c686e) directly from Claude Code: new meta descriptions on all nine pages in the practice voice, with og:description, twitter:description, and mirrored JSON-LD description fields kept in sync, plus a first meta description on 404.html (9 files); nothing deleted
 - 2026-09-20T19:33:43Z: pushed cef118c4 (from 566cef7e) directly from Claude Code: page titles shortened to fit Google's display length on index, about, and faq, and a new contact title, with og:title, twitter:title, and the contact WebPage schema name kept in sync (4 files); nothing deleted
 - 2026-09-20T19:15:07Z: pushed 57f6674e (from 8274308f) directly from Claude Code: netlify.toml added, a build ignore command so pushes that touch only .md files stop consuming Netlify deploy credits (1 file). Earlier the same day 8274308f added the /pages/* splat redirect to _redirects (1 file), pushed without a notice; this entry covers both. Nothing deleted
