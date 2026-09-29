@@ -3,8 +3,8 @@ repo: socialhousetherapy/social-house-therapy
 branch: main
 
 ## Last sync
-date: pending (not pushed yet)
-commit: pending (from 81d9a6d)
+date: 2026-09-29T20:07:19Z
+commit: 39fdcfb (from 81d9a6d)
 ### Updated in this project
 - Footer, every page: the legal row's concern line is shortened to a single link, "Have any questions or concerns?", which opens an email to info@socialhousetherapy.com with the subject "Questions or Concerns". It replaces the longer "Have a question or concern? Call or text (480) 490-4812 or email info@socialhousetherapy.com." sentence from 35a57ab8. Owner decision 2026-09-29: the long sentence looked cluttered in the footer, and the phone number is already shown in the Contact Us column right above it. The link now sits beside Notice of Privacy Practices with the same styling. Changed in the footer template in scripts/site.js and in the static footer copy inside #site-footer on all nine pages, with site.js cache version bumped from v=48 to v=49 on all nine pages
 - Files to bring into the design project before the next bundle: scripts/site.js, index.html, about.html, evaluations.html, speech-therapy-tempe.html, speech-therapy-scottsdale.html, faq.html, contact.html, privacy.html, 404.html. The only changes in each page are the footer line and the v=49 script tag
@@ -27,6 +27,7 @@ commit: pending (from 81d9a6d)
 | (drafts, not in repo) | aac-support, speech-sound-disorders, early-communication-late-talkers, language-thinking-executive-function, autism-social-communication, stuttering-fluency |
 
 ## Sync history
+- 2026-09-29T20:07:19Z: pushed 39fdcfb (from 81d9a6d) directly from Claude Code: footer concern line shortened to a single "Have any questions or concerns?" mailto link (subject "Questions or Concerns") on all nine pages via site.js (v=49) and the static footers (10 files); nothing deleted
 - 2026-09-26T22:40:01Z: pushed 35a57ab8 (from 1c3dbde0) directly from Claude Code: privacy.html replaced with the SHT-C-03 Notice of Privacy Practices effective October 1, 2026 (10 sections, new OCR contact details), and a question-or-concern line added to the footer legal row on all nine pages via site.js (v=48) and the static footers (10 files); nothing deleted
 - 2026-09-20T19:47:53Z: pushed 10ff3c95 (from 361c686e) directly from Claude Code: new meta descriptions on all nine pages in the practice voice, with og:description, twitter:description, and mirrored JSON-LD description fields kept in sync, plus a first meta description on 404.html (9 files); nothing deleted
 - 2026-09-20T19:33:43Z: pushed cef118c4 (from 566cef7e) directly from Claude Code: page titles shortened to fit Google's display length on index, about, and faq, and a new contact title, with og:title, twitter:title, and the contact WebPage schema name kept in sync (4 files); nothing deleted
