@@ -3,11 +3,11 @@ repo: socialhousetherapy/social-house-therapy
 branch: main
 
 ## Last sync
-date: 2026-09-29T20:07:19Z
-commit: 39fdcfb (from 81d9a6d)
+date: pending (not pushed yet)
+commit: pending (from 28c63d1)
 ### Updated in this project
-- Footer, every page: the legal row's concern line is shortened to a single link, "Have any questions or concerns?", which opens an email to info@socialhousetherapy.com with the subject "Questions or Concerns". It replaces the longer "Have a question or concern? Call or text (480) 490-4812 or email info@socialhousetherapy.com." sentence from 35a57ab8. Owner decision 2026-09-29: the long sentence looked cluttered in the footer, and the phone number is already shown in the Contact Us column right above it. The link now sits beside Notice of Privacy Practices with the same styling. Changed in the footer template in scripts/site.js and in the static footer copy inside #site-footer on all nine pages, with site.js cache version bumped from v=48 to v=49 on all nine pages
-- Files to bring into the design project before the next bundle: scripts/site.js, index.html, about.html, evaluations.html, speech-therapy-tempe.html, speech-therapy-scottsdale.html, faq.html, contact.html, privacy.html, 404.html. The only changes in each page are the footer line and the v=49 script tag
+- _redirects: four new 301s for old Squarespace addresses that Google still has on file but that returned a 404 after the move. /pages/about-us and /about-us now go to /about; /pages/what-to-expect and /what-to-expect now go to /evaluations. The /pages/* splat rule already covered /pages/contact, /pages/faq, and /pages/speech-therapy-tempe because those pages keep the same name on this site; these two did not, because their pages were renamed. The new lines sit above the splat so each old address takes a single hop. Found in the 2026-09-29 search rankings review
+- Files to bring into the design project before the next bundle: _redirects. No page or screen changed
 
 ## Screen map
 | Project screen | Repo files |
