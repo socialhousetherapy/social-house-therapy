@@ -393,7 +393,7 @@
         </div>
         <div class="footer-base">
           <div>© ${new Date().getFullYear()} Social House Therapy</div>
-          <div class="footer-legal"><span>Have a question or concern? Call or text <a href="tel:4804904812">(480) 490-4812</a> or email <a href="mailto:info@socialhousetherapy.com">info@socialhousetherapy.com</a>.</span><a href="/privacy">Notice of Privacy Practices</a></div>
+          <div class="footer-legal"><a href="mailto:info@socialhousetherapy.com?subject=Questions%20or%20Concerns">Have any questions or concerns?</a><a href="/privacy">Notice of Privacy Practices</a></div>
         </div>
       </footer>`;
   }

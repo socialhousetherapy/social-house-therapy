@@ -3,13 +3,11 @@ repo: socialhousetherapy/social-house-therapy
 branch: main
 
 ## Last sync
-date: 2026-09-26T22:40:01Z
-commit: 35a57ab8 (from 1c3dbde0)
+date: pending (not pushed yet)
+commit: pending (from 81d9a6d)
 ### Updated in this project
-- privacy.html: the Notice of Privacy Practices is replaced with the approved SHT-C-03 notice (effective October 1, 2026), word for word from the form families sign in SimplePractice. HIPAA requires the posted notice to match the one given to clients, and the effective date cannot come before the date it is published, so it had to be live on or before October 1. Page design is unchanged: same hero, meta row, card, sticky contents, and contact cards. What changed inside the card: 10 sections instead of 9 (new section 05, Technology and AI Tools), both contents lists (desktop and mobile) now list 10 sections, the meta row reads Effective October 1, 2026 / Last updated September 26, 2026 / 10 sections, section 02 and 06 bullets carry bold lead labels, the old standalone "does not sell" note is gone (the sentence is now inside section 03), and the HHS Office for Civil Rights card now shows 1-800-368-1019, TDD 1-800-537-7697, Room 509F HHH Building, and hhs.gov/ocr/complaints (the old 1-877 number is retired). Take the whole file from main
-- Footer, every page: the legal row now opens with "Have a question or concern? Call or text (480) 490-4812 or email info@socialhousetherapy.com." ahead of the Notice of Privacy Practices link. Owner decision 2026-09-26: families raise concerns by call, text, or email, so the site points them there. Changed in the footer template in scripts/site.js and in the static footer copy inside #site-footer on all nine pages, with site.js cache version bumped from v=47 to v=48 on all nine pages
-- Files to bring into the design project before the next bundle: privacy.html, scripts/site.js, index.html, about.html, evaluations.html, speech-therapy-tempe.html, speech-therapy-scottsdale.html, faq.html, contact.html, 404.html. On the eight pages other than privacy, the only changes are the footer line and the v=48 script tag
-- Not changed on purpose: the FAQ answer about DDD (owner is waiting on DDD's reply to the Chapter 34 question before changing any DDD wording), community sessions and pricing, and a Good Faith Estimate page (both planned for a later push)
+- Footer, every page: the legal row's concern line is shortened to a single link, "Have any questions or concerns?", which opens an email to info@socialhousetherapy.com with the subject "Questions or Concerns". It replaces the longer "Have a question or concern? Call or text (480) 490-4812 or email info@socialhousetherapy.com." sentence from 35a57ab8. Owner decision 2026-09-29: the long sentence looked cluttered in the footer, and the phone number is already shown in the Contact Us column right above it. The link now sits beside Notice of Privacy Practices with the same styling. Changed in the footer template in scripts/site.js and in the static footer copy inside #site-footer on all nine pages, with site.js cache version bumped from v=48 to v=49 on all nine pages
+- Files to bring into the design project before the next bundle: scripts/site.js, index.html, about.html, evaluations.html, speech-therapy-tempe.html, speech-therapy-scottsdale.html, faq.html, contact.html, privacy.html, 404.html. The only changes in each page are the footer line and the v=49 script tag
 
 ## Screen map
 | Project screen | Repo files |
