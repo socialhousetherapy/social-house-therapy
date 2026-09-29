@@ -3,8 +3,8 @@ repo: socialhousetherapy/social-house-therapy
 branch: main
 
 ## Last sync
-date: pending (not pushed yet)
-commit: pending (from 28c63d1)
+date: 2026-09-29T20:37:14Z
+commit: 3594c31 (from 28c63d1)
 ### Updated in this project
 - _redirects: four new 301s for old Squarespace addresses that Google still has on file but that returned a 404 after the move. /pages/about-us and /about-us now go to /about; /pages/what-to-expect and /what-to-expect now go to /evaluations. The /pages/* splat rule already covered /pages/contact, /pages/faq, and /pages/speech-therapy-tempe because those pages keep the same name on this site; these two did not, because their pages were renamed. The new lines sit above the splat so each old address takes a single hop. Found in the 2026-09-29 search rankings review
 - Files to bring into the design project before the next bundle: _redirects. No page or screen changed
@@ -27,6 +27,7 @@ commit: pending (from 28c63d1)
 | (drafts, not in repo) | aac-support, speech-sound-disorders, early-communication-late-talkers, language-thinking-executive-function, autism-social-communication, stuttering-fluency |
 
 ## Sync history
+- 2026-09-29T20:37:14Z: pushed 3594c31 (from 28c63d1) directly from Claude Code: four 301s in _redirects for renamed Squarespace addresses (/pages/about-us and /about-us to /about, /pages/what-to-expect and /what-to-expect to /evaluations) that were returning a 404 (1 file); nothing deleted
 - 2026-09-29T20:07:19Z: pushed 39fdcfb (from 81d9a6d) directly from Claude Code: footer concern line shortened to a single "Have any questions or concerns?" mailto link (subject "Questions or Concerns") on all nine pages via site.js (v=49) and the static footers (10 files); nothing deleted
 - 2026-09-26T22:40:01Z: pushed 35a57ab8 (from 1c3dbde0) directly from Claude Code: privacy.html replaced with the SHT-C-03 Notice of Privacy Practices effective October 1, 2026 (10 sections, new OCR contact details), and a question-or-concern line added to the footer legal row on all nine pages via site.js (v=48) and the static footers (10 files); nothing deleted
 - 2026-09-20T19:47:53Z: pushed 10ff3c95 (from 361c686e) directly from Claude Code: new meta descriptions on all nine pages in the practice voice, with og:description, twitter:description, and mirrored JSON-LD description fields kept in sync, plus a first meta description on 404.html (9 files); nothing deleted
