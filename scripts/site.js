@@ -16,7 +16,7 @@
 
   const SOCIALS = [
     { label: 'Instagram', href: 'https://instagram.com/socialhousetherapy', icon: 'instagram' },
-    { label: 'Facebook',  href: 'https://www.facebook.com/people/Social-House-Therapy/61579063274199/',  icon: 'facebook' },
+    { label: 'Facebook',  href: 'https://www.facebook.com/socialhousetherapy',  icon: 'facebook' },
     { label: 'TikTok',    href: 'https://tiktok.com/@socialhousetherapy',   icon: 'tiktok' },
   ];
 
@@ -60,7 +60,7 @@
           </a>
           <nav class="nav-links" aria-label="Primary">${inlineLinks}</nav>
           <div class="nav-right">
-            <a class="nav-cta" href="tel:4804904812" aria-label="Call or text us at 480-490-4812">
+            <a class="nav-cta" href="tel:+14804904812" aria-label="Call or text us at 480-490-4812">
               <span class="nav-cta-pre">Call/Text</span>
               <span class="nav-cta-num">480-490-4812</span>
             </a>
@@ -152,7 +152,7 @@
 
         <div class="menu-foot">
           <div>
-            <a href="tel:4804904812">(480) 490-4812</a>
+            <a href="tel:+14804904812">(480) 490-4812</a>
             <span style="margin: 0 10px; color: var(--ink-300);">·</span>
             <a href="mailto:info@socialhousetherapy.com">info@socialhousetherapy.com</a>
             <span style="margin: 0 10px; color: var(--ink-300);">·</span>
@@ -355,7 +355,7 @@
             <div class="foot-contact foot-contact-mobile">
               <h4 class="footer-h4-stack">Contact Us</h4>
               <ul>
-                <li><a class="foot-phone" href="tel:4804904812" aria-label="Call or text us at 480-490-4812">Call/Text 480-490-4812</a></li>
+                <li><a class="foot-phone" href="tel:+14804904812" aria-label="Call or text us at 480-490-4812">Call/Text 480-490-4812</a></li>
                 <li><a href="mailto:info@socialhousetherapy.com">info@socialhousetherapy.com</a></li>
                   <li><a href="https://share.google/xTUNuque8RDOZr5IY" target="_blank" rel="noopener">Find us on Google</a></li>
               </ul>
@@ -384,7 +384,7 @@
             <div class="foot-contact-desktop">
               <h4 class="footer-h4-stack">Contact Us</h4>
               <ul>
-                <li><a class="foot-phone" href="tel:4804904812" aria-label="Call or text us at 480-490-4812">Call/Text 480-490-4812</a></li>
+                <li><a class="foot-phone" href="tel:+14804904812" aria-label="Call or text us at 480-490-4812">Call/Text 480-490-4812</a></li>
                 <li><a href="mailto:info@socialhousetherapy.com">info@socialhousetherapy.com</a></li>
                   <li><a href="https://share.google/xTUNuque8RDOZr5IY" target="_blank" rel="noopener">Find us on Google</a></li>
               </ul>
@@ -649,7 +649,7 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
           </button>
           <div class="pc-actions">
-            <a class="pc-btn pc-call" href="tel:${PHONE}">
+            <a class="pc-btn pc-call" href="tel:+1${PHONE}">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.2 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
               Call
             </a>
