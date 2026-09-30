@@ -3,11 +3,13 @@ repo: socialhousetherapy/social-house-therapy
 branch: main
 
 ## Last sync
-date: 2026-09-29T20:37:14Z
-commit: 3594c31 (from 28c63d1)
+date: 2026-09-30T20:41:33Z
+commit: e6a79be (from 75a2236)
 ### Updated in this project
-- _redirects: four new 301s for old Squarespace addresses that Google still has on file but that returned a 404 after the move. /pages/about-us and /about-us now go to /about; /pages/what-to-expect and /what-to-expect now go to /evaluations. The /pages/* splat rule already covered /pages/contact, /pages/faq, and /pages/speech-therapy-tempe because those pages keep the same name on this site; these two did not, because their pages were renamed. The new lines sit above the splat so each old address takes a single hop. Found in the 2026-09-29 search rankings review
-- Files to bring into the design project before the next bundle: _redirects. No page or screen changed
+- Facebook link: the page now has the username socialhousetherapy, so the footer social link (scripts/site.js and the static #site-footer copy on all nine pages) and the schema sameAs entries (index, about, contact, evaluations, tempe, scottsdale) point to https://www.facebook.com/socialhousetherapy. The long people/Social-House-Therapy/61579063274199 address is gone from the repo
+- Phone links: every tel: link is now tel:+14804904812 (was tel:4804904812), including the Call button inside the phone chooser in site.js. The chooser still matches on the last 10 digits, so it keeps working. sms: links are unchanged
+- site.js cache version bumped to v=50 on all nine pages
+- Files to bring into the design project before the next bundle: 404.html, about.html, contact.html, evaluations.html, faq.html, index.html, privacy.html, speech-therapy-scottsdale.html, speech-therapy-tempe.html, scripts/site.js. No layout or copy changed
 
 ## Screen map
 | Project screen | Repo files |
@@ -27,6 +29,7 @@ commit: 3594c31 (from 28c63d1)
 | (drafts, not in repo) | aac-support, speech-sound-disorders, early-communication-late-talkers, language-thinking-executive-function, autism-social-communication, stuttering-fluency |
 
 ## Sync history
+- 2026-09-30T20:41:33Z: pushed e6a79be (from 75a2236) directly from Claude Code: Facebook link changed to https://www.facebook.com/socialhousetherapy in the footer and schema sameAs, tel: links changed to tel:+14804904812, site.js v=50 (10 files); nothing deleted
 - 2026-09-29T20:37:14Z: pushed 3594c31 (from 28c63d1) directly from Claude Code: four 301s in _redirects for renamed Squarespace addresses (/pages/about-us and /about-us to /about, /pages/what-to-expect and /what-to-expect to /evaluations) that were returning a 404 (1 file); nothing deleted
 - 2026-09-29T20:07:19Z: pushed 39fdcfb (from 81d9a6d) directly from Claude Code: footer concern line shortened to a single "Have any questions or concerns?" mailto link (subject "Questions or Concerns") on all nine pages via site.js (v=49) and the static footers (10 files); nothing deleted
 - 2026-09-26T22:40:01Z: pushed 35a57ab8 (from 1c3dbde0) directly from Claude Code: privacy.html replaced with the SHT-C-03 Notice of Privacy Practices effective October 1, 2026 (10 sections, new OCR contact details), and a question-or-concern line added to the footer legal row on all nine pages via site.js (v=48) and the static footers (10 files); nothing deleted
