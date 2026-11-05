@@ -3,13 +3,11 @@ repo: socialhousetherapy/social-house-therapy
 branch: main
 
 ## Last sync
-date: 2026-09-30T20:41:33Z
-commit: e6a79be (from 75a2236)
+date: (not pushed yet; committed locally 2026-11-05)
+commit: (sha recorded after push, from e21c736)
 ### Updated in this project
-- Facebook link: the page now has the username socialhousetherapy, so the footer social link (scripts/site.js and the static #site-footer copy on all nine pages) and the schema sameAs entries (index, about, contact, evaluations, tempe, scottsdale) point to https://www.facebook.com/socialhousetherapy. The long people/Social-House-Therapy/61579063274199 address is gone from the repo
-- Phone links: every tel: link is now tel:+14804904812 (was tel:4804904812), including the Call button inside the phone chooser in site.js. The chooser still matches on the last 10 digits, so it keeps working. sms: links are unchanged
-- site.js cache version bumped to v=50 on all nine pages
-- Files to bring into the design project before the next bundle: 404.html, about.html, contact.html, evaluations.html, faq.html, index.html, privacy.html, speech-therapy-scottsdale.html, speech-therapy-tempe.html, scripts/site.js. No layout or copy changed
+- Privacy page name change: privacy.html now says "Social House Therapy LLC" everywhere it said "SHT" (16 places), and the short-name definition in the opening paragraph is gone ("we" means Social House Therapy LLC). This matches the SHT-C-03 Notice of Privacy Practices as refiled 2026-10-26, when the practice stopped using "SHT" in family-facing text. Effective date (October 1, 2026), sections, and all other wording are unchanged
+- Files to bring into the design project before the next bundle: privacy.html. No layout changed
 
 ## Screen map
 | Project screen | Repo files |
@@ -29,6 +27,7 @@ commit: e6a79be (from 75a2236)
 | (drafts, not in repo) | aac-support, speech-sound-disorders, early-communication-late-talkers, language-thinking-executive-function, autism-social-communication, stuttering-fluency |
 
 ## Sync history
+- (pending push): privacy.html "SHT" spelled out as "Social House Therapy LLC" to match the refiled SHT-C-03 (1 file plus github.md); nothing deleted
 - 2026-09-30T20:41:33Z: pushed e6a79be (from 75a2236) directly from Claude Code: Facebook link changed to https://www.facebook.com/socialhousetherapy in the footer and schema sameAs, tel: links changed to tel:+14804904812, site.js v=50 (10 files); nothing deleted
 - 2026-09-29T20:37:14Z: pushed 3594c31 (from 28c63d1) directly from Claude Code: four 301s in _redirects for renamed Squarespace addresses (/pages/about-us and /about-us to /about, /pages/what-to-expect and /what-to-expect to /evaluations) that were returning a 404 (1 file); nothing deleted
 - 2026-09-29T20:07:19Z: pushed 39fdcfb (from 81d9a6d) directly from Claude Code: footer concern line shortened to a single "Have any questions or concerns?" mailto link (subject "Questions or Concerns") on all nine pages via site.js (v=49) and the static footers (10 files); nothing deleted
